@@ -1,4 +1,15 @@
 .control-widget {
     background: darkblue;
     width: 400px;
+
+    -webkit-box-shadow: inset 4px 0 5px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 4px 0 5px 0 rgba(0,0,0,0.75);
+    box-shadow: inset 4px 0 5px 0 rgba(0,0,0,0.75);
+
+    transition: width 500ms;
+    overflow: hidden;
+}
+
+.control-widget.minimized {
+    width: 0;
 }

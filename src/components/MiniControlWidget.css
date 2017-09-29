@@ -1,0 +1,67 @@
+
+
+.MiniControlWidget {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: opacity 500ms;
+    opacity: 0;
+}
+
+.MiniControlWidget > div {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MiniControlWidget.minimized {
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.MiniControlWidget .button-wrapper {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: -30px;
+}
+
+.MiniControlWidget .maximize-button {
+    background: blue;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+
+.MiniControlWidget .big-persona {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 5px solid black;
+    background: gray;
+    z-index: 10;
+}
+
+.MiniControlWidget .persona {
+    height: 0;
+    width: 40px;
+    border-radius: 50%;
+
+    background: gray;
+
+    position: relative;
+    transition: top 300ms, opacity 300ms, height 300ms;
+    opacity: 0;
+    z-index: 5;
+}
+
+.MiniControlWidget:hover .persona {
+    opacity: 1;
+    height: 40px;
+    border: 5px solid black;
+    margin: 5px 0;
+}

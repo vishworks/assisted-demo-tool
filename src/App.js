@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import ControlWidget from './components/ControlWidget.js'
+import ControlWidgetContainer from './containers/ControlWidgetContainer.js'
+import MiniControlWidgetContainer from './containers/MiniControlWidgetContainer.js'
 
 class App extends Component {
   render() {
@@ -11,7 +12,8 @@ class App extends Component {
         <div className="view-port">
           <iframe className="view-frame current" src="http://example.com" />
         </div>
-        <ControlWidget />
+        <ControlWidgetContainer />
+        <MiniControlWidgetContainer />
       </div>
     );
   }

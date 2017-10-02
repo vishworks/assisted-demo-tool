@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import { memoize } from 'lodash'
 
-import FloatingHamburgerBtn from './FloatingHamburgerBtn.js'
 import FloatingButton from './FloatingButton.js'
 
 import './MiniControlWidget.css'
@@ -48,7 +47,7 @@ class MiniControlWidget extends Component {
         >
           <div className="personas-list">
             <div className="persona-row">
-              <FloatingHamburgerBtn onClick={this.onClickMaximize}/>
+              <FloatingButton onClick={this.onClickMaximize} codepoint="&#x2630;"/>
               <div className="persona-wrapper">
                 <div className="persona"
                      onClick={this.onClickExpand}
@@ -72,7 +71,7 @@ class MiniControlWidget extends Component {
       personasRenderers.push(
         <div key={this.props.personas[i].name} className={personaClassName.join(' ')}>
 
-          <FloatingHamburgerBtn onClick={this.onClickMaximize}/>
+          <FloatingButton onClick={this.onClickMaximize} codepoint="&#x2630;"/>
           <div className="persona-wrapper">
             <div className="persona"
               onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
@@ -80,7 +79,11 @@ class MiniControlWidget extends Component {
               >
             </div>
           </div>
-          <div className="label">{this.props.personas[i].label}</div>
+          <div className="label"
+             onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
+            >
+            {this.props.personas[i].label}
+          </div>
         </div>
       );
     }

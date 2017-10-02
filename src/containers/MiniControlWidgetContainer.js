@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { controlWidgetMaximize } from '../actions'
+import { controlWidgetMaximize, selectPersona } from '../actions'
 import MiniControlWidget from '../components/MiniControlWidget.js'
 
 
@@ -7,7 +7,8 @@ import MiniControlWidget from '../components/MiniControlWidget.js'
 const mapStateToProps = state => {
   return {
     status: state.controlWidget.status,
-    personas: state.configuration.personas
+    personas: state.configuration.personas,
+    currentPersona: state.viewPort.currentPersona
   }
 };
 
@@ -15,6 +16,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onClickMaximize: () => {
       dispatch(controlWidgetMaximize());
+    },
+    selectPersona(personaId) {
+      dispatch(selectPersona(personaId));
     }
   }
 };

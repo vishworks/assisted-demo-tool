@@ -8,10 +8,9 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case TYPE.CONTROL_WIDGET_MINIMIZE:
-      return Object.assign({}, state, { status: 'minimized' });
-    case TYPE.CONTROL_WIDGET_MAXIMIZE:
-      return Object.assign({}, state, { status: 'expanded' });
+    case TYPE.SELECT_PERSONA:
+      return Object.assign({}, state, { currentPersona: action.payload.id });
+
     default:
       return state
   }

@@ -1,0 +1,10 @@
+.SidePopup {
+  position: absolute;
+  top: 0;
+  right: 100%;
+
+  background: #152437;
+  color: #FFFFFF;
+
+  width: 300px; height: 300px;
+}

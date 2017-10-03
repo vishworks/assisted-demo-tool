@@ -3,10 +3,10 @@ import { TYPE } from '../actions'
 
 const initialState = { // FIXME this should be set from an external file, asynchronously
   personas: [
-    { name: 'pippo', label: 'Pippo', avatar: 'img/user-1.jpg' },
-    { name: 'pluto', label: 'Pluto', avatar: 'img/user-2.jpg' },
-    { name: 'paperino', label: 'Paperino', avatar: 'img/user-3.jpg' },
-    { name: 'paperone', label: 'Paperone', avatar: 'img/user-4.jpg' },
+    { name: 'businessManager', label: 'Carol Schmidt', description: 'Business Manager', avatar: 'img/user-1.jpg' },
+    { name: 'cmsAdmin', label: 'Jessica Bahia', description: 'CMS Admin', avatar: 'img/user-2.jpg' },
+    { name: 'processManager', label: 'Jack Orwell', description: 'Process Manager', avatar: 'img/user-3.jpg' },
+    { name: 'bpmAdmin', label: 'Nina Bodiul', description: 'BPM Administrator', avatar: 'img/user-4.jpg' }
   ],
   demos: [
     {

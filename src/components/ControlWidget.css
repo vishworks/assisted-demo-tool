@@ -1,15 +1,51 @@
-.control-widget {
-    background: darkblue;
-    width: 400px;
+.ControlWidget {
+    background: #203753;
+    width: 300px;
 
-    -webkit-box-shadow: inset 4px 0 5px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 4px 0 5px 0 rgba(0,0,0,0.75);
-    box-shadow: inset 4px 0 5px 0 rgba(0,0,0,0.75);
+    box-shadow: -8px 0 20px 0 rgba(0, 0, 0, 0.5);
+    z-index: 100;
 
     transition: width 500ms;
-    overflow: hidden;
 }
 
-.control-widget.minimized {
+.ControlWidget.minimized {
     width: 0;
+}
+
+.ControlWidget header {
+    height: 180px;
+    border-bottom: 1px solid white;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ControlWidget .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ControlWidget .tool-btn {
+    display: block;
+    background: #152437;
+    color: #FFFFFF;
+    border: none;
+    outline: 0;
+    
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.ControlWidget .tool-btn:not(:first-child) {
+    border-top: 1px solid #5F748F;
+}
+
+.ControlWidget .tool-btn:not(.active) {
+    border-left: 1px solid #5F748F;
 }

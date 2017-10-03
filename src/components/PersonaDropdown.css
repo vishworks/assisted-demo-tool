@@ -1,0 +1,46 @@
+.PersonaDropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  color: #FFFFFF;
+}
+
+
+.PersonaDropdown .persona-wrapper {
+  flex-grow: 50;
+  display: flex;
+  align-items: center;;
+
+}
+
+
+.PersonaDropdown .persona-label {
+  font-size: 15px;
+  flex-grow: 1;
+}
+
+.PersonaDropdown .persona-description {
+  font-size: 13px;
+  flex-grow: 1;
+}
+
+.PersonaDropdown .persona-dropdown-trigger {
+  color: #00B9F7;
+  font-size: 30px;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.PersonaDropdown .persona-dropdown-trigger:hover {
+  color: #FFFFFF;
+}
+
+.PersonaDropdown .personas-list {
+  position: absolute;
+  top: 100%;
+  background: #152437;
+  width: 100%;
+}

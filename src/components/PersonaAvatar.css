@@ -1,0 +1,11 @@
+.PersonaAvatar {
+  border-radius: 50%;
+  border: 3px solid #00B9F7;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  height: 60px;
+  width: 60px;
+}

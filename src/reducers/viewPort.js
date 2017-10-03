@@ -2,7 +2,7 @@
 import { TYPE } from '../actions'
 
 const initialState = {
-  currentPersona: 'pippo',
+  currentPersona: 'businessManager', // FIXME remove hardcoded, refactor as currentPersonaId
   currentUrl: 'http://example.com'
 };
 

@@ -23,7 +23,6 @@ class PersonaAvatar extends Component {
   }
 
 
-
 }
 
 export default PersonaAvatar;

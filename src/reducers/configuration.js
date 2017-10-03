@@ -10,19 +10,33 @@ const initialState = { // FIXME this should be set from an external file, asynch
   ],
   demos: [
     {
+      id: 'demoA',
       name: 'Demo A',
       steps: [
         {
-          persona: 'pippo',
-          url: 'http://example.com'
+          personaId: 'businessManager',
+          url: 'http://example.com',
+          name: 'Step businessManager 1'
         },
         {
-          persona: 'pluto',
-          url: 'http://google.com'
+          personaId: 'businessManager',
+          url: 'http://google.com',
+          name: 'Step businessManager 2'
         },
         {
-          persona: 'paperino',
-          url: 'http://entando.com'
+          personaId: 'cmsAdmin',
+          url: 'http://entando.com',
+          name: 'Step cmsAdmin 1'
+        },
+        {
+          personaId: 'processManager',
+          url: 'http://entando.com',
+          name: 'Step processManager 1'
+        },
+        {
+          personaId: 'bpmAdmin',
+          url: 'http://entando.com',
+          name: 'Step bpmAdmin 1'
         }
       ]
     }

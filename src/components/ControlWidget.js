@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 import PersonaDropdownContainer from '../containers/PersonaDropdownContainer.js'
+import PersonaStepsListContainer from '../containers/PersonaStepsListContainer.js'
+
+import StepsControlButtonsContainer from '../containers/StepsControlButtonsContainer.js'
+
 import SidePopup from './SidePopup.js'
 
 import './ControlWidget.css'
@@ -19,6 +23,10 @@ class ControlWidget extends Component {
     this.state = {
       activePopup: ''
     };
+  }
+
+  componentDidMount() {
+    this.props.loadConfig();
   }
 
   render() {
@@ -48,7 +56,7 @@ class ControlWidget extends Component {
           <PersonaDropdownContainer />
 
           <SidePopup open={this.state.activePopup === 'steps'} >
-            STEPS
+            <PersonaStepsListContainer />
           </SidePopup>
           <SidePopup open={this.state.activePopup === 'comments'} >
             COMMENTS
@@ -56,6 +64,7 @@ class ControlWidget extends Component {
         </header>
 
 
+        <StepsControlButtonsContainer />
       </div>
     );
   }

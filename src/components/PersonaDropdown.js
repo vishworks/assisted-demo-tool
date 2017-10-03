@@ -50,7 +50,7 @@ class PersonaDropdown extends Component {
         className={className.join(' ')}
         >
         <div className="persona-wrapper">
-          <PersonaAvatar persona={this.props.currentPersona} />
+          <PersonaAvatar imageUrl={this.props.currentPersona.avatar} />
         </div>
         <div className="persona-label">{this.props.currentPersona.label}</div>
         <div className="persona-description">{this.props.currentPersona.description}</div>

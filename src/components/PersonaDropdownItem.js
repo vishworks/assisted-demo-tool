@@ -7,11 +7,6 @@ import './PersonaDropdownItem.css'
 class PersonaDropdownItem extends Component {
 
 
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
 
     let className = ['PersonaDropdownItem'];
@@ -20,7 +15,7 @@ class PersonaDropdownItem extends Component {
       <div
         className={className.join(' ')}
         onClick={(ev) => { this.props.onClick(ev, this.props.persona)}}>
-        <PersonaAvatar persona={this.props.persona} />
+        <PersonaAvatar imageUrl={this.props.persona.avatar} />
         <div>
           <div className="persona-label">{this.props.persona.label}</div>
           <div className="persona-description">{this.props.persona.description}</div>

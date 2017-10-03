@@ -25,10 +25,6 @@ class ControlWidget extends Component {
     };
   }
 
-  componentDidMount() {
-    this.props.loadConfig();
-  }
-
   render() {
 
     let className = ['ControlWidget'];

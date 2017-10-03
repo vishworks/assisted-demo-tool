@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { getControlWidgetStatus } from '../selectors'
-import { controlWidgetMinimize, asyncLoadConfig } from '../actions'
+import { controlWidgetMinimize } from '../actions'
 import ControlWidget from '../components/ControlWidget.js'
 
 
@@ -16,9 +16,6 @@ const mapDispatchToProps = dispatch => {
   return {
     onClickMinimize: () => {
       dispatch(controlWidgetMinimize());
-    },
-    loadConfig: () => {
-      dispatch(asyncLoadConfig());
     }
   }
 };

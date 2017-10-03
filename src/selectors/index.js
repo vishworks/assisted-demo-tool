@@ -1,6 +1,6 @@
 
 import { createSelector } from 'reselect'
-import { find, filter, map } from 'lodash'
+import { find, filter, map, get } from 'lodash'
 
 
 function addIndexToArray(array) {
@@ -12,14 +12,11 @@ function addIndexToArray(array) {
 
 
 
-
-
-export const getCurrentPersonaId = state => state.viewPort.currentPersona;
-export const getCurrentDemoId = state => state.viewPort.currentDemoId;
-export const getPersonas = state => state.configuration.personas;
-export const getDemos = state => state.configuration.demos;
-export const getCurrentStepIndex = state => state.viewPort.currentStepIndex;
-
+export const getPersonas = state => get(state.appReducer.config, 'personas', null);
+export const getDemos = state => get(state.appReducer.config, 'demos', null);
+export const getCurrentStepIndex = state => state.appReducer.current.stepIndex;
+export const getCurrentPersonaId = state => state.appReducer.current.personaId;
+export const getCurrentDemoId = state => state.appReducer.current.demoId;
 
 export const getControlWidgetStatus = state => state.controlWidget.status;
 
@@ -41,6 +38,7 @@ export const getNotSelectedPersonas = createSelector(
 export const getCurrentDemo = createSelector(
   [getCurrentDemoId, getDemos],
   (currentDemoId, demos) => {
+    debugger;
     return find(demos, { id: currentDemoId } );
   }
 );

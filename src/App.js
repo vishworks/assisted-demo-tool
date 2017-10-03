@@ -6,7 +6,17 @@ import ControlWidgetContainer from './containers/ControlWidgetContainer.js'
 import MiniControlWidgetContainer from './containers/MiniControlWidgetContainer.js'
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.loadConfig();
+  }
+
   render() {
+
+    if (this.props.configLoaded === false) {
+      return <div><h1>LOADING CONFIGURATION</h1></div>
+    }
+
     return (
       <div className="App">
         <div className="view-port">
@@ -16,6 +26,7 @@ class App extends Component {
         <MiniControlWidgetContainer />
       </div>
     );
+
   }
 }
 

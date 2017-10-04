@@ -1,6 +1,9 @@
 
 import { TYPE } from '../actions'
 
+import validate from '../helpers/ConfigValidator.js'
+
+
 const initialState = {
   config: null,
   current: {
@@ -15,8 +18,10 @@ const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
 
     case TYPE.LOAD_CONFIG:
-      // FIXME check config malformation
       // FIXME find correctly first demo
+      var valid = validate(action.payload.config);
+      if (!valid) console.log(validate.errors); // FIXME react to validation errors
+
       let newState = {
         config: action.payload.config,
         current: {

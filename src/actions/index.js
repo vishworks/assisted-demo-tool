@@ -5,7 +5,8 @@ export const TYPE = {
   CONTROL_WIDGET_MAXIMIZE: 'CONTROL_WIDGET_MAXIMIZE',
   SELECT_PERSONA: 'SELECT_PERSONA',
   NEXT_STEP: 'NEXT_STEP',
-  PREV_STEP: 'PREV_STEP'
+  PREV_STEP: 'PREV_STEP',
+  GOTO_STEP: 'GOTO_STEP'
 };
 
 
@@ -58,6 +59,15 @@ export const nextStep = () => {
 export const prevStep = () => {
   return {
     type: TYPE.PREV_STEP
+  };
+};
+
+export const gotoStep = (stepIndex) => {
+  return {
+    type: TYPE.GOTO_STEP,
+    payload: {
+      stepIndex: stepIndex
+    }
   };
 };
 

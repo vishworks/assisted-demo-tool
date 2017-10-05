@@ -33,12 +33,22 @@
         {
           "personaId": "businessManager",
           "url": "http://example.com",
-          "name": "Step businessManager 1"
+          "name": "Admin Configuration"
         },
         {
           "personaId": "businessManager",
           "url": "http://google.com",
-          "name": "Step businessManager 2"
+          "name": "Admin Console"
+        },
+        {
+          "personaId": "businessManager",
+          "url": "http://google.com",
+          "name": "Page Models"
+        },
+        {
+          "personaId": "businessManager",
+          "url": "http://google.com",
+          "name": "Page Designer"
         },
         {
           "personaId": "cmsAdmin",

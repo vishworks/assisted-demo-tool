@@ -58,3 +58,11 @@
 .ControlWidget .tool-btn:not(.active) {
     border-left: 1px solid #5F748F;
 }
+
+
+.ControlWidget .side-popup-title {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 25px;
+}

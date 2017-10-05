@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 
+import { gotoStep } from '../actions'
 import { getCurrentPersonaSteps, getCurrentStepIndex } from '../selectors'
 
 
@@ -17,9 +18,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-  //  selectPersona: (personaId) => {
-  //    dispatch(selectPersona(personaId));
-  //  }
+    gotoStep: (stepIndex) => {
+      dispatch(gotoStep(stepIndex));
+    }
   }
 };
 

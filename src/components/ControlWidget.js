@@ -52,6 +52,7 @@ class ControlWidget extends Component {
           <PersonaDropdownContainer />
 
           <SidePopup open={this.state.activePopup === 'steps'} >
+            <div className="side-popup-title">Steps</div>
             <PersonaStepsListContainer />
           </SidePopup>
           <SidePopup open={this.state.activePopup === 'comments'} >

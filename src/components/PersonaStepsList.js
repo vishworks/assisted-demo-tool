@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { forEach } from 'lodash';
 
+import PersonaStepsListItem from './PersonaStepsListItem.js'
+
 import './PersonaStepsList.css'
 
 
@@ -21,11 +23,11 @@ class PersonaStepsList extends Component {
     let renderers = [];
     forEach(this.props.steps, (step, i) => {
       renderers.push(
-        <div>
-          <div>Step {i}</div>
-          <div>{step.name}</div>
-          <div>Step # {step.index} of {this.props.steps.length} { this.props.currentStepIndex === step.index ? 'ACTIVE' : '' }</div>
-        </div>
+        <PersonaStepsListItem
+          step={step}
+          active={this.props.currentStepIndex === step.index }
+          onClick={(ev) => { this.props.gotoStep(step.index) }}
+          />
       );
     });
 

@@ -57,6 +57,13 @@ const reducer = (state = initialState, action = {}) => {
       }
       return gotoStep(state, state.current.stepIndex - 1);
 
+    case TYPE.GOTO_STEP:
+      let stepIndex = action.payload.stepIndex;
+      if (stepIndex < 0 || stepIndex >= getCurrentDemo(state).steps.length) {
+        return state;
+      }
+      return gotoStep(state, stepIndex);
+
     default:
       return state
   }

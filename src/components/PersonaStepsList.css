@@ -1,3 +1,22 @@
 .PersonaStepsList {
 
 }
+
+
+.PersonaStepsList .PersonaStepsListItem {
+    margin: 20px 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.PersonaStepsList .PersonaStepsListItem.active {
+    color: #00B9F7;
+}
+
+.PersonaStepsList .PersonaStepsListItem.active:before {
+    content: "\203a";
+    font-size: 26px;
+    position: absolute;
+    right: calc(100% + 10px);
+    top: calc(50% - 0.6em);
+}

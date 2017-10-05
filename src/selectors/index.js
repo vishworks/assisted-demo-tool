@@ -38,7 +38,6 @@ export const getNotSelectedPersonas = createSelector(
 export const getCurrentDemo = createSelector(
   [getCurrentDemoId, getDemos],
   (currentDemoId, demos) => {
-    debugger;
     return find(demos, { id: currentDemoId } );
   }
 );

@@ -32,7 +32,7 @@ export function asyncLoadConfig() {
         },
           error => dispatch(loadConfig(null))
       );
-    }, 3000);
+    }, 1000);
   };
 }
 

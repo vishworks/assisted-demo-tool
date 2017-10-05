@@ -4,6 +4,7 @@ import './App.css';
 
 import ControlWidgetContainer from './containers/ControlWidgetContainer.js'
 import MiniControlWidgetContainer from './containers/MiniControlWidgetContainer.js'
+import ViewPortContainer from './containers/ViewPortContainer.js'
 
 class App extends Component {
 
@@ -19,9 +20,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="view-port">
-          <iframe className="view-frame current" src="http://example.com" />
-        </div>
+        <ViewPortContainer />
         <ControlWidgetContainer />
         <MiniControlWidgetContainer />
       </div>

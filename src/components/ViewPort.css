@@ -1,0 +1,10 @@
+.ViewPort {
+  flex-grow: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+.ViewPort .view-frame {
+  width: 100%;
+  height: 100%;
+}

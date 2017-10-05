@@ -1,6 +1,6 @@
 
 import { createSelector } from 'reselect'
-import { find, filter, map, get } from 'lodash'
+import { find, filter, map, get, uniq } from 'lodash'
 
 
 function addIndexToArray(array) {
@@ -60,5 +60,26 @@ export const getCurrentDemoStepsCount = createSelector(
   [getAllSteps],
   (allSteps) => {
     return allSteps.length;
+  }
+);
+
+export const getCurrentStep = createSelector(
+  [getAllSteps, getCurrentStepIndex],
+  (allSteps, currentStepIndex) => {
+    return allSteps[currentStepIndex];
+  }
+);
+
+export const getCurrentUrl = createSelector(
+  [getCurrentStep],
+  (currentStep) => {
+    return currentStep.url;
+  }
+);
+
+export const getUrls = createSelector(
+  [getAllSteps],
+  (allSteps) => {
+    return uniq(map(allSteps, 'url'));
   }
 );

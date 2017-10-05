@@ -32,38 +32,38 @@
       "steps": [
         {
           "personaId": "businessManager",
-          "url": "http://example.com",
+          "url": "http://entando.com",
           "name": "Admin Configuration"
         },
         {
           "personaId": "businessManager",
-          "url": "http://google.com",
+          "url": "https://www.entando.com",
           "name": "Admin Console"
         },
         {
           "personaId": "businessManager",
-          "url": "http://google.com",
+          "url": "http://entando.com",
           "name": "Page Models"
         },
         {
           "personaId": "businessManager",
-          "url": "http://google.com",
+          "url": "http://entando.com",
           "name": "Page Designer"
         },
         {
           "personaId": "cmsAdmin",
-          "url": "http://entando.com",
-          "name": "Step cmsAdmin 1"
+          "url": "http://example.com",
+          "name": "See an example website"
         },
         {
           "personaId": "processManager",
-          "url": "http://entando.com",
-          "name": "Step processManager 1"
+          "url": "https://en.wikipedia.org/wiki/Red_Hat",
+          "name": "Learn about RH"
         },
         {
           "personaId": "bpmAdmin",
-          "url": "http://entando.com",
-          "name": "Step bpmAdmin 1"
+          "url": "https://en.wikipedia.org/wiki/Red_Hat",
+          "name": "Still, read the same page"
         }
       ]
     }

@@ -1,5 +1,6 @@
 .ControlWidget {
     background: #203753;
+    min-width: 300px;
     width: 300px;
 
     box-shadow: -8px 0 20px 0 rgba(0, 0, 0, 0.5);

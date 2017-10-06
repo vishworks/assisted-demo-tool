@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import './StepsControlButtons.css'
 
 class StepsControlButtons extends Component {
 
@@ -16,7 +17,14 @@ class StepsControlButtons extends Component {
 
     return (
       <div className={className.join(' ')}>
-        <button onClick={this.prevStep}>PREV</button><button onClick={this.nextStep}>NEXT</button>
+        <button className="back-btn" onClick={this.prevStep}>
+          <span className="arrow">&#x1f860;</span>
+          <span className="label">BACK</span>
+        </button>
+        <button className="next-btn" onClick={this.nextStep}>
+          <span className="label">NEXT</span>
+          <span className="arrow">&#x1f862;</span>
+        </button>
       </div>
     );
   }

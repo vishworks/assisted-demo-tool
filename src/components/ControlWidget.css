@@ -7,10 +7,14 @@
     z-index: 100;
 
     transition: width 500ms;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .ControlWidget.minimized {
     width: 0;
+    min-width: 0;
     overflow: hidden;
 }
 
@@ -66,4 +70,16 @@
     text-align: center;
     padding: 10px 0;
     font-size: 25px;
+}
+
+.ControlWidget .step-content {
+    flex-grow: 2;
+}
+
+.ControlWidget .footer {
+    text-align: right;
+    padding: 10px;
+}
+.ControlWidget .footer img {
+    max-height: 30px;
 }

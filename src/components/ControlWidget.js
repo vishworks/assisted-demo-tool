@@ -96,8 +96,14 @@ class ControlWidget extends Component {
           </SidePopup>
         </header>
 
+        <div className="step-content" style={{background:'red'}}>
+          STEP CONTENT
+        </div>
 
         <StepsControlButtonsContainer />
+        <div className="footer">
+          <img src="img/entando-e.png" />
+        </div>
       </div>
     );
   }

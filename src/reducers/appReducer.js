@@ -6,6 +6,7 @@ import { TYPE } from '../actions'
 import { forEach, get } from 'lodash'
 
 import validate from '../helpers/ConfigValidator.js'
+import parseHash from '../helpers/HashParser.js'
 
 
 const initialState = {
@@ -36,18 +37,24 @@ const reducer = (state = initialState, action = {}) => {
         });
       }
 
+      // if set in url
+      let opts = parseHash(window.location.hash);
+
       let firstDemo = first(action.payload.config.demos),
         firstStep = first(firstDemo.steps),
         newState = {
           config: action.payload.config,
           current: {
-            personaId: firstStep.personaId,
-            stepIndex: 0,
-            demoId: firstDemo.id,
+            personaId: opts.personaId ? opts.personaId : firstStep.personaId,
+            stepIndex: opts.stepIndex ? parseInt(opts.stepIndex) : 0,
+            demoId: opts.demoId ? opts.demoId : firstDemo.id,
             url: firstStep.url
           }
         };
       return merge({}, state, newState);
+
+    case TYPE.UPDATE_STATE_FROM_HASH:
+      return merge({}, state, updateStateFromHash(action.payload.hash));
 
     case TYPE.SET_CONFIG_ERROR:
       return merge({}, initialState, {
@@ -56,7 +63,9 @@ const reducer = (state = initialState, action = {}) => {
 
 
     case TYPE.SELECT_PERSONA:
-      return merge({}, state, { current: { personaId: action.payload.id } });
+      return updateHashFromState(
+        merge({}, state, { current: { personaId: action.payload.id } })
+      );
 
     case TYPE.NEXT_STEP:
       if (state.current.stepIndex === getCurrentDemo(state).steps.length - 1) {
@@ -95,13 +104,49 @@ function gotoStep(state, stepIndex)  {
     newStep = curDemo.steps[newStepIndex],
     newPersonaId = newStep.personaId,
     newUrl = newStep.url;
-  return merge({}, state, {
+  return updateHashFromState(
+    merge({}, state, {
+      current: {
+        stepIndex: newStepIndex,
+        personaId: newPersonaId,
+        url: newUrl
+      }
+    })
+  );
+}
+
+
+/**
+ * Updates state based on the URL hash
+ * @param {string} hash the URL hash fragment
+ * @returns {object} the new state
+ */
+function updateStateFromHash(hash) {
+  let curOpts = parseHash(hash);
+  return {
     current: {
-      stepIndex: newStepIndex,
-      personaId: newPersonaId,
-      url: newUrl
+      personaId: curOpts.personaId,
+      stepIndex: curOpts.stepIndex ? parseInt(curOpts.stepIndex) : undefined,
+      demoId: curOpts.demoId
     }
-  });
+  };
+}
+
+/**
+ * Updates the URL hash (window.location.hash) based on the state object
+ * @param state
+ * @returns {object} the input state, unmodified (for chaining)
+ */
+function updateHashFromState(state) {
+  let curOpts = parseHash(window.location.hash);
+  let hash = [
+    'configUrl=' + encodeURIComponent(curOpts.configUrl),
+    'demoId=' + encodeURIComponent(state.current.demoId),
+    'personaId=' + encodeURIComponent(state.current.personaId),
+    'stepIndex=' + encodeURIComponent(state.current.stepIndex)
+    ].join('--');
+  window.location.hash = hash;
+  return state;
 }
 
 export default reducer;

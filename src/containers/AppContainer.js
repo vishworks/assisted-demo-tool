@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { asyncLoadConfig } from '../actions'
+import { asyncLoadConfig, updateStateFromHash } from '../actions'
 import { getPersonas } from '../selectors'
 import App from '../App.js'
 
@@ -15,6 +15,9 @@ const mapDispatchToProps = dispatch => {
   return {
     loadConfig: (urlHash) => { // FIXME remove
       dispatch(asyncLoadConfig(urlHash));
+    },
+    updateStateFromHash: (urlHash) => {
+      dispatch(updateStateFromHash(urlHash));
     }
   }
 };

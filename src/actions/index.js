@@ -8,7 +8,8 @@ export const TYPE = {
   SELECT_PERSONA: 'SELECT_PERSONA',
   NEXT_STEP: 'NEXT_STEP',
   PREV_STEP: 'PREV_STEP',
-  GOTO_STEP: 'GOTO_STEP'
+  GOTO_STEP: 'GOTO_STEP',
+  UPDATE_STATE_FROM_HASH: 'UPDATE_STATE_FROM_HASH'
 };
 
 
@@ -101,4 +102,12 @@ export const setConfigError = (errorMessage) => {
   };
 };
 
+export const updateStateFromHash = (hash) => {
+  return {
+    type: TYPE.UPDATE_STATE_FROM_HASH,
+    payload: {
+      hash: hash
+    }
+  };
+};
 

@@ -14,8 +14,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-  //  window.addEventListener('hashchange', this.onHashChange);
-    this.onHashChange();
+    window.addEventListener('hashchange', this.onHashChange);
+    this.props.loadConfig(window.location.hash);
   }
 
   render() {
@@ -35,7 +35,7 @@ class App extends Component {
   }
 
   onHashChange() {
-    this.props.loadConfig(window.location.hash);
+    this.props.updateStateFromHash(window.location.hash);
   }
 }
 

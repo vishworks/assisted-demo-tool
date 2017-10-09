@@ -13,13 +13,16 @@ class ViewPort extends Component {
 
     let renderers = [];
     forEach(this.props.urls, (url) => {
+      let className = 'view-frame';
+      if (this.props.currentUrl === url) {
+        className += ' current';
+      }
       let iframe =
         <iframe
           key={url}
           title={url}
-          className="view-frame"
+          className={className}
           src={url}
-          style={{ display: this.props.currentUrl === url ? 'block' : 'none'}}
           />;
       renderers.push(iframe);
     });

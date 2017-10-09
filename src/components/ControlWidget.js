@@ -4,6 +4,8 @@ import PersonaDropdownContainer from '../containers/PersonaDropdownContainer.js'
 import PersonaStepsListContainer from '../containers/PersonaStepsListContainer.js'
 
 import StepsControlButtonsContainer from '../containers/StepsControlButtonsContainer.js'
+import StepContentContainer from '../containers/StepContentContainer.js'
+import StepLabelContainer from '../containers/StepLabelContainer.js'
 
 import SidePopup from './SidePopup.js'
 
@@ -96,10 +98,11 @@ class ControlWidget extends Component {
           </SidePopup>
         </header>
 
-        <div className="step-content" style={{background:'red'}}>
-          STEP CONTENT
+        <div className="step-content">
+          <StepContentContainer />
         </div>
 
+        <StepLabelContainer />
         <StepsControlButtonsContainer />
         <div className="footer">
           <img src="img/entando-e.png" />

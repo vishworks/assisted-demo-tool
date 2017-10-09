@@ -83,3 +83,10 @@ export const getUrls = createSelector(
     return uniq(map(allSteps, 'url'));
   }
 );
+
+export const getCurrentStepContent = createSelector(
+  [getCurrentStep],
+  (currentStep) => {
+    return currentStep.content;
+  }
+);

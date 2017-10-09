@@ -28,7 +28,8 @@
 
 .ControlWidget header {
     height: 180px;
-    border-bottom: 1px solid white;
+    min-height: 180px;
+    border-bottom: 1px solid #5F748F;
     position: relative;
 
     display: flex;
@@ -56,6 +57,10 @@
     cursor: pointer;
 }
 
+.ControlWidget .tool-btn::-moz-focus-inner {
+    border: 0;
+}
+
 .ControlWidget .tool-btn:not(:first-child) {
     border-top: 1px solid #5F748F;
 }
@@ -74,11 +79,16 @@
 
 .ControlWidget .step-content {
     flex-grow: 2;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    overflow: auto;
 }
 
 .ControlWidget .footer {
     text-align: right;
     padding: 10px;
+    min-height: 33px;
 }
 .ControlWidget .footer img {
     max-height: 30px;

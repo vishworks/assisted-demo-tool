@@ -5,6 +5,8 @@ import ControlWidgetContainer from './containers/ControlWidgetContainer.js'
 import MiniControlWidgetContainer from './containers/MiniControlWidgetContainer.js'
 import ViewPortContainer from './containers/ViewPortContainer.js'
 
+import LoadingPage from './components/LoadingPage.js'
+
 class App extends Component {
 
   componentDidMount() {
@@ -14,7 +16,7 @@ class App extends Component {
   render() {
 
     if (this.props.configLoaded === false) {
-      return <div><h1>LOADING CONFIGURATION</h1></div>
+      return <LoadingPage />
     }
 
     return (

@@ -12,13 +12,13 @@ function addIndexToArray(array) {
 
 
 
-//export const getPersonas = state => get(state.appReducer.config, 'personas', null);
 export const getDemos = state => get(state.appReducer.config, 'demos', null);
 export const getCurrentStepIndex = state => state.appReducer.current.stepIndex;
 export const getCurrentPersonaId = state => state.appReducer.current.personaId;
 export const getCurrentDemoId = state => state.appReducer.current.demoId;
 
 export const getControlWidgetStatus = state => state.controlWidget.status;
+export const getConfigErrorMessage = state => state.appReducer.error.message;
 
 
 export const getPersonas = createSelector(

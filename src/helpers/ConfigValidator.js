@@ -72,7 +72,9 @@ let schema = {
   "required": ["personas", "demos"]
 };
 
-const ajv = new Ajv();
+const ajv = new Ajv({
+  allErrors: true
+});
 var validate = ajv.compile(schema);
 
 export default validate;

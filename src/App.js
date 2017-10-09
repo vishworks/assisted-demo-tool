@@ -4,19 +4,24 @@ import './App.css';
 import ControlWidgetContainer from './containers/ControlWidgetContainer.js'
 import MiniControlWidgetContainer from './containers/MiniControlWidgetContainer.js'
 import ViewPortContainer from './containers/ViewPortContainer.js'
-
-import LoadingPage from './components/LoadingPage.js'
+import LoadingPageContainer from './containers/LoadingPageContainer.js'
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.onHashChange = this.onHashChange.bind(this);
+  }
+
   componentDidMount() {
-    this.props.loadConfig();
+  //  window.addEventListener('hashchange', this.onHashChange);
+    this.onHashChange();
   }
 
   render() {
 
     if (this.props.configLoaded === false) {
-      return <LoadingPage />
+      return <LoadingPageContainer />
     }
 
     return (
@@ -27,6 +32,10 @@ class App extends Component {
       </div>
     );
 
+  }
+
+  onHashChange() {
+    this.props.loadConfig(window.location.hash);
   }
 }
 

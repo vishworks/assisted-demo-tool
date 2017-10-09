@@ -8,3 +8,15 @@
   height: 100%;
   z-index: 9000;
 }
+
+
+.LoadingPage .error-container {
+  color: darkred;
+}
+
+.LoadingPage .error-container pre {
+  background: rgba(255,0,0,.1);
+  color: darkred;
+  min-width: 50%;
+  padding: 20px;
+}

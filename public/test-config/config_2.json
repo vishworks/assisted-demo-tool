@@ -1,0 +1,84 @@
+{
+  "personas": [
+    {
+      "name": "businessManager",
+      "label": "Rupert Sciamenna",
+      "description": "Business Manager",
+      "avatar": "img/user-1.jpg"
+    },
+    {
+      "name": "cmsAdmin",
+      "label": "Riccardino Fuffolo",
+      "description": "CMS Admin",
+      "avatar": "img/user-2.jpg"
+    },
+    {
+      "name": "processManager",
+      "label": "Herbert Ballerina",
+      "description": "Process Manager",
+      "avatar": "img/user-3.jpg"
+    },
+    {
+      "name": "bpmAdmin",
+      "label": "Anna Pannocchia",
+      "description": "BPM Administrator",
+      "avatar": "img/user-4.jpg"
+    },
+    {
+      "name": "hiddenGuest",
+      "label": "Geeno",
+      "description": "Hidden Guest",
+      "hidden": true
+    }
+  ],
+  "demos": [
+    {
+      "id": "demoA",
+      "name": "Demo A",
+      "steps": [
+        {
+          "personaId": "businessManager",
+          "url": "http://entando.com",
+          "name": "Admin Configuration",
+          "content": "<h3>Admin login</h3><article>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
+        },
+        {
+          "personaId": "businessManager",
+          "url": "https://www.entando.com",
+          "name": "Admin Console",
+          "content": "<h3>Admin configuration</h3><article><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "businessManager",
+          "url": "http://entando.com",
+          "name": "Page Models",
+          "content": "<h3>Some text formatting</h3><article><b>Lorem ipsum</b> dolor sit amet, saepe <i>euripidis persequeris</i> ea usu, <u>dicat dignissim</u> eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
+        },
+        {
+          "personaId": "hiddenGuest",
+          "url": "http://entando.com",
+          "name": "Page Designer",
+          "content": "<h3>Generic step</h3><article>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
+        },
+        {
+          "personaId": "cmsAdmin",
+          "url": "http://example.com",
+          "name": "See an example website",
+          "content": "<h3>Generic step</h3><article>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
+        },
+        {
+          "personaId": "processManager",
+          "url": "https://en.wikipedia.org/wiki/Red_Hat",
+          "name": "Learn about RH",
+          "content": "<h3>Generic step</h3><article>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
+        },
+        {
+          "personaId": "bpmAdmin",
+          "url": "http://randomcolour.com/",
+          "name": "Still, read the same page",
+          "content": "<h3>Generic step</h3><article>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
+        }
+      ]
+    }
+  ]
+}

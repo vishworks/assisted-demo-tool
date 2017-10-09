@@ -13,8 +13,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadConfig: () => {
-      dispatch(asyncLoadConfig());
+    loadConfig: (urlHash) => { // FIXME remove
+      dispatch(asyncLoadConfig(urlHash));
     }
   }
 };

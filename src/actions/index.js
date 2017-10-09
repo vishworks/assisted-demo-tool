@@ -1,6 +1,8 @@
+import parseHash from '../helpers/HashParser.js'
 
 export const TYPE = {
   LOAD_CONFIG: 'LOAD_CONFIG',
+  SET_CONFIG_ERROR: 'SET_CONFIG_ERROR',
   CONTROL_WIDGET_MINIMIZE: 'CONTROL_WIDGET_MINIMIZE',
   CONTROL_WIDGET_MAXIMIZE: 'CONTROL_WIDGET_MAXIMIZE',
   SELECT_PERSONA: 'SELECT_PERSONA',
@@ -20,22 +22,32 @@ export const loadConfig = (data) => {
 };
 
 // Thunk
-export function asyncLoadConfig() {
+export function asyncLoadConfig(urlHash) {
+
+  let opts = parseHash(urlHash);
+
+  opts.configUrl = opts.configUrl || 'test-config/config_1.json';
 
   return function (dispatch) {
     return setTimeout(() => {
-      fetch('test-config/config_1.json').then(// FIXME use a parametric url
-          response => {
-          response.json().then(function (data) {
-            dispatch(loadConfig(data));
-          });
+      fetch(opts.configUrl).then(
+        response => {
+          try {
+            response.json().then(function (data) {
+              dispatch(loadConfig(data));
+            });
+          } catch(er) {
+            dispatch(setConfigError('Error parsing configuration JSON at \'' + opts.configUrl + '\': ' + er.message));
+            console.error(er);
+          }
         },
-          error => dispatch(loadConfig(null))
+        (error) => {
+          dispatch(setConfigError('Failed to fetch configuration at \'' + opts.configUrl + '\''));
+        }
       );
-    }, 1000);
+    }, 1000); // FIXME remove throttling
   };
 }
-
 
 
 export const controlWidgetMinimize = () => {
@@ -79,4 +91,14 @@ export const selectPersona = (personaId) => {
     }
   };
 };
+
+export const setConfigError = (errorMessage) => {
+  return {
+    type: TYPE.SET_CONFIG_ERROR,
+    payload: {
+      errorMessage: errorMessage
+    }
+  };
+};
+
 

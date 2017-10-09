@@ -3,6 +3,8 @@ import { merge, first, find } from 'lodash'
 
 import { TYPE } from '../actions'
 
+import { forEach, get } from 'lodash'
+
 import validate from '../helpers/ConfigValidator.js'
 
 
@@ -13,6 +15,9 @@ const initialState = {
     stepIndex: null,
     demoId: null,
     url: null
+  },
+  error: {
+    message: ''
   }
 };
 
@@ -22,10 +27,13 @@ const reducer = (state = initialState, action = {}) => {
     case TYPE.LOAD_CONFIG:
       var valid = validate(action.payload.config);
       if (!valid) {
-        alert('Configuration error');
-        console.error(validate.errors);
-        // TODO human readable validation errors
-        return;
+        let msg = '';
+        forEach(validate.errors, (error) => {
+          msg += ('config' + error.dataPath + ' ' + error.message + ':\n' + JSON.stringify(get(action.payload.config, error.dataPath.substring(1)), null, 2) + '\n\n');
+        });
+        return merge({}, initialState, {
+          error: { message: msg }
+        });
       }
 
       let firstDemo = first(action.payload.config.demos),
@@ -40,6 +48,11 @@ const reducer = (state = initialState, action = {}) => {
           }
         };
       return merge({}, state, newState);
+
+    case TYPE.SET_CONFIG_ERROR:
+      return merge({}, initialState, {
+        error: { message: action.payload.errorMessage }
+      });
 
 
     case TYPE.SELECT_PERSONA:
@@ -63,6 +76,10 @@ const reducer = (state = initialState, action = {}) => {
         return state;
       }
       return gotoStep(state, stepIndex);
+
+    case TYPE.UPDATE_STATE_FROM_URL:
+      console.log(action);
+      return state;
 
     default:
       return state

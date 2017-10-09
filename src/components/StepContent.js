@@ -5,11 +5,6 @@ import React, { Component } from 'react';
 
 class StepContent extends Component {
 
-
-  constructor(props) {
-    super(props);
-  }
-
   render() {
 
     let className = ['StepContent'];
@@ -18,8 +13,7 @@ class StepContent extends Component {
       <div
         className={className.join(' ')}
         dangerouslySetInnerHTML={{ __html: this.props.content }}
-        >
-      </div>
+        />
     );
   }
 

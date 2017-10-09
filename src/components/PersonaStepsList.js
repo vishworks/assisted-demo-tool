@@ -9,13 +9,6 @@ import './PersonaStepsList.css'
 
 class PersonaStepsList extends Component {
 
-
-  constructor(props) {
-    super(props);
-
-  }
-
-
   render() {
 
     let className = ['PersonaStepsList'];
@@ -24,6 +17,7 @@ class PersonaStepsList extends Component {
     forEach(this.props.steps, (step, i) => {
       renderers.push(
         <PersonaStepsListItem
+          key={step.index}
           step={step}
           active={this.props.currentStepIndex === step.index }
           onClick={(ev) => { this.props.gotoStep(step.index) }}

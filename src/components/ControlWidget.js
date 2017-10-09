@@ -105,7 +105,7 @@ class ControlWidget extends Component {
         <StepLabelContainer />
         <StepsControlButtonsContainer />
         <div className="footer">
-          <img src="img/entando-e.png" />
+          <img alt="Entando" src="img/entando-e.png" />
         </div>
       </div>
     );

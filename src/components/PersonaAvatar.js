@@ -4,12 +4,6 @@ import './PersonaAvatar.css'
 
 class PersonaAvatar extends Component {
 
-
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
 
     let className = ['PersonaAvatar'];

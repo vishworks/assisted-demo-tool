@@ -7,12 +7,6 @@ import './ViewPort.css'
 
 class ViewPort extends Component {
 
-
-  constructor(props) {
-    super(props);
-  }
-
-
   render() {
 
     let className = ['ViewPort'];
@@ -21,6 +15,8 @@ class ViewPort extends Component {
     forEach(this.props.urls, (url) => {
       let iframe =
         <iframe
+          key={url}
+          title={url}
           className="view-frame"
           src={url}
           style={{ display: this.props.currentUrl === url ? 'block' : 'none'}}

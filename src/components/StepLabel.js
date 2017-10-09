@@ -5,11 +5,6 @@ import './StepLabel.css'
 
 class StepLabel extends Component {
 
-
-  constructor(props) {
-    super(props);
-  }
-
   render() {
 
     let className = ['StepLabel'];

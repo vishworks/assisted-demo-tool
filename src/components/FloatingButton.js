@@ -5,17 +5,9 @@ import './FloatingButton.css'
 
 class FloatingButton extends Component {
 
-
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
 
     let className = ['FloatingButton'];
-
-    
 
     return (
       <div

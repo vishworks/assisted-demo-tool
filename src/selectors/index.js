@@ -1,6 +1,6 @@
 
 import { createSelector } from 'reselect'
-import { find, filter, map, get, uniq } from 'lodash'
+import { find, filter, map, get, uniq, intersection } from 'lodash'
 
 
 function addIndexToArray(array) {
@@ -12,13 +12,28 @@ function addIndexToArray(array) {
 
 
 
-export const getPersonas = state => get(state.appReducer.config, 'personas', null);
+//export const getPersonas = state => get(state.appReducer.config, 'personas', null);
 export const getDemos = state => get(state.appReducer.config, 'demos', null);
 export const getCurrentStepIndex = state => state.appReducer.current.stepIndex;
 export const getCurrentPersonaId = state => state.appReducer.current.personaId;
 export const getCurrentDemoId = state => state.appReducer.current.demoId;
 
 export const getControlWidgetStatus = state => state.controlWidget.status;
+
+
+export const getPersonas = createSelector(
+  [ (state) => get(state.appReducer.config, 'personas', null) ],
+  (personas) => {
+    return personas ?
+      map(personas, (persona) => {
+        if (!persona.avatar) {
+          persona.avatar = 'img/user.png'
+        }
+        return persona;
+      }) :
+      null;
+  }
+);
 
 export const getCurrentPersona = createSelector(
   [getCurrentPersonaId, getPersonas],
@@ -34,6 +49,19 @@ export const getNotSelectedPersonas = createSelector(
   }
 );
 
+export const getVisiblePersonas = createSelector(
+  [getPersonas],
+  (personas) => {
+    return filter(personas, (persona) => { return !persona.hidden } );
+  }
+);
+
+export const getVisibleNotSelectedPersonas = createSelector(
+  [getNotSelectedPersonas, getVisiblePersonas],
+  (notSelectedPersonas, visiblePersonas) => {
+    return intersection(notSelectedPersonas, visiblePersonas);
+  }
+);
 
 export const getCurrentDemo = createSelector(
   [getCurrentDemoId, getDemos],

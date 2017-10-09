@@ -25,6 +25,9 @@ let schema = {
           },
           "avatar": {
             "type": "string"
+          },
+          "hidden": {
+            "type": "boolean"
           }
         },
         "required": ["name", "label"]

@@ -3,13 +3,6 @@ import React, { Component } from 'react';
 
 class PersonaStepsListItem extends Component {
 
-
-  constructor(props) {
-    super(props);
-
-  }
-
-
   render() {
 
     let className = ['PersonaStepsListItem'];
@@ -25,7 +18,6 @@ class PersonaStepsListItem extends Component {
        </div>
 
   }
-
 
 }
 

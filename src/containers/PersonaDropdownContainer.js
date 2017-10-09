@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { getCurrentPersona, getNotSelectedPersonas } from '../selectors'
+import { getCurrentPersona, getVisibleNotSelectedPersonas } from '../selectors'
 
 import { selectPersona } from '../actions'
 import PersonaDropdown from '../components/PersonaDropdown.js'
@@ -10,7 +10,7 @@ import PersonaDropdown from '../components/PersonaDropdown.js'
 
 const mapStateToProps = state => {
   return {
-    personas: getNotSelectedPersonas(state),
+    personas: getVisibleNotSelectedPersonas(state),
     currentPersona: getCurrentPersona(state)
   }
 };

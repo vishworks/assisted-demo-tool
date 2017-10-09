@@ -6,12 +6,6 @@ import './SidePopup.css'
 
 class SidePopup extends Component {
 
-
-  constructor(props) {
-    super(props);
-  }
-
-
   render() {
 
     let className = ['SidePopup'];

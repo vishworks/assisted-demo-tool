@@ -14,10 +14,7 @@ class FloatingButton extends Component {
         className={className.join(' ')}
         onClick={this.props.onClick}
         >
-        <div>
-          {this.props.codepoint}
-        </div>
-
+        <i className={this.props.iconClassName}/>
       </div>
     );
   }

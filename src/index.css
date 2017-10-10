@@ -18,3 +18,10 @@ body {
   box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
   background-color: #00B9F7;
 }
+
+button::-moz-focus-inner {
+  border: 0;
+}
+button:focus {
+  outline: 0;
+}

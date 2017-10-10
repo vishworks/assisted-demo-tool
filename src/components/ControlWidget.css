@@ -49,7 +49,6 @@
     background: #152437;
     color: #FFFFFF;
     border: none;
-    outline: 0;
     
     width: 60px;
     height: 60px;
@@ -61,9 +60,6 @@
     color: #00B9F7;
 }
 
-.ControlWidget .tool-btn::-moz-focus-inner {
-    border: 0;
-}
 
 .ControlWidget .tool-btn:not(:first-child) {
     border-top: 1px solid #5F748F;

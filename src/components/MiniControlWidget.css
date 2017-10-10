@@ -1,12 +1,8 @@
 
-
 .MiniControlWidget {
     position: fixed;
-
     bottom: 20px;
-
     z-index: 4000;
-
     right: -200px;
     transition: right 1s;
 }
@@ -20,7 +16,7 @@
 }
 
 .MiniControlWidget.minimized {
-    right: 20px;
+    right: 5px;
     transition: right 1s;
 }
 
@@ -32,7 +28,7 @@
 }
 
 .MiniControlWidget .close-btn-wrapper {
-    margin-left: 53px;
+    margin-left: 56px;
     margin-top: 15px;
 }
 
@@ -44,30 +40,42 @@
     padding: 4px 0;
 }
 
-.MiniControlWidget .personas-list .persona-row > .persona-wrapper{
-    min-width: 60px;
+.MiniControlWidget .personas-list .persona-row > .persona-wrapper {
+    min-height: 66px;
+    min-width: 250px;
+
     display: flex;
-    justify-content: center;
-    margin-left: 5px;
+    justify-content: flex-start;
+    align-items: center;
+
     cursor: pointer;
+
+    background: rgba(255, 255, 255, .8);
+    border-radius: 35px / 49%;
+    color: #152437;
 }
 
+.MiniControlWidget .personas-list .persona-row > .persona-wrapper .label-sect {
+    flex-grow: 2;
+}
 
 
 .MiniControlWidget .personas-list:hover .persona-row.active .label,
 .MiniControlWidget .personas-list .persona-row .label {
     min-width: 120px;
-    max-width: 120px;
     word-wrap: break-word;
     margin-left: 10px;
-
-    opacity: .3;
-    transition: opacity 300ms;
     cursor: pointer;
 }
 
-.MiniControlWidget .personas-list .persona-row.active .label,
-.MiniControlWidget .personas-list:hover .persona-row:hover .label {
+.MiniControlWidget .personas-list:hover .persona-row.active,
+.MiniControlWidget .personas-list .persona-row {
+    opacity: .3;
+    transition: opacity 300ms;
+}
+
+.MiniControlWidget .personas-list .persona-row.active,
+.MiniControlWidget .personas-list:hover .persona-row:hover {
     opacity: 1;
     transition: opacity 300ms;
 }
@@ -83,25 +91,8 @@
     background-repeat: no-repeat;
     background-position: center center;
 
-    height: 40px;
-    width: 40px;
-    opacity: .3;
-    transition: width 250ms, height 250ms, opacity 250ms;
-}
-
-.MiniControlWidget .personas-list:hover .persona-row.active .persona{
-    min-height: 40px;
-    min-width: 40px;
-    opacity: .3;
-}
-
-
-.MiniControlWidget .personas-list .persona-row.active .persona,
-.MiniControlWidget .personas-list:hover .persona-row:hover .persona {
-    min-height: 60px;
-    min-width: 60px;
-    opacity: 1;
-    transition: width 250ms, height 250ms, opacity 250ms;
+    height: 60px;
+    width: 60px;
 }
 
 
@@ -110,6 +101,7 @@
 .MiniControlWidget .personas-list:hover .persona-row.active .FloatingButton {
     opacity: 0;
     transition: opacity 350ms;
+    margin-right: 10px;
 }
 
 .MiniControlWidget .personas-list .persona-row.active .FloatingButton,
@@ -118,12 +110,3 @@
     transition: opacity 350ms;
 }
 
-
-.MiniControlWidget.collapsed .persona {
-    width: 60px;
-    height: 60px;
-    opacity: .3;
-}
-.MiniControlWidget.collapsed .persona:hover {
-    opacity: 1;
-}

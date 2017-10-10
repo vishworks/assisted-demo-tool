@@ -2,7 +2,7 @@
 import { TYPE } from '../actions'
 
 const initialState = {
-  status: 'expanded' // FIXME create/use ControlWidget visual status enum
+  status: 'minimized' // FIXME create/use ControlWidget visual status enum
 };
 
 const reducer = (state = initialState, action = {}) => {

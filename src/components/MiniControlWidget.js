@@ -47,13 +47,11 @@ class MiniControlWidget extends Component {
         >
           <div className="personas-list">
             <div className="persona-row">
-              <FloatingButton onClick={this.onClickMaximize} codepoint="&#x2630;"/>
-              <div className="persona-wrapper">
-                <div className="persona"
-                     onClick={this.onClickExpand}
-                     style={{backgroundImage: 'url(\''+ (this.getCurrentPersona() ? this.getCurrentPersona().avatar : '') +'\')'}}
-                  >
-                </div>
+              <FloatingButton onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
+              <div className="persona"
+                   onClick={this.onClickExpand}
+                   style={{backgroundImage: 'url(\''+ (this.getCurrentPersona() ? this.getCurrentPersona().avatar : '') +'\')'}}
+                >
               </div>
             </div>
           </div>
@@ -71,26 +69,28 @@ class MiniControlWidget extends Component {
       personasRenderers.push(
         <div key={this.props.personas[i].name} className={personaClassName.join(' ')}>
 
-          <FloatingButton onClick={this.onClickMaximize} codepoint="&#x2630;"/>
+          <FloatingButton onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
+
           <div className="persona-wrapper">
             <div className="persona"
               onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
               style={{backgroundImage: 'url(\''+ this.props.personas[i].avatar +'\')'}}
               >
             </div>
-          </div>
-          <div className="label-sect">
-            <div className="label"
-               onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
-              >
-              {this.props.personas[i].label}
+            <div className="label-sect">
+              <div className="label"
+                   onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
+                >
+                {this.props.personas[i].label}
+              </div>
+              <div className="label"
+                   onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
+                >
+                {this.props.personas[i].description}
+              </div>
             </div>
-            <div className="label"
-                 onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
-              >
-              {this.props.personas[i].description}
-            </div>
           </div>
+
         </div>
       );
     }
@@ -104,7 +104,7 @@ class MiniControlWidget extends Component {
           {personasRenderers}
         </div>
         <div className="close-btn-wrapper">
-          <FloatingButton onClick={this.onClickCollapse} codepoint="&#x1F5D9;"/>
+          <FloatingButton onClick={this.onClickCollapse} iconClassName="fa fa-times"/>
         </div>
       </div>
     );

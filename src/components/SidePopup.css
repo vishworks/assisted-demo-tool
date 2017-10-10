@@ -9,4 +9,5 @@
   width: 300px;
   overflow: auto;
   max-height: 90vh;
+  min-height: 100%;
 }

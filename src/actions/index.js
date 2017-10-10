@@ -1,4 +1,4 @@
-import parseHash from '../helpers/HashParser.js'
+
 
 export const TYPE = {
   LOAD_CONFIG: 'LOAD_CONFIG',
@@ -23,27 +23,23 @@ export const loadConfig = (data) => {
 };
 
 // Thunk
-export function asyncLoadConfig(urlHash) {
-
-  let opts = parseHash(urlHash);
-
-  opts.configUrl = opts.configUrl || 'test-config/config_1.json';
+export function asyncLoadConfig(configUrl) {
 
   return function (dispatch) {
     return setTimeout(() => {
-      fetch(opts.configUrl).then(
+      fetch(configUrl).then(
         response => {
           try {
             response.json().then(function (data) {
               dispatch(loadConfig(data));
             });
           } catch(er) {
-            dispatch(setConfigError('Error parsing configuration JSON at \'' + opts.configUrl + '\': ' + er.message));
+            dispatch(setConfigError('Error parsing configuration JSON at \'' + configUrl + '\': ' + er.message));
             console.error(er);
           }
         },
         (error) => {
-          dispatch(setConfigError('Failed to fetch configuration at \'' + opts.configUrl + '\''));
+          dispatch(setConfigError('Failed to fetch configuration at \'' + configUrl + '\''));
         }
       );
     }, 1000); // FIXME remove throttling

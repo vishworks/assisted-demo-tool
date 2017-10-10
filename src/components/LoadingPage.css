@@ -12,6 +12,7 @@
 
 .LoadingPage .error-container {
   color: darkred;
+  text-align: center;
 }
 
 .LoadingPage .error-container pre {

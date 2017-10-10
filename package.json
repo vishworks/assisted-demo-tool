@@ -6,6 +6,7 @@
     "ajv": "^5.2.3",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
+    "query-string": "^5.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",

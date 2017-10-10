@@ -118,3 +118,10 @@ export const getCurrentStepContent = createSelector(
     return currentStep.content;
   }
 );
+
+export const getCurrentStepName = createSelector(
+  [getCurrentStep],
+  (currentStep) => {
+    return currentStep.name;
+  }
+);

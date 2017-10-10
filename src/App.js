@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import qs from 'query-string'
+
 import './App.css';
 
 import ControlWidgetContainer from './containers/ControlWidgetContainer.js'
@@ -15,7 +18,12 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener('hashchange', this.onHashChange);
-    this.props.loadConfig(window.location.hash);
+    let configUrl = qs.parse(window.location.search).configUrl;
+    if (configUrl) {
+      this.props.loadConfig(configUrl);
+    } else {
+      this.props.setConfigError('Error in URL: configUrl search parameter is required.');
+    }
   }
 
   render() {

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { getControlWidgetStatus } from '../selectors'
+import { getControlWidgetStatus, getCurrentStepName } from '../selectors'
 import { controlWidgetMinimize } from '../actions'
 import ControlWidget from '../components/ControlWidget.js'
 
@@ -8,7 +8,8 @@ import ControlWidget from '../components/ControlWidget.js'
 
 const mapStateToProps = state => {
   return {
-    status: getControlWidgetStatus(state)
+    status: getControlWidgetStatus(state),
+    currentStepName: getCurrentStepName(state)
   }
 };
 

@@ -46,7 +46,7 @@ const reducer = (state = initialState, action = {}) => {
           config: action.payload.config,
           current: {
             personaId: opts.personaId ? opts.personaId : firstStep.personaId,
-            stepIndex: opts.stepIndex ? parseInt(opts.stepIndex, 10) : 0,
+            stepIndex: opts.stepNumber ? parseInt(opts.stepNumber, 10) -1 : 0,
             demoId: opts.demoId ? opts.demoId : firstDemo.id,
             url: firstStep.url
           }
@@ -123,10 +123,11 @@ function gotoStep(state, stepIndex)  {
  */
 function updateStateFromHash(hash) {
   let curOpts = parseHash(hash);
+  debugger;
   return {
     current: {
       personaId: curOpts.personaId,
-      stepIndex: curOpts.stepIndex ? parseInt(curOpts.stepIndex, 10) : undefined,
+      stepIndex: curOpts.stepNumber ? parseInt(curOpts.stepNumber, 10)-1 : undefined,
       demoId: curOpts.demoId
     }
   };
@@ -138,14 +139,12 @@ function updateStateFromHash(hash) {
  * @returns {object} the input state, unmodified (for chaining)
  */
 function updateHashFromState(state) {
-  let curOpts = parseHash(window.location.hash);
-  let hash = [
-    'configUrl=' + encodeURIComponent(curOpts.configUrl),
+  window.location.hash = [
     'demoId=' + encodeURIComponent(state.current.demoId),
     'personaId=' + encodeURIComponent(state.current.personaId),
-    'stepIndex=' + encodeURIComponent(state.current.stepIndex)
+    'stepNumber=' + encodeURIComponent(state.current.stepIndex+1)
     ].join('--');
-  window.location.hash = hash;
+
   return state;
 }
 

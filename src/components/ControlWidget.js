@@ -59,7 +59,7 @@ class ControlWidget extends Component {
           </SidePopup>
           <SidePopup open={this.state.activePopup === 'comments'} >
 
-            <div style={{  fontSize: '20px', textAlign: 'center', padding: '10px 0'}} >Comments</div>
+            <div style={{  fontSize: '20px', textAlign: 'center', padding: '10px 0'}} >COMMENTS</div>
 
             <div style={{ display:'flex', flexDirection: 'column', fontSize: '14px'}}>
               <div style={{ display:'flex', flexDirection: 'row', marginTop: '10px', padding: '20px'}}>
@@ -99,6 +99,7 @@ class ControlWidget extends Component {
         </header>
 
         <div className="step-content">
+          <h3>{this.props.currentStepName}</h3>
           <StepContentContainer />
         </div>
 

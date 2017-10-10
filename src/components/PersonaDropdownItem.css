@@ -1,17 +1,14 @@
 .PersonaDropdownItem {
   display: flex;
+  flex-direction: column;
   align-items: center;
-
+  justify-content: center;
   padding: 5px 10px;
   cursor: pointer;
 }
 
 .PersonaDropdownItem:hover {
   color: #00B9F7;
-}
-
-.PersonaDropdownItem .PersonaAvatar{
-  margin-right: 10px;
 }
 
 .PersonaDropdownItem .persona-label{

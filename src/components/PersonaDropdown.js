@@ -56,7 +56,7 @@ class PersonaDropdown extends Component {
         <div className="persona-description">{this.props.currentPersona.description}</div>
         <div className="persona-dropdown-trigger"
           onClick={this.toggle}>
-          <div>{this.state.hidden ? '\u2304' : '\u2303'}</div>
+          <i className={this.state.hidden ? 'fa fa-angle-down' : 'fa fa-angle-up'} />
         </div>
 
 

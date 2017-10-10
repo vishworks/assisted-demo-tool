@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { createStore, compose, applyMiddleware } from 'redux'
+
+import 'font-awesome/css/font-awesome.min.css'
 import './index.css';
+
 import AppContainer from './containers/AppContainer';
 import rootReducer from './reducers'
 import thunk from 'redux-thunk'

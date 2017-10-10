@@ -40,13 +40,13 @@ class ControlWidget extends Component {
         <header>
           <div className="toolbar">
             <button className="tool-btn" onClick={this.onClickMinimize}>
-              <img src="img/icons/left-arrow.png" alt="Minimize" />
+              <i className="fa fa-arrow-right" />
             </button>
             <button className={this.getToolBtnClassName('comments')} data-id="comments" onClick={this.togglePanel}>
-              <img src="img/icons/comments.png" alt="Comments" />
+              <i className="fa fa-comment-o" />
             </button>
             <button className={this.getToolBtnClassName('steps')} data-id="steps" onClick={this.togglePanel}>
-              <img src="img/icons/note-list.png" alt="User steps" />
+              <i className="fa fa-list" />
             </button>
 
           </div>
@@ -104,9 +104,6 @@ class ControlWidget extends Component {
 
         <StepLabelContainer />
         <StepsControlButtonsContainer />
-        <div className="footer">
-          <img alt="Entando" src="img/entando-e.png" />
-        </div>
       </div>
     );
   }

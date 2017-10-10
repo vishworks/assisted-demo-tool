@@ -14,12 +14,11 @@ class PersonaDropdownItem extends Component {
     return (
       <div
         className={className.join(' ')}
-        onClick={(ev) => { this.props.onClick(ev, this.props.persona)}}>
+        onClick={(ev) => { this.props.onClick(ev, this.props.persona)}}
+        >
         <PersonaAvatar imageUrl={this.props.persona.avatar} />
-        <div>
-          <div className="persona-label">{this.props.persona.label}</div>
-          <div className="persona-description">{this.props.persona.description}</div>
-        </div>
+        <div className="persona-label">{this.props.persona.label}</div>
+        <div className="persona-description">{this.props.persona.description}</div>
       </div>
     );
   }

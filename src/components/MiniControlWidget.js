@@ -79,10 +79,17 @@ class MiniControlWidget extends Component {
               >
             </div>
           </div>
-          <div className="label"
-             onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
-            >
-            {this.props.personas[i].label}
+          <div className="label-sect">
+            <div className="label"
+               onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
+              >
+              {this.props.personas[i].label}
+            </div>
+            <div className="label"
+                 onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
+              >
+              {this.props.personas[i].description}
+            </div>
           </div>
         </div>
       );

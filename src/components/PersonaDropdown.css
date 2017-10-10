@@ -12,7 +12,7 @@
 .PersonaDropdown .persona-wrapper {
   flex-grow: 50;
   display: flex;
-  align-items: center;;
+  align-items: center;
 
 }
 
@@ -29,7 +29,7 @@
 
 .PersonaDropdown .persona-dropdown-trigger {
   color: #00B9F7;
-  font-size: 30px;
+  font-size: 20px;
   flex-grow: 1;
   cursor: pointer;
 }
@@ -43,4 +43,9 @@
   top: 100%;
   background: #152437;
   width: 100%;
+  padding: 20px 0;
+}
+
+.PersonaDropdown .PersonaDropdownItem {
+  margin: 10px 0;
 }

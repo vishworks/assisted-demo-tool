@@ -21,7 +21,7 @@ class StepsControlButtons extends Component {
                 onClick={this.prevStep}
                 disabled={this.props.currentStepIndex === 0}
           >
-          <span className="arrow">&#x1f860;</span>
+          <i className="fa fa-arrow-left arrow" />
           <span className="label">BACK</span>
         </button>
         <button className="next-btn"
@@ -29,7 +29,7 @@ class StepsControlButtons extends Component {
                 disabled={this.props.currentStepIndex >= this.props.stepsCount -1}
           >
           <span className="label">NEXT</span>
-          <span className="arrow">&#x1f862;</span>
+          <i className="fa fa-arrow-right arrow" />
         </button>
       </div>
     );
@@ -44,9 +44,9 @@ class StepsControlButtons extends Component {
 
 
   nextStep() {
- //   if (this.props.currentStepIndex < this.props.stepsCount) {
+    if (this.props.currentStepIndex < this.props.stepsCount) {
       this.props.nextStep();
-   // }
+    }
   }
 
 }

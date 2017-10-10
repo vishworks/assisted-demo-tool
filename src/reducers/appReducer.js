@@ -46,7 +46,7 @@ const reducer = (state = initialState, action = {}) => {
           config: action.payload.config,
           current: {
             personaId: opts.personaId ? opts.personaId : firstStep.personaId,
-            stepIndex: opts.stepIndex ? parseInt(opts.stepIndex) : 0,
+            stepIndex: opts.stepIndex ? parseInt(opts.stepIndex, 10) : 0,
             demoId: opts.demoId ? opts.demoId : firstDemo.id,
             url: firstStep.url
           }
@@ -126,7 +126,7 @@ function updateStateFromHash(hash) {
   return {
     current: {
       personaId: curOpts.personaId,
-      stepIndex: curOpts.stepIndex ? parseInt(curOpts.stepIndex) : undefined,
+      stepIndex: curOpts.stepIndex ? parseInt(curOpts.stepIndex, 10) : undefined,
       demoId: curOpts.demoId
     }
   };

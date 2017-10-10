@@ -14,8 +14,9 @@
 }
 
 .PersonaStepsList .PersonaStepsListItem.active:before {
-    content: "\203a";
-    font-size: 26px;
+    content: "\F105";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
     position: absolute;
     right: calc(100% + 10px);
     top: calc(50% - 0.6em);

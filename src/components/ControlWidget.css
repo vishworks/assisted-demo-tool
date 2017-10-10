@@ -4,7 +4,7 @@
     width: 300px;
 
     box-shadow: -8px 0 20px 0 rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    z-index: 5000;
 
     transition: width 500ms;
 
@@ -53,8 +53,12 @@
     
     width: 60px;
     height: 60px;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
+}
+
+.ControlWidget .tool-btn.active {
+    color: #00B9F7;
 }
 
 .ControlWidget .tool-btn::-moz-focus-inner {
@@ -83,13 +87,4 @@
     text-align: center;
     padding: 10px;
     overflow: auto;
-}
-
-.ControlWidget .footer {
-    text-align: right;
-    padding: 10px;
-    min-height: 33px;
-}
-.ControlWidget .footer img {
-    max-height: 30px;
 }

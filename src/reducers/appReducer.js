@@ -1,5 +1,5 @@
 
-import { merge, first, find } from 'lodash'
+import { merge, find, isNumber, isNaN } from 'lodash'
 
 import { TYPE } from '../actions'
 
@@ -38,23 +38,15 @@ const reducer = (state = initialState, action = {}) => {
       }
 
       // if set in url
-      let opts = parseHash(window.location.hash);
+      let hashState = updateStateFromHash(action.payload.config, window.location.hash);
 
-      let firstDemo = first(action.payload.config.demos),
-        firstStep = first(firstDemo.steps),
-        newState = {
+      let newState = {
           config: action.payload.config,
-          current: {
-            personaId: opts.personaId ? opts.personaId : firstStep.personaId,
-            stepIndex: opts.stepNumber ? parseInt(opts.stepNumber, 10) -1 : 0,
-            demoId: opts.demoId ? opts.demoId : firstDemo.id,
-            url: firstStep.url
-          }
         };
-      return merge({}, state, newState);
+      return merge({}, state, newState, hashState);
 
     case TYPE.UPDATE_STATE_FROM_HASH:
-      return merge({}, state, updateStateFromHash(action.payload.hash));
+      return merge({}, state, updateStateFromHash(state.config, action.payload.hash));
 
     case TYPE.SET_CONFIG_ERROR:
       return merge({}, initialState, {
@@ -121,16 +113,36 @@ function gotoStep(state, stepIndex)  {
  * @param {string} hash the URL hash fragment
  * @returns {object} the new state
  */
-function updateStateFromHash(hash) {
-  let curOpts = parseHash(hash);
-  debugger;
-  return {
-    current: {
-      personaId: curOpts.personaId,
-      stepIndex: curOpts.stepNumber ? parseInt(curOpts.stepNumber, 10)-1 : undefined,
-      demoId: curOpts.demoId
-    }
-  };
+function updateStateFromHash(config, hash) {
+
+  let opts = parseHash(hash),
+    hashState = {};
+
+  let selectedDemo = find(config.demos, { id: opts.demoId });
+  if (!selectedDemo) {
+    selectedDemo = get(config, 'demos.0');
+  }
+  hashState.demoId = selectedDemo.id;
+
+
+  let stepNumber = parseInt(opts.stepNumber, 10);
+  if (isNumber(stepNumber) && !isNaN(stepNumber) && stepNumber > 0 && stepNumber <= selectedDemo.steps.length) {
+    hashState.stepIndex = stepNumber -1;
+  } else  {
+    hashState.stepIndex = 0;
+  }
+  hashState.url = selectedDemo.steps[hashState.stepIndex].url;
+
+  // FIXME find among the demo's personas, not the global personas
+  if (find(config.personas, { name: opts.personaId })) {
+    hashState.personaId = opts.personaId;
+  } else {
+    hashState.personaId = selectedDemo.steps[hashState.stepIndex].personaId;
+  }
+
+  return updateHashFromState({
+    current: hashState
+  });
 }
 
 /**

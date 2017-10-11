@@ -26,7 +26,7 @@ class PersonaStepsList extends Component {
     });
 
     if (renderers.length === 0) {
-      renderers.push(<div className="info-message">There are no steps for this persona</div>);
+      renderers = <div className="info-message">There are no steps for this persona</div>;
     }
 
 

@@ -23,7 +23,7 @@ class MiniControlWidget extends Component {
     this.onClickMaximize = this.onClickMaximize.bind(this);
 
     this.memoizedGetCurrentPersona = memoize((personaId) => {
-      return this.props.personas.find((el) => { return el.name === personaId });
+      return this.props.personas.find((el) => { return el.id === personaId });
     });
 
     this.state = {
@@ -63,11 +63,11 @@ class MiniControlWidget extends Component {
     let personasRenderers = [];
     for (let i=0; i<personasCount; ++i) {
       let personaClassName = ['persona-row'];
-      if (this.props.currentPersona === this.props.personas[i].name) {
+      if (this.props.currentPersona === this.props.personas[i].id) {
         personaClassName.push('active');
       }
       personasRenderers.push(
-        <div key={this.props.personas[i].name} className={personaClassName.join(' ')}>
+        <div key={this.props.personas[i].id} className={personaClassName.join(' ')}>
 
           <FloatingButton onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
 
@@ -127,7 +127,7 @@ class MiniControlWidget extends Component {
   }
 
   onClickPersona(ev, persona) {
-    this.props.selectPersona(persona.name);
+    this.props.selectPersona(persona.id);
     this.collapse();
   }
 

@@ -1,20 +1,19 @@
 {
   "personas": [
     {
-      "id": "itAdmin",
       "label": "Carol Smith",
       "description": "IT Administrator",
       "avatar": "img/user-1.jpg"
     },
     {
-      "id": "marketing",
+      "name": "marketing",
       "label": "Jessica Bahia",
       "description": "Marketing",
       "avatar": "img/user-2.jpg"
     },
     {
       "id": "editor",
-      "label": "Pablo Benitez",
+      "labelll": "Pablo Benitez",
       "description": "Editor",
       "avatar": "img/user-3.jpg"
     },
@@ -22,13 +21,20 @@
       "id": "partner",
       "label": "Nina Bodiul",
       "description": "Partner",
-      "avatar": "img/user-4.jpg"
+      "avatar": "img/user-4.jpg",
+      "visible": true
     },
     {
       "id": "hiddenGuest",
       "label": "Hidden Guest",
       "description": "Random User",
       "hidden": true
+    },
+    {
+      "id": "hiddenGuest2",
+      "label": "Hidden Guest",
+      "description": "Random User",
+      "hidden": "yes"
     }
   ],
   "demos": [

@@ -38,14 +38,14 @@ export const getPersonas = createSelector(
 export const getCurrentPersona = createSelector(
   [getCurrentPersonaId, getPersonas],
   (currentPersonaId, personas) => {
-    return find(personas, { name: currentPersonaId } );
+    return find(personas, { id: currentPersonaId } );
   }
 );
 
 export const getNotSelectedPersonas = createSelector(
   [getCurrentPersonaId, getPersonas],
   (currentPersonaId, personas) => {
-    return filter(personas, (persona) => { return persona.name !== currentPersonaId } );
+    return filter(personas, (persona) => { return persona.id !== currentPersonaId } );
   }
 );
 

@@ -134,7 +134,7 @@ function updateStateFromHash(config, hash) {
   hashState.url = selectedDemo.steps[hashState.stepIndex].url;
 
   // FIXME find among the demo's personas, not the global personas
-  if (find(config.personas, { name: opts.personaId })) {
+  if (find(config.personas, { id: opts.personaId })) {
     hashState.personaId = opts.personaId;
   } else {
     hashState.personaId = selectedDemo.steps[hashState.stepIndex].personaId;

@@ -14,7 +14,7 @@ let schema = {
       "items": {
         "type": "object",
         "properties": {
-          "name": {
+          "id": {
             "type": "string"
           },
           "label": {
@@ -30,7 +30,7 @@ let schema = {
             "type": "boolean"
           }
         },
-        "required": ["name", "label"]
+        "required": ["id", "label"]
       }
     },
     "demos": {

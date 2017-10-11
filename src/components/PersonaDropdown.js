@@ -33,7 +33,7 @@ class PersonaDropdown extends Component {
     let personaRenderers = [];
     forEach(this.props.personas, (persona) => {
       let renderer = <PersonaDropdownItem
-        key={persona.name}
+        key={persona.id}
         persona={persona}
         onClick={this.onClickPersona}
         >
@@ -76,7 +76,7 @@ class PersonaDropdown extends Component {
   }
 
   onClickPersona(ev, persona) {
-    this.props.selectPersona(persona.name);
+    this.props.selectPersona(persona.id);
     this.toggle();
   }
 

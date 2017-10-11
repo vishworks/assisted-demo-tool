@@ -12,6 +12,9 @@
 
 .LoadingPage .error-container {
   color: darkred;
+}
+
+.LoadingPage .error-container h1 {
   text-align: center;
 }
 

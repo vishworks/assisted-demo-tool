@@ -151,11 +151,18 @@ function updateStateFromHash(config, hash) {
  * @returns {object} the input state, unmodified (for chaining)
  */
 function updateHashFromState(state) {
-  window.location.hash = [
+  let newHash = [
     'demoId=' + encodeURIComponent(state.current.demoId),
     'personaId=' + encodeURIComponent(state.current.personaId),
     'stepNumber=' + encodeURIComponent(state.current.stepIndex+1)
-    ].join('--');
+  ].join('--');
+
+  if (window.history && window.history.pushState) {
+    // don't trigger an hashchange event
+    window.history.pushState(null, null, '#' + newHash);
+  } else {
+    window.location.hash = newHash;
+  }
 
   return state;
 }

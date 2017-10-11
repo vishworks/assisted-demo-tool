@@ -9,8 +9,10 @@
   height: 100%;
   position: absolute;
   z-index: 100;
+  visibility: hidden;
 }
 
 .ViewPort .view-frame.current {
   z-index: 200;
+  visibility: visible;
 }

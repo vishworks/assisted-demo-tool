@@ -1,7 +1,8 @@
-.PersonaStepsList {
 
+
+.PersonaStepsList .info-message {
+    text-align: center;
 }
-
 
 .PersonaStepsList .PersonaStepsListItem {
     margin: 20px 30px;

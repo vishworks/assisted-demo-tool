@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import { forEach } from 'lodash';
-
 import PersonaAvatar from './PersonaAvatar.js'
 
 import './LabelledAvatar.css'

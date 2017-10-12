@@ -5,7 +5,7 @@ import qs from 'query-string'
 import './App.css';
 
 import ControlWidgetContainer from './containers/ControlWidgetContainer.js'
-import MiniControlWidgetContainer from './containers/MiniControlWidgetContainer.js'
+import ControlWidgetMiniContainer from './containers/ControlWidgetMiniContainer.js'
 import ViewPortContainer from './containers/ViewPortContainer.js'
 import LoadingPageContainer from './containers/LoadingPageContainer.js'
 
@@ -36,7 +36,7 @@ class App extends Component {
       <div className="App">
         <ViewPortContainer />
         <ControlWidgetContainer />
-        <MiniControlWidgetContainer />
+        <ControlWidgetMiniContainer />
       </div>
     );
 

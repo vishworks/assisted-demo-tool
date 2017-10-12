@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { getControlWidgetStatus, getCurrentPersonaId, getCurrentPersonaImageUrl, getVisiblePersonas } from '../selectors'
 import { controlWidgetMaximize, selectPersona } from '../actions'
-import MiniControlWidget from '../components/MiniControlWidget.js'
+import ControlWidgetMini from '../components/ControlWidgetMini/ControlWidgetMini.js'
 
 
 
@@ -25,9 +25,9 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-const MiniControlWidgetContainer = connect(
+const ControlWidgetMiniContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(MiniControlWidget);
+)(ControlWidgetMini);
 
-export default MiniControlWidgetContainer
+export default ControlWidgetMiniContainer

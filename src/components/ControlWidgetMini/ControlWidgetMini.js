@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
-import { memoize } from 'lodash'
+import FloatingButton from '../FloatingButton.js'
+import PersonaAvatar from '../PersonaAvatar.js'
+import List from '../List.js'
+import PersonaListItem from './PersonaListItem.js'
 
-import FloatingButton from './FloatingButton.js'
-import PersonaAvatar from './PersonaAvatar.js'
-import List from './List.js'
-
-import './MiniControlWidget.css'
+import './ControlWidgetMini.css'
 
 
-class MiniControlWidget extends Component {
+class ControlWidgetMini extends Component {
 
 
   constructor(props) {
@@ -32,7 +31,7 @@ class MiniControlWidget extends Component {
 
 
   renderCollapsed() {
-    let className = ['MiniControlWidget', this.props.status, 'collapsed'];
+    let className = ['ControlWidgetMini', this.props.status, 'collapsed'];
     return <div
       className={className.join(' ')}
       >
@@ -47,31 +46,17 @@ class MiniControlWidget extends Component {
       return this.renderCollapsed();
     }
 
-    let className = ['MiniControlWidget'];
+    let className = ['ControlWidgetMini'];
     className.push(this.props.status);
 
     let personaToPersonaRow = (persona) => {
-        let personaClassName = ['persona-row'];
-        if (this.props.currentPersonaId === persona.id) {
-          personaClassName.push('active');
-        }
-        return <div key={persona.id} className={personaClassName.join(' ')}
-             onClick={(ev) => { this.onClickPersona(ev, persona) }}
-          >
-          <div className="persona-wrapper">
-            <PersonaAvatar imageUrl={persona.avatar}  />
-            <div className="label-sect">
-              <div className="label">
-                {persona.label}
-              </div>
-              <div className="label">
-                {persona.description}
-              </div>
-            </div>
-          </div>
-        </div>
-      },
-      personasList = <List modelName="PersonaRow" className="personas-list" model={this.props.personas} mapFunction={personaToPersonaRow} />;
+        return <PersonaListItem onClick={(ev) => { this.onClickPersona(ev, persona) }}
+                                active={this.props.currentPersonaId === persona.id}
+                                id={persona.id}
+                                imageUrl={persona.avatar}
+                                label={persona.label}
+                                description={persona.description} />;
+      };
 
 
     className.push('expanded');
@@ -80,7 +65,10 @@ class MiniControlWidget extends Component {
         className={className.join(' ')}
         >
         <FloatingButton className="hamburger-btn" onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
-        {personasList}
+        <List modelName="PersonaRow"
+              className="personas-list"
+              model={this.props.personas}
+              mapFunction={personaToPersonaRow} />
         <FloatingButton className="close-btn" onClick={this.onClickCollapse} iconClassName="fa fa-times"/>
       </div>
     );
@@ -118,4 +106,4 @@ class MiniControlWidget extends Component {
 
 }
 
-export default MiniControlWidget;
+export default ControlWidgetMini;

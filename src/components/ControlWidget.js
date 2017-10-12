@@ -8,6 +8,8 @@ import StepContentContainer from '../containers/StepContentContainer.js'
 import StepLabelContainer from '../containers/StepLabelContainer.js'
 import NotSelectedPersonaListContainer from '../containers/NotSelectedPersonaListContainer.js'
 
+import Comment from '../components/Comment.js'
+import List from '../components/List.js'
 
 import SidePopup from './SidePopup.js'
 
@@ -35,6 +37,11 @@ class ControlWidget extends Component {
     className.push(this.props.status);
 
 
+    let items = [{id:'pippo'},{id:'pluto'},{id:'paperino'}];
+    let func = (item) => {
+      return <Comment key={item.id}/>;
+    };
+    let list = <List modelName="Comment" className="test-list" model={items} mapFunction={func} />
 
 
     return (
@@ -69,43 +76,8 @@ class ControlWidget extends Component {
             <PersonaStepsListContainer />
           </SidePopup>
           <SidePopup open={this.state.activePopup === 'comments'} >
-
             <div style={{  fontSize: '20px', textAlign: 'center', padding: '10px 0'}} >COMMENTS</div>
-
-            <div style={{ display:'flex', flexDirection: 'column', fontSize: '14px'}}>
-              <div style={{ display:'flex', flexDirection: 'row', marginTop: '10px', padding: '20px'}}>
-                <div>
-                  <div
-                    className="PersonaAvatar"
-                    style={{ backgroundImage: 'url(\'img/user-1.jpg\')', minWidth: '40px', maxWidth: '40px', minHeight: '40px', maxHeight: '40px', borderWidth: '1px', marginRight: '20px' }}>
-                  </div>
-                </div>
-                <div>
-                  <div style={{ fontWeight: 'bold', fontSize: '16px'}}>Carol Schmidt</div>
-                  <div>Business Manager</div>
-                  <div style={{ marginTop: '20px' }}>
-                    Lorem ipsum dolor sit amet, sociis et, euismod elit, erat convallis fusce pellentesque adipisci, aliquam orci libero dictumst ornare id arcu, fames id. Velit quis eu pellentesque mauris, dignissim donec, tristique dapibus praesent duis tristique.
-                  </div>
-                </div>
-              </div>
-
-              <div style={{ display:'flex', flexDirection: 'row', marginTop: '10px', padding: '20px'}}>
-                <div>
-                  <div
-                    className="PersonaAvatar"
-                    style={{ backgroundImage: 'url(\'img/user-2.jpg\')', minWidth: '40px', maxWidth: '40px', minHeight: '40px', maxHeight: '40px', borderWidth: '1px', marginRight: '20px' }}>
-                  </div>
-                </div>
-                <div>
-                  <div style={{ fontWeight: 'bold', fontSize: '16px'}}>Jessica Bahia</div>
-                  <div>CMS Admin</div>
-                  <div style={{ marginTop: '20px' }}>
-                    Lorem ipsum dolor sit amet, sociis et, euismod elit, erat convallis fusce pellentesque adipisci, aliquam orci libero dictumst ornare id arcu, fames id. Velit quis eu pellentesque mauris, dignissim donec, tristique dapibus praesent duis tristique.
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            {list}
           </SidePopup>
         </header>
 

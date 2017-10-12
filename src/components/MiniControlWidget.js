@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { memoize } from 'lodash'
 
 import FloatingButton from './FloatingButton.js'
+import PersonaAvatar from './PersonaAvatar.js'
+import List from './List.js'
 
 import './MiniControlWidget.css'
 
@@ -18,13 +20,10 @@ class MiniControlWidget extends Component {
 
     this.onClickCollapse = this.onClickCollapse.bind(this);
     this.onClickExpand = this.onClickExpand.bind(this);
-    this.getCurrentPersona = this.getCurrentPersona.bind(this);
     this.onClickPersona = this.onClickPersona.bind(this);
     this.onClickMaximize = this.onClickMaximize.bind(this);
 
-    this.memoizedGetCurrentPersona = memoize((personaId) => {
-      return this.props.personas.find((el) => { return el.id === personaId });
-    });
+    this.renderCollapsed = this.renderCollapsed.bind(this);
 
     this.state = {
       collapsed: true
@@ -32,86 +31,59 @@ class MiniControlWidget extends Component {
   }
 
 
+  renderCollapsed() {
+    let className = ['MiniControlWidget', this.props.status, 'collapsed'];
+    return <div
+      className={className.join(' ')}
+      >
+      <FloatingButton className="hamburger-btn" onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
+      <PersonaAvatar imageUrl={this.props.currentPersonaImageUrl} onClick={this.onClickExpand} />
+    </div>
+  }
 
   render() {
 
-
+    if (this.state.collapsed) {
+      return this.renderCollapsed();
+    }
 
     let className = ['MiniControlWidget'];
     className.push(this.props.status);
 
-    if (this.state.collapsed) {
-      className.push('collapsed');
-      return <div
-        className={className.join(' ')}
-        >
-          <div className="personas-list">
-            <div className="persona-row">
-              <FloatingButton onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
-              <div className="persona"
-                   onClick={this.onClickExpand}
-                   style={{backgroundImage: 'url(\''+ (this.getCurrentPersona() ? this.getCurrentPersona().avatar : '') +'\')'}}
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-    }
-
-    let personasCount = this.props.personas.length;
-
-    let personasRenderers = [];
-    for (let i=0; i<personasCount; ++i) {
-      let personaClassName = ['persona-row'];
-      if (this.props.currentPersona === this.props.personas[i].id) {
-        personaClassName.push('active');
-      }
-      personasRenderers.push(
-        <div key={this.props.personas[i].id} className={personaClassName.join(' ')}>
-
-          <FloatingButton onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
-
+    let personaToPersonaRow = (persona) => {
+        let personaClassName = ['persona-row'];
+        if (this.props.currentPersonaId === persona.id) {
+          personaClassName.push('active');
+        }
+        return <div key={persona.id} className={personaClassName.join(' ')}
+             onClick={(ev) => { this.onClickPersona(ev, persona) }}
+          >
           <div className="persona-wrapper">
-            <div className="persona"
-              onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
-              style={{backgroundImage: 'url(\''+ this.props.personas[i].avatar +'\')'}}
-              >
-            </div>
+            <PersonaAvatar imageUrl={persona.avatar}  />
             <div className="label-sect">
-              <div className="label"
-                   onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
-                >
-                {this.props.personas[i].label}
+              <div className="label">
+                {persona.label}
               </div>
-              <div className="label"
-                   onClick={(ev) => { this.onClickPersona(ev, this.props.personas[i]) }}
-                >
-                {this.props.personas[i].description}
+              <div className="label">
+                {persona.description}
               </div>
             </div>
           </div>
-
         </div>
-      );
-    }
+      },
+      personasList = <List modelName="PersonaRow" className="personas-list" model={this.props.personas} mapFunction={personaToPersonaRow} />;
+
 
     className.push('expanded');
     return (
       <div
         className={className.join(' ')}
         >
-        <div className="personas-list">
-          {personasRenderers}
-        </div>
-        <div className="close-btn-wrapper">
-          <FloatingButton onClick={this.onClickCollapse} iconClassName="fa fa-times"/>
-        </div>
+        <FloatingButton className="hamburger-btn" onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
+        {personasList}
+        <FloatingButton className="close-btn" onClick={this.onClickCollapse} iconClassName="fa fa-times"/>
       </div>
     );
-  }
-
-  getCurrentPersona() {
-    return this.memoizedGetCurrentPersona(this.props.currentPersona);
   }
 
   collapse() {

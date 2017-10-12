@@ -11,7 +11,8 @@ class PersonaAvatar extends Component {
     return (
       <div
         className={className.join(' ')}
-        style={{ backgroundImage: 'url(\''+ this.props.imageUrl +'\')' }}>
+        style={{ backgroundImage: 'url(\''+ this.props.imageUrl +'\')' }}
+        onClick={this.props.onClick}>
       </div>
     );
   }

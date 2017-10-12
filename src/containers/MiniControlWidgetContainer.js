@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getControlWidgetStatus, getCurrentPersonaId, getVisiblePersonas } from '../selectors'
+import { getControlWidgetStatus, getCurrentPersonaId, getCurrentPersonaImageUrl, getVisiblePersonas } from '../selectors'
 import { controlWidgetMaximize, selectPersona } from '../actions'
 import MiniControlWidget from '../components/MiniControlWidget.js'
 
@@ -9,7 +9,8 @@ const mapStateToProps = state => {
   return {
     status: getControlWidgetStatus(state),
     personas: getVisiblePersonas(state),
-    currentPersona: getCurrentPersonaId(state)
+    currentPersonaId: getCurrentPersonaId(state),
+    currentPersonaImageUrl: getCurrentPersonaImageUrl(state)
   }
 };
 

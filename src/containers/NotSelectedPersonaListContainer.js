@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getCurrentPersona, getVisibleNotSelectedPersonas } from '../selectors'
 
 import { selectPersona } from '../actions'
-import PersonaDropdown from '../components/PersonaDropdown.js'
+import PersonaList from '../components/PersonaList.js'
 
 
 
@@ -23,9 +23,9 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-const PersonaDropdownContainer = connect(
+const NotSelectedPersonaListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(PersonaDropdown);
+)(PersonaList);
 
-export default PersonaDropdownContainer
+export default NotSelectedPersonaListContainer

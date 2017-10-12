@@ -1,0 +1,7 @@
+.PersonaList {
+
+}
+
+.PersonaList .LabelledAvatar {
+  cursor: pointer;
+}

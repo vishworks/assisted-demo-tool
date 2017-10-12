@@ -125,3 +125,22 @@ export const getCurrentStepName = createSelector(
     return currentStep.name;
   }
 );
+
+export const getCurrentPersonaImageUrl = createSelector(
+  [getCurrentPersona],
+  (currentPersona) => {
+    return currentPersona.avatar;
+  }
+);
+export const getCurrentPersonaLabel = createSelector(
+  [getCurrentPersona],
+  (currentPersona) => {
+    return currentPersona.label;
+  }
+);
+export const getCurrentPersonaDescription = createSelector(
+  [getCurrentPersona],
+  (currentPersona) => {
+    return currentPersona.description;
+  }
+);

@@ -1,5 +1,6 @@
 .ControlWidget {
     background: #203753;
+    color: #FFFFFF;
     min-width: 300px;
     width: 300px;
 
@@ -33,6 +34,7 @@
     position: relative;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -83,4 +85,9 @@
     text-align: center;
     padding: 10px;
     overflow: auto;
+}
+
+.ControlWidget .persona-dropdown-trigger:hover {
+    color: #00B9F7;
+    cursor: pointer;
 }

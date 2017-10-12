@@ -1,0 +1,17 @@
+.LabelledAvatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.LabelledAvatar .persona-label{
+  padding-top: 15px;
+  font-size: 15px;
+}
+
+.LabelledAvatar .persona-description{
+  padding-top: 5px;
+  font-size: 13px;
+  padding-bottom: 20px;
+}

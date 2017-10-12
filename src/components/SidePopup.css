@@ -11,3 +11,11 @@
   max-height: 90vh;
   min-height: 100%;
 }
+
+.SidePopup.popup-bottom {
+  display: block;
+  right: 0;
+  width: 100%;
+  top: calc(100% + 1px);
+  padding: 20px 0;
+}

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-import PersonaDropdownContainer from '../containers/PersonaDropdownContainer.js'
+import CurrentPersonaLabelledAvatarContainer from '../containers/CurrentPersonaLabelledAvatarContainer.js'
 import PersonaStepsListContainer from '../containers/PersonaStepsListContainer.js'
 
 import StepsControlButtonsContainer from '../containers/StepsControlButtonsContainer.js'
 import StepContentContainer from '../containers/StepContentContainer.js'
 import StepLabelContainer from '../containers/StepLabelContainer.js'
+import NotSelectedPersonaListContainer from '../containers/NotSelectedPersonaListContainer.js'
+
 
 import SidePopup from './SidePopup.js'
 
@@ -48,10 +50,19 @@ class ControlWidget extends Component {
             <button className={this.getToolBtnClassName('steps')} data-id="steps" onClick={this.togglePanel}>
               <i className="fa fa-list" />
             </button>
-
           </div>
 
-          <PersonaDropdownContainer />
+          <CurrentPersonaLabelledAvatarContainer />
+
+          <div className="persona-dropdown-trigger"
+               data-id="personas"
+               onClick={this.togglePanel}>
+            <i className={this.state.activePopup === 'personas' ? 'fa fa-angle-up' : 'fa fa-angle-down'} />
+          </div>
+
+          <SidePopup className="popup-bottom" open={this.state.activePopup === 'personas'} >
+            <NotSelectedPersonaListContainer />
+          </SidePopup>
 
           <SidePopup open={this.state.activePopup === 'steps'} >
             <div className="side-popup-title">Steps</div>

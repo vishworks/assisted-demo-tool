@@ -5,7 +5,6 @@ import DisplayModeEnum from '../enums/DisplayMode.js'
 import { getDisplayMode } from '../selectors'
 
 const CONTROL_PAGE_NAME = 'ControlPage'; // CONTROL_PAGE_NAME is opened by DISPLAY_PAGE_NAME
-const DISPLAY_PAGE_NAME = 'DisplayPage';
 
 const MessageType = Object.freeze({
   ACTION: 'FORWARD_ACTION',
@@ -22,6 +21,7 @@ var controlPageWindow;
 
 const ControlCenterMiddleware = store => {
 
+  // handle other window's messages
   window.addEventListener('message', (ev) => {
     switch (ev.data.type) {
       case MessageType.INIT_CONTROL_PAGE:
@@ -42,6 +42,7 @@ const ControlCenterMiddleware = store => {
     }
   });
 
+  // when the window is closing, it sends a message to the other window
   window.addEventListener('beforeunload', (ev) => {
     let isControlPage = getDisplayMode(store.getState()) === DisplayModeEnum.CONTROL_PAGE;
     let otherWindow = isControlPage ? window.opener : controlPageWindow;
@@ -69,6 +70,7 @@ const ControlCenterMiddleware = store => {
       }
     }
 
+    // if it's the control page, forward actions to the display page
     if (isControlPage && !includes(NOT_FORWARDABLE_ACTIONS, action.type)) {
       try {
         window.opener.postMessage({

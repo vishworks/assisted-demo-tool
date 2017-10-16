@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 
-import CurrentPersonaLabelledAvatarContainer from '../containers/CurrentPersonaLabelledAvatarContainer.js'
-import PersonaStepsListContainer from '../containers/PersonaStepsListContainer.js'
+import CurrentPersonaLabelledAvatarContainer from '../../containers/CurrentPersonaLabelledAvatarContainer.js'
+import PersonaStepsListContainer from '../../containers/PersonaStepsListContainer.js'
 
-import StepsControlButtonsContainer from '../containers/StepsControlButtonsContainer.js'
-import StepContentContainer from '../containers/StepContentContainer.js'
-import StepLabelContainer from '../containers/StepLabelContainer.js'
-import NotSelectedPersonaListContainer from '../containers/NotSelectedPersonaListContainer.js'
+import StepsControlButtonsContainer from '../../containers/StepsControlButtonsContainer.js'
+import StepContentContainer from '../../containers/StepContentContainer.js'
+import StepLabelContainer from '../../containers/StepLabelContainer.js'
+import NotSelectedPersonaListContainer from '../../containers/NotSelectedPersonaListContainer.js'
 
-import Comment from '../components/Comment.js'
-import List from '../components/List.js'
+import List from '../List.js'
 
-import SidePopup from './SidePopup.js'
+import DisplayModeEnum from '../../enums/DisplayMode.js'
+
+import SidePopup from './../SidePopup.js'
 
 import './ControlWidget.css'
 
@@ -23,6 +24,7 @@ class ControlWidget extends Component {
 
     this.togglePanel = this.togglePanel.bind(this);
     this.onClickMinimize = this.onClickMinimize.bind(this);
+    this.onClickDetach = this.onClickDetach.bind(this);
     this.getToolBtnClassName = this.getToolBtnClassName.bind(this);
 
 
@@ -36,13 +38,6 @@ class ControlWidget extends Component {
     let className = ['ControlWidget'];
 
 
-    let items = [{id:'pippo'},{id:'pluto'},{id:'paperino'}];
-    let func = (item) => {
-      return <Comment key={item.id}/>;
-    };
-    let list = <List modelName="Comment" className="test-list" model={items} mapFunction={func} />
-
-
     return (
       <div className={className.join(' ')}>
         <header>
@@ -50,11 +45,11 @@ class ControlWidget extends Component {
             <button className="tool-btn" onClick={this.onClickMinimize}>
               <i className="fa fa-arrow-right" />
             </button>
-            <button className={this.getToolBtnClassName('comments')} data-id="comments" onClick={this.togglePanel}>
-              <i className="fa fa-comment-o" />
-            </button>
             <button className={this.getToolBtnClassName('steps')} data-id="steps" onClick={this.togglePanel}>
               <i className="fa fa-list" />
+            </button>
+            <button className="tool-btn" onClick={() => { this.props.setDisplayMode('DETACHED_PAGE') }}>
+              <i className="fa fa-object-ungroup" />
             </button>
           </div>
 
@@ -74,13 +69,8 @@ class ControlWidget extends Component {
             <div className="side-popup-title">Steps</div>
             <PersonaStepsListContainer />
           </SidePopup>
-          <SidePopup open={this.state.activePopup === 'comments'} >
-            <div style={{  fontSize: '20px', textAlign: 'center', padding: '10px 0'}} >COMMENTS</div>
-            {list}
-          </SidePopup>
         </header>
 
-        <button onClick={() => { this.props.setDisplayMode('DETACHED_PAGE') }}>BLA</button>
         <div className="step-content">
           <h3>{this.props.currentStepName}</h3>
           <StepContentContainer />
@@ -108,6 +98,11 @@ class ControlWidget extends Component {
 
   onClickMinimize(ev) {
     this.props.onClickMinimize(ev);
+    this.setState({ activePopup: '' });
+  }
+
+  onClickDetach(ev) {
+    this.props.setDisplayMode(DisplayModeEnum.DETACHED_PAGE)
     this.setState({ activePopup: '' });
   }
 }

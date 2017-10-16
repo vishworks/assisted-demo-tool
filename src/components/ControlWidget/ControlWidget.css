@@ -47,7 +47,8 @@
     cursor: pointer;
 }
 
-.ControlWidget .tool-btn.active {
+.ControlWidget .tool-btn.active,
+.ControlWidget .tool-btn:hover {
     color: #00B9F7;
 }
 

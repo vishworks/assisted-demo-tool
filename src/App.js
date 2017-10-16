@@ -6,6 +6,7 @@ import './App.css';
 
 import ControlWidgetContainer from './containers/ControlWidgetContainer.js'
 import ControlWidgetMiniContainer from './containers/ControlWidgetMiniContainer.js'
+import ControlPageContainer from './containers/ControlPageContainer.js'
 import ViewPortContainer from './containers/ViewPortContainer.js'
 import LoadingPageContainer from './containers/LoadingPageContainer.js'
 
@@ -44,7 +45,7 @@ class App extends Component {
 
     if (this.props.displayMode === DisplayModeEnum.CONTROL_PAGE) {
       return <div className="App" data-displayMode="CONTROL_WIDGET">
-        <ControlWidgetContainer />
+        <ControlPageContainer />
       </div>;
     }
 

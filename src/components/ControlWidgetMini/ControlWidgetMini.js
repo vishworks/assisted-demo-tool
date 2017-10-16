@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { kebabCase } from 'lodash'
 
-import FloatingButton from '../FloatingButton.js'
+import FloatingButton from './FloatingButton.js'
 import PersonaAvatar from '../PersonaAvatar.js'
 import List from '../List.js'
 import PersonaListItem from './PersonaListItem.js'

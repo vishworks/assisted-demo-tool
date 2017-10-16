@@ -1,150 +1,92 @@
+import { includes } from 'lodash'
 
-import { startsWith } from 'lodash'
-
-import { TYPE, setDisplayMode } from '../actions'
+import { TYPE, setDisplayMode, loadConfig } from '../actions'
 import DisplayModeEnum from '../enums/DisplayMode.js'
-
+import { getDisplayMode } from '../selectors'
 
 const CONTROL_PAGE_NAME = 'ControlPage'; // CONTROL_PAGE_NAME is opened by DISPLAY_PAGE_NAME
 const DISPLAY_PAGE_NAME = 'DisplayPage';
 
 const MessageType = Object.freeze({
-  ACTION: 'ACTION',
-  WINDOW_CLOSED: 'WINDOW_CLOSED'
+  ACTION: 'FORWARD_ACTION',
+  WINDOW_CLOSED: 'WINDOW_CLOSED',
+  INIT_CONTROL_PAGE: 'INIT_CONTROL_PAGE'
 });
 
-var controlPageWindow = null,
-  displayPageWindow = null,
-  detachedMode, windowRole, token = Date.now();
+const NOT_FORWARDABLE_ACTIONS = [
+  TYPE.SET_DISPLAY_MODE,
+  TYPE.LOAD_CONFIG
+];
 
+var controlPageWindow;
 
+const ControlCenterMiddleware = store => {
 
-
-const messageHandler = (ev) => {
-  console.log('message', ev.data);
-  switch (ev.data.type) {
-    case MessageType.ACTION:
-      dispatch(ev.data.payload);
-      break;
-    case MessageType.WINDOW_CLOSED:
-      dispatch(setDisplayMode(DisplayModeEnum.CONTROL_WIDGET_MINI));
-      window.removeEventListener('message', messageHandler); // remove this event listener
-      detachedMode = false;
-      windowRole = DISPLAY_PAGE_NAME;
-      console.info('Detached mode: deactivated', windowRole);
-      break;
-  }
-};
-
-const beforeUnloadHandler = (ev) => {
-  ev.preventDefault();
-  if (controlPageWindow) {
-    if (controlPageWindow.name === window.name) {
-
-      displayPageWindow.postMessage({
-          type: MessageType.WINDOW_CLOSED
-        },
-        '*');
-      controlPageWindow.postMessage({
-          type: MessageType.WINDOW_CLOSED
-        },
-        '*');
-    } else {
-      alert('closing display!');
-      controlPageWindow.postMessage({
-          type: MessageType.WINDOW_CLOSED
-        },
-        '*');
-      displayPageWindow.postMessage({
-          type: MessageType.WINDOW_CLOSED
-        },
-        '*');
+  window.addEventListener('message', (ev) => {
+    switch (ev.data.type) {
+      case MessageType.INIT_CONTROL_PAGE:
+        store.dispatch(setDisplayMode(DisplayModeEnum.CONTROL_PAGE));
+        store.dispatch(loadConfig(ev.data.payload.config));
+        break;
+      case MessageType.ACTION:
+        store.dispatch(ev.data.payload.action);
+        break;
+      case MessageType.WINDOW_CLOSED:
+        let isControlPage = getDisplayMode(store.getState()) === DisplayModeEnum.CONTROL_PAGE;
+        if (isControlPage) {
+          window.close();
+        } else {
+          store.dispatch(setDisplayMode(DisplayModeEnum.CONTROL_WIDGET));
+        }
+        break;
     }
-  }
-};
+  });
 
+  window.addEventListener('beforeunload', (ev) => {
+    let isControlPage = getDisplayMode(store.getState()) === DisplayModeEnum.CONTROL_PAGE;
+    let otherWindow = isControlPage ? window.opener : controlPageWindow;
+    otherWindow.postMessage({ type: MessageType.WINDOW_CLOSED }, '*');
+  });
 
-if (!window.opener && startsWith(window.name, CONTROL_PAGE_NAME)) {
-  debugger;
-}
-
-if (window.opener && startsWith(window.name, CONTROL_PAGE_NAME)) {
-  displayPageWindow = window.opener;
-  controlPageWindow = window;
-  window.addEventListener('beforeunload', beforeUnloadHandler);
-  window.addEventListener('message', messageHandler);
-  detachedMode = true;
-  windowRole = CONTROL_PAGE_NAME;
-  console.info('Detached mode: active', windowRole);
-} else {
-  window.name = DISPLAY_PAGE_NAME;
-  detachedMode = false;
-  console.info('Detached mode: inactive', windowRole);
-  windowRole = DISPLAY_PAGE_NAME;
-}
-
-var dispatch;
-
-const ControlPageMiddleware = store => {
-  dispatch = store.dispatch.bind(store);
   return next => action => {
 
-    // don't change the display mode from the control view
-    if (action.type === TYPE.SET_DISPLAY_MODE) {
-      return next(action);
-    }
-
-    try { // FIXME passing thunks does not work
-      displayPageWindow.postMessage({
-          type: 'ACTION',
-          payload: action
-        },
-        '*');
-    } catch (e) {}
-
-    return next(action);
-  }
-};
-
-const DisplayPageMiddleware = store => {
-
-  dispatch = store.dispatch.bind(store);
-  return next => action => {
+    var displayMode = getDisplayMode(store.getState());
+    var isControlPage = displayMode === DisplayModeEnum.CONTROL_PAGE,
+      detachedMode = isControlPage || displayMode === DisplayModeEnum.DETACHED_PAGE;
 
     // when the user sets the display mode to "display page + control page"
-    if (action.type === TYPE.SET_DISPLAY_MODE) {
+    if (!detachedMode && action.type === TYPE.SET_DISPLAY_MODE) {
       if (action.payload.displayMode === DisplayModeEnum.DETACHED_PAGE) {
-
-        // if already in detached mode, do nothing
-        if (detachedMode)  {
-   //       return;
-        }
-
-        detachedMode = true;
-        console.info('Detached mode: activated', windowRole);
-        windowRole = DISPLAY_PAGE_NAME;
-
-        // open the control page
-        controlPageWindow = window.open(window.location.href, CONTROL_PAGE_NAME + '-' + token );
+        controlPageWindow = window.open(window.location.href, CONTROL_PAGE_NAME, 'width=1020,height=800' );
         controlPageWindow.addEventListener('load', () => {
           controlPageWindow.postMessage({
-            type: MessageType.ACTION,
-            payload: setDisplayMode(DisplayModeEnum.CONTROL_PAGE)
+            type: MessageType.INIT_CONTROL_PAGE,
+            payload: {
+              config: store.getState().appReducer.config
+            }
           }, '*');
         });
-
-        // handle messages from control page
-        window.addEventListener('message', messageHandler);
-        window.addEventListener('beforeunload', beforeUnloadHandler);
-
       }
     }
+
+    if (isControlPage && !includes(NOT_FORWARDABLE_ACTIONS, action.type)) {
+      try {
+        window.opener.postMessage({
+          type: MessageType.ACTION,
+          payload: {
+            action: action
+          }
+        }, '*');
+      } catch (e) {
+        // probably thunk, do nothing
+      }
+    }
+
+
     return next(action);
   }
 };
 
-const DetachedPageMiddleware = windowRole === CONTROL_PAGE_NAME ?
-  ControlPageMiddleware :
-  DisplayPageMiddleware;
 
-export default DetachedPageMiddleware;
+
+export default ControlCenterMiddleware;

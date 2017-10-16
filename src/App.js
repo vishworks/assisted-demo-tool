@@ -22,6 +22,8 @@ class App extends Component {
     window.addEventListener('hashchange', this.onHashChange);
     let searchParams = qs.parse(window.location.search);
     if (searchParams.configUrl) {
+
+      if (window.name !== 'ControlPage')
       this.props.loadConfig(searchParams.configUrl);
 
       // FIXME check search parameter controlCenter. If so, do nothing and wait for the message with the state to load in redux

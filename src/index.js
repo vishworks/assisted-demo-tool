@@ -21,7 +21,7 @@ let store = createStore(
     // preloadedState,
     compose(
       applyMiddleware(ControlPageMiddleware, thunk)
-       ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+   //    ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );
 

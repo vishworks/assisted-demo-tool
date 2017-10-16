@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
-import { getControlWidgetStatus, getCurrentPersonaId, getCurrentPersonaImageUrl, getVisiblePersonas } from '../selectors'
-import { controlWidgetMaximize, selectPersona } from '../actions'
+import { getCurrentPersonaId, getCurrentPersonaImageUrl, getVisiblePersonas } from '../selectors'
+import { setDisplayMode, selectPersona } from '../actions'
+import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlWidgetMini from '../components/ControlWidgetMini/ControlWidgetMini.js'
 
 
 
 const mapStateToProps = state => {
   return {
-    status: getControlWidgetStatus(state),
     personas: getVisiblePersonas(state),
     currentPersonaId: getCurrentPersonaId(state),
     currentPersonaImageUrl: getCurrentPersonaImageUrl(state)
@@ -17,7 +17,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onClickMaximize: () => {
-      dispatch(controlWidgetMaximize());
+      dispatch(setDisplayMode(DisplayModeEnum.CONTROL_WIDGET));
     },
     selectPersona(personaId) {
       dispatch(selectPersona(personaId));

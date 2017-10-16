@@ -1,16 +1,15 @@
 
 import { TYPE } from '../actions'
+import DisplayModeEnum from '../enums/DisplayMode.js'
 
 const initialState = {
-  status: 'minimized' // FIXME create/use ControlWidget visual status enum
+  displayMode: DisplayModeEnum.CONTROL_WIDGET_MINI
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case TYPE.CONTROL_WIDGET_MINIMIZE:
-      return Object.assign({}, state, { status: 'minimized' });
-    case TYPE.CONTROL_WIDGET_MAXIMIZE:
-      return Object.assign({}, state, { status: 'expanded' });
+    case TYPE.SET_DISPLAY_MODE:
+      return Object.assign({}, state, { displayMode: action.payload.displayMode });
     default:
       return state
   }

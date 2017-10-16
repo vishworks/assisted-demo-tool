@@ -17,7 +17,6 @@ export const getCurrentStepIndex = state => state.appReducer.current.stepIndex;
 export const getCurrentPersonaId = state => state.appReducer.current.personaId;
 export const getCurrentDemoId = state => state.appReducer.current.demoId;
 
-export const getControlWidgetStatus = state => state.controlWidget.status;
 export const getConfigErrorMessage = state => state.appReducer.error.message;
 
 
@@ -144,3 +143,10 @@ export const getCurrentPersonaDescription = createSelector(
     return currentPersona.description;
   }
 );
+
+//--------------------------------------------------------------------------------------------------------------//
+//----------------------------------- Control widget visual status----------------------------------------------//
+//--------------------------------------------------------------------------------------------------------------//
+
+
+export const getDisplayMode = state => state.controlWidget.displayMode;

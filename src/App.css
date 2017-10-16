@@ -8,3 +8,15 @@ html, body, #root, .App {
   display: flex;
   font-family: 'Lato', sans-serif;
 }
+
+.App[data-displayMode="CONTROL_WIDGET_MINI"] .ControlWidgetMini {
+  right: 5px;
+  transition: right 1s;
+}
+
+.App[data-displayMode="CONTROL_WIDGET"] .ControlWidget {
+  min-width: 300px;
+  width: 300px;
+  overflow: visible;
+  transition: width 500ms, min-width 500ms;
+}

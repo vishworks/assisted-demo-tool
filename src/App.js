@@ -9,6 +9,8 @@ import ControlWidgetMiniContainer from './containers/ControlWidgetMiniContainer.
 import ViewPortContainer from './containers/ViewPortContainer.js'
 import LoadingPageContainer from './containers/LoadingPageContainer.js'
 
+import DisplayModeEnum from './enums/DisplayMode.js'
+
 class App extends Component {
 
   constructor(props) {
@@ -18,22 +20,34 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener('hashchange', this.onHashChange);
-    let configUrl = qs.parse(window.location.search).configUrl;
-    if (configUrl) {
-      this.props.loadConfig(configUrl);
+    let searchParams = qs.parse(window.location.search);
+    if (searchParams.configUrl) {
+      this.props.loadConfig(searchParams.configUrl);
+
+      // FIXME check search parameter controlCenter. If so, do nothing and wait for the message with the state to load in redux
+
     } else {
       this.props.setConfigError('Error in URL: configUrl search parameter is required.');
     }
+
   }
 
   render() {
+
+
 
     if (this.props.configLoaded === false) {
       return <LoadingPageContainer />
     }
 
+    if (this.props.displayMode === DisplayModeEnum.CONTROL_PAGE) {
+      return <div className="App" data-displayMode="CONTROL_WIDGET">
+        <ControlWidgetContainer />
+      </div>;
+    }
+
     return (
-      <div className="App">
+      <div className="App" data-displayMode={this.props.displayMode}>
         <ViewPortContainer />
         <ControlWidgetContainer />
         <ControlWidgetMiniContainer />

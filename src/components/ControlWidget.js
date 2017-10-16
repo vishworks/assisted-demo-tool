@@ -34,7 +34,6 @@ class ControlWidget extends Component {
   render() {
 
     let className = ['ControlWidget'];
-    className.push(this.props.status);
 
 
     let items = [{id:'pippo'},{id:'pluto'},{id:'paperino'}];
@@ -81,6 +80,7 @@ class ControlWidget extends Component {
           </SidePopup>
         </header>
 
+        <button onClick={() => { this.props.setDisplayMode('DETACHED_PAGE') }}>BLA</button>
         <div className="step-content">
           <h3>{this.props.currentStepName}</h3>
           <StepContentContainer />

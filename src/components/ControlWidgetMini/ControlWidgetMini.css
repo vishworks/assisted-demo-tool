@@ -15,11 +15,6 @@
     align-items: center;
 }
 
-.ControlWidgetMini.minimized {
-    right: 5px;
-    transition: right 1s;
-}
-
 .ControlWidgetMini .personas-list .PersonaListItem {
     display: flex;
     flex-direction: row;

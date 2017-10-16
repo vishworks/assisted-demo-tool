@@ -3,8 +3,7 @@
 export const TYPE = {
   LOAD_CONFIG: 'LOAD_CONFIG',
   SET_CONFIG_ERROR: 'SET_CONFIG_ERROR',
-  CONTROL_WIDGET_MINIMIZE: 'CONTROL_WIDGET_MINIMIZE',
-  CONTROL_WIDGET_MAXIMIZE: 'CONTROL_WIDGET_MAXIMIZE',
+  SET_DISPLAY_MODE: 'SET_DISPLAY_MODE',
   SELECT_PERSONA: 'SELECT_PERSONA',
   NEXT_STEP: 'NEXT_STEP',
   PREV_STEP: 'PREV_STEP',
@@ -47,15 +46,12 @@ export function asyncLoadConfig(configUrl) {
 }
 
 
-export const controlWidgetMinimize = () => {
+export const setDisplayMode = (displayMode) => {
   return {
-    type: TYPE.CONTROL_WIDGET_MINIMIZE
-  };
-};
-
-export const controlWidgetMaximize = () => {
-  return {
-    type: TYPE.CONTROL_WIDGET_MAXIMIZE
+    type: TYPE.SET_DISPLAY_MODE,
+    payload: {
+      displayMode: displayMode
+    }
   };
 };
 

@@ -12,7 +12,7 @@ import thunk from 'redux-thunk'
 import registerServiceWorker from './registerServiceWorker';
 
 
-
+import ControlPageMiddleware from './middlewares/ControlPageMiddleware.js'
 
 
 
@@ -20,8 +20,8 @@ let store = createStore(
     rootReducer,
     // preloadedState,
     compose(
-      applyMiddleware(thunk)
-      // ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      applyMiddleware(ControlPageMiddleware, thunk)
+       ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );
 

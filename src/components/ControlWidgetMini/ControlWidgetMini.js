@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { kebabCase } from 'lodash'
 
 import FloatingButton from '../FloatingButton.js'
 import PersonaAvatar from '../PersonaAvatar.js'
@@ -31,7 +32,7 @@ class ControlWidgetMini extends Component {
 
 
   renderCollapsed() {
-    let className = ['ControlWidgetMini', this.props.status, 'collapsed'];
+    let className = ['ControlWidgetMini', 'collapsed'];
     return <div
       className={className.join(' ')}
       >
@@ -47,7 +48,6 @@ class ControlWidgetMini extends Component {
     }
 
     let className = ['ControlWidgetMini'];
-    className.push(this.props.status);
 
     let personaToPersonaRow = (persona) => {
         return <PersonaListItem onClick={(ev) => { this.onClickPersona(ev, persona) }}

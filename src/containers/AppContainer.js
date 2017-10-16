@@ -1,12 +1,13 @@
 import { connect } from 'react-redux'
 import { asyncLoadConfig, updateStateFromHash, setConfigError } from '../actions'
-import { getPersonas } from '../selectors'
+import { getDisplayMode, getPersonas } from '../selectors'
 import App from '../App.js'
 
 
 
 const mapStateToProps = state => {
   return {
+    displayMode: getDisplayMode(state),
     configLoaded: !!getPersonas(state) // FIXME create speaking selector
   }
 };

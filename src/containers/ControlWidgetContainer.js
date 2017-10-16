@@ -1,14 +1,14 @@
 import { connect } from 'react-redux'
 
-import { getControlWidgetStatus, getCurrentStepName } from '../selectors'
-import { controlWidgetMinimize } from '../actions'
+import { getCurrentStepName } from '../selectors'
+import { setDisplayMode } from '../actions'
+import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlWidget from '../components/ControlWidget.js'
 
 
 
 const mapStateToProps = state => {
   return {
-    status: getControlWidgetStatus(state),
     currentStepName: getCurrentStepName(state)
   }
 };
@@ -16,7 +16,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onClickMinimize: () => {
-      dispatch(controlWidgetMinimize());
+      dispatch(setDisplayMode(DisplayModeEnum.CONTROL_WIDGET_MINI));
+    },
+    setDisplayMode: (displayMode) => {
+      dispatch(setDisplayMode(displayMode));
     }
   }
 };

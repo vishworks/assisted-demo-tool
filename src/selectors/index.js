@@ -100,16 +100,16 @@ export const getCurrentStep = createSelector(
 );
 
 export const getCurrentUrl = createSelector(
-  [getCurrentStep],
-  (currentStep) => {
-    return currentStep.url;
+  [getCurrentPersona],
+  (currentPersona) => {
+    return currentPersona.url;
   }
 );
 
 export const getUrls = createSelector(
-  [getAllSteps],
-  (allSteps) => {
-    return uniq(map(allSteps, 'url'));
+  [getPersonas],
+  (personas) => {
+    return uniq(map(personas, 'url'));
   }
 );
 

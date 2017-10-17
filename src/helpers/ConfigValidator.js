@@ -26,11 +26,14 @@ let schema = {
           "avatar": {
             "type": "string"
           },
+          "url": {
+            "type": "string"
+          },
           "hidden": {
             "type": "boolean"
           }
         },
-        "required": ["id", "label"]
+        "required": ["id", "url", "label"]
       }
     },
     "demos": {
@@ -54,14 +57,11 @@ let schema = {
                 "personaId": {
                   "type": "string"
                 },
-                "url": {
-                  "type": "string"
-                },
                 "name": {
                   "type": "string"
                 }
               },
-              "required": ["personaId", "url", "name"]
+              "required": ["personaId", "name"]
             }
           }
         },

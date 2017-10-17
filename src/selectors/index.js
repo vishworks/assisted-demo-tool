@@ -18,6 +18,7 @@ export const getCurrentPersonaId = state => state.appReducer.current.personaId;
 export const getCurrentDemoId = state => state.appReducer.current.demoId;
 
 export const getActivePopup = state => state.appReducer.visual.activePopup;
+export const getDisplayBullets = state => state.appReducer.visual.displayBullets;
 
 export const getConfigErrorMessage = state => state.appReducer.error.message;
 
@@ -117,6 +118,13 @@ export const getCurrentStepContent = createSelector(
   [getCurrentStep],
   (currentStep) => {
     return currentStep.content;
+  }
+);
+
+export const getCurrentStepBullets = createSelector(
+  [getCurrentStep],
+  (currentStep) => {
+    return currentStep.bullets;
   }
 );
 

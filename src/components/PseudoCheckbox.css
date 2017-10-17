@@ -1,0 +1,20 @@
+.PseudoCheckbox {
+  font-size: 12px;
+  text-align: right;
+  padding: 0 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.PseudoCheckbox.disabled {
+  color: #999;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.PseudoCheckbox:hover {
+  color: #00B9F7;
+}
+.PseudoCheckbox i.fa {
+  margin-left: 10px;
+}

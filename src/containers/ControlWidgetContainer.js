@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { getCurrentStepName, getActivePopup } from '../selectors'
+import { getActivePopup } from '../selectors'
 import { setDisplayMode, openPopup } from '../actions'
 import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlWidget from '../components/ControlWidget/ControlWidget.js'
@@ -9,7 +9,6 @@ import ControlWidget from '../components/ControlWidget/ControlWidget.js'
 
 const mapStateToProps = state => {
   return {
-    currentStepName: getCurrentStepName(state),
     activePopup: getActivePopup(state)
   }
 };

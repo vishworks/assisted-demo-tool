@@ -10,6 +10,8 @@ import StepLabelContainer from '../../containers/StepLabelContainer.js'
 import NotSelectedPersonaListContainer from '../../containers/NotSelectedPersonaListContainer.js'
 import PopupContainer from '../../containers/PopupContainer.js'
 
+import PseudoCheckbox from '../../components/PseudoCheckbox.js'
+
 
 import DisplayModeEnum from '../../enums/DisplayMode.js'
 
@@ -69,18 +71,15 @@ class ControlWidget extends Component {
           <PopupContainer popupId="steps" closeOnClick={false}>
             <div className="side-popup-title">Steps</div>
 
-            <div className="small-pseudo-checkbox"
-                 onClick={()=>{ this.setState({filterStepsByPersona: !this.state.filterStepsByPersona }); }}
-              >
-              Filter by persona
-              <i className={this.state.filterStepsByPersona ? 'fa fa-check-square-o' : 'fa fa-square-o'}/>
-            </div>
+            <PseudoCheckbox text="Filter by persona"
+                            checked={this.state.filterStepsByPersona}
+                            onClick={()=>{ this.setState({filterStepsByPersona: !this.state.filterStepsByPersona }); }}
+              />
             {this.state.filterStepsByPersona ? <PersonaStepsListContainer /> : <AllStepsListContainer />}
           </PopupContainer>
         </header>
 
         <div className="step-content">
-          <h3>{this.props.currentStepName}</h3>
           <StepContentContainer />
         </div>
 

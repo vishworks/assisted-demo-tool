@@ -21,7 +21,8 @@ const initialState = {
     message: ''
   },
   visual: {
-    activePopup: ''
+    activePopup: '',
+    displayBullets: false
   }
 };
 
@@ -83,6 +84,9 @@ const reducer = (state = initialState, action = {}) => {
 
     case TYPE.POPUP_OPEN:
       return merge({}, state, { visual: { activePopup: action.payload.popupId } });
+
+    case TYPE.STEP_CONTENT_SHOW_BULLETS:
+      return merge({}, state, { visual: { displayBullets: action.payload.show } });
 
     default:
       return state

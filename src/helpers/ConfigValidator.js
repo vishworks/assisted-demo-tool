@@ -59,9 +59,22 @@ let schema = {
                 },
                 "name": {
                   "type": "string"
+                },
+                "bullets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "content": {
+                  "type": "string"
                 }
               },
-              "required": ["personaId", "name"]
+              "required": ["personaId", "name"],
+              "anyOf": [
+                { "required": ["content"] },
+                { "required": ["bullets"] }
+              ]
             }
           }
         },

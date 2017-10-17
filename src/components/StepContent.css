@@ -1,0 +1,13 @@
+.StepContent {
+  color: #FFFFFF;
+  padding: 10px;
+}
+
+
+.StepContent .step-title  {
+  text-align: center;
+}
+
+.StepContent .PseudoCheckbox {
+  float: right;
+}

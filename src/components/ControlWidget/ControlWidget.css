@@ -65,12 +65,9 @@
     font-size: 20px;
 }
 
-.ControlWidget .step-content {
-    flex-grow: 2;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 10px;
+.ControlWidget .step-content  {
     overflow: auto;
+    flex-grow: 2;
 }
 
 .ControlWidget .persona-dropdown-trigger:hover {
@@ -78,16 +75,6 @@
     cursor: pointer;
 }
 
-
-.ControlWidget .small-pseudo-checkbox {
-    font-size: 12px;
-    text-align: right;
-    padding: 0 10px;
-    cursor: pointer;
-}
-.ControlWidget .small-pseudo-checkbox:hover {
-    color: #00B9F7;
-}
-.ControlWidget .small-pseudo-checkbox i.fa {
-    margin-left: 10px;
+.ControlWidget .PseudoCheckbox  {
+    float: right;
 }

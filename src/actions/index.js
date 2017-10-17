@@ -9,7 +9,8 @@ export const TYPE = {
   PREV_STEP: 'PREV_STEP',
   GOTO_STEP: 'GOTO_STEP',
   UPDATE_STATE_FROM_HASH: 'UPDATE_STATE_FROM_HASH',
-  POPUP_OPEN: 'POPUP_OPEN'
+  POPUP_OPEN: 'POPUP_OPEN',
+  STEP_CONTENT_SHOW_BULLETS: 'STEP_CONTENT_SHOW_BULLETS'
 };
 
 
@@ -109,6 +110,15 @@ export const openPopup = (popupId) => {
     type: TYPE.POPUP_OPEN,
     payload: {
       popupId: popupId
+    }
+  };
+};
+
+export const showBullets = (show) => {
+  return {
+    type: TYPE.STEP_CONTENT_SHOW_BULLETS,
+    payload: {
+      show: show
     }
   };
 };

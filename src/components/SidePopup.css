@@ -12,10 +12,10 @@
   min-height: 100%;
 }
 
-.SidePopup.popup-bottom {
+.SidePopup.popup-cover {
   display: block;
   right: 0;
   width: 100%;
-  top: calc(100% + 1px);
+  top: 0;
   padding: 20px 0;
 }

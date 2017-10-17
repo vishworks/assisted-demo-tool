@@ -19,6 +19,9 @@ const initialState = {
   },
   error: {
     message: ''
+  },
+  visual: {
+    activePopup: ''
   }
 };
 
@@ -78,9 +81,8 @@ const reducer = (state = initialState, action = {}) => {
       }
       return gotoStep(state, stepIndex);
 
-    case TYPE.UPDATE_STATE_FROM_URL:
-      console.log(action);
-      return state;
+    case TYPE.POPUP_OPEN:
+      return merge({}, state, { visual: { activePopup: action.payload.popupId } });
 
     default:
       return state

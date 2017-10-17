@@ -3,15 +3,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  cursor: pointer;
 }
 
-.LabelledAvatar .persona-label{
+.LabelledAvatar .persona-label {
   padding-top: 15px;
   font-size: 15px;
 }
 
-.LabelledAvatar .persona-description{
+.LabelledAvatar .persona-description {
   padding-top: 5px;
   font-size: 13px;
   padding-bottom: 20px;
+}
+
+.LabelledAvatar:hover .persona-label {
+  color: #00B9F7;
+}
+
+.LabelledAvatar:hover .persona-description {
+  color: #00B9F7;
 }

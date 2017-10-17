@@ -17,6 +17,8 @@ export const getCurrentStepIndex = state => state.appReducer.current.stepIndex;
 export const getCurrentPersonaId = state => state.appReducer.current.personaId;
 export const getCurrentDemoId = state => state.appReducer.current.demoId;
 
+export const getActivePopup = state => state.appReducer.visual.activePopup;
+
 export const getConfigErrorMessage = state => state.appReducer.error.message;
 
 

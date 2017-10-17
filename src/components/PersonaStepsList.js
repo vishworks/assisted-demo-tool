@@ -20,13 +20,13 @@ class PersonaStepsList extends Component {
           key={step.index}
           step={step}
           active={this.props.currentStepIndex === step.index }
-          onClick={(ev) => { this.props.gotoStep(step.index) }}
+          onClick={(ev) => { this.props.gotoStep(step.index); }}
           />
       );
     });
 
     if (renderers.length === 0) {
-      renderers = <div className="info-message">There are no steps for this persona</div>;
+      renderers = <div className="info-message">No steps</div>;
     }
 
 

@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 
 import CurrentPersonaLabelledAvatarContainer from '../../containers/CurrentPersonaLabelledAvatarContainer.js'
 import PersonaStepsListContainer from '../../containers/PersonaStepsListContainer.js'
+import AllStepsListContainer from '../../containers/AllStepsListContainer.js'
 
 import StepsControlButtonsContainer from '../../containers/StepsControlButtonsContainer.js'
 import StepContentContainer from '../../containers/StepContentContainer.js'
 import StepLabelContainer from '../../containers/StepLabelContainer.js'
 import NotSelectedPersonaListContainer from '../../containers/NotSelectedPersonaListContainer.js'
+import PopupContainer from '../../containers/PopupContainer.js'
 
-import List from '../List.js'
 
 import DisplayModeEnum from '../../enums/DisplayMode.js'
 
-import SidePopup from './../SidePopup.js'
+
 
 import './ControlWidget.css'
 
@@ -29,7 +30,7 @@ class ControlWidget extends Component {
 
 
     this.state = {
-      activePopup: ''
+      filterStepsByPersona: false
     };
   }
 
@@ -53,22 +54,29 @@ class ControlWidget extends Component {
             </button>
           </div>
 
-          <CurrentPersonaLabelledAvatarContainer />
-
-          <div className="persona-dropdown-trigger"
-               data-id="personas"
+          <div data-id="personas"
                onClick={this.togglePanel}>
-            <i className={this.state.activePopup === 'personas' ? 'fa fa-angle-up' : 'fa fa-angle-down'} />
+            <CurrentPersonaLabelledAvatarContainer />
           </div>
 
-          <SidePopup className="popup-bottom" open={this.state.activePopup === 'personas'} >
-            <NotSelectedPersonaListContainer />
-          </SidePopup>
 
-          <SidePopup open={this.state.activePopup === 'steps'} >
+
+
+          <PopupContainer className="popup-cover" popupId="personas" >
+            <NotSelectedPersonaListContainer />
+          </PopupContainer>
+
+          <PopupContainer popupId="steps" closeOnClick={false}>
             <div className="side-popup-title">Steps</div>
-            <PersonaStepsListContainer />
-          </SidePopup>
+
+            <div className="small-pseudo-checkbox"
+                 onClick={()=>{ this.setState({filterStepsByPersona: !this.state.filterStepsByPersona }); }}
+              >
+              Filter by persona
+              <i className={this.state.filterStepsByPersona ? 'fa fa-check-square-o' : 'fa fa-square-o'}/>
+            </div>
+            {this.state.filterStepsByPersona ? <PersonaStepsListContainer /> : <AllStepsListContainer />}
+          </PopupContainer>
         </header>
 
         <div className="step-content">
@@ -84,12 +92,12 @@ class ControlWidget extends Component {
 
   togglePanel(ev) {
     let panelId = ev.currentTarget.getAttribute('data-id');
-    this.setState({ activePopup: this.state.activePopup === panelId ? '' : panelId });
+    this.props.openPopup(this.props.activePopup === panelId ? '' : panelId );
   }
 
   getToolBtnClassName(panelId) {
     let className = 'tool-btn';
-    if (panelId === this.state.activePopup) {
+    if (panelId === this.props.activePopup) {
       className += ' active';
     }
     return className;
@@ -98,12 +106,12 @@ class ControlWidget extends Component {
 
   onClickMinimize(ev) {
     this.props.onClickMinimize(ev);
-    this.setState({ activePopup: '' });
+    this.props.openPopup('');
   }
 
   onClickDetach(ev) {
-    this.props.setDisplayMode(DisplayModeEnum.DETACHED_PAGE)
-    this.setState({ activePopup: '' });
+    this.props.setDisplayMode(DisplayModeEnum.DETACHED_PAGE);
+    this.props.openPopup('');
   }
 }
 

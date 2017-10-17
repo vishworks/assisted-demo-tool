@@ -2,6 +2,7 @@ html, body, #root, .App {
   height: 100%;
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 
 .App {
@@ -14,9 +15,12 @@ html, body, #root, .App {
   transition: right 1s;
 }
 
-.App[data-displayMode="CONTROL_WIDGET"] .ControlWidget {
-  min-width: 300px;
-  width: 300px;
-  overflow: visible;
-  transition: width 500ms, min-width 500ms;
+.App .ViewPort {
+  transition: min-width 500ms;
+  min-width: 100%;
+
+}
+.App[data-displayMode="CONTROL_WIDGET"] .ViewPort {
+  transition: min-width 500ms;
+  min-width: calc(100% - 300px);
 }

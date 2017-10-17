@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
+import { isFunction } from 'lodash'
 
-import { getCurrentPersona, getVisibleNotSelectedPersonas } from '../selectors'
+import { getCurrentPersona, getVisiblePersonas } from '../selectors'
 
 import { selectPersona } from '../actions'
 import PersonaList from '../components/PersonaList.js'
@@ -10,15 +11,16 @@ import PersonaList from '../components/PersonaList.js'
 
 const mapStateToProps = state => {
   return {
-    personas: getVisibleNotSelectedPersonas(state),
+    personas: getVisiblePersonas(state),
     currentPersona: getCurrentPersona(state)
   }
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     selectPersona: (personaId) => {
       dispatch(selectPersona(personaId));
+      isFunction(ownProps.onClickPersona) && ownProps.onClickPersona(personaId);
     }
   }
 };

@@ -1,0 +1,17 @@
+.CustomCheckBox {
+  display: inline-block;
+  position: relative;
+  border: 2px solid #5F748F;
+  border-radius: 1px;
+  min-width: 15px;
+  min-height: 15px;
+  max-width: 15px;
+  max-height: 15px;
+  color: #00B9F7;
+}
+
+.CustomCheckBox > .tick {
+  position: absolute;
+  bottom: -3px;
+  font-size: 20px;
+}

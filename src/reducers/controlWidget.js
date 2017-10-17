@@ -3,7 +3,7 @@ import { TYPE } from '../actions'
 import DisplayModeEnum from '../enums/DisplayMode.js'
 
 const initialState = {
-  displayMode: DisplayModeEnum.CONTROL_WIDGET_MINI
+  displayMode: DisplayModeEnum.CONTROL_WIDGET
 };
 
 const reducer = (state = initialState, action = {}) => {

@@ -6,7 +6,7 @@ import PersonaStepsListContainer from '../../containers/PersonaStepsListContaine
 import StepsControlButtonsContainer from '../../containers/StepsControlButtonsContainer.js'
 import StepContentContainer from '../../containers/StepContentContainer.js'
 import StepLabelContainer from '../../containers/StepLabelContainer.js'
-import NotSelectedPersonaListContainer from '../../containers/NotSelectedPersonaListContainer.js'
+import NotSelectedPersonaListContainer from '../../containers/PersonaListContainer.js'
 
 
 

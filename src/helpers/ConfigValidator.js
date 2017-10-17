@@ -57,7 +57,7 @@ let schema = {
                 "personaId": {
                   "type": "string"
                 },
-                "name": {
+                "name": { // FIXME refactor name -> title
                   "type": "string"
                 },
                 "bullets": {

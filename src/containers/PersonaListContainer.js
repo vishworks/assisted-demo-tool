@@ -25,9 +25,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 };
 
-const NotSelectedPersonaListContainer = connect(
+const PersonaListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(PersonaList);
 
-export default NotSelectedPersonaListContainer
+export default PersonaListContainer

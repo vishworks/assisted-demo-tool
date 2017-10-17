@@ -10,7 +10,9 @@ export const TYPE = {
   GOTO_STEP: 'GOTO_STEP',
   UPDATE_STATE_FROM_HASH: 'UPDATE_STATE_FROM_HASH',
   POPUP_OPEN: 'POPUP_OPEN',
-  STEP_CONTENT_SHOW_BULLETS: 'STEP_CONTENT_SHOW_BULLETS'
+  STEP_CONTENT_SHOW_BULLETS: 'STEP_CONTENT_SHOW_BULLETS',
+  DEMO_EXCLUDE: 'DEMO_EXCLUDE',
+  DEMO_INCLUDE: 'DEMO_INCLUDE'
 };
 
 
@@ -119,6 +121,27 @@ export const showBullets = (show) => {
     type: TYPE.STEP_CONTENT_SHOW_BULLETS,
     payload: {
       show: show
+    }
+  };
+};
+
+
+export const excludeDemo = (demoId, demoIndex) => {
+  return {
+    type: TYPE.DEMO_EXCLUDE,
+    payload: {
+      demoId: demoId,
+      demoIndex: demoIndex
+    }
+  };
+};
+
+export const includeDemo = (demoId, demoIndex) => {
+  return {
+    type: TYPE.DEMO_INCLUDE,
+    payload: {
+      demoId: demoId,
+      demoIndex: demoIndex
     }
   };
 };

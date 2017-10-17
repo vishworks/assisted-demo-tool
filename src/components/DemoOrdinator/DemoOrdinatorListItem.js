@@ -13,7 +13,10 @@ class DemoOrdinatorListItem extends Component {
 
 
     return <div className="DemoOrdinatorListItem">
-      <CustomCheckBox />
+      <CustomCheckBox
+        checked={this.props.demoIncluded}
+        onClick={this.props.onClickCheckbox}
+        />
       <div className="demo-name">{this.props.demoName}</div>
       <SortButton />
     </div>;

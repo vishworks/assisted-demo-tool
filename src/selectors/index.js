@@ -1,6 +1,6 @@
 
 import { createSelector } from 'reselect'
-import { find, filter, map, get, uniq, intersection } from 'lodash'
+import { find, filter, map, get, uniq, intersection, includes } from 'lodash'
 
 
 function addIndexToArray(array) {
@@ -21,6 +21,8 @@ export const getActivePopup = state => state.appReducer.visual.activePopup;
 export const getDisplayBullets = state => state.appReducer.visual.displayBullets;
 
 export const getConfigErrorMessage = state => state.appReducer.error.message;
+
+export const getDemoOrder = state => state.appReducer.demoOrder;
 
 
 export const getPersonas = createSelector(
@@ -151,6 +153,16 @@ export const getCurrentPersonaDescription = createSelector(
   [getCurrentPersona],
   (currentPersona) => {
     return currentPersona.description;
+  }
+);
+
+export const getDemoOrdinatorList = createSelector(
+  [getDemos, getDemoOrder],
+  (demos, demoOrder) => {
+    return map(demos, (demo) => {
+      demo.included = includes(demoOrder, demo.id);
+      return demo;
+    });
   }
 );
 

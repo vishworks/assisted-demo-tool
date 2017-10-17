@@ -1,9 +1,9 @@
 
-import { merge, find, isNumber, isNaN } from 'lodash'
+import { merge, assign, find, isNumber, isNaN, map } from 'lodash'
 
 import { TYPE } from '../actions'
 
-import { forEach, get } from 'lodash'
+import { forEach, get, without, clone } from 'lodash'
 
 import validate from '../helpers/ConfigValidator.js'
 import parseHash from '../helpers/HashParser.js'
@@ -23,7 +23,8 @@ const initialState = {
   visual: {
     activePopup: '',
     displayBullets: false
-  }
+  },
+  demoOrder: []
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -46,6 +47,7 @@ const reducer = (state = initialState, action = {}) => {
 
       let newState = {
           config: action.payload.config,
+          demoOrder: map(action.payload.config.demos, 'id')
         };
       return merge({}, state, newState, hashState);
 
@@ -87,6 +89,15 @@ const reducer = (state = initialState, action = {}) => {
 
     case TYPE.STEP_CONTENT_SHOW_BULLETS:
       return merge({}, state, { visual: { displayBullets: action.payload.show } });
+
+    case TYPE.DEMO_EXCLUDE:
+      let newDemoOrder = without(state.demoOrder, action.payload.demoId);
+      return assign({}, state, { demoOrder: newDemoOrder });
+
+    case TYPE.DEMO_INCLUDE:
+      let newDemoOrder2 = clone(state.demoOrder);
+      newDemoOrder2.splice(action.payload.demoIndex, 0, action.payload.demoId);
+      return assign({}, state, { demoOrder: newDemoOrder2 });
 
     default:
       return state

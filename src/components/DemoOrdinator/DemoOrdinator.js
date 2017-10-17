@@ -9,10 +9,21 @@ import './DemoOrdinator.css'
 class DemoOrdinator extends Component {
 
 
+  constructor(props) {
+    super(props);
+    this.onClickCheckbox = this.onClickCheckbox.bind(this);
+  }
+
   render() {
 
-    let list = this.props.demos.map((demo) => {
-      return <DemoOrdinatorListItem demoName={demo.name} />
+    let list = this.props.demos.map((demo, i) => {
+
+      return <DemoOrdinatorListItem key={demo.id}
+                                    demoName={demo.name}
+                                    demoIncluded={demo.included}
+                                    onClickCheckbox={this.onClickCheckbox(demo.id, i)}
+
+        />;
 
     });
 
@@ -21,6 +32,16 @@ class DemoOrdinator extends Component {
         { list }
       </div>
     );
+  }
+
+  onClickCheckbox(demoId, demoIndex) {
+    return (ev, checked) => {
+      if (checked) {
+        this.props.includeDemo(demoId, demoIndex);
+      } else {
+        this.props.excludeDemo(demoId, demoIndex);
+      }
+    };
   }
 
 }

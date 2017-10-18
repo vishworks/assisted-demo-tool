@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { getActivePopup } from '../selectors'
-import { setDisplayMode, openPopup } from '../actions'
+import { setDisplayMode, openPopup, closeAllPopups } from '../actions'
 import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlWidget from '../components/ControlWidget/ControlWidget.js'
 
@@ -23,6 +23,9 @@ const mapDispatchToProps = dispatch => {
     },
     openPopup: (popupId) => {
       dispatch(openPopup(popupId));
+    },
+    closeAllPopups: () => {
+      dispatch(closeAllPopups());
     }
   }
 };

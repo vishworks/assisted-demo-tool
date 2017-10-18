@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { isFunction } from 'lodash';
 
 import './SidePopup.css'
 
@@ -15,8 +15,10 @@ class SidePopup extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.activePopup === this.props.popupId) {
       document.addEventListener('click', this.globalClickHandler);
+      isFunction(this.props.onOpen) && this.props.onOpen();
     } else {
       document.removeEventListener('click', this.globalClickHandler);
+      isFunction(this.props.onClose) && this.props.onClose();
     }
   }
 
@@ -35,7 +37,7 @@ class SidePopup extends Component {
   }
 
   globalClickHandler() {
-    this.props.openPopup('');
+    this.props.closeAllPopups();
   }
 
   onClick(ev) {

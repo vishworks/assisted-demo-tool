@@ -1,9 +1,7 @@
 
-import { merge, assign, find, isNumber, isNaN, map } from 'lodash'
+import { merge, find, isNumber, isNaN, map, forEach, get, cloneDeep } from 'lodash'
 
 import { TYPE } from '../actions'
-
-import { forEach, get, without, clone } from 'lodash'
 
 import validate from '../helpers/ConfigValidator.js'
 import parseHash from '../helpers/HashParser.js'
@@ -23,8 +21,7 @@ const initialState = {
   visual: {
     activePopup: '',
     displayBullets: false
-  },
-  demoOrder: []
+  }
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -46,9 +43,12 @@ const reducer = (state = initialState, action = {}) => {
       let hashState = updateStateFromHash(action.payload.config, window.location.hash);
 
       let newState = {
-          config: action.payload.config,
-          demoOrder: map(action.payload.config.demos, 'id')
+          config: action.payload.config
         };
+      newState.config.demos = map(newState.config.demos, (demo) => {
+        demo.included = true;
+        return demo;
+      });
       return merge({}, state, newState, hashState);
 
     case TYPE.UPDATE_STATE_FROM_HASH:
@@ -87,17 +87,40 @@ const reducer = (state = initialState, action = {}) => {
     case TYPE.POPUP_OPEN:
       return merge({}, state, { visual: { activePopup: action.payload.popupId } });
 
+    case TYPE.POPUP_CLOSE_ALL:
+      return merge({}, state, { visual: { activePopup: '' } });
+
     case TYPE.STEP_CONTENT_SHOW_BULLETS:
       return merge({}, state, { visual: { displayBullets: action.payload.show } });
 
     case TYPE.DEMO_EXCLUDE:
-      let newDemoOrder = without(state.demoOrder, action.payload.demoId);
-      return assign({}, state, { demoOrder: newDemoOrder });
+      let newDemos = map(state.config.demos, (demo) => {
+        if (action.payload.demoId === demo.id) {
+          demo.included = false;
+        }
+        return demo;
+      });
+      return merge({}, state, { config: { demos: newDemos } });
 
     case TYPE.DEMO_INCLUDE:
-      let newDemoOrder2 = clone(state.demoOrder);
-      newDemoOrder2.splice(action.payload.demoIndex, 0, action.payload.demoId);
-      return assign({}, state, { demoOrder: newDemoOrder2 });
+      let newDemos2 = map(state.config.demos, (demo) => {
+        if (action.payload.demoId === demo.id) {
+          demo.included = true;
+        }
+        return demo;
+      });
+      return merge({}, state, { config: { demos: newDemos2 } });
+
+    case TYPE.DEMO_MOVE_TO_INDEX:
+      let { newIndex, oldIndex } = action.payload;
+      if (newIndex < 0 || newIndex >= state.config.demos.length) {
+        return state;
+      }
+      let newDemos3 = cloneDeep(state.config.demos);
+      let park = newDemos3[newIndex];
+      newDemos3[newIndex] = newDemos3[oldIndex];
+      newDemos3[oldIndex] = park;
+      return merge({}, state, { config: { demos: newDemos3 } });
 
     default:
       return state

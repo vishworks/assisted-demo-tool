@@ -22,7 +22,6 @@ export const getDisplayBullets = state => state.appReducer.visual.displayBullets
 
 export const getConfigErrorMessage = state => state.appReducer.error.message;
 
-export const getDemoOrder = state => state.appReducer.demoOrder;
 
 
 export const getPersonas = createSelector(
@@ -156,15 +155,6 @@ export const getCurrentPersonaDescription = createSelector(
   }
 );
 
-export const getDemoOrdinatorList = createSelector(
-  [getDemos, getDemoOrder],
-  (demos, demoOrder) => {
-    return map(demos, (demo) => {
-      demo.included = includes(demoOrder, demo.id);
-      return demo;
-    });
-  }
-);
 
 //--------------------------------------------------------------------------------------------------------------//
 //----------------------------------- Control widget visual status----------------------------------------------//

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
-import { getDemoOrdinatorList } from '../selectors'
-import { excludeDemo, includeDemo } from '../actions'
+import { getDemos } from '../selectors'
+import { excludeDemo, includeDemo, moveDemo } from '../actions'
 import DisplayModeEnum from '../enums/DisplayMode.js'
 import DemoOrdinator from '../components/DemoOrdinator/DemoOrdinator.js'
 
@@ -9,7 +9,7 @@ import DemoOrdinator from '../components/DemoOrdinator/DemoOrdinator.js'
 
 const mapStateToProps = state => {
   return {
-    demos: getDemoOrdinatorList(state)
+    demos: getDemos(state)
   }
 };
 
@@ -20,6 +20,9 @@ const mapDispatchToProps = dispatch => {
     },
     includeDemo: (demoId, index) => {
       dispatch(includeDemo(demoId, index));
+    },
+    moveDemo: (demoId, oldIndex, newIndex) => {
+      dispatch(moveDemo(demoId, oldIndex, newIndex));
     }
   }
 };

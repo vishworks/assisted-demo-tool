@@ -70,7 +70,11 @@ class ControlWidget extends Component {
 
 
 
-          <PopupContainer popupId="settings" closeOnClick={false}>
+          <PopupContainer popupId="settings"
+                          closeOnClick={false}
+                          onOpen={() => {console.log('open')}}
+                          onClose={() => {console.log('close')}}
+            >
             <div className="side-popup-title">Settings</div>
             <DemoOrdinatorContainer />
           </PopupContainer>
@@ -102,7 +106,12 @@ class ControlWidget extends Component {
 
   togglePanel(ev) {
     let panelId = ev.currentTarget.getAttribute('data-id');
-    this.props.openPopup(this.props.activePopup === panelId ? '' : panelId );
+    if (this.props.activePopup === panelId) {
+      this.props.closeAllPopups();
+    } else {
+      this.props.openPopup(panelId);
+    }
+
   }
 
   getToolBtnClassName(panelId) {
@@ -116,12 +125,12 @@ class ControlWidget extends Component {
 
   onClickMinimize(ev) {
     this.props.onClickMinimize(ev);
-    this.props.openPopup('');
+    this.props.closeAllPopups();
   }
 
   onClickDetach(ev) {
     this.props.setDisplayMode(DisplayModeEnum.DETACHED_PAGE);
-    this.props.openPopup('');
+    this.props.closeAllPopups();
   }
 }
 

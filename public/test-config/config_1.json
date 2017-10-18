@@ -131,6 +131,25 @@
           "content": "some content marketing"
         }
       ]
+    },
+
+    {
+      "id": "testDemo3",
+      "name": "Demo 3",
+      "steps": [
+        {
+          "personaId": "itAdmin",
+          "name": "It Admin step",
+          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
+          "content": "some content itAdmin"
+        },
+        {
+          "personaId": "marketing",
+          "name": "Marketing step",
+          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
+          "content": "some content marketing"
+        }
+      ]
     }
   ]
 }

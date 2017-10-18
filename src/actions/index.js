@@ -10,9 +10,11 @@ export const TYPE = {
   GOTO_STEP: 'GOTO_STEP',
   UPDATE_STATE_FROM_HASH: 'UPDATE_STATE_FROM_HASH',
   POPUP_OPEN: 'POPUP_OPEN',
+  POPUP_CLOSE_ALL: 'POPUP_CLOSE_ALL',
   STEP_CONTENT_SHOW_BULLETS: 'STEP_CONTENT_SHOW_BULLETS',
   DEMO_EXCLUDE: 'DEMO_EXCLUDE',
-  DEMO_INCLUDE: 'DEMO_INCLUDE'
+  DEMO_INCLUDE: 'DEMO_INCLUDE',
+  DEMO_MOVE_TO_INDEX: 'DEMO_MOVE_TO_INDEX'
 };
 
 
@@ -45,7 +47,7 @@ export function asyncLoadConfig(configUrl) {
           dispatch(setConfigError('Failed to fetch configuration at \'' + configUrl + '\''));
         }
       );
-    }, 1000); // FIXME remove throttling
+    }, 500); // FIXME remove throttling
   };
 }
 
@@ -116,6 +118,12 @@ export const openPopup = (popupId) => {
   };
 };
 
+export const closeAllPopups = () => {
+  return {
+    type: TYPE.POPUP_CLOSE_ALL
+  };
+};
+
 export const showBullets = (show) => {
   return {
     type: TYPE.STEP_CONTENT_SHOW_BULLETS,
@@ -142,6 +150,17 @@ export const includeDemo = (demoId, demoIndex) => {
     payload: {
       demoId: demoId,
       demoIndex: demoIndex
+    }
+  };
+};
+
+export const moveDemo = (demoId, oldIndex, newIndex) => {
+  return {
+    type: TYPE.DEMO_MOVE_TO_INDEX,
+    payload: {
+      demoId: demoId,
+      oldIndex: oldIndex,
+      newIndex: newIndex
     }
   };
 };

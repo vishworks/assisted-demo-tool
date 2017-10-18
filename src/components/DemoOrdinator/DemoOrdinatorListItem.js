@@ -18,7 +18,12 @@ class DemoOrdinatorListItem extends Component {
         onClick={this.props.onClickCheckbox}
         />
       <div className="demo-name">{this.props.demoName}</div>
-      <SortButton />
+      <SortButton
+        onClickUp={this.props.onClickMoveUp}
+        onClickDown={this.props.onClickMoveDown}
+        disableUp={this.props.isFirstItem}
+        disableDown={this.props.isLastItem}
+        />
     </div>;
 
 

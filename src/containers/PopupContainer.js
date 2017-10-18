@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 
 import { getActivePopup } from '../selectors'
 
-import { openPopup } from '../actions'
+import { closeAllPopups } from '../actions'
 
 import SidePopup from '../components/SidePopup.js'
 
@@ -13,14 +13,16 @@ const mapStateToProps = (state, ownProps) => {
     activePopup: getActivePopup(state),
     popupId: ownProps.popupId,
     className: ownProps.className,
-    closeOnClick: ownProps.closeOnClick
+    closeOnClick: ownProps.closeOnClick,
+    onOpen: ownProps.onOpen,
+    onClose: ownProps.onClose
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    openPopup: (popupId) => {
-      dispatch(openPopup(popupId));
+    closeAllPopups: () => {
+      dispatch(closeAllPopups());
     }
   }
 };

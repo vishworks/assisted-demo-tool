@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { map } from 'lodash';
 
 import DemoOrdinatorListItem from './DemoOrdinatorListItem.js'
 
@@ -12,17 +12,21 @@ class DemoOrdinator extends Component {
   constructor(props) {
     super(props);
     this.onClickCheckbox = this.onClickCheckbox.bind(this);
+    this.moveDemo = this.moveDemo.bind(this);
   }
 
   render() {
 
-    let list = this.props.demos.map((demo, i) => {
+    let list = map(this.props.demos, (demo, i) => {
 
       return <DemoOrdinatorListItem key={demo.id}
                                     demoName={demo.name}
                                     demoIncluded={demo.included}
                                     onClickCheckbox={this.onClickCheckbox(demo.id, i)}
-
+                                    onClickMoveUp={this.moveDemo(demo.id, i, i-1)}
+                                    onClickMoveDown={this.moveDemo(demo.id, i, i+1)}
+                                    isFirstItem={i===0}
+                                    isLastItem={i+1===this.props.demos.length}
         />;
 
     });
@@ -41,6 +45,12 @@ class DemoOrdinator extends Component {
       } else {
         this.props.excludeDemo(demoId, demoIndex);
       }
+    };
+  }
+
+  moveDemo(demoId, oldIndex, newIndex) {
+    return (ev) => {
+      this.props.moveDemo(demoId, oldIndex, newIndex);
     };
   }
 

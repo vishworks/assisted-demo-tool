@@ -8,8 +8,13 @@
 .SortButton .fa {
   font-size: 20px;
   color: #5F748F;
+  cursor: pointer;
 }
 
 .SortButton .fa:hover {
   color: #00B9F7;
+}
+
+.SortButton .fa.disabled {
+  visibility: hidden;
 }

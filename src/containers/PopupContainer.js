@@ -4,7 +4,7 @@ import { getActivePopup } from '../selectors'
 
 import { closeAllPopups } from '../actions'
 
-import SidePopup from '../components/SidePopup.js'
+import Popup from '../components/Popup.js'
 
 
 
@@ -30,6 +30,6 @@ const mapDispatchToProps = (dispatch) => {
 const PopupContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SidePopup);
+)(Popup);
 
 export default PopupContainer

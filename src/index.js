@@ -31,3 +31,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'));
 registerServiceWorker();
+
+
+// TODO refactor CSS: do not use component class names in other files (e.g. .Popup in ControlWidget.css). Inject custom classes to control children styles
+// TODO switch to SASS

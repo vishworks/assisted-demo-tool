@@ -1,4 +1,4 @@
-.SidePopup {
+.Popup {
   position: absolute;
   top: 0;
   right: 100%;
@@ -12,7 +12,7 @@
   min-height: 100%;
 }
 
-.SidePopup.popup-cover {
+.Popup.popup-cover {
   display: block;
   right: 0;
   width: 100%;

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { isFunction } from 'lodash';
 
-import './SidePopup.css'
+import './Popup.css'
 
 
-class SidePopup extends Component {
+class Popup extends Component {
 
   constructor(props) {
     super(props);
@@ -13,6 +13,7 @@ class SidePopup extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    // on open and on close behaviors
     if (nextProps.activePopup === this.props.popupId) {
       document.addEventListener('click', this.globalClickHandler);
       isFunction(this.props.onOpen) && this.props.onOpen();
@@ -24,7 +25,7 @@ class SidePopup extends Component {
 
   render() {
 
-    let className = ['SidePopup'];
+    let className = ['Popup'];
     if (this.props.className) {
       className.push(this.props.className);
     }
@@ -49,8 +50,8 @@ class SidePopup extends Component {
 
 }
 
-SidePopup.defaultProps = {
+Popup.defaultProps = {
   closeOnClick: true
 };
 
-export default SidePopup;
+export default Popup;

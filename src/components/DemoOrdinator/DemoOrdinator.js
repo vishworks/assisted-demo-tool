@@ -13,6 +13,7 @@ class DemoOrdinator extends Component {
     super(props);
     this.onClickCheckbox = this.onClickCheckbox.bind(this);
     this.moveDemo = this.moveDemo.bind(this);
+    this.onClickApply = this.onClickApply.bind(this);
   }
 
   render() {
@@ -34,6 +35,13 @@ class DemoOrdinator extends Component {
     return (
       <div className="DemoOrdinator">
         { list }
+        <div className="btn-section">
+          <button className="big-blue-btn"
+                  onClick={this.onClickApply}
+            >
+            Apply
+          </button>
+        </div>
       </div>
     );
   }
@@ -52,6 +60,11 @@ class DemoOrdinator extends Component {
     return (ev) => {
       this.props.moveDemo(demoId, oldIndex, newIndex);
     };
+  }
+
+  onClickApply() {
+    this.props.applyDemoSettings();
+    this.props.closeAllPopups();
   }
 
 }

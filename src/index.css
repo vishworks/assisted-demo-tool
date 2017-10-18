@@ -25,3 +25,38 @@ button::-moz-focus-inner {
 button:focus {
   outline: 0;
 }
+
+
+
+
+button.big-blue-btn {
+  border: none;
+  height: 40px;
+  width: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: #00659C;
+  color: #FFFFFF;
+  cursor: pointer;
+
+  font-size: 16px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+
+button.big-blue-btn:hover {
+  background-color: #00B9F7;
+}
+
+button.big-blue-btn:focus {
+  outline: 0;
+}
+
+button.big-blue-btn:disabled {
+  background: #375667;
+  color: #999999;
+  cursor: not-allowed;
+}

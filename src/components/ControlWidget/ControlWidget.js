@@ -72,8 +72,7 @@ class ControlWidget extends Component {
 
           <PopupContainer popupId="settings"
                           closeOnClick={false}
-                          onOpen={() => {console.log('open')}}
-                          onClose={() => {console.log('close')}}
+                          onOpen={this.props.startDemoSettings}
             >
             <div className="side-popup-title">Settings</div>
             <DemoOrdinatorContainer />

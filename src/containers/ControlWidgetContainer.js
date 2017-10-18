@@ -5,7 +5,7 @@ import { setDisplayMode, openPopup, closeAllPopups } from '../actions'
 import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlWidget from '../components/ControlWidget/ControlWidget.js'
 
-
+import { startDemoSettings } from '../state/demos/actions.js'
 
 const mapStateToProps = state => {
   return {
@@ -26,6 +26,9 @@ const mapDispatchToProps = dispatch => {
     },
     closeAllPopups: () => {
       dispatch(closeAllPopups());
+    },
+    startDemoSettings: () => {
+      dispatch(startDemoSettings());
     }
   }
 };

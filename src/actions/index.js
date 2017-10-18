@@ -14,7 +14,10 @@ export const TYPE = {
   STEP_CONTENT_SHOW_BULLETS: 'STEP_CONTENT_SHOW_BULLETS',
   DEMO_EXCLUDE: 'DEMO_EXCLUDE',
   DEMO_INCLUDE: 'DEMO_INCLUDE',
-  DEMO_MOVE_TO_INDEX: 'DEMO_MOVE_TO_INDEX'
+  DEMO_MOVE_TO_INDEX: 'DEMO_MOVE_TO_INDEX',
+  SETTINGS_START: 'SETTINGS_START',
+  SETTINGS_APPLY: 'SETTINGS_APPLY',
+  SETTINGS_CANCEL: 'SETTINGS_CANCEL'
 };
 
 
@@ -162,5 +165,23 @@ export const moveDemo = (demoId, oldIndex, newIndex) => {
       oldIndex: oldIndex,
       newIndex: newIndex
     }
+  };
+};
+
+export const startSettings = () => {
+  return {
+    type: TYPE.SETTINGS_START
+  };
+};
+
+export const applySettings = () => {
+  return {
+    type: TYPE.SETTINGS_APPLY
+  };
+};
+
+export const cancelSettings = () => {
+  return {
+    type: TYPE.SETTINGS_CANCEL
   };
 };

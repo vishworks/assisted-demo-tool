@@ -1,21 +1,14 @@
 
+
 import { createSelector } from 'reselect'
-import { find, filter, map, get, uniq, intersection, includes } from 'lodash'
+import { find, filter, map, get, uniq, intersection, includes, memoize, overArgs, forEach } from 'lodash'
 
-
-function addIndexToArray(array) {
-  return map(array, (el, index) => {
-    el.index = index;
-    return el;
-  });
-}
 
 
 
 export const getDemos = state => state.demos;
 export const getCurrentDemoId = state => state.currentDemoId;
 export const getTempDemos = state => state.tempDemos;
-
 
 
 export const getCurrentDemo = createSelector(
@@ -38,4 +31,13 @@ export const getCurrentDemoStepsCount = createSelector(
     return allSteps.length;
   }
 );
+
+
+
+function addIndexToArray(array) {
+  return map(array, (el, index) => {
+    el.index = index;
+    return el;
+  });
+}
 

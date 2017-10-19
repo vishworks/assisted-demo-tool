@@ -1,42 +1,32 @@
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { mapValues } from 'lodash'
 
-// import { getDemos } from '../selectors'
-// import { excludeDemo, includeDemo, moveDemo } from '../actions'
-import DisplayModeEnum from '../enums/DisplayMode.js'
 import DemoOrdinator from '../components/DemoOrdinator/DemoOrdinator.js'
 
-
-import { getTempDemos } from '../state/demos/selectors.js'
+import Demos from '../state/demos/localSelectors.js'
 
 import { closeAllPopups } from '../actions'
 import { excludeDemo, includeDemo, moveDemo, applyDemoSettings } from '../state/demos/actions.js'
 
-const mapStateToProps = state => {
-  return {
-    demos: getTempDemos(state.demos)
-  }
+
+
+const selectorMap = {
+  demos: Demos.getTempDemos
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    closeAllPopups: (demoId, index) => {
-      dispatch(closeAllPopups(demoId, index));
-    },
-    excludeDemo: (demoId, index) => {
-      dispatch(excludeDemo(demoId, index));
-    },
-    includeDemo: (demoId, index) => {
-      dispatch(includeDemo(demoId, index));
-    },
-    moveDemo: (demoId, oldIndex, newIndex) => {
-      dispatch(moveDemo(demoId, oldIndex, newIndex));
-    },
-    applyDemoSettings: () => {
-      dispatch(applyDemoSettings());
-    }
-  }
+
+const actionsMap = {
+  closeAllPopups,
+  excludeDemo,
+  includeDemo,
+  moveDemo,
+  applyDemoSettings
 };
 
+
+const mapStateToProps = state => mapValues(selectorMap, func => func(state) );
+const mapDispatchToProps = dispatch => bindActionCreators(actionsMap, dispatch);
 const DemoOrdinatorContainer = connect(
   mapStateToProps,
   mapDispatchToProps

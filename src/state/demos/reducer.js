@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+
 import { merge, cloneDeep, map } from 'lodash'
 
 import { TYPE as APP_TYPE } from '../../actions'
@@ -6,12 +6,6 @@ import { TYPE as APP_TYPE } from '../../actions'
 import { default as TYPE } from './types.js'
 
 
-
-const initialState = {
-  demos: [],
-  tempDemos: [],
-  currentDemoId: null
-};
 
 
 const demosReducer = (state = [], action = {}) => {

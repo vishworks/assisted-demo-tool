@@ -4,7 +4,7 @@ import { mapValues } from 'lodash'
 
 import DemoOrdinator from '../components/DemoOrdinator/DemoOrdinator.js'
 
-import Demos from '../state/demos/localSelectors.js'
+import { getTempDemos } from '../state/demos/localSelectors.js'
 
 import { closeAllPopups } from '../actions'
 import { excludeDemo, includeDemo, moveDemo, applyDemoSettings } from '../state/demos/actions.js'
@@ -12,7 +12,7 @@ import { excludeDemo, includeDemo, moveDemo, applyDemoSettings } from '../state/
 
 
 const selectorMap = {
-  demos: Demos.getTempDemos
+  demos: getTempDemos
 };
 
 

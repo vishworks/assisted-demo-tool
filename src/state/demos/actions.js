@@ -40,3 +40,10 @@ export const moveDemo = (demoId, oldIndex, newIndex) => ({
     newIndex
   }
 });
+
+export const selectDemo = (demoId) => ({
+  type: TYPES.DEMOS_SETTINGS_SELECT_DEMO,
+  payload: {
+    demoId
+  }
+});

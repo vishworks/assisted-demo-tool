@@ -6,6 +6,7 @@ import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlWidget from '../components/ControlWidget/ControlWidget.js'
 
 import { startDemoSettings } from '../state/demos/actions.js'
+import { getDemos } from '../state/demos/selectors.js'
 
 const mapStateToProps = state => {
   return {

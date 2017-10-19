@@ -18,7 +18,7 @@ class DemoOrdinator extends Component {
 
   render() {
 
-    let list = map(this.props.demos, (demo, i) => {
+    let list = this.props.demos.map((demo, i) => {
 
       return <DemoOrdinatorListItem key={demo.id}
                                     demoName={demo.name}
@@ -63,7 +63,7 @@ class DemoOrdinator extends Component {
   }
 
   onClickApply() {
-    this.props.applyDemoSettings();
+    this.props.applyDemoSettings(this.props.demos);
     this.props.closeAllPopups();
   }
 

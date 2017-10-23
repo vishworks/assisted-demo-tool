@@ -8,7 +8,6 @@ export const TYPE = {
   NEXT_STEP: 'NEXT_STEP',
   PREV_STEP: 'PREV_STEP',
   GOTO_STEP: 'GOTO_STEP',
-  UPDATE_STATE_FROM_HASH: 'UPDATE_STATE_FROM_HASH',
   POPUP_OPEN: 'POPUP_OPEN',
   POPUP_CLOSE_ALL: 'POPUP_CLOSE_ALL',
   STEP_CONTENT_SHOW_BULLETS: 'STEP_CONTENT_SHOW_BULLETS',
@@ -99,15 +98,6 @@ export const setConfigError = (errorMessage) => {
     type: TYPE.SET_CONFIG_ERROR,
     payload: {
       errorMessage: errorMessage
-    }
-  };
-};
-
-export const updateStateFromHash = (hash) => {
-  return {
-    type: TYPE.UPDATE_STATE_FROM_HASH,
-    payload: {
-      hash: hash
     }
   };
 };

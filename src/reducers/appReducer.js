@@ -1,10 +1,11 @@
 
-import { merge, find, isNumber, isNaN, map, forEach, get, cloneDeep } from 'lodash'
+import { merge, find, isNumber, isNaN, map, forEach, get, cloneDeep, omit } from 'lodash'
 
 import { TYPE } from '../actions'
+import TYPE_DEMOS from '../state/demos/types.js'
 
 import validate from '../helpers/ConfigValidator.js'
-import parseHash from '../helpers/HashParser.js'
+import { parseHash } from '../helpers/HashUtils.js'
 
 
 const initialState = {
@@ -61,28 +62,31 @@ const reducer = (state = initialState, action = {}) => {
 
 
     case TYPE.SELECT_PERSONA:
-      return updateHashFromState(
-        merge({}, state, { current: { personaId: action.payload.id } })
-      );
+      if (find(action.meta.personas, { id: action.payload.id })) {
+        return merge({}, state, { current: { personaId: action.payload.id } });
+      }
+      return state;
 
     case TYPE.NEXT_STEP:
-      if (state.current.stepIndex === getCurrentDemo(state).steps.length - 1) {
-        return state;
-      }
-      return gotoStep(state, state.current.stepIndex + 1);
+      return gotoStep(
+        state,
+        state.current.stepIndex + 1,
+        action.meta.stepsCount
+      );
 
     case TYPE.PREV_STEP:
-      if (state.current.stepIndex === 0) {
-        return state;
-      }
-      return gotoStep(state, state.current.stepIndex - 1);
+      return gotoStep(
+        state,
+        state.current.stepIndex - 1,
+        action.meta.stepsCount
+      );
 
     case TYPE.GOTO_STEP:
-      let stepIndex = action.payload.stepIndex;
-      if (stepIndex < 0 || stepIndex >= getCurrentDemo(state).steps.length) {
-        return state;
-      }
-      return gotoStep(state, stepIndex);
+      return gotoStep(
+        state,
+        action.payload.stepIndex,
+        action.meta.stepsCount
+      );
 
     case TYPE.POPUP_OPEN:
       return merge({}, state, { visual: { activePopup: action.payload.popupId } });
@@ -122,6 +126,13 @@ const reducer = (state = initialState, action = {}) => {
       newDemos3[oldIndex] = park;
       return merge({}, state, { config: { demos: newDemos3 } });
 
+
+    case TYPE_DEMOS.DEMOS_SETTINGS_SELECT_DEMO:
+      return gotoStep(state, 0);
+
+
+
+
     default:
       return state
   }
@@ -130,21 +141,24 @@ const reducer = (state = initialState, action = {}) => {
 function getCurrentDemo(state) {
   return find(state.config.demos, { id: state.current.demoId });
 }
-function gotoStep(state, stepIndex)  {
+function gotoStep(state, stepIndex, stepsCount)  {
+
+  if (stepIndex < 0 || stepIndex >= stepsCount) {
+    return state;
+  }
+  // FIXME send actions from middleware to do this
   let curDemo = getCurrentDemo(state),
     newStepIndex = stepIndex,
     newStep = curDemo.steps[newStepIndex],
     newPersonaId = newStep.personaId,
     newUrl = newStep.url;
-  return updateHashFromState(
-    merge({}, state, {
-      current: {
-        stepIndex: newStepIndex,
-        personaId: newPersonaId,
-        url: newUrl
-      }
-    })
-  );
+  return merge({}, state, {
+          current: {
+            stepIndex: newStepIndex,
+            personaId: newPersonaId,
+            url: newUrl
+          }
+        });
 }
 
 
@@ -154,7 +168,6 @@ function gotoStep(state, stepIndex)  {
  * @returns {object} the new state
  */
 function updateStateFromHash(config, hash) {
-
   let opts = parseHash(hash),
     hashState = {};
 
@@ -180,31 +193,7 @@ function updateStateFromHash(config, hash) {
     hashState.personaId = selectedDemo.steps[hashState.stepIndex].personaId;
   }
 
-  return updateHashFromState({
-    current: hashState
-  });
-}
-
-/**
- * Updates the URL hash (window.location.hash) based on the state object
- * @param state
- * @returns {object} the input state, unmodified (for chaining)
- */
-function updateHashFromState(state) {
-  let newHash = [
-    'demoId=' + encodeURIComponent(state.current.demoId),
-    'personaId=' + encodeURIComponent(state.current.personaId),
-    'stepNumber=' + encodeURIComponent(state.current.stepIndex+1)
-  ].join('--');
-
-  if (window.history && window.history.pushState) {
-    // don't trigger an hashchange event
-    window.history.pushState(null, null, '#' + newHash);
-  } else {
-    window.location.hash = newHash;
-  }
-
-  return state;
+  return { current: hashState };
 }
 
 export default reducer;

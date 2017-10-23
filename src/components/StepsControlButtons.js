@@ -37,16 +37,16 @@ class StepsControlButtons extends Component {
 
 
   prevStep() {
-    if (this.props.currentStepIndex > 0) {
+  //  if (this.props.currentStepIndex > 0) {
       this.props.prevStep();
-    }
+  //  }
   }
 
 
   nextStep() {
-    if (this.props.currentStepIndex < this.props.stepsCount) {
+   // if (this.props.currentStepIndex < this.props.stepsCount) {
       this.props.nextStep();
-    }
+  //  }
   }
 
 }

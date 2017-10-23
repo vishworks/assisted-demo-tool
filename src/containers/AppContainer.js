@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { asyncLoadConfig, updateStateFromHash, setConfigError } from '../actions'
+import { asyncLoadConfig, setConfigError } from '../actions'
 import { getDisplayMode, getPersonas } from '../selectors'
 import App from '../App.js'
 
@@ -16,9 +16,6 @@ const mapDispatchToProps = dispatch => {
   return {
     loadConfig: (configUrl) => { // FIXME remove
       dispatch(asyncLoadConfig(configUrl));
-    },
-    updateStateFromHash: (urlHash) => {
-      dispatch(updateStateFromHash(urlHash));
     },
     setConfigError: (message) => {
       dispatch(setConfigError(message));

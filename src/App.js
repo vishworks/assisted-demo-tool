@@ -14,13 +14,8 @@ import DisplayModeEnum from './enums/DisplayMode.js'
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.onHashChange = this.onHashChange.bind(this);
-  }
-
   componentDidMount() {
-    window.addEventListener('hashchange', this.onHashChange);
+
     let searchParams = qs.parse(window.location.search);
     if (searchParams.configUrl) {
 
@@ -57,10 +52,6 @@ class App extends Component {
       </div>
     );
 
-  }
-
-  onHashChange() {
-    this.props.updateStateFromHash(window.location.hash);
   }
 }
 

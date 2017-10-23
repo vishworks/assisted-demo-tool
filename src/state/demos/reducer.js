@@ -1,6 +1,7 @@
+import { combineReducers } from 'redux'
+import { merge, cloneDeep, map, get, find } from 'lodash'
 
-import { merge, cloneDeep, map } from 'lodash'
-
+import { parseCurrentHash } from '../../helpers/HashUtils.js'
 import { TYPE as APP_TYPE } from '../../actions'
 
 import { default as TYPE } from './types.js'
@@ -12,11 +13,14 @@ const demosReducer = (state = [], action = {}) => {
   switch (action.type) {
 
     case APP_TYPE.LOAD_CONFIG:
-      let newDemos = action.payload.config.demos.map((demo) => {
+      let newDemos = map(action.payload.config.demos, (demo) => {
         demo.included = true;
         return demo;
       });
-      return merge({}, state, newDemos );
+      return Object.assign([], state, newDemos );
+
+    case TYPE.DEMOS_SETTINGS_APPLY:
+      return cloneDeep(action.meta.tempDemos);
 
     default:
       return state
@@ -32,7 +36,7 @@ const tempDemosReducer = (state = [], action = {}) => {
 
     case TYPE.DEMOS_SETTINGS_INCLUDE_DEMO:
       // tempDemos[demoId].included = true
-      return merge([], state, map(state, (demo) => {
+      return Object.assign([], state, map(state, (demo) => {
           if (demo.id === action.payload.demoId) {
             demo.included = true;
           }
@@ -42,7 +46,7 @@ const tempDemosReducer = (state = [], action = {}) => {
 
     case TYPE.DEMOS_SETTINGS_EXCLUDE_DEMO:
       // tempDemos[demoId].included = false
-      return merge([], state, map(state, (demo) => {
+      return Object.assign([], state, map(state, (demo) => {
           if (demo.id === action.payload.demoId) {
             demo.included = false;
           }
@@ -56,7 +60,13 @@ const tempDemosReducer = (state = [], action = {}) => {
         park = tempDemosClone[action.payload.newIndex];
       tempDemosClone[action.payload.newIndex] = tempDemosClone[action.payload.oldIndex];
       tempDemosClone[action.payload.oldIndex] = park;
-      return merge([], state, tempDemosClone);
+      return Object.assign([], state, tempDemosClone);
+
+    case TYPE.DEMOS_SETTINGS_START:
+      return cloneDeep(action.meta.demos);
+
+    case TYPE.DEMOS_SETTINGS_APPLY:
+      return [];
 
     default:
       return state
@@ -64,29 +74,38 @@ const tempDemosReducer = (state = [], action = {}) => {
 };
 
 // FIXME create demo count selector and apply to ordinator
-// FIXME create a way to not specify state property name for selectors in the specific containers
 
-const reducer = (state = { demos: [], tempDemos: [] }, action = {}) => {
-  state = {
-    demos: demosReducer(state.demos, action),
-    tempDemos: tempDemosReducer(state.tempDemos, action)
-  };
+const currentDemoIdReducer = (state = '', action = {}) => {
+
   switch (action.type) {
+    case APP_TYPE.LOAD_CONFIG: {
+      let demos = action.payload.config.demos,
+        newHash = parseCurrentHash();
+      if (find(demos, { id: newHash.demoId })) {
+        return  newHash.demoId;
+      }
+      return get(demos, '0.id');
+    }
 
-    case TYPE.DEMOS_SETTINGS_APPLY:
-      return merge({}, state, {
-        demos: cloneDeep(state.tempDemos),
-        tempDemos: []
-      });
+    case TYPE.DEMOS_SETTINGS_SELECT_DEMO: {
+      let demos = get(action, 'meta.demos');
+      if (find(demos, { id:  action.payload.demoId })) {
+        return action.payload.demoId;
+      }
+      return get(demos, '0.id');
+    }
 
-    case TYPE.DEMOS_SETTINGS_START:
-      // tempDemos = demos
-      return merge({}, state, { tempDemos: cloneDeep(state.demos)});
 
     default:
       return state
   }
 };
 
+
+const reducer = combineReducers({
+  tempDemos: tempDemosReducer,
+  demos: demosReducer,
+  currentDemoId: currentDemoIdReducer
+});
 
 export default reducer;

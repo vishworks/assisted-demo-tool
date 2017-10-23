@@ -2,7 +2,8 @@ import { connect } from 'react-redux'
 
 import { prevStep, nextStep } from '../actions'
 
-import { getCurrentDemoStepsCount, getCurrentStepIndex } from '../selectors'
+import { getCurrentStepIndex } from '../selectors'
+import { getCurrentDemoStepsCount } from '../state/demos/selectors.js'
 
 
 import StepsControlButtons from '../components/StepsControlButtons.js'

@@ -13,14 +13,15 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 import ControlPageMiddleware from './middlewares/ControlPageMiddleware.js'
-
+import UrlHashMiddleware from './middlewares/UrlHashMiddleware.js'
+import ConsistencyCheckMiddleware from './middlewares/ConsistencyCheckMiddleware.js'
 
 
 let store = createStore(
     rootReducer,
     // preloadedState,
     compose(
-      applyMiddleware(ControlPageMiddleware, thunk)
+      applyMiddleware(ControlPageMiddleware, UrlHashMiddleware, ConsistencyCheckMiddleware, thunk)
        ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );

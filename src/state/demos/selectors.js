@@ -21,14 +21,14 @@ export const getCurrentDemo = createSelector(
 export const getAllSteps = createSelector(
   [getCurrentDemo],
   (currentDemo) => {
-    return addIndexToArray(currentDemo.steps);
+    return currentDemo && addIndexToArray(currentDemo.steps);
   }
 );
 
 export const getCurrentDemoStepsCount = createSelector(
   [getAllSteps],
   (allSteps) => {
-    return allSteps.length;
+    return allSteps && allSteps.length;
   }
 );
 

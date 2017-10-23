@@ -6,7 +6,7 @@ import TYPE_DEMOS from '../state/demos/types.js'
 import { selectDemo } from '../state/demos/actions.js'
 
 import { getDemos, getTempDemos, getCurrentDemoStepsCount } from '../state/demos/localSelectors.js'
-import { getPersonas } from '../selectors'
+import { getPersonas } from '../state/personas/localSelectors.js'
 
 
 

@@ -44,7 +44,7 @@ const reducer = (state = initialState, action = {}) => {
       let hashState = updateStateFromHash(action.payload.config, window.location.hash);
 
       let newState = {
-          config: action.payload.config
+          config: omit(action.payload.config, 'personas')
         };
       newState.config.demos = map(newState.config.demos, (demo) => {
         demo.included = true;
@@ -52,20 +52,12 @@ const reducer = (state = initialState, action = {}) => {
       });
       return merge({}, state, newState, hashState);
 
-    case TYPE.UPDATE_STATE_FROM_HASH:
-      return merge({}, state, updateStateFromHash(state.config, action.payload.hash));
 
     case TYPE.SET_CONFIG_ERROR:
       return merge({}, initialState, {
         error: { message: action.payload.errorMessage }
       });
 
-
-    case TYPE.SELECT_PERSONA:
-      if (find(action.meta.personas, { id: action.payload.id })) {
-        return merge({}, state, { current: { personaId: action.payload.id } });
-      }
-      return state;
 
     case TYPE.NEXT_STEP:
       return gotoStep(

@@ -4,6 +4,7 @@ import { find, filter, map, get, uniq, intersection, includes } from 'lodash'
 
 // FIXME de-centralize all selectors
 import { getAllSteps } from '../state/demos/localSelectors.js'
+import { getCurrentPersonaId, getCurrentPersona, getPersonas } from '../state/personas/localSelectors.js'
 
 function addIndexToArray(array) {
   return map(array, (el, index) => {
@@ -14,9 +15,7 @@ function addIndexToArray(array) {
 
 
 
-
 export const getCurrentStepIndex = state => state.appReducer.current.stepIndex;
-export const getCurrentPersonaId = state => state.appReducer.current.personaId;
 
 
 export const getActivePopup = state => state.appReducer.visual.activePopup;
@@ -25,50 +24,6 @@ export const getDisplayBullets = state => state.appReducer.visual.displayBullets
 export const getConfigErrorMessage = state => state.appReducer.error.message;
 
 
-
-
-
-export const getPersonas = createSelector(
-  [ (state) => get(state.appReducer.config, 'personas', null) ],
-  (personas) => {
-    return personas ?
-      map(personas, (persona) => {
-        if (!persona.avatar) {
-          persona.avatar = 'img/user.png'
-        }
-        return persona;
-      }) :
-      null;
-  }
-);
-
-export const getCurrentPersona = createSelector(
-  [getCurrentPersonaId, getPersonas],
-  (currentPersonaId, personas) => {
-    return find(personas, { id: currentPersonaId } );
-  }
-);
-
-export const getNotSelectedPersonas = createSelector(
-  [getCurrentPersonaId, getPersonas],
-  (currentPersonaId, personas) => {
-    return filter(personas, (persona) => { return persona.id !== currentPersonaId } );
-  }
-);
-
-export const getVisiblePersonas = createSelector(
-  [getPersonas],
-  (personas) => {
-    return filter(personas, (persona) => { return !persona.hidden } );
-  }
-);
-
-export const getVisibleNotSelectedPersonas = createSelector(
-  [getNotSelectedPersonas, getVisiblePersonas],
-  (notSelectedPersonas, visiblePersonas) => {
-    return intersection(notSelectedPersonas, visiblePersonas);
-  }
-);
 
 export const getCurrentPersonaSteps = createSelector(
   [getAllSteps, getCurrentPersonaId],
@@ -119,24 +74,6 @@ export const getCurrentStepName = createSelector(
   }
 );
 
-export const getCurrentPersonaImageUrl = createSelector(
-  [getCurrentPersona],
-  (currentPersona) => {
-    return currentPersona.avatar;
-  }
-);
-export const getCurrentPersonaLabel = createSelector(
-  [getCurrentPersona],
-  (currentPersona) => {
-    return currentPersona.label;
-  }
-);
-export const getCurrentPersonaDescription = createSelector(
-  [getCurrentPersona],
-  (currentPersona) => {
-    return currentPersona.description;
-  }
-);
 
 
 //--------------------------------------------------------------------------------------------------------------//

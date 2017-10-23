@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getCurrentPersonaId, getCurrentPersonaImageUrl, getVisiblePersonas } from '../selectors'
+import { getCurrentPersonaId, getCurrentPersonaImageUrl, getVisiblePersonas } from '../state/personas/localSelectors.js'
 import { setDisplayMode, selectPersona } from '../actions'
 import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlWidgetMini from '../components/ControlWidgetMini/ControlWidgetMini.js'

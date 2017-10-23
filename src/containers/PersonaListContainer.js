@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { isFunction } from 'lodash'
 
-import { getCurrentPersona, getVisiblePersonas } from '../selectors'
+import { getCurrentPersona, getVisiblePersonas } from '../state/personas/localSelectors.js'
 
 import { selectPersona } from '../actions'
 import PersonaList from '../components/PersonaList.js'

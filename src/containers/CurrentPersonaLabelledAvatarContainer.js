@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { getCurrentPersonaImageUrl, getCurrentPersonaLabel, getCurrentPersonaDescription } from '../selectors'
+import { getCurrentPersonaImageUrl, getCurrentPersonaLabel, getCurrentPersonaDescription } from '../state/personas/localSelectors.js'
 
 
 import LabelledAvatar from '../components/LabelledAvatar.js'

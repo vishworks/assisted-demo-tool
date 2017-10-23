@@ -39,6 +39,20 @@ export const getCurrentStep = createSelector(
   }
 );
 
+export const getNextStep = createSelector(
+  [getAllSteps, getCurrentStepIndex],
+  (allSteps, currentStepIndex) => {
+    return allSteps[currentStepIndex + 1];
+  }
+);
+
+export const getPrevStep = createSelector(
+  [getAllSteps, getCurrentStepIndex],
+  (allSteps, currentStepIndex) => {
+    return allSteps[currentStepIndex - 1];
+  }
+);
+
 export const getCurrentUrl = createSelector(
   [getCurrentPersona],
   (currentPersona) => {

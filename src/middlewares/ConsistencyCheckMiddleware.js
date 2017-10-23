@@ -5,7 +5,8 @@ import { TYPE } from '../actions'
 import TYPE_DEMOS from '../state/demos/types.js'
 import { selectDemo } from '../state/demos/actions.js'
 
-import { getDemos, getTempDemos, getCurrentDemoStepsCount } from '../state/demos/localSelectors.js'
+import { getDemos, getTempDemos, getCurrentDemoStepsCount, getAllSteps } from '../state/demos/localSelectors.js'
+import { getCurrentStepIndex } from '../selectors'
 import { getPersonas } from '../state/personas/localSelectors.js'
 
 
@@ -35,11 +36,29 @@ const ConsistencyCheckMiddleware = store => next => action => {
       set(action, 'meta.demos', getDemos(store.getState()));
       break;
 
-    case TYPE.GOTO_STEP:
-    case TYPE.NEXT_STEP:
-    case TYPE.PREV_STEP:
+    case TYPE.GOTO_STEP: {
       set(action, 'meta.stepsCount', getCurrentDemoStepsCount(store.getState()));
+      let tgtStep = get(getAllSteps(store.getState()), action.payload.stepIndex);
+      set(action, 'meta.targetStep', tgtStep);
       break;
+    }
+
+
+    case TYPE.NEXT_STEP: {
+      set(action, 'meta.stepsCount', getCurrentDemoStepsCount(store.getState()));
+      let state = store.getState(),
+        tgtStep = get(getAllSteps(state), getCurrentStepIndex(state) + 1);
+      set(action, 'meta.targetStep', tgtStep);
+      break;
+    }
+
+    case TYPE.PREV_STEP: {
+      set(action, 'meta.stepsCount', getCurrentDemoStepsCount(store.getState()));
+      let state = store.getState(),
+        tgtStep = get(getAllSteps(state), getCurrentStepIndex(state) - 1);
+      set(action, 'meta.targetStep', tgtStep);
+      break;
+    }
 
     default:
       break;

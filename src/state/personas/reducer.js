@@ -40,6 +40,11 @@ const currentPersonaId = (state = '', action = {}) => {
       }
       return state;
 
+    case APP_TYPE.NEXT_STEP:
+    case APP_TYPE.PREV_STEP:
+    case APP_TYPE.GOTO_STEP:
+      return action.meta.targetStep.personaId;
+
 
     default:
       return state

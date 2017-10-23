@@ -44,7 +44,7 @@ const reducer = (state = initialState, action = {}) => {
       let hashState = updateStateFromHash(action.payload.config, window.location.hash);
 
       let newState = {
-          config: omit(action.payload.config, 'personas')
+          config: action.payload.config
         };
       newState.config.demos = map(newState.config.demos, (demo) => {
         demo.included = true;

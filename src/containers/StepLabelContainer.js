@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { getCurrentStepIndex } from '../selectors'
-import { getCurrentDemoStepsCount } from '../state/demos/selectors.js'
+
+import { getStepsCount, getCurrentStepIndex } from '../state/steps/localSelectors.js'
 import StepLabel from '../components/StepLabel.js'
 
 
@@ -8,7 +8,7 @@ import StepLabel from '../components/StepLabel.js'
 const mapStateToProps = state => {
   return {
     stepIndex: getCurrentStepIndex(state),
-    stepsCount: getCurrentDemoStepsCount(state)
+    stepsCount: getStepsCount(state)
   }
 };
 

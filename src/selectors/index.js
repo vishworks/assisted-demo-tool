@@ -3,7 +3,7 @@ import { createSelector } from 'reselect'
 import { find, filter, map, get, uniq, intersection, includes } from 'lodash'
 
 // FIXME de-centralize all selectors
-import { getAllSteps } from '../state/demos/localSelectors.js'
+import { getAllSteps } from '../state/steps/localSelectors.js'
 import { getCurrentPersonaId, getCurrentPersona, getPersonas } from '../state/personas/localSelectors.js'
 
 function addIndexToArray(array) {
@@ -15,7 +15,7 @@ function addIndexToArray(array) {
 
 
 
-export const getCurrentStepIndex = state => state.appReducer.current.stepIndex;
+
 
 
 export const getActivePopup = state => state.appReducer.visual.activePopup;
@@ -32,47 +32,7 @@ export const getCurrentPersonaSteps = createSelector(
   }
 );
 
-export const getCurrentStep = createSelector(
-  [getAllSteps, getCurrentStepIndex],
-  (allSteps, currentStepIndex) => {
-    return allSteps[currentStepIndex];
-  }
-);
 
-export const getNextStep = createSelector(
-  [getAllSteps, getCurrentStepIndex],
-  (allSteps, currentStepIndex) => {
-    return allSteps[currentStepIndex + 1];
-  }
-);
-
-export const getPrevStep = createSelector(
-  [getAllSteps, getCurrentStepIndex],
-  (allSteps, currentStepIndex) => {
-    return allSteps[currentStepIndex - 1];
-  }
-);
-
-export const getCurrentStepContent = createSelector(
-  [getCurrentStep],
-  (currentStep) => {
-    return currentStep.content;
-  }
-);
-
-export const getCurrentStepBullets = createSelector(
-  [getCurrentStep],
-  (currentStep) => {
-    return currentStep.bullets;
-  }
-);
-
-export const getCurrentStepName = createSelector(
-  [getCurrentStep],
-  (currentStep) => {
-    return currentStep.name;
-  }
-);
 
 
 

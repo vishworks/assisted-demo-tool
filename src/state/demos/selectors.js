@@ -18,26 +18,3 @@ export const getCurrentDemo = createSelector(
   }
 );
 
-export const getAllSteps = createSelector(
-  [getCurrentDemo],
-  (currentDemo) => {
-    return currentDemo && addIndexToArray(currentDemo.steps);
-  }
-);
-
-export const getCurrentDemoStepsCount = createSelector(
-  [getAllSteps],
-  (allSteps) => {
-    return allSteps && allSteps.length;
-  }
-);
-
-
-
-function addIndexToArray(array) {
-  return map(array, (el, index) => {
-    el.index = index;
-    return el;
-  });
-}
-

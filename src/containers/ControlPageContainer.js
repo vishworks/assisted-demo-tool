@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { getCurrentStepName } from '../selectors'
+import { getCurrentStepName } from '../state/steps/localSelectors.js'
 import { setDisplayMode } from '../actions'
 import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlPage from '../components/ControlPage/ControlPage.js'

@@ -5,13 +5,14 @@ import controlWidget from './controlWidget.js'
 import appReducer from './appReducer.js'
 import demos from '../state/demos/reducer.js'
 import personas from '../state/personas/reducer.js'
-
+import steps from '../state/steps/reducer.js'
 
 import { updateHashFromObject } from '../helpers/HashUtils.js'
 
 const rootReducer = combineReducers({
   demos,
   personas,
+  steps,
   controlWidget,
   appReducer
 

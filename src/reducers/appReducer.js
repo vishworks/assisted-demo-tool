@@ -59,27 +59,6 @@ const reducer = (state = initialState, action = {}) => {
       });
 
 
-    case TYPE.NEXT_STEP:
-      return gotoStep(
-        state,
-        state.current.stepIndex + 1,
-        action.meta.stepsCount
-      );
-
-    case TYPE.PREV_STEP:
-      return gotoStep(
-        state,
-        state.current.stepIndex - 1,
-        action.meta.stepsCount
-      );
-
-    case TYPE.GOTO_STEP:
-      return gotoStep(
-        state,
-        action.payload.stepIndex,
-        action.meta.stepsCount
-      );
-
     case TYPE.POPUP_OPEN:
       return merge({}, state, { visual: { activePopup: action.payload.popupId } });
 
@@ -88,39 +67,6 @@ const reducer = (state = initialState, action = {}) => {
 
     case TYPE.STEP_CONTENT_SHOW_BULLETS:
       return merge({}, state, { visual: { displayBullets: action.payload.show } });
-
-    case TYPE.DEMO_EXCLUDE:
-      let newDemos = map(state.config.demos, (demo) => {
-        if (action.payload.demoId === demo.id) {
-          demo.included = false;
-        }
-        return demo;
-      });
-      return merge({}, state, { config: { demos: newDemos } });
-
-    case TYPE.DEMO_INCLUDE:
-      let newDemos2 = map(state.config.demos, (demo) => {
-        if (action.payload.demoId === demo.id) {
-          demo.included = true;
-        }
-        return demo;
-      });
-      return merge({}, state, { config: { demos: newDemos2 } });
-
-    case TYPE.DEMO_MOVE_TO_INDEX:
-      let { newIndex, oldIndex } = action.payload;
-      if (newIndex < 0 || newIndex >= state.config.demos.length) {
-        return state;
-      }
-      let newDemos3 = cloneDeep(state.config.demos);
-      let park = newDemos3[newIndex];
-      newDemos3[newIndex] = newDemos3[oldIndex];
-      newDemos3[oldIndex] = park;
-      return merge({}, state, { config: { demos: newDemos3 } });
-
-
-    case TYPE_DEMOS.DEMOS_SETTINGS_SELECT_DEMO:
-      return gotoStep(state, 0);
 
 
 
@@ -133,25 +79,7 @@ const reducer = (state = initialState, action = {}) => {
 function getCurrentDemo(state) {
   return find(state.config.demos, { id: state.current.demoId });
 }
-function gotoStep(state, stepIndex, stepsCount)  {
 
-  if (stepIndex < 0 || stepIndex >= stepsCount) {
-    return state;
-  }
-  // FIXME send actions from middleware to do this
-  let curDemo = getCurrentDemo(state),
-    newStepIndex = stepIndex,
-    newStep = curDemo.steps[newStepIndex],
-    newPersonaId = newStep.personaId,
-    newUrl = newStep.url;
-  return merge({}, state, {
-          current: {
-            stepIndex: newStepIndex,
-            personaId: newPersonaId,
-            url: newUrl
-          }
-        });
-}
 
 
 /**

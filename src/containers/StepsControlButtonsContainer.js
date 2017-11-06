@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { prevStep, nextStep } from '../actions'
+import { prevStep, nextStep } from '../state/steps/actions.js'
 
 import { getStepsCount, getCurrentStepIndex } from '../state/steps/localSelectors.js'
 

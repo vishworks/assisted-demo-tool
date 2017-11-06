@@ -4,9 +4,6 @@ export const TYPE = {
   LOAD_CONFIG: 'LOAD_CONFIG',
   SET_CONFIG_ERROR: 'SET_CONFIG_ERROR',
   SET_DISPLAY_MODE: 'SET_DISPLAY_MODE',
-  NEXT_STEP: 'NEXT_STEP',
-  PREV_STEP: 'PREV_STEP',
-  GOTO_STEP: 'GOTO_STEP',
   POPUP_OPEN: 'POPUP_OPEN',
   POPUP_CLOSE_ALL: 'POPUP_CLOSE_ALL',
   STEP_CONTENT_SHOW_BULLETS: 'STEP_CONTENT_SHOW_BULLETS'
@@ -56,26 +53,6 @@ export const setDisplayMode = (displayMode) => {
   };
 };
 
-export const nextStep = () => {
-  return {
-    type: TYPE.NEXT_STEP
-  };
-};
-
-export const prevStep = () => {
-  return {
-    type: TYPE.PREV_STEP
-  };
-};
-
-export const gotoStep = (stepIndex) => {
-  return {
-    type: TYPE.GOTO_STEP,
-    payload: {
-      stepIndex: stepIndex
-    }
-  };
-};
 
 
 export const setConfigError = (errorMessage) => {

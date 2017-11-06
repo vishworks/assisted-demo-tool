@@ -1,7 +1,7 @@
 import { reduce, isEqual, includes, toInteger, toString, find } from 'lodash'
 
 import { parseHash } from '../helpers/HashUtils.js'
-import { gotoStep } from '../actions'
+import { gotoStep } from '../state/steps/actions.js'
 import { selectPersona } from '../state/personas/actions.js'
 import { selectDemo } from '../state/demos/actions.js'
 

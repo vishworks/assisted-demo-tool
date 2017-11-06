@@ -1,10 +1,12 @@
 import { reduce, isEqual, includes, toInteger, toString, find, get, set } from 'lodash'
 
 import { parseHash } from '../helpers/HashUtils.js'
-import { TYPE } from '../actions'
+
 import TYPE_DEMOS from '../state/demos/types.js'
 
 import TYPE_PERSONAS from '../state/personas/types.js'
+import TYPE_STEPS from '../state/steps/types.js'
+
 import { selectDemo } from '../state/demos/actions.js'
 
 import { getDemos, getTempDemos } from '../state/demos/localSelectors.js'
@@ -38,7 +40,7 @@ const ConsistencyCheckMiddleware = store => next => action => {
       set(action, 'meta.demos', getDemos(store.getState()));
       break;
 
-    case TYPE.GOTO_STEP: {
+    case TYPE_STEPS.GOTO_STEP: {
       set(action, 'meta.stepsCount', getStepsCount(store.getState()));
       let tgtStep = get(getAllSteps(store.getState()), action.payload.stepIndex);
       set(action, 'meta.targetStep', tgtStep);
@@ -46,7 +48,7 @@ const ConsistencyCheckMiddleware = store => next => action => {
     }
 
 
-    case TYPE.NEXT_STEP: {
+    case TYPE_STEPS.NEXT_STEP: {
       set(action, 'meta.stepsCount', getStepsCount(store.getState()));
       let state = store.getState(),
         tgtStep = get(getAllSteps(state), getCurrentStepIndex(state) + 1);
@@ -54,7 +56,7 @@ const ConsistencyCheckMiddleware = store => next => action => {
       break;
     }
 
-    case TYPE.PREV_STEP: {
+    case TYPE_STEPS.PREV_STEP: {
       set(action, 'meta.stepsCount', getStepsCount(store.getState()));
       let state = store.getState(),
         tgtStep = get(getAllSteps(state), getCurrentStepIndex(state) - 1);

@@ -7,6 +7,10 @@ import demos from '../state/demos/reducer.js'
 import personas from '../state/personas/reducer.js'
 import steps from '../state/steps/reducer.js'
 
+import { getCurrentDemoId } from '../state/demos/localSelectors.js'
+import { getCurrentPersonaId } from '../state/personas/localSelectors.js'
+import { getCurrentStepIndex } from '../state/steps/localSelectors.js'
+
 import { updateHashFromObject } from '../helpers/HashUtils.js'
 
 const rootReducer = combineReducers({
@@ -22,9 +26,9 @@ const rootReducer = combineReducers({
 const rootReducerUpdatingHash = (state, action) => {
   let newState =  rootReducer(state, action);
 
-  let demoId = newState.demos.currentDemoId,
-    stepNumber = newState.appReducer.current.stepIndex + 1,
-    personaId = newState.personas.currentPersonaId;
+  let demoId = getCurrentDemoId(newState),
+    stepNumber = getCurrentStepIndex(newState) + 1,
+    personaId = getCurrentPersonaId(newState);
 
 
   if (some([demoId, personaId], isEmpty) === false) {

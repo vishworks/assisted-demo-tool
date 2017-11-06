@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { gotoStep } from '../actions'
+import { gotoStep } from '../state/steps/actions.js'
 import { getAllSteps, getCurrentStepIndex } from '../state/steps/localSelectors.js'
 
 

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
-import { getConfigErrorMessage } from '../selectors'
+import { getGlobalErrorMessage } from '../state/ui/localSelectors.js'
 import LoadingPage from '../components/LoadingPage.js'
 
 
 const mapStateToProps = state => {
   return {
-    errorMessage: getConfigErrorMessage(state)
+    errorMessage: getGlobalErrorMessage(state)
   }
 };
 

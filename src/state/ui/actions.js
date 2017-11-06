@@ -27,3 +27,24 @@ export const setDisplayMode = (displayMode) => {
     }
   };
 };
+
+
+export const setGlobalError = (errorMessage) => {
+  return {
+    type: TYPE.SET_GLOBAL_ERROR,
+    payload: {
+      errorMessage: errorMessage
+    }
+  };
+};
+
+
+
+export const showBullets = (show) => {
+  return {
+    type: TYPE.STEP_CONTENT_SHOW_BULLETS,
+    payload: {
+      show: show
+    }
+  };
+};

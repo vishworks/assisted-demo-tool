@@ -13,3 +13,5 @@ export default localSelectors;
 
 export const getActivePopup = localSelectors.getActivePopup;
 export const getDisplayMode = localSelectors.getDisplayMode;
+export const getDisplayBullets = localSelectors.getDisplayBullets;
+export const getGlobalErrorMessage = localSelectors.getGlobalErrorMessage;

@@ -32,10 +32,34 @@ const displayMode = (state = DisplayModeEnum.CONTROL_WIDGET, action = {}) => {
   }
 };
 
+const globalErrorMessage = (state = '', action = {}) => {
+
+  switch (action.type) {
+    case TYPE.SET_GLOBAL_ERROR:
+      return action.payload.errorMessage;
+
+    default:
+      return state
+  }
+};
+
+const displayBullets = (state = false, action = {}) => {
+
+  switch (action.type) {
+    case TYPE.STEP_CONTENT_SHOW_BULLETS:
+      return action.payload.show;
+
+    default:
+      return state
+  }
+};
+
 
 const reducer = combineReducers({
   displayMode,
-  activePopup
+  activePopup,
+  globalErrorMessage,
+  displayBullets
 });
 
 export default reducer;

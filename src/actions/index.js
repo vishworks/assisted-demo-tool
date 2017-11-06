@@ -1,9 +1,9 @@
 
+import { setGlobalError } from '../state/ui/actions.js'
+
 
 export const TYPE = {
-  LOAD_CONFIG: 'LOAD_CONFIG',
-  SET_CONFIG_ERROR: 'SET_CONFIG_ERROR',
-  STEP_CONTENT_SHOW_BULLETS: 'STEP_CONTENT_SHOW_BULLETS'
+  LOAD_CONFIG: 'LOAD_CONFIG'
 };
 
 
@@ -28,40 +28,16 @@ export function asyncLoadConfig(configUrl) {
               dispatch(loadConfig(data));
             });
           } catch(er) {
-            dispatch(setConfigError('Error parsing configuration JSON at \'' + configUrl + '\': ' + er.message));
+            dispatch(setGlobalError('Error parsing configuration JSON at \'' + configUrl + '\': ' + er.message));
             console.error(er);
           }
         },
         (error) => {
-          dispatch(setConfigError('Failed to fetch configuration at \'' + configUrl + '\''));
+          dispatch(setGlobalError('Failed to fetch configuration at \'' + configUrl + '\''));
         }
       );
     }, 500); // FIXME remove throttling
   };
 }
 
-
-
-
-
-
-export const setConfigError = (errorMessage) => {
-  return {
-    type: TYPE.SET_CONFIG_ERROR,
-    payload: {
-      errorMessage: errorMessage
-    }
-  };
-};
-
-
-
-export const showBullets = (show) => {
-  return {
-    type: TYPE.STEP_CONTENT_SHOW_BULLETS,
-    payload: {
-      show: show
-    }
-  };
-};
 

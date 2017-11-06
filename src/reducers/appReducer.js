@@ -53,14 +53,7 @@ const reducer = (state = initialState, action = {}) => {
       return merge({}, state, newState, hashState);
 
 
-    case TYPE.SET_CONFIG_ERROR:
-      return merge({}, initialState, {
-        error: { message: action.payload.errorMessage }
-      });
 
-
-    case TYPE.STEP_CONTENT_SHOW_BULLETS:
-      return merge({}, state, { visual: { displayBullets: action.payload.show } });
 
 
 

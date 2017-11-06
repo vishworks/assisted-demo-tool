@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
-import { asyncLoadConfig, setConfigError } from '../actions'
+import { asyncLoadConfig } from '../actions'
+import { setGlobalError } from '../state/ui/actions.js'
 import { getDisplayMode } from '../state/ui/localSelectors.js'
 import { getPersonas } from '../state/personas/localSelectors.js'
 import App from '../App.js'
@@ -19,7 +20,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(asyncLoadConfig(configUrl));
     },
     setConfigError: (message) => {
-      dispatch(setConfigError(message));
+      dispatch(setGlobalError(message));
     }
   }
 };

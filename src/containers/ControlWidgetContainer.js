@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 
-import { getActivePopup } from '../selectors'
-import { setDisplayMode, openPopup, closeAllPopups } from '../actions'
+import { getActivePopup } from '../state/ui/localSelectors.js'
+
+import { openPopup, closeAllPopups, setDisplayMode } from '../state/ui/actions.js'
 import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlWidget from '../components/ControlWidget/ControlWidget.js'
 

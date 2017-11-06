@@ -6,7 +6,7 @@ import DemoOrdinator from '../components/DemoOrdinator/DemoOrdinator.js'
 
 import { getTempDemos } from '../state/demos/localSelectors.js'
 
-import { closeAllPopups } from '../actions'
+import { closeAllPopups } from '../state/ui/actions.js'
 import { excludeDemo, includeDemo, moveDemo, applyDemoSettings } from '../state/demos/actions.js'
 
 

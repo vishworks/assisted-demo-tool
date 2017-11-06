@@ -3,9 +3,6 @@
 export const TYPE = {
   LOAD_CONFIG: 'LOAD_CONFIG',
   SET_CONFIG_ERROR: 'SET_CONFIG_ERROR',
-  SET_DISPLAY_MODE: 'SET_DISPLAY_MODE',
-  POPUP_OPEN: 'POPUP_OPEN',
-  POPUP_CLOSE_ALL: 'POPUP_CLOSE_ALL',
   STEP_CONTENT_SHOW_BULLETS: 'STEP_CONTENT_SHOW_BULLETS'
 };
 
@@ -44,14 +41,7 @@ export function asyncLoadConfig(configUrl) {
 }
 
 
-export const setDisplayMode = (displayMode) => {
-  return {
-    type: TYPE.SET_DISPLAY_MODE,
-    payload: {
-      displayMode: displayMode
-    }
-  };
-};
+
 
 
 
@@ -64,20 +54,7 @@ export const setConfigError = (errorMessage) => {
   };
 };
 
-export const openPopup = (popupId) => {
-  return {
-    type: TYPE.POPUP_OPEN,
-    payload: {
-      popupId: popupId
-    }
-  };
-};
 
-export const closeAllPopups = () => {
-  return {
-    type: TYPE.POPUP_CLOSE_ALL
-  };
-};
 
 export const showBullets = (show) => {
   return {

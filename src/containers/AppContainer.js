@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { asyncLoadConfig, setConfigError } from '../actions'
-import { getDisplayMode } from '../selectors'
+import { getDisplayMode } from '../state/ui/localSelectors.js'
 import { getPersonas } from '../state/personas/localSelectors.js'
 import App from '../App.js'
 

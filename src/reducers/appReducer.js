@@ -59,12 +59,6 @@ const reducer = (state = initialState, action = {}) => {
       });
 
 
-    case TYPE.POPUP_OPEN:
-      return merge({}, state, { visual: { activePopup: action.payload.popupId } });
-
-    case TYPE.POPUP_CLOSE_ALL:
-      return merge({}, state, { visual: { activePopup: '' } });
-
     case TYPE.STEP_CONTENT_SHOW_BULLETS:
       return merge({}, state, { visual: { displayBullets: action.payload.show } });
 

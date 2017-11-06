@@ -6,19 +6,10 @@ import { find, filter, map, get, uniq, intersection, includes } from 'lodash'
 import { getAllSteps } from '../state/steps/localSelectors.js'
 import { getCurrentPersonaId, getCurrentPersona, getPersonas } from '../state/personas/localSelectors.js'
 
-function addIndexToArray(array) {
-  return map(array, (el, index) => {
-    el.index = index;
-    return el;
-  });
-}
 
 
 
 
-
-
-export const getActivePopup = state => state.appReducer.visual.activePopup;
 export const getDisplayBullets = state => state.appReducer.visual.displayBullets;
 
 export const getConfigErrorMessage = state => state.appReducer.error.message;
@@ -41,4 +32,3 @@ export const getCurrentPersonaSteps = createSelector(
 //--------------------------------------------------------------------------------------------------------------//
 
 
-export const getDisplayMode = state => state.controlWidget.displayMode;

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 
-import { getActivePopup } from '../selectors'
+import { getActivePopup } from '../state/ui/localSelectors.js'
 
-import { closeAllPopups } from '../actions'
+import { closeAllPopups } from '../state/ui/actions.js'
 
 import Popup from '../components/Popup.js'
 

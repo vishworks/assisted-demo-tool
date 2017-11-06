@@ -35,8 +35,8 @@ const currentPersonaId = (state = '', action = {}) => {
     }
 
     case TYPE.SELECT_PERSONA:
-      if (find(action.meta.personas, { id: action.payload.id })) {
-        return action.payload.id;
+      if (find(action.meta.personas, { id: action.payload.personaId })) {
+        return action.payload.personaId;
       }
       return state;
 

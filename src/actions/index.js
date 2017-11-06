@@ -84,14 +84,6 @@ export const gotoStep = (stepIndex) => {
   };
 };
 
-export const selectPersona = (personaId) => {
-  return {
-    type: TYPE.SELECT_PERSONA,
-    payload: {
-      id: personaId
-    }
-  };
-};
 
 export const setConfigError = (errorMessage) => {
   return {
@@ -126,52 +118,3 @@ export const showBullets = (show) => {
   };
 };
 
-
-export const excludeDemo = (demoId, demoIndex) => {
-  return {
-    type: TYPE.DEMO_EXCLUDE,
-    payload: {
-      demoId: demoId,
-      demoIndex: demoIndex
-    }
-  };
-};
-
-export const includeDemo = (demoId, demoIndex) => {
-  return {
-    type: TYPE.DEMO_INCLUDE,
-    payload: {
-      demoId: demoId,
-      demoIndex: demoIndex
-    }
-  };
-};
-
-export const moveDemo = (demoId, oldIndex, newIndex) => {
-  return {
-    type: TYPE.DEMO_MOVE_TO_INDEX,
-    payload: {
-      demoId: demoId,
-      oldIndex: oldIndex,
-      newIndex: newIndex
-    }
-  };
-};
-
-export const startSettings = () => {
-  return {
-    type: TYPE.SETTINGS_START
-  };
-};
-
-export const applySettings = () => {
-  return {
-    type: TYPE.SETTINGS_APPLY
-  };
-};
-
-export const cancelSettings = () => {
-  return {
-    type: TYPE.SETTINGS_CANCEL
-  };
-};

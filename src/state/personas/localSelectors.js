@@ -21,4 +21,5 @@ export const getVisibleNotSelectedPersonas = localSelectors.getVisibleNotSelecte
 export const getCurrentPersonaImageUrl = localSelectors.getCurrentPersonaImageUrl;
 export const getCurrentPersonaLabel = localSelectors.getCurrentPersonaLabel;
 export const getCurrentPersonaDescription = localSelectors.getCurrentPersonaDescription;
-
+export const getCurrentUrl = localSelectors.getCurrentUrl;
+export const getUrls = localSelectors.getUrls;

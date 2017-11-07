@@ -20,7 +20,7 @@ const demosReducer = (state = [], action = {}) => {
       return Object.assign([], state, newDemos );
 
     case TYPE.DEMOS_SETTINGS_APPLY:
-      return cloneDeep(action.meta.tempDemos);
+      return cloneDeep(action.payload.tempDemos);
 
     default:
       return state
@@ -63,7 +63,7 @@ const tempDemosReducer = (state = [], action = {}) => {
       return Object.assign([], state, tempDemosClone);
 
     case TYPE.DEMOS_SETTINGS_START:
-      return cloneDeep(action.meta.demos);
+      return cloneDeep(action.payload.demos);
 
     case TYPE.DEMOS_SETTINGS_APPLY:
       return [];
@@ -73,7 +73,7 @@ const tempDemosReducer = (state = [], action = {}) => {
   }
 };
 
-// FIXME create demo count selector and apply to ordinator
+
 
 const currentDemoIdReducer = (state = '', action = {}) => {
 
@@ -88,11 +88,7 @@ const currentDemoIdReducer = (state = '', action = {}) => {
     }
 
     case TYPE.DEMOS_SETTINGS_SELECT_DEMO: {
-      let demos = get(action, 'meta.demos');
-      if (find(demos, { id:  action.payload.demoId })) {
-        return action.payload.demoId;
-      }
-      return get(demos, '0.id');
+      return action.payload.demoId;
     }
 
 

@@ -22,4 +22,6 @@ export const getPrevStep = localSelectors.getPrevStep;
 export const getCurrentStepContent = localSelectors.getCurrentStepContent;
 export const getCurrentStepBullets = localSelectors.getCurrentStepBullets;
 export const getCurrentStepName = localSelectors.getCurrentStepName;
+export const getIsFirstStep = localSelectors.getIsFirstStep;
+export const getIsLastStep = localSelectors.getIsLastStep;
 

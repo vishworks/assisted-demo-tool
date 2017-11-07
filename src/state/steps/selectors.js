@@ -29,25 +29,25 @@ export const getStepsCount = createSelector(
   }
 );
 
+export const getIsLastStep = createSelector(
+  [getStepsCount, getCurrentStepIndex],
+  (stepsCount, currentStepIndex) => {
+    return currentStepIndex >= stepsCount - 1;
+  }
+);
+
+export const getIsFirstStep = createSelector(
+  [getCurrentStepIndex],
+  (currentStepIndex) => {
+    return currentStepIndex === 0;
+  }
+);
+
 
 export const getCurrentStep = createSelector(
   [getAllSteps, getCurrentStepIndex],
   (allSteps, currentStepIndex) => {
     return allSteps[currentStepIndex];
-  }
-);
-
-export const getNextStep = createSelector(
-  [getAllSteps, getCurrentStepIndex],
-  (allSteps, currentStepIndex) => {
-    return currentStepIndex === allSteps.length - 1 ? allSteps[currentStepIndex] : allSteps[currentStepIndex + 1];
-  }
-);
-
-export const getPrevStep = createSelector(
-  [getAllSteps, getCurrentStepIndex],
-  (allSteps, currentStepIndex) => {
-    return currentStepIndex === 0 ? allSteps[0] :  allSteps[currentStepIndex - 1];
   }
 );
 

@@ -4,12 +4,18 @@ import { default as TYPES }  from './types.js'
 
 
 
-export const startDemoSettings = () => ({
-  type: TYPES.DEMOS_SETTINGS_START
+export const startDemoSettings = (demos) => ({
+  type: TYPES.DEMOS_SETTINGS_START,
+  payload: {
+    demos
+  }
 });
 
-export const applyDemoSettings = () => ({
-  type: TYPES.DEMOS_SETTINGS_APPLY
+export const applyDemoSettings = (tempDemos) => ({
+  type: TYPES.DEMOS_SETTINGS_APPLY,
+  payload: {
+    tempDemos
+  }
 });
 
 export const cancelDemoSettings = () => ({

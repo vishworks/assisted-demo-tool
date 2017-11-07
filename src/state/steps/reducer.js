@@ -31,12 +31,6 @@ const currentStepIndex = (state = 0, action = {}) => {
       return (newHash.stepNumber && parseInt(newHash.stepNumber, 10) - 1) || 0;
     }
 
-    case TYPE.NEXT_STEP:
-      return state + 1;
-
-    case TYPE.PREV_STEP:
-      return state - 1;
-
     case TYPE.GOTO_STEP:
       return action.payload.stepIndex;
 

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 
-import { prevStep, nextStep } from '../state/steps/actions.js'
+import { prevStep, nextStep } from '../state/steps/operations.js'
 
-import { getStepsCount, getCurrentStepIndex } from '../state/steps/localSelectors.js'
+import { getIsFirstStep, getIsLastStep } from '../state/steps/localSelectors.js'
 
 
 import StepsControlButtons from '../components/StepsControlButtons.js'
@@ -12,8 +12,8 @@ import StepsControlButtons from '../components/StepsControlButtons.js'
 
 const mapStateToProps = state => {
   return {
-    stepsCount: getStepsCount(state),
-    currentStepIndex: getCurrentStepIndex(state)
+    isFirstStep: getIsFirstStep(state),
+    isLastStep: getIsLastStep(state)
   }
 };
 

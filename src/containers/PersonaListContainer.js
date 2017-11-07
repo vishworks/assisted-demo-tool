@@ -3,7 +3,7 @@ import { isFunction } from 'lodash'
 
 import { getCurrentPersona, getVisiblePersonas } from '../state/personas/localSelectors.js'
 
-import { selectPersona } from '../state/personas/actions.js'
+import { selectPersona } from '../state/personas/operations.js'
 
 import PersonaList from '../components/PersonaList.js'
 

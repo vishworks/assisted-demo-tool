@@ -6,7 +6,7 @@ import { openPopup, closeAllPopups, setDisplayMode } from '../state/ui/actions.j
 import DisplayModeEnum from '../enums/DisplayMode.js'
 import ControlWidget from '../components/ControlWidget/ControlWidget.js'
 
-import { startDemoSettings } from '../state/demos/actions.js'
+import { startDemoSettings } from '../state/demos/operations.js'
 import { getDemos } from '../state/demos/selectors.js'
 
 const mapStateToProps = state => {

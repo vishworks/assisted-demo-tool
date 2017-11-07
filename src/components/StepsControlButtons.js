@@ -19,14 +19,14 @@ class StepsControlButtons extends Component {
       <div className={className.join(' ')}>
         <button className="back-btn"
                 onClick={this.prevStep}
-                disabled={this.props.currentStepIndex === 0}
+                disabled={this.props.isFirstStep}
           >
           <i className="fa fa-arrow-left arrow" />
           <span className="label">BACK</span>
         </button>
         <button className="next-btn"
                 onClick={this.nextStep}
-                disabled={this.props.currentStepIndex >= this.props.stepsCount -1}
+                disabled={this.props.isLastStep}
           >
           <span className="label">NEXT</span>
           <i className="fa fa-arrow-right arrow" />
@@ -37,16 +37,16 @@ class StepsControlButtons extends Component {
 
 
   prevStep() {
-  //  if (this.props.currentStepIndex > 0) {
+    if (this.props.isFirstStep === false) {
       this.props.prevStep();
-  //  }
+    }
   }
 
 
   nextStep() {
-   // if (this.props.currentStepIndex < this.props.stepsCount) {
+    if (this.props.isLastStep === false) {
       this.props.nextStep();
-  //  }
+    }
   }
 
 }

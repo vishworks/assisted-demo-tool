@@ -9,7 +9,7 @@ import { default as TYPE } from './types.js'
 
 
 
-const demosReducer = (state = [], action = {}) => {
+const demos = (state = [], action = {}) => {
   switch (action.type) {
 
     case APP_TYPE.LOAD_CONFIG:
@@ -27,7 +27,7 @@ const demosReducer = (state = [], action = {}) => {
   }
 };
 
-const tempDemosReducer = (state = [], action = {}) => {
+const tempDemos = (state = [], action = {}) => {
   switch (action.type) {
 
     case TYPE.DEMOS_SETTINGS_CANCEL:
@@ -75,7 +75,7 @@ const tempDemosReducer = (state = [], action = {}) => {
 
 
 
-const currentDemoIdReducer = (state = '', action = {}) => {
+const currentDemoId = (state = '', action = {}) => {
 
   switch (action.type) {
     case APP_TYPE.LOAD_CONFIG: {
@@ -98,10 +98,33 @@ const currentDemoIdReducer = (state = '', action = {}) => {
 };
 
 
+const currentStepIndex = (state = 0, action = {}) => {
+
+  switch (action.type) {
+
+    case APP_TYPE.LOAD_CONFIG: {
+      return 0;
+    }
+
+    case TYPE.GOTO_STEP:
+      return action.payload.stepIndex;
+
+    case TYPE.DEMOS_SETTINGS_SELECT_DEMO: {
+      return 0;
+    }
+
+    default:
+      return state
+  }
+};
+
+
+
 const reducer = combineReducers({
-  tempDemos: tempDemosReducer,
-  demos: demosReducer,
-  currentDemoId: currentDemoIdReducer
+  tempDemos,
+  demos,
+  currentDemoId,
+  currentStepIndex
 });
 
 export default reducer;

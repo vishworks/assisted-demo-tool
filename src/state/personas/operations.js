@@ -11,7 +11,7 @@ export function selectPersona(personaId) {
       dispatch(setCurrentPersonaId(personaId));
     } else {
       console.error('[selectPersona] : persona with id ' + personaId + ' not found');
-      dispatch(getCurrentPersonaId(getState())); // abort
+      dispatch(setCurrentPersonaId(getCurrentPersonaId(getState()))); // abort
     }
 
   };

@@ -3,7 +3,7 @@ import { createSelector } from 'reselect'
 import { find, filter, map, get, uniq, intersection, includes } from 'lodash'
 
 // selectors depending from multiple modules
-import { getAllSteps } from '../state/steps/localSelectors.js'
+import { getAllSteps } from '../state/demos/localSelectors.js'
 import { getCurrentPersonaId } from '../state/personas/localSelectors.js'
 
 

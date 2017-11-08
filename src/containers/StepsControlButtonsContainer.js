@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 
-import { prevStep, nextStep } from '../state/steps/operations.js'
+import { prevStep, nextStep } from '../state/demos/operations.js'
 
-import { getIsFirstStep, getIsLastStep } from '../state/steps/localSelectors.js'
+import { getIsFirstStep, getIsLastStep } from '../state/demos/localSelectors.js'
 
 
 import StepsControlButtons from '../components/StepsControlButtons.js'

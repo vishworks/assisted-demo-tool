@@ -1,9 +1,8 @@
 import { reduce, isEqual, includes, toInteger, toString, find } from 'lodash'
 
 import { parseHash } from '../helpers/HashUtils.js'
-import { gotoStep } from '../state/steps/operations.js'
 import { selectPersona } from '../state/personas/operations.js'
-import { selectDemo } from '../state/demos/operations.js'
+import { selectDemo, gotoStep } from '../state/demos/operations.js'
 
 import { getCurrentDemo } from '../state/demos/localSelectors.js'
 

@@ -20,7 +20,7 @@ let store = createStore(
     rootReducer,
     // preloadedState,
     compose(
-      applyMiddleware(ControlPageMiddleware, UrlHashMiddleware, thunk)
+      applyMiddleware(thunk, ControlPageMiddleware, UrlHashMiddleware)
        ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );

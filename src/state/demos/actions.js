@@ -53,3 +53,12 @@ export const selectDemo = (demoId) => ({
     demoId
   }
 });
+
+export const gotoStep = (stepIndex) => {
+  return {
+    type: TYPES.GOTO_STEP,
+    payload: {
+      stepIndex: stepIndex
+    }
+  };
+};

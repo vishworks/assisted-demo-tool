@@ -7,11 +7,9 @@ import appReducer from './appReducer.js'
 import ui from '../state/ui/reducer.js'
 import demos from '../state/demos/reducer.js'
 import personas from '../state/personas/reducer.js'
-import steps from '../state/steps/reducer.js'
 
-import { getCurrentDemoId } from '../state/demos/localSelectors.js'
+import { getCurrentDemoId, getCurrentStepIndex } from '../state/demos/localSelectors.js'
 import { getCurrentPersonaId } from '../state/personas/localSelectors.js'
-import { getCurrentStepIndex } from '../state/steps/localSelectors.js'
 
 import { updateHashFromObject } from '../helpers/HashUtils.js'
 
@@ -19,7 +17,6 @@ const rootReducer = combineReducers({
   ui,
   demos,
   personas,
-  steps,
   controlWidget,
   appReducer
 

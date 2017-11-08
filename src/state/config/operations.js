@@ -3,7 +3,7 @@ import { setGlobalError } from '../ui/actions.js'
 import { selectDemo, gotoStep } from '../demos/operations.js'
 import { selectPersona } from '../personas/operations.js'
 import { parseCurrentHash } from '../../helpers/HashUtils.js'
-
+import { loadConfig } from './actions.js'
 
 
 export function asyncLoadConfig(configUrl) {

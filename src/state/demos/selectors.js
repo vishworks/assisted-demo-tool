@@ -90,3 +90,10 @@ export const getCurrentStepName = createSelector(
     return currentStep.name;
   }
 );
+
+export const getCurrentStepPersonaId = createSelector(
+  [getCurrentStep],
+  (currentStep) => {
+    return currentStep.personaId;
+  }
+);

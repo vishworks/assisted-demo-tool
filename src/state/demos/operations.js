@@ -5,7 +5,12 @@ import {
   startDemoSettings as startDemoSettingsAction,
   gotoStep as gotoStepAction
 } from './actions.js'
-import { getDemos, getTempDemos, getStepsCount, getCurrentStepIndex } from './localSelectors.js'
+import {
+  selectPersona
+} from '../personas/operations.js'
+
+import { getDemos, getTempDemos, getStepsCount, getCurrentStepIndex, getCurrentStepPersonaId } from './localSelectors.js'
+import { getCurrentPersonaId } from '../personas/localSelectors.js'
 
 export function selectDemo(demoId) {
 
@@ -36,42 +41,36 @@ export function startDemoSettings() {
   };
 }
 
-
-export const nextStep = () =>
-  (dispatch, getState) => {
-    let state = getState(),
-      stepsCount = getStepsCount(state),
-      currentStepIndex = getCurrentStepIndex(state);
-    if (currentStepIndex < stepsCount - 1) {
-      dispatch(gotoStepAction(currentStepIndex + 1));
-    } else {
-      console.warn('[nextStep] attempting to go to next step from last step');
-      dispatch(gotoStepAction(currentStepIndex)); // to update url
-    }
-  };
-
-
-export const prevStep = () =>
-  (dispatch, getState) => {
-    let state = getState(),
-      currentStepIndex = getCurrentStepIndex(state);
-    if (currentStepIndex > 0) {
-      dispatch(gotoStepAction(currentStepIndex - 1));
-    } else {
-      console.warn('[prevStep] attempting to go to prev step from first step');
-      dispatch(gotoStepAction(currentStepIndex)); // to update url
-    }
-  };
-
 export const gotoStep = (stepIndex) =>
   (dispatch, getState) => {
     let state = getState(),
       stepsCount = getStepsCount(state),
-      currentStepIndex = getCurrentStepIndex(state);
-    if (stepIndex > 0 && stepIndex < stepsCount - 1) {
+      currentStepIndex = getCurrentStepIndex(state),
+      currentPersonaId = getCurrentPersonaId(state);
+    if (stepIndex >= 0 && stepIndex < stepsCount) {
       dispatch(gotoStepAction(stepIndex));
+
+      // update persona if necessary
+      let nextPersonaId = getCurrentStepPersonaId(getState());
+      if (nextPersonaId !== currentPersonaId) {
+        dispatch(selectPersona(nextPersonaId));
+      }
+
     } else {
       console.warn('[gotoStep] attempting to go to step with index ' + stepIndex );
       dispatch(gotoStepAction(currentStepIndex)); // to update url
     }
   };
+
+export const nextStep = () =>
+  (dispatch, getState) => {
+    let currentStepIndex = getCurrentStepIndex(getState());
+    gotoStep(currentStepIndex + 1)(dispatch, getState);
+  };
+
+export const prevStep = () =>
+  (dispatch, getState) => {
+    let currentStepIndex = getCurrentStepIndex(getState());
+    gotoStep(currentStepIndex - 1)(dispatch, getState);
+  };
+

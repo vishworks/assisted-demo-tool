@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import { merge, cloneDeep, map, get, find } from 'lodash'
 
 import { parseCurrentHash } from '../../helpers/HashUtils.js'
-import { TYPE as APP_TYPE } from '../../actions'
+import { LOAD_CONFIG } from '../config/types.js'
 
 import { default as TYPE } from './types.js'
 
@@ -12,7 +12,7 @@ import { default as TYPE } from './types.js'
 const demos = (state = [], action = {}) => {
   switch (action.type) {
 
-    case APP_TYPE.LOAD_CONFIG:
+    case LOAD_CONFIG:
       let newDemos = map(action.payload.config.demos, (demo) => {
         demo.included = true;
         return demo;
@@ -78,7 +78,7 @@ const tempDemos = (state = [], action = {}) => {
 const currentDemoId = (state = '', action = {}) => {
 
   switch (action.type) {
-    case APP_TYPE.LOAD_CONFIG:
+    case LOAD_CONFIG:
       return action.payload.initialDemoId;
 
     case TYPE.DEMOS_SETTINGS_SELECT_DEMO: {
@@ -96,7 +96,7 @@ const currentStepIndex = (state = 0, action = {}) => {
 
   switch (action.type) {
 
-    case APP_TYPE.LOAD_CONFIG:
+    case LOAD_CONFIG:
       return action.payload.initialStepIndex;
 
     case TYPE.GOTO_STEP:

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { asyncLoadConfig } from '../actions'
+import { asyncLoadConfig } from '../state/config/operations.js'
 import { setGlobalError } from '../state/ui/actions.js'
 import { getDisplayMode } from '../state/ui/localSelectors.js'
 import { getPersonas } from '../state/personas/localSelectors.js'

@@ -1,5 +1,5 @@
 
-import { default as TYPE } from './types.js'
+import { LOAD_CONFIG } from './types.js'
 
 
 
@@ -7,7 +7,7 @@ import { default as TYPE } from './types.js'
 const config = (state = {}, action = {}) => {
   switch (action.type) {
 
-    case TYPE.LOAD_CONFIG:
+    case LOAD_CONFIG:
       return Object.assign({}, state, action.payload.config);
 
     default:

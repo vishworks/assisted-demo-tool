@@ -1,11 +1,15 @@
 import { includes } from 'lodash'
 
-import { TYPE, loadConfig } from '../actions'
+import { loadConfig } from '../state/config/actions.js'
+import { LOAD_CONFIG } from '../state/config/types.js'
 import { default as TYPES_UI } from '../state/ui/types.js'
 
 import { setDisplayMode } from '../state/ui/actions.js'
 import DisplayModeEnum from '../enums/DisplayMode.js'
 import { getDisplayMode } from '../state/ui/localSelectors.js'
+
+import { getCurrentPersonaId } from '../state/personas/localSelectors.js'
+import { getCurrentDemoId, getCurrentStepIndex } from '../state/demos/localSelectors.js'
 
 const CONTROL_PAGE_NAME = 'ControlPage'; // CONTROL_PAGE_NAME is opened by DISPLAY_PAGE_NAME
 
@@ -17,7 +21,7 @@ const MessageType = Object.freeze({
 
 const NOT_FORWARDABLE_ACTIONS = [
   TYPES_UI.SET_DISPLAY_MODE,
-  TYPE.LOAD_CONFIG
+  LOAD_CONFIG
 ];
 
 var controlPageWindow;
@@ -29,7 +33,8 @@ const ControlCenterMiddleware = store => {
     switch (ev.data.type) {
       case MessageType.INIT_CONTROL_PAGE:
         store.dispatch(setDisplayMode(DisplayModeEnum.CONTROL_PAGE));
-        store.dispatch(loadConfig(ev.data.payload.config));
+        let state = store.getState();
+        store.dispatch(loadConfig(ev.data.payload.config, getCurrentDemoId(state), getCurrentStepIndex(state), getCurrentPersonaId(state)));
         break;
       case MessageType.ACTION:
         store.dispatch(ev.data.payload.action);

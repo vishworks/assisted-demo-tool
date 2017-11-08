@@ -27,3 +27,4 @@ export const getCurrentStepBullets = localSelectors.getCurrentStepBullets;
 export const getCurrentStepName = localSelectors.getCurrentStepName;
 export const getIsFirstStep = localSelectors.getIsFirstStep;
 export const getIsLastStep = localSelectors.getIsLastStep;
+export const getCurrentStepPersonaId = localSelectors.getCurrentStepPersonaId;

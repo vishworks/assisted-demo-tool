@@ -4,7 +4,7 @@ import { get, find } from 'lodash'
 import { parseCurrentHash } from '../../helpers/HashUtils.js'
 import { LOAD_CONFIG } from '../config/types.js'
 
-import { default as TYPE } from './types.js'
+import { SELECT_PERSONA } from './types.js'
 
 
 
@@ -28,7 +28,7 @@ const currentPersonaId = (state = '', action = {}) => {
     case LOAD_CONFIG:
       return action.payload.initialPersonaId;
 
-    case TYPE.SELECT_PERSONA:
+    case SELECT_PERSONA:
       return action.payload.personaId;
 
     default:

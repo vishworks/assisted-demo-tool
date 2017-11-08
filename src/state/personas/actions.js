@@ -1,11 +1,11 @@
 
 
-import { default as TYPE }  from './types.js'
+import { SELECT_PERSONA }  from './types.js'
 
 
 export const selectPersona = (personaId) => {
   return {
-    type: TYPE.SELECT_PERSONA,
+    type: SELECT_PERSONA,
     payload: {
       personaId: personaId
     }

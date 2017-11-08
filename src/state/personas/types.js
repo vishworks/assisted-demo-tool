@@ -1,4 +1,2 @@
 
-export default {
-  SELECT_PERSONA: 'SELECT_PERSONA'
-};
+export const SELECT_PERSONA = 'SELECT_PERSONA';

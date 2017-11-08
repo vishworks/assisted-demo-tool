@@ -1,19 +1,23 @@
 import { combineReducers } from 'redux'
 
-
-import { default as TYPE } from './types.js'
 import DisplayModeEnum from '../../enums/DisplayMode.js'
 
-
+import {
+  POPUP_OPEN,
+  POPUP_CLOSE_ALL,
+  SET_DISPLAY_MODE,
+  SET_GLOBAL_ERROR,
+  STEP_CONTENT_SHOW_BULLETS
+}  from './types.js'
 
 
 const activePopup = (state = '', action = {}) => {
 
   switch (action.type) {
-    case TYPE.POPUP_OPEN:
+    case POPUP_OPEN:
       return action.payload.popupId;
 
-    case TYPE.POPUP_CLOSE_ALL:
+    case POPUP_CLOSE_ALL:
       return '';
 
     default:
@@ -24,7 +28,7 @@ const activePopup = (state = '', action = {}) => {
 const displayMode = (state = DisplayModeEnum.CONTROL_WIDGET, action = {}) => {
 
   switch (action.type) {
-    case TYPE.SET_DISPLAY_MODE:
+    case SET_DISPLAY_MODE:
       return action.payload.displayMode;
 
     default:
@@ -35,7 +39,7 @@ const displayMode = (state = DisplayModeEnum.CONTROL_WIDGET, action = {}) => {
 const globalErrorMessage = (state = '', action = {}) => {
 
   switch (action.type) {
-    case TYPE.SET_GLOBAL_ERROR:
+    case SET_GLOBAL_ERROR:
       return action.payload.errorMessage;
 
     default:
@@ -46,7 +50,7 @@ const globalErrorMessage = (state = '', action = {}) => {
 const displayBullets = (state = false, action = {}) => {
 
   switch (action.type) {
-    case TYPE.STEP_CONTENT_SHOW_BULLETS:
+    case STEP_CONTENT_SHOW_BULLETS:
       return action.payload.show;
 
     default:

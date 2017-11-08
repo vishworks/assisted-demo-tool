@@ -2,7 +2,7 @@ import { includes } from 'lodash'
 
 import { loadConfig } from '../state/config/actions.js'
 import { LOAD_CONFIG } from '../state/config/types.js'
-import { default as TYPES_UI } from '../state/ui/types.js'
+import { SET_DISPLAY_MODE } from '../state/ui/types.js'
 
 import { setDisplayMode } from '../state/ui/actions.js'
 import DisplayModeEnum from '../enums/DisplayMode.js'
@@ -22,7 +22,7 @@ const MessageType = Object.freeze({
 });
 
 const NOT_FORWARDABLE_ACTIONS = [
-  TYPES_UI.SET_DISPLAY_MODE,
+  SET_DISPLAY_MODE,
   LOAD_CONFIG
 ];
 
@@ -66,7 +66,7 @@ const ControlCenterMiddleware = store => {
       detachedMode = isControlPage || displayMode === DisplayModeEnum.DETACHED_PAGE;
 
     // when the user sets the display mode to "display page + control page"
-    if (!detachedMode && action.type === TYPES_UI.SET_DISPLAY_MODE) {
+    if (!detachedMode && action.type === SET_DISPLAY_MODE) {
       if (action.payload.displayMode === DisplayModeEnum.DETACHED_PAGE) {
         controlPageWindow = window.open(window.location.href, CONTROL_PAGE_NAME, 'width=1020,height=800' );
         controlPageWindow.addEventListener('load', () => {

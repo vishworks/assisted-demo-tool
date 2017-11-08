@@ -11,6 +11,8 @@ import { getDisplayMode } from '../state/ui/localSelectors.js'
 import { getCurrentPersonaId } from '../state/personas/localSelectors.js'
 import { getCurrentDemoId, getCurrentStepIndex } from '../state/demos/localSelectors.js'
 
+import { getConfig } from '../state/config/localSelectors.js'
+
 const CONTROL_PAGE_NAME = 'ControlPage'; // CONTROL_PAGE_NAME is opened by DISPLAY_PAGE_NAME
 
 const MessageType = Object.freeze({
@@ -33,8 +35,8 @@ const ControlCenterMiddleware = store => {
     switch (ev.data.type) {
       case MessageType.INIT_CONTROL_PAGE:
         store.dispatch(setDisplayMode(DisplayModeEnum.CONTROL_PAGE));
-        let state = store.getState();
-        store.dispatch(loadConfig(ev.data.payload.config, getCurrentDemoId(state), getCurrentStepIndex(state), getCurrentPersonaId(state)));
+        let { config, initialDemoId, initialStepIndex, initialPersonaId } = ev.data.payload;
+        store.dispatch(loadConfig(config, initialDemoId, initialStepIndex, initialPersonaId));
         break;
       case MessageType.ACTION:
         store.dispatch(ev.data.payload.action);
@@ -68,10 +70,14 @@ const ControlCenterMiddleware = store => {
       if (action.payload.displayMode === DisplayModeEnum.DETACHED_PAGE) {
         controlPageWindow = window.open(window.location.href, CONTROL_PAGE_NAME, 'width=1020,height=800' );
         controlPageWindow.addEventListener('load', () => {
+          let state = store.getState();
           controlPageWindow.postMessage({
             type: MessageType.INIT_CONTROL_PAGE,
             payload: {
-              config: store.getState().appReducer.config
+              config: getConfig(state),
+              initialDemoId: getCurrentDemoId(state),
+              initialStepIndex: getCurrentStepIndex(state),
+              initialPersonaId: getCurrentPersonaId(state)
             }
           }, '*');
         });

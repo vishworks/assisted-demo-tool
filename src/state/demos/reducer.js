@@ -4,7 +4,16 @@ import { merge, cloneDeep, map, get, find } from 'lodash'
 import { parseCurrentHash } from '../../helpers/HashUtils.js'
 import { LOAD_CONFIG } from '../config/types.js'
 
-import { default as TYPE } from './types.js'
+import {
+  DEMOS_SETTINGS_APPLY,
+  DEMOS_SETTINGS_CANCEL,
+  DEMOS_SETTINGS_INCLUDE_DEMO,
+  DEMOS_SETTINGS_EXCLUDE_DEMO,
+  DEMOS_SETTINGS_MOVE_DEMO,
+  DEMOS_SETTINGS_START,
+  DEMOS_SETTINGS_SELECT_DEMO,
+  GOTO_STEP
+} from './types.js'
 
 
 
@@ -19,7 +28,7 @@ const demos = (state = [], action = {}) => {
       });
       return Object.assign([], state, newDemos );
 
-    case TYPE.DEMOS_SETTINGS_APPLY:
+    case DEMOS_SETTINGS_APPLY:
       return cloneDeep(action.payload.tempDemos);
 
     default:
@@ -30,11 +39,11 @@ const demos = (state = [], action = {}) => {
 const tempDemos = (state = [], action = {}) => {
   switch (action.type) {
 
-    case TYPE.DEMOS_SETTINGS_CANCEL:
+    case DEMOS_SETTINGS_CANCEL:
       // tempDemos = []
       return [];
 
-    case TYPE.DEMOS_SETTINGS_INCLUDE_DEMO:
+    case DEMOS_SETTINGS_INCLUDE_DEMO:
       // tempDemos[demoId].included = true
       return Object.assign([], state, map(state, (demo) => {
           if (demo.id === action.payload.demoId) {
@@ -44,7 +53,7 @@ const tempDemos = (state = [], action = {}) => {
         })
       );
 
-    case TYPE.DEMOS_SETTINGS_EXCLUDE_DEMO:
+    case DEMOS_SETTINGS_EXCLUDE_DEMO:
       // tempDemos[demoId].included = false
       return Object.assign([], state, map(state, (demo) => {
           if (demo.id === action.payload.demoId) {
@@ -54,7 +63,7 @@ const tempDemos = (state = [], action = {}) => {
         })
       );
 
-    case TYPE.DEMOS_SETTINGS_MOVE_DEMO:
+    case DEMOS_SETTINGS_MOVE_DEMO:
       // swap tempDemos elements oldIndex newIndex
       let tempDemosClone = cloneDeep(state),
         park = tempDemosClone[action.payload.newIndex];
@@ -62,10 +71,10 @@ const tempDemos = (state = [], action = {}) => {
       tempDemosClone[action.payload.oldIndex] = park;
       return Object.assign([], state, tempDemosClone);
 
-    case TYPE.DEMOS_SETTINGS_START:
+    case DEMOS_SETTINGS_START:
       return cloneDeep(action.payload.demos);
 
-    case TYPE.DEMOS_SETTINGS_APPLY:
+    case DEMOS_SETTINGS_APPLY:
       return [];
 
     default:
@@ -81,7 +90,7 @@ const currentDemoId = (state = '', action = {}) => {
     case LOAD_CONFIG:
       return action.payload.initialDemoId;
 
-    case TYPE.DEMOS_SETTINGS_SELECT_DEMO: {
+    case DEMOS_SETTINGS_SELECT_DEMO: {
       return action.payload.demoId;
     }
 
@@ -99,10 +108,10 @@ const currentStepIndex = (state = 0, action = {}) => {
     case LOAD_CONFIG:
       return action.payload.initialStepIndex;
 
-    case TYPE.GOTO_STEP:
+    case GOTO_STEP:
       return action.payload.stepIndex;
 
-    case TYPE.DEMOS_SETTINGS_SELECT_DEMO:
+    case DEMOS_SETTINGS_SELECT_DEMO:
       return 0;
 
     default:

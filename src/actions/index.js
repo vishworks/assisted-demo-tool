@@ -9,11 +9,14 @@ export const TYPE = {
 };
 
 
-export const loadConfig = (data) => {
+export const loadConfig = (data, initialDemoId, initialStepIndex, initialPersonaId) => {
   return {
     type: TYPE.LOAD_CONFIG,
     payload: {
-      config: data
+      config: data,
+      initialDemoId,
+      initialStepIndex,
+      initialPersonaId
     }
   };
 };
@@ -28,21 +31,28 @@ export function asyncLoadConfig(configUrl) {
           try {
             response.json().then(function (data) {
 
-              // get it before dispatching loadconfig (it would override url hash with default values)
+              // select currently selected state after loadConfig
               let { demoId, stepNumber, personaId } = parseCurrentHash();
+              let selectedDemoId, selectedStepIndex, selectedPersonaId;
 
-              dispatch(loadConfig(data));
+
+              selectedDemoId = (demoId && find(data.demos, { id: demoId })) ?
+                demoId :
+                first(data.demos).id;
+
+              selectedStepIndex = !!stepNumber ?
+                toInteger(stepNumber) - 1 :
+                0;
+
+              selectedPersonaId = (personaId && find(data.personas, { id: personaId })) ?
+                personaId :
+                first(data.personas).id;
 
 
-              if (demoId && find(data.demos, { id: demoId })) {
-                dispatch(selectDemo(demoId));
-              }
-              if (stepNumber) {
-                dispatch(gotoStep(toInteger(stepNumber) - 1));
-              }
-              if (personaId && find(data.personas, { id: personaId })) {
-                dispatch(selectPersona(personaId));
-              }
+
+              dispatch(loadConfig(data, selectedDemoId, selectedStepIndex, selectedPersonaId));
+
+
 
             });
           } catch(er) {

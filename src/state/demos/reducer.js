@@ -78,14 +78,8 @@ const tempDemos = (state = [], action = {}) => {
 const currentDemoId = (state = '', action = {}) => {
 
   switch (action.type) {
-    case APP_TYPE.LOAD_CONFIG: {
-      let demos = action.payload.config.demos,
-        newHash = parseCurrentHash();
-      if (find(demos, { id: newHash.demoId })) {
-        return  newHash.demoId;
-      }
-      return get(demos, '0.id');
-    }
+    case APP_TYPE.LOAD_CONFIG:
+      return action.payload.initialDemoId;
 
     case TYPE.DEMOS_SETTINGS_SELECT_DEMO: {
       return action.payload.demoId;
@@ -102,16 +96,14 @@ const currentStepIndex = (state = 0, action = {}) => {
 
   switch (action.type) {
 
-    case APP_TYPE.LOAD_CONFIG: {
-      return 0;
-    }
+    case APP_TYPE.LOAD_CONFIG:
+      return action.payload.initialStepIndex;
 
     case TYPE.GOTO_STEP:
       return action.payload.stepIndex;
 
-    case TYPE.DEMOS_SETTINGS_SELECT_DEMO: {
+    case TYPE.DEMOS_SETTINGS_SELECT_DEMO:
       return 0;
-    }
 
     default:
       return state

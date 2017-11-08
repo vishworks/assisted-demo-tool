@@ -25,14 +25,8 @@ const personas = (state = [], action = {}) => {
 const currentPersonaId = (state = '', action = {}) => {
 
   switch (action.type) {
-    case APP_TYPE.LOAD_CONFIG: {
-      let personas = action.payload.config.personas,
-        newHash = parseCurrentHash();
-      if (find(personas, { id: newHash.personaId })) {
-        return  newHash.personaId;
-      }
-      return get(personas, '0.id');
-    }
+    case APP_TYPE.LOAD_CONFIG:
+      return action.payload.initialPersonaId;
 
     case TYPE.SELECT_PERSONA:
       return action.payload.personaId;

@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux'
 import { some, isEmpty } from 'lodash'
-import controlWidget from './controlWidget.js'
 
-import appReducer from './appReducer.js'
 
+import config from '../state/config/reducer.js'
 import ui from '../state/ui/reducer.js'
 import demos from '../state/demos/reducer.js'
 import personas from '../state/personas/reducer.js'
@@ -14,12 +13,10 @@ import { getCurrentPersonaId } from '../state/personas/localSelectors.js'
 import { updateHashFromObject } from '../helpers/HashUtils.js'
 
 const rootReducer = combineReducers({
+  config,
   ui,
   demos,
-  personas,
-  controlWidget,
-  appReducer
-
+  personas
 });
 
 

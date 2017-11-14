@@ -3,6 +3,8 @@
 import { createSelector } from 'reselect'
 import { find, filter, map, get, uniq, intersection, includes, memoize, overArgs, forEach } from 'lodash'
 
+import { getCurrentPersonaId } from 'state/personas/selectors.js'
+
 
 function addIndexToArray(array) {
   return map(array, (el, index) => {
@@ -110,5 +112,12 @@ export const getCurrentStepPersonaId = createSelector(
   [getCurrentStep],
   (currentStep) => {
     return currentStep.personaId;
+  }
+);
+
+export const getCurrentPersonaSteps = createSelector(
+  [getAllSteps, getCurrentPersonaId],
+  (allSteps, currentPersonaId) => {
+    return filter(allSteps, { personaId: currentPersonaId } );
   }
 );

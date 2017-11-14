@@ -7,7 +7,7 @@ import 'font-awesome/css/font-awesome.min.css'
 import './index.css';
 
 import AppContainer from './containers/AppContainer';
-import rootReducer from './reducers'
+import rootReducer from './state/rootReducer.js'
 import thunk from 'redux-thunk'
 import registerServiceWorker from './registerServiceWorker';
 
@@ -35,5 +35,3 @@ registerServiceWorker();
 
 // TODO refactor CSS: do not use component class names in other files (e.g. .Popup in ControlWidget.css). Inject custom classes to control children styles
 // TODO switch to SASS
-// TODO refactor state using ducks
-// TODO use modular reducers

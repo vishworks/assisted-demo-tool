@@ -16,9 +16,15 @@
     "reselect": "^3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently --kill-others \"npm run prettier-watch\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "onchange": "^3.2.1",
+    "prettier": "1.8.2"
   }
 }

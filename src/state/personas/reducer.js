@@ -1,27 +1,21 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 
-import { LOAD_CONFIG } from '../config/types.js'
+import { LOAD_CONFIG } from '../config/types.js';
 
-import { SELECT_PERSONA } from './types.js'
-
-
-
+import { SELECT_PERSONA } from './types.js';
 
 const personas = (state = [], action = {}) => {
   switch (action.type) {
-
     case LOAD_CONFIG:
       let newPersonas = action.payload.config.personas.slice();
-      return Object.assign([], state, newPersonas );
+      return Object.assign([], state, newPersonas);
 
     default:
-      return state
+      return state;
   }
 };
 
-
 const currentPersonaId = (state = '', action = {}) => {
-
   switch (action.type) {
     case LOAD_CONFIG:
       return action.payload.initialPersonaId;
@@ -30,10 +24,9 @@ const currentPersonaId = (state = '', action = {}) => {
       return action.payload.personaId;
 
     default:
-      return state
+      return state;
   }
 };
-
 
 const reducer = combineReducers({
   personas,

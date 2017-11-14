@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { map } from 'lodash';
 
-import DemoOrdinatorListItem from './DemoOrdinatorListItem.js'
+import DemoOrdinatorListItem from './DemoOrdinatorListItem.js';
 
-import './DemoOrdinator.css'
-
+import './DemoOrdinator.css';
 
 class DemoOrdinator extends Component {
-
-
   constructor(props) {
     super(props);
     this.onClickCheckbox = this.onClickCheckbox.bind(this);
@@ -17,28 +14,26 @@ class DemoOrdinator extends Component {
   }
 
   render() {
-
     let list = map(this.props.demos, (demo, i) => {
-
-      return <DemoOrdinatorListItem key={demo.id}
-                                    demoName={demo.name}
-                                    demoIncluded={demo.included}
-                                    onClickCheckbox={this.onClickCheckbox(demo.id, i)}
-                                    onClickMoveUp={this.moveDemo(demo.id, i, i-1)}
-                                    onClickMoveDown={this.moveDemo(demo.id, i, i+1)}
-                                    isFirstItem={i===0}
-                                    isLastItem={i+1===this.props.demos.length}
-        />;
-
+      return (
+        <DemoOrdinatorListItem
+          key={demo.id}
+          demoName={demo.name}
+          demoIncluded={demo.included}
+          onClickCheckbox={this.onClickCheckbox(demo.id, i)}
+          onClickMoveUp={this.moveDemo(demo.id, i, i - 1)}
+          onClickMoveDown={this.moveDemo(demo.id, i, i + 1)}
+          isFirstItem={i === 0}
+          isLastItem={i + 1 === this.props.demos.length}
+        />
+      );
     });
 
     return (
       <div className="DemoOrdinator">
-        { list }
+        {list}
         <div className="btn-section">
-          <button className="big-blue-btn"
-                  onClick={this.onClickApply}
-            >
+          <button className="big-blue-btn" onClick={this.onClickApply}>
             Apply
           </button>
         </div>
@@ -57,7 +52,7 @@ class DemoOrdinator extends Component {
   }
 
   moveDemo(demoId, oldIndex, newIndex) {
-    return (ev) => {
+    return ev => {
       this.props.moveDemo(demoId, oldIndex, newIndex);
     };
   }
@@ -66,7 +61,6 @@ class DemoOrdinator extends Component {
     this.props.applyDemoSettings(this.props.demos);
     this.props.closeAllPopups();
   }
-
 }
 
 export default DemoOrdinator;

@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import HorizontalDemoListContainer from "../containers/HorizontalDemoListContainer.js";
+import HorizontalDemoListContainer from '../containers/HorizontalDemoListContainer.js';
 
-import "./ControlPage.css";
+import './ControlPage.css';
 
 class ControlPage extends Component {
   render() {
-    let className = ["ControlPage"];
+    let className = ['ControlPage'];
 
     return (
-      <div className={className.join(" ")}>
+      <div className={className.join(' ')}>
         <div className="header">
           <HorizontalDemoListContainer />
         </div>

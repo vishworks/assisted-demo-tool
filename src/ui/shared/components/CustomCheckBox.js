@@ -1,13 +1,9 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-
-
-import './CustomCheckBox.css'
-
+import './CustomCheckBox.css';
 
 class CustomCheckBox extends PureComponent {
-
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
@@ -15,9 +11,8 @@ class CustomCheckBox extends PureComponent {
 
   render() {
     return (
-      <div className="CustomCheckBox"
-           onClick={this.onClick}>
-        { this.props.checked ? <i className="fa fa-check tick" /> : null }
+      <div className="CustomCheckBox" onClick={this.onClick}>
+        {this.props.checked ? <i className="fa fa-check tick" /> : null}
       </div>
     );
   }

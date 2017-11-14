@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 
-import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js'
+import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js';
 
-import './LabelledAvatar.css'
-
+import './LabelledAvatar.css';
 
 class LabelledAvatar extends Component {
-
-
   render() {
     let className = ['LabelledAvatar'];
 
     let { imageUrl, label, description } = this.props;
 
-
     return (
-      <div
-        className={className.join(' ')}
-        onClick={this.props.onClick}
-        >
+      <div className={className.join(' ')} onClick={this.props.onClick}>
         <div className="persona-wrapper">
           <PersonaAvatar imageUrl={imageUrl} />
         </div>
@@ -27,7 +20,6 @@ class LabelledAvatar extends Component {
       </div>
     );
   }
-
 }
 
 export default LabelledAvatar;

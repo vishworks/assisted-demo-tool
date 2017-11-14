@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { isFunction } from 'lodash';
 
-import './Popup.css'
-
+import './Popup.css';
 
 class Popup extends Component {
-
   constructor(props) {
     super(props);
     this.globalClickHandler = this.globalClickHandler.bind(this);
@@ -24,15 +22,20 @@ class Popup extends Component {
   }
 
   render() {
-
     let className = ['Popup'];
     if (this.props.className) {
       className.push(this.props.className);
     }
     return (
-      <div className={className.join(' ')} style={{ display: this.props.activePopup === this.props.popupId ? 'block' : 'none'}}
-        onClick={this.onClick}>
-        { this.props.children }
+      <div
+        className={className.join(' ')}
+        style={{
+          display:
+            this.props.activePopup === this.props.popupId ? 'block' : 'none'
+        }}
+        onClick={this.onClick}
+      >
+        {this.props.children}
       </div>
     );
   }
@@ -46,8 +49,6 @@ class Popup extends Component {
       ev.nativeEvent.stopImmediatePropagation();
     }
   }
-
-
 }
 
 Popup.defaultProps = {

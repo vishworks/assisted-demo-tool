@@ -1,23 +1,21 @@
-
-import { join, map, sortBy, toPairs, merge, memoize, filter, isEmpty } from 'lodash'
-
+import {
+  join,
+  map,
+  sortBy,
+  toPairs,
+  merge,
+  memoize,
+  filter,
+  isEmpty
+} from 'lodash';
 
 const PARAMS_SEPARATOR = '--';
 const KEY_VALUE_SEPARATOR = '=';
 
-
 export function getHashFromObject(props) {
-
   return join(
-    map(
-      sortBy(
-        filter(
-          toPairs(props),
-          pair => !isEmpty(pair[1]+'')
-        ),
-        0
-      ),
-      (ar)=> join(ar, KEY_VALUE_SEPARATOR)
+    map(sortBy(filter(toPairs(props), pair => !isEmpty(pair[1] + '')), 0), ar =>
+      join(ar, KEY_VALUE_SEPARATOR)
     ),
     PARAMS_SEPARATOR
   );
@@ -38,16 +36,16 @@ export function updateHashFromObject(props) {
   updateHash(getHashFromObject(merged));
 }
 
-export const parseHash = memoize((hash) => {
+export const parseHash = memoize(hash => {
   hash = hash || '';
   hash = decodeURIComponent(hash.substring(1)); // remove hash symbol
   let optsStr = hash.split(PARAMS_SEPARATOR);
 
   let opts = {};
-  optsStr.forEach((opt) => {
+  optsStr.forEach(opt => {
     let index = opt.indexOf(KEY_VALUE_SEPARATOR);
     if (index !== -1) {
-      let  key = opt.substring(0, index);
+      let key = opt.substring(0, index);
       opts[key] = opt.substring(index + 1);
     } else {
       opts[opt] = true;
@@ -59,4 +57,3 @@ export const parseHash = memoize((hash) => {
 export const parseCurrentHash = () => {
   return parseHash(window.location.hash);
 };
-

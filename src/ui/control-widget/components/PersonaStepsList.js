@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 
 import { forEach } from 'lodash';
 
-import PersonaStepsListItem from './PersonaStepsListItem.js'
+import PersonaStepsListItem from './PersonaStepsListItem.js';
 
-import './PersonaStepsList.css'
-
+import './PersonaStepsList.css';
 
 class PersonaStepsList extends Component {
-
   render() {
-
     let className = ['PersonaStepsList'];
 
     let renderers = [];
@@ -19,9 +16,11 @@ class PersonaStepsList extends Component {
         <PersonaStepsListItem
           key={step.index}
           step={step}
-          active={this.props.currentStepIndex === step.index }
-          onClick={(ev) => { this.props.gotoStep(step.index); }}
-          />
+          active={this.props.currentStepIndex === step.index}
+          onClick={ev => {
+            this.props.gotoStep(step.index);
+          }}
+        />
       );
     });
 
@@ -29,17 +28,8 @@ class PersonaStepsList extends Component {
       renderers = <div className="info-message">No steps</div>;
     }
 
-
-    return (
-      <div
-        className={className.join(' ')}
-        >
-        {renderers}
-      </div>
-    );
+    return <div className={className.join(' ')}>{renderers}</div>;
   }
-
-
 }
 
 export default PersonaStepsList;

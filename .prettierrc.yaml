@@ -1,0 +1,13 @@
+# .prettierrc
+# https://prettier.io/docs/en/options.html
+
+printWidth: 80
+parser: flow
+
+tabWidth: 2       # indentation width
+useTabs: false    # use tabs instead of spaces to indent
+semi: true        # put semicolumns after satements
+singleQuote: true # use single quotes instead of double quotes (not in JSX)
+trailingComma: none
+bracketSpacing: true
+jsxBracketSameLine: false

@@ -1,5 +1,3 @@
-
-
 import {
   DEMOS_SETTINGS_APPLY,
   DEMOS_SETTINGS_CANCEL,
@@ -9,18 +7,16 @@ import {
   DEMOS_SETTINGS_START,
   DEMOS_SETTINGS_SELECT_DEMO,
   GOTO_STEP
-} from './types.js'
+} from './types.js';
 
-
-
-export const startDemoSettings = (demos) => ({
+export const startDemoSettings = demos => ({
   type: DEMOS_SETTINGS_START,
   payload: {
     demos
   }
 });
 
-export const applyDemoSettings = (tempDemos) => ({
+export const applyDemoSettings = tempDemos => ({
   type: DEMOS_SETTINGS_APPLY,
   payload: {
     tempDemos
@@ -56,14 +52,14 @@ export const moveDemo = (demoId, oldIndex, newIndex) => ({
   }
 });
 
-export const selectDemo = (demoId) => ({
+export const selectDemo = demoId => ({
   type: DEMOS_SETTINGS_SELECT_DEMO,
   payload: {
     demoId
   }
 });
 
-export const gotoStep = (stepIndex) => {
+export const gotoStep = stepIndex => {
   return {
     type: GOTO_STEP,
     payload: {

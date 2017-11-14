@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
-import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js'
-
+import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js';
 
 class PersonaListItem extends Component {
-
-
   render() {
-
     let { id, imageUrl, label, description } = this.props;
     let className = ['PersonaListItem'];
     if (this.props.className) {
@@ -19,23 +14,22 @@ class PersonaListItem extends Component {
       className.push('active');
     }
 
-    return <div key={id} className={className.join(' ')}
-                onClick={ this.props.onClick }
+    return (
+      <div
+        key={id}
+        className={className.join(' ')}
+        onClick={this.props.onClick}
       >
-      <div className="persona-wrapper">
-        <PersonaAvatar imageUrl={imageUrl}  />
-        <div className="label-sect">
-          <div className="label">
-            {label}
-          </div>
-          <div className="label">
-            {description}
+        <div className="persona-wrapper">
+          <PersonaAvatar imageUrl={imageUrl} />
+          <div className="label-sect">
+            <div className="label">{label}</div>
+            <div className="label">{description}</div>
           </div>
         </div>
       </div>
-    </div>
+    );
   }
-
 }
 
 PersonaListItem.propTypes = {

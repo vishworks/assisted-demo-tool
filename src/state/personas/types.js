@@ -1,2 +1,1 @@
-
 export const SELECT_PERSONA = 'SELECT_PERSONA';

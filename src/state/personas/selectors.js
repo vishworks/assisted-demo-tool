@@ -1,57 +1,50 @@
-
-
-import { createSelector } from 'reselect'
-import { find, filter, map, uniq, intersection } from 'lodash'
-
+import { createSelector } from 'reselect';
+import { find, filter, map, uniq, intersection } from 'lodash';
 
 export const getPersonasState = state => state.personas;
 
-
 export const getCurrentPersonaId = createSelector(
-  [getPersonasState], personasState => personasState.currentPersonaId
+  [getPersonasState],
+  personasState => personasState.currentPersonaId
 );
 
 const getRawPersonas = createSelector(
-  [getPersonasState], personasState => personasState.personas
+  [getPersonasState],
+  personasState => personasState.personas
 );
 
-export const getPersonas = createSelector(
-  [getRawPersonas],
-  (personas) => {
-    return personas && personas.length ?
-      map(personas, (persona) => {
+export const getPersonas = createSelector([getRawPersonas], personas => {
+  return personas && personas.length
+    ? map(personas, persona => {
         if (!persona.avatar) {
-          persona.avatar = 'img/user.png'
+          persona.avatar = 'img/user.png';
         }
         return persona;
-      }) :
-      null;
-  }
-);
-
-
+      })
+    : null;
+});
 
 export const getCurrentPersona = createSelector(
   [getCurrentPersonaId, getPersonas],
   (currentPersonaId, personas) => {
-    return find(personas, { id: currentPersonaId } );
+    return find(personas, { id: currentPersonaId });
   }
 );
 
 export const getNotSelectedPersonas = createSelector(
   [getCurrentPersonaId, getPersonas],
   (currentPersonaId, personas) => {
-    return filter(personas, (persona) => { return persona.id !== currentPersonaId } );
+    return filter(personas, persona => {
+      return persona.id !== currentPersonaId;
+    });
   }
 );
 
-export const getVisiblePersonas = createSelector(
-  [getPersonas],
-  (personas) => {
-    return filter(personas, (persona) => { return !persona.hidden } );
-  }
-);
-
+export const getVisiblePersonas = createSelector([getPersonas], personas => {
+  return filter(personas, persona => {
+    return !persona.hidden;
+  });
+});
 
 export const getVisibleNotSelectedPersonas = createSelector(
   [getNotSelectedPersonas, getVisiblePersonas],
@@ -62,33 +55,30 @@ export const getVisibleNotSelectedPersonas = createSelector(
 
 export const getCurrentPersonaImageUrl = createSelector(
   [getCurrentPersona],
-  (currentPersona) => {
+  currentPersona => {
     return currentPersona && currentPersona.avatar;
   }
 );
 export const getCurrentPersonaLabel = createSelector(
   [getCurrentPersona],
-  (currentPersona) => {
+  currentPersona => {
     return currentPersona && currentPersona.label;
   }
 );
 export const getCurrentPersonaDescription = createSelector(
   [getCurrentPersona],
-  (currentPersona) => {
+  currentPersona => {
     return currentPersona && currentPersona.description;
   }
 );
 
 export const getCurrentUrl = createSelector(
-    [getCurrentPersona],
-    (currentPersona) => {
-      return currentPersona.url;
-    }
+  [getCurrentPersona],
+  currentPersona => {
+    return currentPersona.url;
+  }
 );
 
-export const getUrls = createSelector(
-    [getPersonas],
-    (personas) => {
-      return uniq(map(personas, 'url'));
-    }
-);
+export const getUrls = createSelector([getPersonas], personas => {
+  return uniq(map(personas, 'url'));
+});

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 import { isFunction } from 'lodash';
 
-import './PseudoCheckbox.css'
+import './PseudoCheckbox.css';
 
 class PseudoCheckbox extends Component {
-
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
@@ -17,11 +16,13 @@ class PseudoCheckbox extends Component {
       className.push('disabled');
     }
     return (
-      <span className={ className.join(' ') }
-            onClick={this.onClick}
-        >
-        { this.props.text }
-        <i className={this.props.checked ? 'fa fa-check-square-o' : 'fa fa-square-o'}/>
+      <span className={className.join(' ')} onClick={this.onClick}>
+        {this.props.text}
+        <i
+          className={
+            this.props.checked ? 'fa fa-check-square-o' : 'fa fa-square-o'
+          }
+        />
       </span>
     );
   }
@@ -31,7 +32,6 @@ class PseudoCheckbox extends Component {
       this.props.onClick(ev);
     }
   }
-
 }
 
 PseudoCheckbox.propTypes = {

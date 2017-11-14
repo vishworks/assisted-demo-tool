@@ -3,10 +3,9 @@ import { isEmpty } from 'lodash';
 
 import PseudoCheckbox from 'ui/shared/components/PseudoCheckbox.js';
 
-import './StepContent.css'
+import './StepContent.css';
 
 class StepContent extends Component {
-
   constructor(props) {
     super(props);
     this.renderBullets = this.renderBullets.bind(this);
@@ -15,15 +14,14 @@ class StepContent extends Component {
   }
 
   render() {
-    let
-      displayBullets,
+    let displayBullets,
       contentRenderer,
       cannotChoose = false;
 
     if (isEmpty(this.props.content)) {
       displayBullets = true;
       cannotChoose = true;
-    } else if(isEmpty(this.props.bullets)) {
+    } else if (isEmpty(this.props.bullets)) {
       displayBullets = false;
       cannotChoose = true;
     } else {
@@ -36,11 +34,18 @@ class StepContent extends Component {
       contentRenderer = this.renderContent();
     }
 
-    return <div className="StepContent">
-      <h3 className="step-title">{this.props.stepTitle}</h3>
-      <PseudoCheckbox text="Show Bullets" checked={displayBullets} onClick={this.onClickShowBullets} disabled={cannotChoose} />
-      { contentRenderer }
-    </div>;
+    return (
+      <div className="StepContent">
+        <h3 className="step-title">{this.props.stepTitle}</h3>
+        <PseudoCheckbox
+          text="Show Bullets"
+          checked={displayBullets}
+          onClick={this.onClickShowBullets}
+          disabled={cannotChoose}
+        />
+        {contentRenderer}
+      </div>
+    );
   }
 
   renderContent() {
@@ -48,21 +53,18 @@ class StepContent extends Component {
       <div
         className="content"
         dangerouslySetInnerHTML={{ __html: this.props.content }}
-        />
+      />
     );
   }
 
   renderBullets() {
-
-    let bulletList = this.props.bullets.map((bullet) => {
-      return <li>{bullet}</li>
+    let bulletList = this.props.bullets.map(bullet => {
+      return <li>{bullet}</li>;
     });
 
     return (
       <div className="bullets">
-        <ul>
-          { bulletList }
-        </ul>
+        <ul>{bulletList}</ul>
       </div>
     );
   }
@@ -70,7 +72,6 @@ class StepContent extends Component {
   onClickShowBullets() {
     this.props.showBullets(!this.props.displayBullets);
   }
-
 }
 
 export default StepContent;

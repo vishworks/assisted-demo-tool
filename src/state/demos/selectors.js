@@ -1,10 +1,7 @@
+import { createSelector } from 'reselect';
+import { find, filter, map } from 'lodash';
 
-
-import { createSelector } from 'reselect'
-import { find, filter, map } from 'lodash'
-
-import { getCurrentPersonaId } from 'state/personas/selectors.js'
-
+import { getCurrentPersonaId } from 'state/personas/selectors.js';
 
 function addIndexToArray(array) {
   return map(array, (el, index) => {
@@ -13,57 +10,46 @@ function addIndexToArray(array) {
   });
 }
 
-
 export const getDemosState = state => state.demos;
 
-
 export const getDemos = createSelector(
-  [getDemosState], (demosState) => demosState.demos
+  [getDemosState],
+  demosState => demosState.demos
 );
 
 export const getCurrentDemoId = createSelector(
-  [getDemosState], (demosState) => demosState.currentDemoId
+  [getDemosState],
+  demosState => demosState.currentDemoId
 );
 
 export const getTempDemos = createSelector(
-  [getDemosState], (demosState) => demosState.tempDemos
+  [getDemosState],
+  demosState => demosState.tempDemos
 );
 
 export const getCurrentStepIndex = createSelector(
-  [getDemosState], (demosState) => demosState.currentStepIndex
+  [getDemosState],
+  demosState => demosState.currentStepIndex
 );
-
 
 export const getCurrentDemo = createSelector(
   [getCurrentDemoId, getDemos],
   (currentDemoId, demos) => {
-    return find(demos, { id: currentDemoId } );
+    return find(demos, { id: currentDemoId });
   }
 );
 
+export const getSteps = createSelector([getCurrentDemo], currentDemo => {
+  return currentDemo && currentDemo.steps;
+});
 
+export const getAllSteps = createSelector([getSteps], steps => {
+  return steps && addIndexToArray(steps);
+});
 
-export const getSteps = createSelector(
-  [getCurrentDemo],
-  (currentDemo) => {
-    return currentDemo && currentDemo.steps;
-  }
-);
-
-
-export const getAllSteps = createSelector(
-  [getSteps],
-  (steps) => {
-    return steps && addIndexToArray(steps);
-  }
-);
-
-export const getStepsCount = createSelector(
-  [getSteps],
-  (steps) => {
-    return steps && steps.length;
-  }
-);
+export const getStepsCount = createSelector([getSteps], steps => {
+  return steps && steps.length;
+});
 
 export const getIsLastStep = createSelector(
   [getStepsCount, getCurrentStepIndex],
@@ -74,11 +60,10 @@ export const getIsLastStep = createSelector(
 
 export const getIsFirstStep = createSelector(
   [getCurrentStepIndex],
-  (currentStepIndex) => {
+  currentStepIndex => {
     return currentStepIndex === 0;
   }
 );
-
 
 export const getCurrentStep = createSelector(
   [getAllSteps, getCurrentStepIndex],
@@ -89,28 +74,28 @@ export const getCurrentStep = createSelector(
 
 export const getCurrentStepContent = createSelector(
   [getCurrentStep],
-  (currentStep) => {
+  currentStep => {
     return currentStep.content;
   }
 );
 
 export const getCurrentStepBullets = createSelector(
   [getCurrentStep],
-  (currentStep) => {
+  currentStep => {
     return currentStep.bullets;
   }
 );
 
 export const getCurrentStepName = createSelector(
   [getCurrentStep],
-  (currentStep) => {
+  currentStep => {
     return currentStep.name;
   }
 );
 
 export const getCurrentStepPersonaId = createSelector(
   [getCurrentStep],
-  (currentStep) => {
+  currentStep => {
     return currentStep.personaId;
   }
 );
@@ -118,6 +103,6 @@ export const getCurrentStepPersonaId = createSelector(
 export const getCurrentPersonaSteps = createSelector(
   [getAllSteps, getCurrentPersonaId],
   (allSteps, currentPersonaId) => {
-    return filter(allSteps, { personaId: currentPersonaId } );
+    return filter(allSteps, { personaId: currentPersonaId });
   }
 );

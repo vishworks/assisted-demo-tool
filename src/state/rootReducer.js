@@ -1,16 +1,18 @@
-import { combineReducers } from 'redux'
-import { some, isEmpty } from 'lodash'
+import { combineReducers } from 'redux';
+import { some, isEmpty } from 'lodash';
 
+import config from 'state/config/reducer.js';
+import ui from 'state/ui/reducer.js';
+import demos from 'state/demos/reducer.js';
+import personas from 'state/personas/reducer.js';
 
-import config from '../state/config/reducer.js'
-import ui from '../state/ui/reducer.js'
-import demos from '../state/demos/reducer.js'
-import personas from '../state/personas/reducer.js'
+import {
+  getCurrentDemoId,
+  getCurrentStepIndex
+} from 'state/demos/selectors.js';
+import { getCurrentPersonaId } from 'state/personas/selectors.js';
 
-import { getCurrentDemoId, getCurrentStepIndex } from '../state/demos/selectors.js'
-import { getCurrentPersonaId } from '../state/personas/selectors.js'
-
-import { updateHashFromObject } from '../helpers/HashUtils.js'
+import { updateHashFromObject } from 'helpers/HashUtils.js';
 
 const rootReducer = combineReducers({
   config,
@@ -19,14 +21,12 @@ const rootReducer = combineReducers({
   personas
 });
 
-
 const rootReducerUpdatingHash = (state, action) => {
-  let newState =  rootReducer(state, action);
+  let newState = rootReducer(state, action);
 
   let demoId = getCurrentDemoId(newState),
     stepNumber = getCurrentStepIndex(newState) + 1,
     personaId = getCurrentPersonaId(newState);
-
 
   if (some([demoId, personaId], isEmpty) === false) {
     updateHashFromObject({

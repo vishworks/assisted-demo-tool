@@ -1,20 +1,14 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
-import { getCurrentStepName } from 'state/demos/selectors.js'
-import ControlPage from '../components/ControlPage.js'
-
-
+import { getCurrentStepName } from 'state/demos/selectors.js';
+import ControlPage from '../components/ControlPage.js';
 
 const mapStateToProps = state => {
   return {
     currentStepName: getCurrentStepName(state)
-  }
+  };
 };
 
+const ControlPageContainer = connect(mapStateToProps, null)(ControlPage);
 
-const ControlPageContainer = connect(
-  mapStateToProps,
-  null
-)(ControlPage);
-
-export default ControlPageContainer
+export default ControlPageContainer;

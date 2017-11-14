@@ -1,16 +1,12 @@
-
-
 import {
   POPUP_OPEN,
   POPUP_CLOSE_ALL,
   SET_DISPLAY_MODE,
   SET_GLOBAL_ERROR,
   STEP_CONTENT_SHOW_BULLETS
-}  from './types.js'
+} from './types.js';
 
-
-
-export const openPopup = (popupId) => {
+export const openPopup = popupId => {
   return {
     type: POPUP_OPEN,
     payload: {
@@ -25,7 +21,7 @@ export const closeAllPopups = () => {
   };
 };
 
-export const setDisplayMode = (displayMode) => {
+export const setDisplayMode = displayMode => {
   return {
     type: SET_DISPLAY_MODE,
     payload: {
@@ -34,8 +30,7 @@ export const setDisplayMode = (displayMode) => {
   };
 };
 
-
-export const setGlobalError = (errorMessage) => {
+export const setGlobalError = errorMessage => {
   return {
     type: SET_GLOBAL_ERROR,
     payload: {
@@ -44,9 +39,7 @@ export const setGlobalError = (errorMessage) => {
   };
 };
 
-
-
-export const showBullets = (show) => {
+export const showBullets = show => {
   return {
     type: STEP_CONTENT_SHOW_BULLETS,
     payload: {

@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import FloatingButton from './FloatingButton.js'
-import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js'
-import List from './List.js'
-import PersonaListItem from './PersonaListItem.js'
+import FloatingButton from './FloatingButton.js';
+import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js';
+import List from './List.js';
+import PersonaListItem from './PersonaListItem.js';
 
-import './ControlWidgetMini.css'
-
+import './ControlWidgetMini.css';
 
 class ControlWidgetMini extends Component {
-
-
   constructor(props) {
     super(props);
 
@@ -29,46 +26,64 @@ class ControlWidgetMini extends Component {
     };
   }
 
-
   renderCollapsed() {
     let className = ['ControlWidgetMini', 'collapsed'];
-    return <div
-      className={className.join(' ')}
-      >
-      <FloatingButton className="hamburger-btn" onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
-      <PersonaAvatar imageUrl={this.props.currentPersonaImageUrl} onClick={this.onClickExpand} />
-    </div>
+    return (
+      <div className={className.join(' ')}>
+        <FloatingButton
+          className="hamburger-btn"
+          onClick={this.onClickMaximize}
+          iconClassName="fa fa-bars"
+        />
+        <PersonaAvatar
+          imageUrl={this.props.currentPersonaImageUrl}
+          onClick={this.onClickExpand}
+        />
+      </div>
+    );
   }
 
   render() {
-
     if (this.state.collapsed) {
       return this.renderCollapsed();
     }
 
     let className = ['ControlWidgetMini'];
 
-    let personaToPersonaRow = (persona) => {
-        return <PersonaListItem onClick={(ev) => { this.onClickPersona(ev, persona) }}
-                                active={this.props.currentPersonaId === persona.id}
-                                id={persona.id}
-                                imageUrl={persona.avatar}
-                                label={persona.label}
-                                description={persona.description} />;
-      };
-
+    let personaToPersonaRow = persona => {
+      return (
+        <PersonaListItem
+          onClick={ev => {
+            this.onClickPersona(ev, persona);
+          }}
+          active={this.props.currentPersonaId === persona.id}
+          id={persona.id}
+          imageUrl={persona.avatar}
+          label={persona.label}
+          description={persona.description}
+        />
+      );
+    };
 
     className.push('expanded');
     return (
-      <div
-        className={className.join(' ')}
-        >
-        <FloatingButton className="hamburger-btn" onClick={this.onClickMaximize} iconClassName="fa fa-bars"/>
-        <List modelName="PersonaRow"
-              className="personas-list"
-              model={this.props.personas}
-              mapFunction={personaToPersonaRow} />
-        <FloatingButton className="close-btn" onClick={this.onClickCollapse} iconClassName="fa fa-times"/>
+      <div className={className.join(' ')}>
+        <FloatingButton
+          className="hamburger-btn"
+          onClick={this.onClickMaximize}
+          iconClassName="fa fa-bars"
+        />
+        <List
+          modelName="PersonaRow"
+          className="personas-list"
+          model={this.props.personas}
+          mapFunction={personaToPersonaRow}
+        />
+        <FloatingButton
+          className="close-btn"
+          onClick={this.onClickCollapse}
+          iconClassName="fa fa-times"
+        />
       </div>
     );
   }
@@ -102,7 +117,6 @@ class ControlWidgetMini extends Component {
     this.props.onClickMaximize();
     this.collapse();
   }
-
 }
 
 export default ControlWidgetMini;

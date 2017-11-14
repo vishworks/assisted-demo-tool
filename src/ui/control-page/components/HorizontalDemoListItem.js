@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class HorizontalDemoListItem extends Component {
   render() {
-    let itemClass = "HorizontalDemoListItem";
+    let itemClass = 'HorizontalDemoListItem';
     if (this.props.active) {
-      itemClass += " active";
+      itemClass += ' active';
     }
     return (
       <div className={itemClass} onClick={this.props.onClick}>

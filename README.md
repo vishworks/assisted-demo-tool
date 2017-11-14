@@ -1,3 +1,18 @@
+
+### Code style enforcement with Prettier
+https://prettier.io/
+
+- Code style enforcement with Prettier on file save:
+  - install prettier: ```yarn add prettier --dev --exact```
+  - install onchange: ```yarn add onchange --dev```
+  - install concurrently: ```yarn add concurrently --dev```
+  - create .prettierrc.yaml file at project root
+  - in package.json file modify "scripts" entry:
+    - add entry: ```"prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"```
+    - add entry: ```"original-start": "react-scripts start"```
+    - change "start" entry like: ```"start": "concurrently --kill-others \"npm run prettier-watch\" \"npm run original-start\"",```
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -283,7 +298,7 @@ In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and s
 
 Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine.
 
 ## Formatting Code Automatically
 
@@ -1769,7 +1784,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 

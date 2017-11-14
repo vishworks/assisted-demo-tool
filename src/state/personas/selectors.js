@@ -1,7 +1,7 @@
 
 
 import { createSelector } from 'reselect'
-import { find, filter, map, get, uniq, intersection, includes, memoize, overArgs, forEach } from 'lodash'
+import { find, filter, map, uniq, intersection } from 'lodash'
 
 
 export const getPersonasState = state => state.personas;

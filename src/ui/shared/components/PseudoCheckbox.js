@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
+
 import { isFunction } from 'lodash';
 
 import './PseudoCheckbox.css'
@@ -31,5 +33,11 @@ class PseudoCheckbox extends Component {
   }
 
 }
+
+PseudoCheckbox.propTypes = {
+  text: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func
+};
 
 export default PseudoCheckbox;

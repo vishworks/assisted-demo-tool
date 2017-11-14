@@ -10,7 +10,7 @@ html, body, #root, .App {
   font-family: 'Lato', sans-serif;
 }
 
-.App[data-displayMode="CONTROL_WIDGET_MINI"] .ControlWidgetMini {
+.App[data-display-mode="CONTROL_WIDGET_MINI"] .ControlWidgetMini {
   right: 5px;
   transition: right 1s;
 }
@@ -20,7 +20,7 @@ html, body, #root, .App {
   min-width: 100%;
 
 }
-.App[data-displayMode="CONTROL_WIDGET"] .ViewPort {
+.App[data-display-mode="CONTROL_WIDGET"] .ViewPort {
   transition: min-width 500ms;
   min-width: calc(100% - 300px);
 }

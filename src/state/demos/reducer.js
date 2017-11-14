@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux'
-import { merge, cloneDeep, map, get, find } from 'lodash'
+import { cloneDeep, map } from 'lodash'
 
-import { parseCurrentHash } from '../../helpers/HashUtils.js'
 import { LOAD_CONFIG } from '../config/types.js'
 
 import {

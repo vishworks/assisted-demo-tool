@@ -39,13 +39,13 @@ class App extends Component {
     }
 
     if (this.props.displayMode === DisplayModeEnum.CONTROL_PAGE) {
-      return <div className="App" data-displayMode="CONTROL_WIDGET">
+      return <div className="App" data-display-mode="CONTROL_WIDGET">
         <ControlPageContainer />
       </div>;
     }
 
     return (
-      <div className="App" data-displayMode={this.props.displayMode}>
+      <div className="App" data-display-mode={this.props.displayMode}>
         <ViewPortContainer />
         <ControlWidgetContainer />
         <ControlWidgetMiniContainer />

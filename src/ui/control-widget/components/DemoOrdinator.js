@@ -18,7 +18,7 @@ class DemoOrdinator extends Component {
 
   render() {
 
-    let list = this.props.demos.map((demo, i) => {
+    let list = map(this.props.demos, (demo, i) => {
 
       return <DemoOrdinatorListItem key={demo.id}
                                     demoName={demo.name}

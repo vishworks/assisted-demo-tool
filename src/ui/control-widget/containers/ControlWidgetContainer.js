@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 
 import { getActivePopup } from 'state/ui/selectors.js'
-import { getDemos } from 'state/demos/selectors.js'
 import { startDemoSettings } from 'state/demos/operations.js'
 import { openPopup, closeAllPopups, setDisplayMode } from 'state/ui/actions.js'
 import DisplayModeEnum from 'enums/DisplayMode.js'

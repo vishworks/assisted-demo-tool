@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { kebabCase } from 'lodash'
+import React, { Component } from 'react'
 
 import FloatingButton from './FloatingButton.js'
 import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js'

@@ -28,7 +28,8 @@ class CustomCheckBox extends PureComponent {
 }
 
 CustomCheckBox.propTypes = {
-  checked: PropTypes.bool.isRequired
+  checked: PropTypes.bool.isRequired,
+  onClick: PropTypes.func
 };
 
 CustomCheckBox.defaultProps = {

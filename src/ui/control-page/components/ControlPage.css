@@ -6,22 +6,22 @@
 
 .ControlPage .header {
   background: #203753;
-  color: #FFFFFF;
+  color: #ffffff;
 
   min-height: 80px;
 }
 
 .ControlPage .small-row {
-  background: #F9F9F9;
-  color: #8B8D8F;
-  border-bottom: 1px solid #D1D1D1;
+  background: #f9f9f9;
+  color: #8b8d8f;
+  border-bottom: 1px solid #d1d1d1;
 
   min-height: 80px;
 }
 
 .ControlPage .main-content {
-  background: #F9F9F9;
-  color: #8B8D8F;
+  background: #f9f9f9;
+  color: #8b8d8f;
 
   flex-grow: 1;
 }

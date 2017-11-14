@@ -49,6 +49,8 @@ const ControlCenterMiddleware = store => {
           store.dispatch(setDisplayMode(DisplayModeEnum.CONTROL_WIDGET));
         }
         break;
+      default:
+        break;
     }
   });
 

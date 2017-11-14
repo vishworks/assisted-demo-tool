@@ -1,7 +1,7 @@
 
 
 import { createSelector } from 'reselect'
-import { find, filter, map, get, uniq, intersection, includes, memoize, overArgs, forEach } from 'lodash'
+import { find, filter, map } from 'lodash'
 
 import { getCurrentPersonaId } from 'state/personas/selectors.js'
 

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import './PersonaAvatar.css'
 
@@ -17,7 +18,11 @@ class PersonaAvatar extends Component {
     );
   }
 
-
 }
+
+PersonaAvatar.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  onClick: PropTypes.func
+};
 
 export default PersonaAvatar;

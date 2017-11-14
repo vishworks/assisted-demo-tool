@@ -1,7 +1,5 @@
 import { combineReducers } from 'redux'
-import { get, find } from 'lodash'
 
-import { parseCurrentHash } from '../../helpers/HashUtils.js'
 import { LOAD_CONFIG } from '../config/types.js'
 
 import { SELECT_PERSONA } from './types.js'

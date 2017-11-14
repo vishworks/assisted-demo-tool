@@ -6,8 +6,8 @@ import { createStore, compose, applyMiddleware } from 'redux'
 import 'font-awesome/css/font-awesome.min.css'
 import './index.css';
 
-import AppContainer from './containers/AppContainer';
-import rootReducer from './state/rootReducer.js'
+import AppContainer from 'ui/app/containers/AppContainer';
+import rootReducer from 'state/rootReducer.js'
 import thunk from 'redux-thunk'
 import registerServiceWorker from './registerServiceWorker';
 

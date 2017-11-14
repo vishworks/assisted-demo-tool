@@ -1,0 +1,39 @@
+.HorizontalDemoList {
+    background: #203753;
+    color: #ffffff;
+    display: flex;
+    flex-basis: 10;
+}
+
+.HorizontalDemoList .HorizontalDemoListItem {
+    border-right: 1px solid #5F748F;
+    height: 80px;
+    min-width: 160px;
+    max-width: 160px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+}
+.HorizontalDemoList .HorizontalDemoListItem:first-child {
+    border-left: 1px solid #5F748F;
+}
+.HorizontalDemoList .HorizontalDemoListItem:hover {
+    color: #00B9F7;
+}
+.HorizontalDemoList .HorizontalDemoListItem.active:after {
+    content: " ";
+    position: absolute;
+    height: 7px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #00B9F7;
+}
+
+.HorizontalDemoList .HorizontalDemoListItem .demo-name {
+    font-size: 18px;
+    font-weight: bold;
+}

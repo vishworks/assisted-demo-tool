@@ -68,7 +68,7 @@ const ControlCenterMiddleware = store => {
     // when the user sets the display mode to "display page + control page"
     if (!detachedMode && action.type === SET_DISPLAY_MODE) {
       if (action.payload.displayMode === DisplayModeEnum.DETACHED_PAGE) {
-        controlPageWindow = window.open(window.location.href, CONTROL_PAGE_NAME, 'width=1020,height=800' );
+        controlPageWindow = window.open(window.location.href, CONTROL_PAGE_NAME, 'width=' + (window.screen.availWidth || 1100) + ',height=' + (window.screen.availHeight || 800));
         controlPageWindow.addEventListener('load', () => {
           let state = store.getState();
           controlPageWindow.postMessage({

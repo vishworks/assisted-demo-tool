@@ -1,6 +1,27 @@
 .ControlPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ControlPage .header {
   background: #203753;
   color: #FFFFFF;
 
-  overflow: scroll;
+  min-height: 80px;
+}
+
+.ControlPage .small-row {
+  background: #F9F9F9;
+  color: #8B8D8F;
+  border-bottom: 1px solid #D1D1D1;
+
+  min-height: 80px;
+}
+
+.ControlPage .main-content {
+  background: #F9F9F9;
+  color: #8B8D8F;
+
+  flex-grow: 1;
 }

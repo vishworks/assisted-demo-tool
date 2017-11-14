@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 
-import CurrentPersonaLabelledAvatarContainer from '../../containers/CurrentPersonaLabelledAvatarContainer.js'
-import PersonaStepsListContainer from '../../containers/PersonaStepsListContainer.js'
-
-import StepsControlButtonsContainer from '../../containers/StepsControlButtonsContainer.js'
-import StepContentContainer from '../../containers/StepContentContainer.js'
-import StepLabelContainer from '../../containers/StepLabelContainer.js'
-import NotSelectedPersonaListContainer from '../../containers/PersonaListContainer.js'
-
+import HorizontalDemoListContainer from '../../containers/ControlPage/HorizontalDemoListContainer.js'
 
 
 import './ControlPage.css'
@@ -25,33 +18,20 @@ class ControlPage extends Component {
     let className = ['ControlPage'];
 
 
-
-
     return (
       <div className={className.join(' ')}>
-        <header>
-          <CurrentPersonaLabelledAvatarContainer />
+        <div className="header">
 
-          <div className="persona-dropdown-trigger"
-               data-id="personas"
-               onClick={this.togglePanel}>
-            <i className="fa fa-angle-down" />
-          </div>
-
-        </header>
-
-        <div>
-          <div>Steps</div>
-          <PersonaStepsListContainer />
+          <HorizontalDemoListContainer />
         </div>
+        <div className="small-row">
 
-        <div className="step-content">
-          <h3>{this.props.currentStepName}</h3>
-          <StepContentContainer />
+
         </div>
+        <div className="main-content">
 
-        <StepLabelContainer />
-        <StepsControlButtonsContainer />
+
+        </div>
       </div>
     );
   }

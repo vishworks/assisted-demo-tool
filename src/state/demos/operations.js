@@ -9,8 +9,8 @@ import {
   selectPersona
 } from '../personas/operations.js'
 
-import { getDemos, getTempDemos, getStepsCount, getCurrentStepIndex, getCurrentStepPersonaId } from './localSelectors.js'
-import { getCurrentPersonaId } from '../personas/localSelectors.js'
+import { getDemos, getTempDemos, getStepsCount, getCurrentStepIndex, getCurrentStepPersonaId } from './selectors.js'
+import { getCurrentPersonaId } from '../personas/selectors.js'
 
 export function selectDemo(demoId) {
 
@@ -73,4 +73,3 @@ export const prevStep = () =>
     let currentStepIndex = getCurrentStepIndex(getState());
     gotoStep(currentStepIndex - 1)(dispatch, getState);
   };
-

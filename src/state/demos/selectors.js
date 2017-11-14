@@ -12,10 +12,25 @@ function addIndexToArray(array) {
 }
 
 
-export const getDemos = state => state.demos;
-export const getCurrentDemoId = state => state.currentDemoId;
-export const getTempDemos = state => state.tempDemos;
-export const getCurrentStepIndex = state => state.currentStepIndex;
+export const getDemosState = state => state.demos;
+
+
+export const getDemos = createSelector(
+  [getDemosState], (demosState) => demosState.demos
+);
+
+export const getCurrentDemoId = createSelector(
+  [getDemosState], (demosState) => demosState.currentDemoId
+);
+
+export const getTempDemos = createSelector(
+  [getDemosState], (demosState) => demosState.tempDemos
+);
+
+export const getCurrentStepIndex = createSelector(
+  [getDemosState], (demosState) => demosState.currentStepIndex
+);
+
 
 export const getCurrentDemo = createSelector(
   [getCurrentDemoId, getDemos],

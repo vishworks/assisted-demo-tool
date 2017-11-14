@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { getStepsCount, getCurrentStepIndex } from '../state/demos/localSelectors.js'
+import { getStepsCount, getCurrentStepIndex } from '../state/demos/selectors.js'
 import StepLabel from '../components/StepLabel.js'
 
 

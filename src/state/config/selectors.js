@@ -1,4 +1,4 @@
 
 
 
-export const getConfig = state => state;
+export const getConfig = state => state.config;

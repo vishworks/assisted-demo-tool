@@ -4,7 +4,7 @@ import { mapValues } from 'lodash'
 
 import DemoOrdinator from '../components/DemoOrdinator/DemoOrdinator.js'
 
-import { getTempDemos } from '../state/demos/localSelectors.js'
+import { getTempDemos } from '../state/demos/selectors.js'
 
 import { closeAllPopups } from '../state/ui/actions.js'
 import { excludeDemo, includeDemo, moveDemo } from '../state/demos/actions.js'

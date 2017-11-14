@@ -1,6 +1,6 @@
 import { includes, map, get } from 'lodash'
 import { selectPersona as setCurrentPersonaId } from './actions.js'
-import { getPersonas, getCurrentPersonaId } from './localSelectors.js'
+import { getPersonas, getCurrentPersonaId } from './selectors.js'
 
 export function selectPersona(personaId) {
 

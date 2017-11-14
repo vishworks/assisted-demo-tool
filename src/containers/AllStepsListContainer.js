@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { gotoStep } from '../state/demos/operations.js'
-import { getAllSteps, getCurrentStepIndex } from '../state/demos/localSelectors.js'
+import { getAllSteps, getCurrentStepIndex } from '../state/demos/selectors.js'
 
 
 import PersonaStepsList from '../components/PersonaStepsList.js'

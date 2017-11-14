@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { getUrls, getCurrentUrl } from '../state/personas/localSelectors.js'
+import { getUrls, getCurrentUrl } from '../state/personas/selectors.js'
 
 
 import ViewPort from '../components/ViewPort.js'

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { getDemos, getCurrentDemoId } from '../../state/demos/localSelectors.js'
+import { getDemos, getCurrentDemoId } from '../../state/demos/selectors.js'
 import { selectDemo } from '../../state/demos/actions.js'
 
 import HorizontalDemoList from '../../components/ControlPage/HorizontalDemoList.js'

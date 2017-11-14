@@ -3,8 +3,8 @@ import { createSelector } from 'reselect'
 import { find, filter, map, get, uniq, intersection, includes } from 'lodash'
 
 // selectors depending from multiple modules
-import { getAllSteps } from '../state/demos/localSelectors.js'
-import { getCurrentPersonaId } from '../state/personas/localSelectors.js'
+import { getAllSteps } from '../state/demos/selectors.js'
+import { getCurrentPersonaId } from '../state/personas/selectors.js'
 
 
 
@@ -15,5 +15,3 @@ export const getCurrentPersonaSteps = createSelector(
     return filter(allSteps, { personaId: currentPersonaId } );
   }
 );
-
-

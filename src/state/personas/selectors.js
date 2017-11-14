@@ -4,11 +4,19 @@ import { createSelector } from 'reselect'
 import { find, filter, map, get, uniq, intersection, includes, memoize, overArgs, forEach } from 'lodash'
 
 
+export const getPersonasState = state => state.personas;
 
-export const getCurrentPersonaId = state => state.currentPersonaId;
+
+export const getCurrentPersonaId = createSelector(
+  [getPersonasState], personasState => personasState.currentPersonaId
+);
+
+const getRawPersonas = createSelector(
+  [getPersonasState], personasState => personasState.personas
+);
 
 export const getPersonas = createSelector(
-  [ (state) => get(state, 'personas', null) ],
+  [getRawPersonas],
   (personas) => {
     return personas && personas.length ?
       map(personas, (persona) => {

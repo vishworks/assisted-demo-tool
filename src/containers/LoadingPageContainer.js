@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getGlobalErrorMessage } from '../state/ui/localSelectors.js'
+import { getGlobalErrorMessage } from '../state/ui/selectors.js'
 import LoadingPage from '../components/LoadingPage.js'
 
 

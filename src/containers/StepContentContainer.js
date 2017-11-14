@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { getDisplayBullets } from '../state/ui/localSelectors.js'
-import { getCurrentStepContent, getCurrentStepBullets, getCurrentStepName } from '../state/demos/localSelectors.js'
+import { getDisplayBullets } from '../state/ui/selectors.js'
+import { getCurrentStepContent, getCurrentStepBullets, getCurrentStepName } from '../state/demos/selectors.js'
 import { showBullets } from '../state/ui/actions.js'
 import StepContent from '../components/StepContent.js'
 

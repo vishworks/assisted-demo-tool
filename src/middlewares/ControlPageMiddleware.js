@@ -6,12 +6,12 @@ import { SET_DISPLAY_MODE } from '../state/ui/types.js'
 
 import { setDisplayMode } from '../state/ui/actions.js'
 import DisplayModeEnum from '../enums/DisplayMode.js'
-import { getDisplayMode } from '../state/ui/localSelectors.js'
+import { getDisplayMode } from '../state/ui/selectors.js'
 
-import { getCurrentPersonaId } from '../state/personas/localSelectors.js'
-import { getCurrentDemoId, getCurrentStepIndex } from '../state/demos/localSelectors.js'
+import { getCurrentPersonaId } from '../state/personas/selectors.js'
+import { getCurrentDemoId, getCurrentStepIndex } from '../state/demos/selectors.js'
 
-import { getConfig } from '../state/config/localSelectors.js'
+import { getConfig } from '../state/config/selectors.js'
 
 const CONTROL_PAGE_NAME = 'ControlPage'; // CONTROL_PAGE_NAME is opened by DISPLAY_PAGE_NAME
 

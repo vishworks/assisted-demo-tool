@@ -59,11 +59,9 @@ export const selectDemo = demoId => ({
   }
 });
 
-export const gotoStep = stepIndex => {
-  return {
-    type: GOTO_STEP,
-    payload: {
-      stepIndex: stepIndex
-    }
-  };
-};
+export const gotoStep = stepIndex => ({
+  type: GOTO_STEP,
+  payload: {
+    stepIndex: stepIndex
+  }
+});

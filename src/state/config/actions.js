@@ -1,18 +1,16 @@
 import { LOAD_CONFIG } from './types.js';
 
 export const loadConfig = (
-  data,
+  config,
   initialDemoId,
   initialStepIndex,
   initialPersonaId
-) => {
-  return {
-    type: LOAD_CONFIG,
-    payload: {
-      config: data,
-      initialDemoId,
-      initialStepIndex,
-      initialPersonaId
-    }
-  };
-};
+) => ({
+  type: LOAD_CONFIG,
+  payload: {
+    config,
+    initialDemoId,
+    initialStepIndex,
+    initialPersonaId
+  }
+});

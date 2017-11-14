@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import HorizontalDemoListContainer from '../containers/HorizontalDemoListContainer.js';
+import CloseButton from './CloseButton.js';
 
 import './ControlPage.css';
 
@@ -12,6 +13,7 @@ class ControlPage extends Component {
       <div className={className.join(' ')}>
         <div className="header">
           <HorizontalDemoListContainer />
+          <CloseButton />
         </div>
         <div className="small-row" />
         <div className="main-content" />

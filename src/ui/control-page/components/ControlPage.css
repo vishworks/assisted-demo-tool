@@ -5,6 +5,8 @@
 }
 
 .ControlPage .header {
+  display: flex;
+  justify-content: space-between;
   background: #203753;
   color: #ffffff;
 

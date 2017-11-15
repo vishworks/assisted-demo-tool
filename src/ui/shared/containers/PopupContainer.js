@@ -1,12 +1,10 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
-import { getActivePopup } from 'state/ui/selectors.js'
+import { getActivePopup } from 'state/ui/selectors.js';
 
-import { closeAllPopups } from 'state/ui/actions.js'
+import { closeAllPopups } from 'state/ui/actions.js';
 
-import Popup from '../components/Popup.js'
-
-
+import Popup from '../components/Popup.js';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,20 +14,17 @@ const mapStateToProps = (state, ownProps) => {
     closeOnClick: ownProps.closeOnClick,
     onOpen: ownProps.onOpen,
     onClose: ownProps.onClose
-  }
+  };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     closeAllPopups: () => {
       dispatch(closeAllPopups());
     }
-  }
+  };
 };
 
-const PopupContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Popup);
+const PopupContainer = connect(mapStateToProps, mapDispatchToProps)(Popup);
 
-export default PopupContainer
+export default PopupContainer;

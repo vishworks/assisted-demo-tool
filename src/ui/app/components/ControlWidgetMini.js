@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-import FloatingButton from './FloatingButton.js';
+import { map } from 'lodash';
+
+import FloatingButton from 'ui/shared/components/FloatingButton.js';
 import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js';
-import List from './List.js';
-import PersonaListItem from './PersonaListItem.js';
+import PersonaListItem from 'ui/personas/components/PersonaListItem.js';
 
 import './ControlWidgetMini.css';
 
@@ -49,22 +50,6 @@ class ControlWidgetMini extends Component {
     }
 
     let className = ['ControlWidgetMini'];
-
-    let personaToPersonaRow = persona => {
-      return (
-        <PersonaListItem
-          onClick={ev => {
-            this.onClickPersona(ev, persona);
-          }}
-          active={this.props.currentPersonaId === persona.id}
-          id={persona.id}
-          imageUrl={persona.avatar}
-          label={persona.label}
-          description={persona.description}
-        />
-      );
-    };
-
     className.push('expanded');
     return (
       <div className={className.join(' ')}>
@@ -73,12 +58,22 @@ class ControlWidgetMini extends Component {
           onClick={this.onClickMaximize}
           iconClassName="fa fa-bars"
         />
-        <List
-          modelName="PersonaRow"
-          className="personas-list"
-          model={this.props.personas}
-          mapFunction={personaToPersonaRow}
-        />
+
+        <div className="personas-list">
+          {map(this.props.personas, persona => (
+            <PersonaListItem
+              key={persona.id}
+              onClick={ev => {
+                this.onClickPersona(ev, persona);
+              }}
+              active={this.props.currentPersonaId === persona.id}
+              id={persona.id}
+              imageUrl={persona.avatar}
+              label={persona.label}
+              description={persona.description}
+            />
+          ))}
+        </div>
         <FloatingButton
           className="close-btn"
           onClick={this.onClickCollapse}

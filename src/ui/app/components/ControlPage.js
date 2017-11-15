@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import HorizontalDemoListContainer from 'ui/demos/containers/HorizontalDemoListContainer.js';
-import CloseButton from './CloseButton.js';
+import CloseButton from 'ui/shared/components/CloseButton.js';
 import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
 
 import './ControlPage.css';

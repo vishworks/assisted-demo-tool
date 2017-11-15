@@ -9,7 +9,9 @@ import {
   GOTO_STEP
 } from './types.js';
 
-export const startDemoSettings = demos => ({
+export { startDemoSettings } from './operations.js';
+
+export const _startDemoSettings = demos => ({
   type: DEMOS_SETTINGS_START,
   payload: {
     demos

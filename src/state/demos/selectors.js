@@ -17,6 +17,10 @@ export const getDemos = createSelector(
   demosState => demosState.demos
 );
 
+export const getIncludedDemos = createSelector([getDemos], demos =>
+  filter(demos, demo => demo.included)
+);
+
 export const getCurrentDemoId = createSelector(
   [getDemosState],
   demosState => demosState.currentDemoId

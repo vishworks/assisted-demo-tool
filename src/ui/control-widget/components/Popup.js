@@ -47,6 +47,8 @@ class Popup extends Component {
   onClick(ev) {
     if (!this.props.closeOnClick) {
       ev.nativeEvent.stopImmediatePropagation();
+      ev.stopPropagation();
+      ev.nativeEvent.stopPropagation();
     }
   }
 }

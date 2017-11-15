@@ -2,7 +2,7 @@ import { includes, map, get } from 'lodash';
 import {
   selectDemo as setCurrentDemoId,
   applyDemoSettings as applyDemoSettingsAction,
-  startDemoSettings as startDemoSettingsAction,
+  _startDemoSettings as startDemoSettingsAction,
   gotoStep as gotoStepAction
 } from './actions.js';
 import { selectPersona } from '../personas/operations.js';

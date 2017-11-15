@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import CurrentPersonaLabelledAvatarContainer from '../containers/CurrentPersonaLabelledAvatarContainer.js';
+import CurrentPersonaLabelledAvatarContainer from 'ui/personas/containers/CurrentPersonaLabelledAvatarContainer.js';
 import PersonaStepsListContainer from '../containers/PersonaStepsListContainer.js';
 import AllStepsListContainer from '../containers/AllStepsListContainer.js';
 
 import StepsControlButtonsContainer from '../containers/StepsControlButtonsContainer.js';
 import StepContentContainer from '../containers/StepContentContainer.js';
 import StepLabelContainer from '../containers/StepLabelContainer.js';
-import NotSelectedPersonaListContainer from '../containers/PersonaListContainer.js';
+import NotSelectedPersonaListContainer from 'ui/personas/containers/PersonaListContainer.js';
 import PopupContainer from '../containers/PopupContainer.js';
 import DemoOrdinatorContainer from '../containers/DemoOrdinatorContainer.js';
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 import CurrentPersonaLabelledAvatarContainer from 'ui/personas/containers/CurrentPersonaLabelledAvatarContainer.js';
-import PersonaStepsListContainer from '../containers/PersonaStepsListContainer.js';
-import AllStepsListContainer from '../containers/AllStepsListContainer.js';
+import PersonaStepsListContainer from 'ui/steps/containers/PersonaStepsListContainer.js';
+import AllStepsListContainer from 'ui/steps/containers/AllStepsListContainer.js';
 
-import StepsControlButtonsContainer from '../containers/StepsControlButtonsContainer.js';
-import StepContentContainer from '../containers/StepContentContainer.js';
-import StepLabelContainer from '../containers/StepLabelContainer.js';
+import StepsControlButtonsContainer from 'ui/steps/containers/StepsControlButtonsContainer.js';
+import StepContentContainer from 'ui/steps/containers/StepContentContainer.js';
+import StepLabelContainer from 'ui/steps/containers/StepLabelContainer.js';
 import NotSelectedPersonaListContainer from 'ui/personas/containers/PersonaListContainer.js';
 import PopupContainer from '../containers/PopupContainer.js';
 import DemoOrdinatorContainer from '../containers/DemoOrdinatorContainer.js';

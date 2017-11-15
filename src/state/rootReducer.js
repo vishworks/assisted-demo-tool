@@ -12,6 +12,8 @@ import {
 } from 'state/demos/selectors.js';
 import { getCurrentPersonaId } from 'state/personas/selectors.js';
 
+import { RESET_STATE } from 'state/config/types.js';
+
 import { updateHashFromObject } from 'helpers/HashUtils.js';
 
 const rootReducer = combineReducers({
@@ -22,7 +24,10 @@ const rootReducer = combineReducers({
 });
 
 const rootReducerUpdatingHash = (state, action) => {
-  let newState = rootReducer(state, action);
+  let newState =
+    action.type === RESET_STATE
+      ? action.payload.newState
+      : rootReducer(state, action);
 
   let demoId = getCurrentDemoId(newState),
     stepNumber = getCurrentStepIndex(newState) + 1,

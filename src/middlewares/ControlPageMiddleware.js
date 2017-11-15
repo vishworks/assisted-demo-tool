@@ -1,20 +1,12 @@
 import { includes } from 'lodash';
 
-import { loadConfig } from '../state/config/actions.js';
+import { resetState } from '../state/config/actions.js';
 import { LOAD_CONFIG } from '../state/config/types.js';
 import { SET_DISPLAY_MODE } from '../state/ui/types.js';
 
 import { setDisplayMode } from '../state/ui/actions.js';
 import DisplayModeEnum from '../enums/DisplayMode.js';
 import { getDisplayMode } from '../state/ui/selectors.js';
-
-import { getCurrentPersonaId } from '../state/personas/selectors.js';
-import {
-  getCurrentDemoId,
-  getCurrentStepIndex
-} from '../state/demos/selectors.js';
-
-import { getConfig } from '../state/config/selectors.js';
 
 const CONTROL_PAGE_NAME = 'ControlPage'; // CONTROL_PAGE_NAME is opened by DISPLAY_PAGE_NAME
 
@@ -33,16 +25,9 @@ const ControlCenterMiddleware = store => {
   window.addEventListener('message', ev => {
     switch (ev.data.type) {
       case MessageType.INIT_CONTROL_PAGE:
+        let { currentState } = ev.data.payload;
+        store.dispatch(resetState(currentState));
         store.dispatch(setDisplayMode(DisplayModeEnum.CONTROL_PAGE));
-        let {
-          config,
-          initialDemoId,
-          initialStepIndex,
-          initialPersonaId
-        } = ev.data.payload;
-        store.dispatch(
-          loadConfig(config, initialDemoId, initialStepIndex, initialPersonaId)
-        );
         break;
       case MessageType.ACTION:
         store.dispatch(ev.data.payload.action);
@@ -92,10 +77,7 @@ const ControlCenterMiddleware = store => {
             {
               type: MessageType.INIT_CONTROL_PAGE,
               payload: {
-                config: getConfig(state),
-                initialDemoId: getCurrentDemoId(state),
-                initialStepIndex: getCurrentStepIndex(state),
-                initialPersonaId: getCurrentPersonaId(state)
+                currentState: state
               }
             },
             '*'

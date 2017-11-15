@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import HorizontalDemoListContainer from '../containers/HorizontalDemoListContainer.js';
+import HorizontalDemoListContainer from 'ui/demos/containers/HorizontalDemoListContainer.js';
 import CloseButton from './CloseButton.js';
-import SetupDemoButton from '../containers/SetupDemoButtonContainer.js';
+import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
 
 import './ControlPage.css';
 

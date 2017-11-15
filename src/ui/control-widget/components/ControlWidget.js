@@ -9,7 +9,7 @@ import StepContentContainer from 'ui/steps/containers/StepContentContainer.js';
 import StepLabelContainer from 'ui/steps/containers/StepLabelContainer.js';
 import NotSelectedPersonaListContainer from 'ui/personas/containers/PersonaListContainer.js';
 import PopupContainer from '../containers/PopupContainer.js';
-import DemoOrdinatorContainer from '../containers/DemoOrdinatorContainer.js';
+import DemoOrdinatorContainer from 'ui/demos/containers/DemoOrdinatorContainer.js';
 
 import PseudoCheckbox from 'ui/shared/components/PseudoCheckbox.js';
 

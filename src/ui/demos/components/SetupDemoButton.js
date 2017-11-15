@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import PopupContainer from 'ui/control-widget/containers/PopupContainer.js';
-import DemoOrdinatorContainer from 'ui/control-widget/containers/DemoOrdinatorContainer.js';
+import DemoOrdinatorContainer from 'ui/demos/containers/DemoOrdinatorContainer.js';
 
 import './SetupDemoButton.css';
 

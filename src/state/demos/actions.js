@@ -13,7 +13,9 @@ export {
   startDemoSettings,
   applyDemoSettings,
   selectDemo,
-  gotoStep
+  gotoStep,
+  prevStep,
+  nextStep
 } from './operations.js';
 
 export const _startDemoSettings = demos => ({

@@ -4,7 +4,7 @@ import {
   getCurrentPersonaImageUrl,
   getVisiblePersonas
 } from 'state/personas/selectors.js';
-import { selectPersona } from 'state/personas/operations.js';
+import { selectPersona } from 'state/personas/actions.js';
 import { setDisplayMode } from 'state/ui/actions.js';
 import DisplayModeEnum from 'enums/DisplayMode.js';
 import ControlWidgetMini from '../components/ControlWidgetMini.js';

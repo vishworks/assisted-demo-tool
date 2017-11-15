@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { prevStep, nextStep } from 'state/demos/operations.js';
+import { prevStep, nextStep } from 'state/demos/actions.js';
 
 import { getIsFirstStep, getIsLastStep } from 'state/demos/selectors.js';
 

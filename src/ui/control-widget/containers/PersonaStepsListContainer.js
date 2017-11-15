@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { gotoStep } from 'state/demos/operations.js';
+import { gotoStep } from 'state/demos/actions.js';
 import {
   getCurrentStepIndex,
   getCurrentPersonaSteps

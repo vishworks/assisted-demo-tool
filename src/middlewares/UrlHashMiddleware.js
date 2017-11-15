@@ -1,8 +1,8 @@
 import { reduce, isEqual, includes, toInteger, toString } from 'lodash';
 
 import { parseHash } from '../helpers/HashUtils.js';
-import { selectPersona } from '../state/personas/operations.js';
-import { selectDemo, gotoStep } from '../state/demos/operations.js';
+import { selectPersona } from '../state/personas/actions.js';
+import { selectDemo, gotoStep } from '../state/demos/actions.js';
 
 var oldHash = window.location.hash;
 

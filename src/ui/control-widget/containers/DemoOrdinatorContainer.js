@@ -8,7 +8,7 @@ import { getTempDemos } from 'state/demos/selectors.js';
 
 import { closeAllPopups } from 'state/ui/actions.js';
 import { excludeDemo, includeDemo, moveDemo } from 'state/demos/actions.js';
-import { applyDemoSettings } from 'state/demos/operations.js';
+import { applyDemoSettings } from 'state/demos/actions.js';
 
 const selectorMap = {
   demos: getTempDemos

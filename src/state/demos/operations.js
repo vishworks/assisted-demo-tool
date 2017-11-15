@@ -5,7 +5,7 @@ import {
   _startDemoSettings,
   _gotoStep
 } from './actions.js';
-import { selectPersona } from '../personas/operations.js';
+import { selectPersona } from '../personas/actions.js';
 
 import {
   getDemos,

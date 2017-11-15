@@ -4,21 +4,18 @@
 ### Code style enforcement with Prettier
 https://prettier.io/
 
-- Code style enforcement with Prettier on file save:
-  - install prettier: ```yarn add prettier --dev --exact```
-  - install onchange: ```yarn add onchange --dev```
-  - install concurrently: ```yarn add concurrently --dev```
-  - create .prettierrc.yaml file at project root
-  - in package.json file modify "scripts" entry:
-    - add entry: ```"prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"```
-    - add entry: ```"original-start": "react-scripts start"```
-    - change "start" entry like: ```"start": "concurrently --kill-others \"npm run prettier-watch\" \"npm run original-start\"",```
-
-- Code style enforcement with Prettier on changes staging (git add):
+- Code style enforcement with Prettier on pre-commit hook:
   - install prettier: ```yarn add prettier --dev --exact```
   - install lint-staged and husky: ```yarn add lint-staged husky --dev```
-
-
+  - in package.json file modify "scripts" entry:
+    - add entry ```"precommit": "lint-staged"```
+  - in package.json, add entry ```"lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }```
+  
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

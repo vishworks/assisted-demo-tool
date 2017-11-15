@@ -1,5 +1,7 @@
 import { LOAD_CONFIG } from './types.js';
 
+export { asyncLoadConfig } from './operations.js';
+
 export const loadConfig = (
   config,
   initialDemoId,

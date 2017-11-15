@@ -1,9 +1,9 @@
 import { includes, map, get } from 'lodash';
 import {
-  selectDemo as setCurrentDemoId,
-  applyDemoSettings as applyDemoSettingsAction,
-  _startDemoSettings as startDemoSettingsAction,
-  gotoStep as gotoStepAction
+  _selectDemo,
+  _applyDemoSettings,
+  _startDemoSettings,
+  _gotoStep
 } from './actions.js';
 import { selectPersona } from '../personas/operations.js';
 
@@ -14,16 +14,17 @@ import {
   getCurrentStepIndex,
   getCurrentStepPersonaId
 } from './selectors.js';
+
 import { getCurrentPersonaId } from '../personas/selectors.js';
 
 export function selectDemo(demoId) {
   return function(dispatch, getState) {
     var demos = getDemos(getState());
     if (includes(map(demos, 'id'), demoId)) {
-      dispatch(setCurrentDemoId(demoId));
+      dispatch(_selectDemo(demoId));
     } else {
       console.error('[selectDemo] : demo with id ' + demoId + ' not found');
-      dispatch(setCurrentDemoId(get(demos, '0.id')));
+      dispatch(_selectDemo(get(demos, '0.id')));
     }
   };
 }
@@ -31,14 +32,14 @@ export function selectDemo(demoId) {
 export function applyDemoSettings() {
   return function(dispatch, getState) {
     var tempDemos = getTempDemos(getState());
-    dispatch(applyDemoSettingsAction(tempDemos));
+    dispatch(_applyDemoSettings(tempDemos));
   };
 }
 
 export function startDemoSettings() {
   return function(dispatch, getState) {
     var demos = getDemos(getState());
-    dispatch(startDemoSettingsAction(demos));
+    dispatch(_startDemoSettings(demos));
   };
 }
 
@@ -48,7 +49,7 @@ export const gotoStep = stepIndex => (dispatch, getState) => {
     currentStepIndex = getCurrentStepIndex(state),
     currentPersonaId = getCurrentPersonaId(state);
   if (stepIndex >= 0 && stepIndex < stepsCount) {
-    dispatch(gotoStepAction(stepIndex));
+    dispatch(_gotoStep(stepIndex));
 
     // update persona if necessary
     let nextPersonaId = getCurrentStepPersonaId(getState());
@@ -57,7 +58,7 @@ export const gotoStep = stepIndex => (dispatch, getState) => {
     }
   } else {
     console.warn('[gotoStep] attempting to go to step with index ' + stepIndex);
-    dispatch(gotoStepAction(currentStepIndex)); // to update url
+    dispatch(_gotoStep(currentStepIndex)); // to update url
   }
 };
 

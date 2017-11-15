@@ -9,7 +9,12 @@ import {
   GOTO_STEP
 } from './types.js';
 
-export { startDemoSettings } from './operations.js';
+export {
+  startDemoSettings,
+  applyDemoSettings,
+  selectDemo,
+  gotoStep
+} from './operations.js';
 
 export const _startDemoSettings = demos => ({
   type: DEMOS_SETTINGS_START,
@@ -18,10 +23,24 @@ export const _startDemoSettings = demos => ({
   }
 });
 
-export const applyDemoSettings = tempDemos => ({
+export const _applyDemoSettings = tempDemos => ({
   type: DEMOS_SETTINGS_APPLY,
   payload: {
     tempDemos
+  }
+});
+
+export const _selectDemo = demoId => ({
+  type: DEMOS_SETTINGS_SELECT_DEMO,
+  payload: {
+    demoId
+  }
+});
+
+export const _gotoStep = stepIndex => ({
+  type: GOTO_STEP,
+  payload: {
+    stepIndex: stepIndex
   }
 });
 
@@ -51,19 +70,5 @@ export const moveDemo = (demoId, oldIndex, newIndex) => ({
     demoId,
     oldIndex,
     newIndex
-  }
-});
-
-export const selectDemo = demoId => ({
-  type: DEMOS_SETTINGS_SELECT_DEMO,
-  payload: {
-    demoId
-  }
-});
-
-export const gotoStep = stepIndex => ({
-  type: GOTO_STEP,
-  payload: {
-    stepIndex: stepIndex
   }
 });

@@ -14,6 +14,11 @@ https://prettier.io/
     - add entry: ```"original-start": "react-scripts start"```
     - change "start" entry like: ```"start": "concurrently --kill-others \"npm run prettier-watch\" \"npm run original-start\"",```
 
+- Code style enforcement with Prettier on changes staging (git add):
+  - install prettier: ```yarn add prettier --dev --exact```
+  - install lint-staged and husky: ```yarn add lint-staged husky --dev```
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

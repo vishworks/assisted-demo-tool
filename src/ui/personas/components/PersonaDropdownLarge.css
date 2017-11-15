@@ -1,0 +1,38 @@
+.PersonaDropdownLarge {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-basis: 100;
+  min-width: 300px;
+  position: relative;
+
+  background: #1F3652;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.PersonaDropdownLarge:hover {
+  color: #00B9F7;
+}
+
+.PersonaDropdownLarge .centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PersonaDropdownLarge .label-wrapper {
+  text-align: right;
+  flex-grow: 4;
+}
+.PersonaDropdownLarge .label-wrapper .DoubleLabel-label {
+  font-size: 20px;
+}
+.PersonaDropdownLarge .label-wrapper .DoubleLabel-description {
+  font-size: 13px;
+}
+
+.PersonaDropdownLarge .image-wrapper {
+  flex-grow: 1;
+}

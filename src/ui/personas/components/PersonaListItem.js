@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js';
+import RoundImage from 'ui/shared/components/RoundImage.js';
 
 class PersonaListItem extends Component {
   render() {
@@ -21,7 +21,7 @@ class PersonaListItem extends Component {
         onClick={this.props.onClick}
       >
         <div className="persona-wrapper">
-          <PersonaAvatar imageUrl={imageUrl} />
+          <RoundImage imageUrl={imageUrl} />
           <div className="label-sect">
             <div className="label">{label}</div>
             <div className="label">{description}</div>

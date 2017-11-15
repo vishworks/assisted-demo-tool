@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import HorizontalDemoListContainer from 'ui/demos/containers/HorizontalDemoListContainer.js';
 import CloseButton from 'ui/shared/components/CloseButton.js';
 import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
+import PersonaDropdownLargeContainer from 'ui/personas/containers/PersonaDropdownLargeContainer.js';
 
 import './ControlPage.css';
 
@@ -17,6 +18,7 @@ class ControlPage extends Component {
             <HorizontalDemoListContainer />
           </div>
           <div className="header-right">
+            <PersonaDropdownLargeContainer />
             <SetupDemoButton />
             <CloseButton />
           </div>

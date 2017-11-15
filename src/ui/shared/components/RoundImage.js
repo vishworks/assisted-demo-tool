@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './PersonaAvatar.css';
+import './RoundImage.css';
 
-class PersonaAvatar extends Component {
+class RoundImage extends Component {
   render() {
-    let className = ['PersonaAvatar'];
-
     return (
       <div
-        className={className.join(' ')}
+        className="RoundImage"
         style={{ backgroundImage: "url('" + this.props.imageUrl + "')" }}
         onClick={this.props.onClick}
       />
@@ -17,9 +15,9 @@ class PersonaAvatar extends Component {
   }
 }
 
-PersonaAvatar.propTypes = {
+RoundImage.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   onClick: PropTypes.func
 };
 
-export default PersonaAvatar;
+export default RoundImage;

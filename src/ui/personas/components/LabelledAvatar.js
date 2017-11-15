@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js';
+import RoundImage from 'ui/shared/components/RoundImage.js';
 
 import './LabelledAvatar.css';
 
@@ -13,7 +13,7 @@ class LabelledAvatar extends Component {
     return (
       <div className={className.join(' ')} onClick={this.props.onClick}>
         <div className="persona-wrapper">
-          <PersonaAvatar imageUrl={imageUrl} />
+          <RoundImage imageUrl={imageUrl} />
         </div>
         <div className="persona-label">{label}</div>
         <div className="persona-description">{description}</div>

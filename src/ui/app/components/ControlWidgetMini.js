@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { map } from 'lodash';
 
 import FloatingButton from 'ui/shared/components/FloatingButton.js';
-import PersonaAvatar from 'ui/shared/components/PersonaAvatar.js';
+import RoundImage from 'ui/shared/components/RoundImage.js';
 import PersonaListItem from 'ui/personas/components/PersonaListItem.js';
 
 import './ControlWidgetMini.css';
@@ -36,7 +36,7 @@ class ControlWidgetMini extends Component {
           onClick={this.onClickMaximize}
           iconClassName="fa fa-bars"
         />
-        <PersonaAvatar
+        <RoundImage
           imageUrl={this.props.currentPersonaImageUrl}
           onClick={this.onClickExpand}
         />

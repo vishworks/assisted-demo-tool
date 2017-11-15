@@ -33,3 +33,7 @@
 
   flex-grow: 1;
 }
+
+.ControlPage .header .PersonaDropdownLarge {
+  border-left: 1px solid #5f748f;
+}

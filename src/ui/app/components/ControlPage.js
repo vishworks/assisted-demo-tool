@@ -4,6 +4,10 @@ import HorizontalDemoListContainer from 'ui/demos/containers/HorizontalDemoListC
 import CloseButton from 'ui/shared/components/CloseButton.js';
 import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
 import PersonaDropdownLargeContainer from 'ui/personas/containers/PersonaDropdownLargeContainer.js';
+import BigStepsListContainer from 'ui/steps/containers/BigStepsListContainer.js';
+import BigActiveStepNumberDisplayContainer from 'ui/steps/containers/BigActiveStepNumberDisplayContainer.js';
+
+import BigTimer from 'ui/demos/components/BigTimer.js';
 
 import './ControlPage.css';
 
@@ -23,8 +27,20 @@ class ControlPage extends Component {
             <CloseButton />
           </div>
         </div>
-        <div className="small-row" />
-        <div className="main-content" />
+        <div className="layout-row main-content">
+          <div className="layout-col-1">
+            <div className="layout-header">
+              <div className="font-header-title">Steps index</div>
+            </div>
+            <BigStepsListContainer />
+          </div>
+          <div className="layout-col-2">
+            <div className="layout-header">
+              <BigActiveStepNumberDisplayContainer />
+              <BigTimer />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

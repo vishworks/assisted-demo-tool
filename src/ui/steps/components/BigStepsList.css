@@ -1,0 +1,50 @@
+
+.BigStepsList {
+  overflow: auto;
+  height: 100%;
+}
+
+.BigStepsListItem {
+  height: 135px;
+  position: relative;
+  padding: 20px 0 0 35px;
+  cursor: pointer;
+  background: #f9f9f9;
+  color: #8b8d8f;
+}
+
+.BigStepsListItem .step-number {
+  font-size: 18px;
+}
+.BigStepsListItem .step-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.BigStepsListItem .step-subtext {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+.BigStepsListItem.active {
+  background: #ffffff;
+}
+
+.BigStepsListItem:hover {
+  color: #66696b;
+}
+
+.BigStepsListItem.active .step-name {
+  color: #203753;
+}
+
+.BigStepsListItem.active:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 100%;
+  background: #00B9F7;
+}

@@ -36,6 +36,11 @@ export const getCurrentStepIndex = createSelector(
   demosState => demosState.currentStepIndex
 );
 
+export const getCurrentStepNumber = createSelector(
+  [getCurrentStepIndex],
+  currentStepIndex => currentStepIndex + 1
+);
+
 export const getCurrentDemo = createSelector(
   [getCurrentDemoId, getDemos],
   (currentDemoId, demos) => {

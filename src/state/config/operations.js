@@ -1,6 +1,7 @@
-import { find, first, toInteger } from 'lodash';
+import { find, first, toInteger, forEach, get } from 'lodash';
 import { setGlobalError } from '../ui/actions.js';
 import { parseCurrentHash } from '../../helpers/HashUtils.js';
+import validateConfig from 'helpers/ConfigValidator.js';
 import { loadConfig } from './actions.js';
 
 export function asyncLoadConfig(configUrl) {
@@ -10,6 +11,24 @@ export function asyncLoadConfig(configUrl) {
         response => {
           try {
             response.json().then(function(data) {
+              if (!validateConfig(data)) {
+                let errors = validateConfig.errors,
+                  errorMsg = 'Errors in configuration:\n\n';
+
+                forEach(errors, err => {
+                  errorMsg +=
+                    'config' +
+                    err.dataPath +
+                    ' ' +
+                    err.message +
+                    ' (found: ' +
+                    JSON.stringify(get(data, err.dataPath.substring(1))) +
+                    ')\n\n';
+                });
+                dispatch(setGlobalError(errorMsg));
+                return;
+              }
+
               // select currently selected state after loadConfig
               let { demoId, stepNumber, personaId } = parseCurrentHash();
               let selectedDemoId, selectedStepIndex, selectedPersonaId;

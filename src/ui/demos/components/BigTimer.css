@@ -22,6 +22,22 @@
   color: #00B9F7;
   font-size: 18px;
 }
+
+.BigTimer.warning {
+  background: #ffffe0;
+}
+.BigTimer.warning .timer-time {
+  color: orange;
+}
+
+.BigTimer.danger {
+  background: #ffe0e0;
+}
+.BigTimer.danger .timer-time {
+  color: red;
+}
+
+
 .BigTimer .timer-subtext {
   font-size: 13px;
 }
@@ -40,4 +56,12 @@
   right: 15px;
 
   font-size: 16px;
+}
+
+.BigTimer .timer-controls .timer-btn {
+  margin-left: 5px;
+  cursor: pointer;
+}
+.BigTimer .timer-controls .timer-btn:hover {
+  color: #00B9F7;
 }

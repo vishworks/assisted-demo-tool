@@ -40,6 +40,7 @@
     {
       "id": "entandoUXP",
       "name": "Entando UXP Demo",
+      "estimatedTime": 5,
       "steps": [
         {
           "personaId": "itAdmin",
@@ -117,6 +118,7 @@
     {
       "id": "testDemo2",
       "name": "Demo 2",
+      "estimatedTime": 2,
       "steps": [
         {
           "personaId": "itAdmin",
@@ -136,6 +138,7 @@
     {
       "id": "testDemo3",
       "name": "Demo 3",
+      "estimatedTime": 3,
       "steps": [
         {
           "personaId": "itAdmin",

@@ -48,6 +48,13 @@ export const getCurrentDemo = createSelector(
   }
 );
 
+export const getCurrentDemoEstimatedTime = createSelector(
+  [getCurrentDemo],
+  currentDemo => {
+    return currentDemo && currentDemo.estimatedTime;
+  }
+);
+
 export const getSteps = createSelector([getCurrentDemo], currentDemo => {
   return currentDemo && currentDemo.steps;
 });

@@ -7,7 +7,7 @@ import PersonaDropdownLargeContainer from 'ui/personas/containers/PersonaDropdow
 import BigStepsListContainer from 'ui/steps/containers/BigStepsListContainer.js';
 import BigActiveStepNumberDisplayContainer from 'ui/steps/containers/BigActiveStepNumberDisplayContainer.js';
 
-import BigTimer from 'ui/demos/components/BigTimer.js';
+import BigTimerContainer from 'ui/demos/containers/BigTimerContainer.js';
 
 import './ControlPage.css';
 
@@ -37,7 +37,7 @@ class ControlPage extends Component {
           <div className="layout-col-2">
             <div className="layout-header">
               <BigActiveStepNumberDisplayContainer />
-              <BigTimer />
+              <BigTimerContainer />
             </div>
           </div>
         </div>

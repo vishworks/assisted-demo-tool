@@ -6,8 +6,8 @@ import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
 import PersonaDropdownLargeContainer from 'ui/personas/containers/PersonaDropdownLargeContainer.js';
 import BigStepsListContainer from 'ui/steps/containers/BigStepsListContainer.js';
 import BigActiveStepNumberDisplayContainer from 'ui/steps/containers/BigActiveStepNumberDisplayContainer.js';
-
 import BigTimerContainer from 'ui/demos/containers/BigTimerContainer.js';
+import CurrentDemoNameContainer from 'ui/demos/containers/CurrentDemoNameContainer.js';
 
 import './ControlPage.css';
 
@@ -38,6 +38,7 @@ class ControlPage extends Component {
             <div className="layout-header">
               <BigActiveStepNumberDisplayContainer />
               <BigTimerContainer />
+              <CurrentDemoNameContainer />
             </div>
           </div>
         </div>

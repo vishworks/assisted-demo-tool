@@ -55,6 +55,13 @@ export const getCurrentDemoEstimatedTime = createSelector(
   }
 );
 
+export const getCurrentDemoName = createSelector(
+  [getCurrentDemo],
+  currentDemo => {
+    return currentDemo && currentDemo.name;
+  }
+);
+
 export const getSteps = createSelector([getCurrentDemo], currentDemo => {
   return currentDemo && currentDemo.steps;
 });

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import TimeDisplay from 'ui/shared/components/TimeDisplay.js';
+
 import './BigTimer.css';
 
 class BigTimer extends Component {
@@ -29,7 +31,9 @@ class BigTimer extends Component {
 
         <div className="timer-content">
           <div className="timer-header">Timer</div>
-          <div className="timer-time">{this.getTimeString()}</div>
+          <div className="timer-time">
+            <TimeDisplay currentTime={this.state.time} />
+          </div>
           <div className="timer-subtext">
             Estimate time {this.props.estimatedTime} minutes
           </div>
@@ -67,12 +71,6 @@ class BigTimer extends Component {
     this.setState({
       time: 0
     });
-  }
-
-  getTimeString() {
-    let mins = Math.floor(this.state.time / 60),
-      secs = this.state.time % 60;
-    return mins + ':' + (secs < 10 ? '0' : '') + secs;
   }
 
   getTimeStatusClass() {

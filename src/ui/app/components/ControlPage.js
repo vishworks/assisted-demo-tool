@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import SplitPane from 'react-split-pane';
+
 import HorizontalDemoListContainer from 'ui/demos/containers/HorizontalDemoListContainer.js';
 import CloseButton from 'ui/shared/components/CloseButton.js';
 import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
@@ -10,6 +12,7 @@ import BigTimerContainer from 'ui/demos/containers/BigTimerContainer.js';
 
 import BigActiveDemoNameDisplay from 'ui/demos/components/BigActiveDemoNameDisplay.js';
 
+import 'ui/shared/components/SplitPaneResizer.css';
 import './ControlPage.css';
 
 class ControlPage extends Component {
@@ -29,23 +32,38 @@ class ControlPage extends Component {
           </div>
         </div>
         <div className="layout-row main-content">
-          <div className="layout-col-1">
-            <div className="layout-header">
-              <div className="font-header-title">Steps index</div>
+          <SplitPane split="vertical" minSize={300} defaultSize={400}>
+            <div className="layout-col-1">
+              <div className="layout-header">
+                <div className="font-header-title">Steps index</div>
+              </div>
+              <BigStepsListContainer />
             </div>
-            <BigStepsListContainer />
-          </div>
-          <div className="layout-col-2">
-            <div className="layout-header">
-              <BigActiveStepNumberDisplayContainer />
-              <BigTimerContainer />
-            </div>
-          </div>
-          <div className="layout-col-3">
-            <div className="layout-header">
-              <BigActiveDemoNameDisplay />
-            </div>
-          </div>
+            <SplitPane
+              split="vertical"
+              minSize={300}
+              defaultSize={400}
+              primary="second"
+            >
+              <div className="layout-col-2">
+                <div className="layout-header">
+                  <BigActiveStepNumberDisplayContainer />
+                  <BigTimerContainer />
+                </div>
+              </div>
+              <div className="layout-col-3">
+                <SplitPane split="horizontal" minSize={400} defaultSize={500}>
+                  <div>
+                    <div className="layout-header">
+                      <BigActiveDemoNameDisplay />
+                    </div>
+                    HIGHLIGHTS
+                  </div>
+                  <div>NOTES</div>
+                </SplitPane>
+              </div>
+            </SplitPane>
+          </SplitPane>
         </div>
       </div>
     );

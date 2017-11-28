@@ -46,10 +46,6 @@
   align-items: stretch;
 }
 
-.ControlPage .layout-col-1 {
-  min-width: 290px;
-  border-right: 1px solid #d1d1d1;
-}
 .ControlPage .layout-col-2 {
   flex-grow: 2;
 }
@@ -62,7 +58,4 @@
 
 .ControlPage .layout-col-2 .layout-header .BigActiveStepNumberDisplay {
   border-right: 1px solid #d1d1d1;
-}
-.ControlPage .layout-col-3 {
-  border-left: 1px solid #d1d1d1;
 }

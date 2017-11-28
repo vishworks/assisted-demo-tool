@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@types/inline-style-prefixer@^3.0.0":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/inline-style-prefixer/-/inline-style-prefixer-3.0.1.tgz#8541e636b029124b747952e9a28848286d2b5bf6"
+
+"@types/react@^16.0.18":
+  version "16.0.25"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.25.tgz#bf696b83fe480c5e0eff4335ee39ebc95884a1ed"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -1057,6 +1065,10 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bowser@^1.7.3:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.8.1.tgz#49785777e7302febadb1a5b71d9a646520ed310d"
+
 boxen@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-0.6.0.tgz#8364d4248ac34ff0ef1b2f2bf49a6c60ce0d81b6"
@@ -1660,6 +1672,12 @@ crypto-browserify@^3.11.0:
 css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
+
+css-in-js-utils@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/css-in-js-utils/-/css-in-js-utils-2.0.0.tgz#5af1dd70f4b06b331f48d22a3d86e0786c0b9435"
+  dependencies:
+    hyphenate-style-name "^1.0.2"
 
 css-loader@0.28.4:
   version "0.28.4"
@@ -3118,6 +3136,10 @@ husky@^0.14.3:
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
 
+hyphenate-style-name@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
+
 iconv-lite@0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
@@ -3184,6 +3206,13 @@ inherits@2.0.1:
 ini@^1.3.4, ini@~1.3.0:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
+
+inline-style-prefixer@^3.0.6:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/inline-style-prefixer/-/inline-style-prefixer-3.0.8.tgz#8551b8e5b4d573244e66a34b04f7d32076a2b534"
+  dependencies:
+    bowser "^1.7.3"
+    css-in-js-utils "^2.0.0"
 
 inquirer@3.2.1:
   version "3.2.1"
@@ -5210,7 +5239,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5417,6 +5446,22 @@ react-scripts@1.0.14:
     whatwg-fetch "2.0.3"
   optionalDependencies:
     fsevents "1.1.2"
+
+react-split-pane@^0.1.71:
+  version "0.1.71"
+  resolved "https://registry.yarnpkg.com/react-split-pane/-/react-split-pane-0.1.71.tgz#19b1b30638655e655f9f5fe57b1ae7cc6c151829"
+  dependencies:
+    "@types/inline-style-prefixer" "^3.0.0"
+    "@types/react" "^16.0.18"
+    inline-style-prefixer "^3.0.6"
+    prop-types "^15.5.10"
+    react-style-proptype "^3.0.0"
+
+react-style-proptype@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-style-proptype/-/react-style-proptype-3.1.0.tgz#c8912fc13460f5b0c1ec1114c729d535b52b8073"
+  dependencies:
+    prop-types "^15.5.4"
 
 "react@^15 || ^16", react@^16.0.0:
   version "16.0.0"

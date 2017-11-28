@@ -76,6 +76,12 @@ let schema = {
               required: ['personaId', 'name'],
               anyOf: [{ required: ['content'] }, { required: ['bullets'] }]
             }
+          },
+          highlights: {
+            type: 'array',
+            items: {
+              type: 'string'
+            }
           }
         },
         required: ['id', 'name', 'steps']

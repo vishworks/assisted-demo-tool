@@ -22,6 +22,10 @@
   justify-content: center;
 }
 
+.PersonaDropdownLarge .chevron-wrapper {
+  min-width: 40px;
+}
+    
 .PersonaDropdownLarge .label-wrapper {
   text-align: right;
   flex-grow: 4;

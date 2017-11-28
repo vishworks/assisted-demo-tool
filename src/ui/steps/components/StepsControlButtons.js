@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import PrevStepButtonContainer from 'ui/steps/containers/PrevStepButtonContainer.js';
+import NextStepButtonContainer from 'ui/steps/containers/NextStepButtonContainer.js';
+
 import './StepsControlButtons.css';
 
 class StepsControlButtons extends Component {
@@ -10,26 +13,10 @@ class StepsControlButtons extends Component {
   }
 
   render() {
-    let className = ['StepsControlButtons'];
-
     return (
-      <div className={className.join(' ')}>
-        <button
-          className="back-btn"
-          onClick={this.prevStep}
-          disabled={this.props.isFirstStep}
-        >
-          <i className="fa fa-arrow-left arrow" />
-          <span className="label">BACK</span>
-        </button>
-        <button
-          className="next-btn"
-          onClick={this.nextStep}
-          disabled={this.props.isLastStep}
-        >
-          <span className="label">NEXT</span>
-          <i className="fa fa-arrow-right arrow" />
-        </button>
+      <div className="StepsControlButtons">
+        <PrevStepButtonContainer />
+        <NextStepButtonContainer />
       </div>
     );
   }

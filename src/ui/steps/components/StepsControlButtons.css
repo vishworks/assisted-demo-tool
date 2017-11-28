@@ -5,39 +5,3 @@
   padding: 20px 0;
   min-height: 40px;
 }
-
-.StepsControlButtons button {
-  border: none;
-  height: 40px;
-  width: 90px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  background-color: #00659C;
-  color: #FFFFFF;
-  cursor: pointer;
-}
-
-.StepsControlButtons button:hover {
-  background-color: #00B9F7;
-}
-
-.StepsControlButtons button:focus {
-  outline: 0;
-}
-
-.StepsControlButtons button:disabled {
-  background: #375667;
-  color: #999999;
-  cursor: not-allowed;
-}
-
-.StepsControlButtons .arrow {
-  font-size: 20px;
-}
-.StepsControlButtons .label {
-  font-size: 16px;
-  line-height: 17px;
-}

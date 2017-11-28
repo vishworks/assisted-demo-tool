@@ -1,0 +1,35 @@
+.NextStepButton {
+  border: none;
+  height: 40px;
+  width: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: #00659C;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.NextStepButton:hover {
+  background-color: #00B9F7;
+}
+
+.NextStepButton:focus {
+  outline: 0;
+}
+
+.NextStepButton:disabled {
+  background: #375667;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.NextStepButton .arrow {
+  font-size: 20px;
+}
+.NextStepButton .label {
+  font-size: 16px;
+  line-height: 17px;
+}

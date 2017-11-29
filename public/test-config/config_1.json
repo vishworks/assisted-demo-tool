@@ -114,8 +114,14 @@
 
       ],
       "highlights": [
-        "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful",
-        "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
+        {
+          "title": "Highlight title 1",
+          "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
+        },
+        {
+          "title": "Highlight title 2",
+          "text": "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
+        }
       ]
     },
 
@@ -138,8 +144,14 @@
         }
       ],
       "highlights": [
-        "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful",
-        "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
+        {
+          "title": "Highlight title 1",
+          "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
+        },
+        {
+          "title": "Highlight title 2",
+          "text": "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
+        }
       ]
     },
 

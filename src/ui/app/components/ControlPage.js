@@ -54,13 +54,27 @@ class ControlPage extends Component {
               </div>
               <div className="layout-col-3">
                 <SplitPane split="horizontal" minSize={400} defaultSize={500}>
-                  <div>
-                    <div className="layout-header">
-                      <BigActiveDemoNameDisplay />
+                  <div className="white-area">
+                    <div className="grey-area layout-header">
+                      <div className="icon-label">
+                        <i
+                          className="icon fa fa-lightbulb-o"
+                          aria-hidden="true"
+                        />
+                        <span className="label">Highlights</span>
+                      </div>
                     </div>
                     <CurrentDemoHighlightListContainer />
                   </div>
-                  <div>NOTES</div>
+                  <div className="white-area">
+                    <div className="grey-area layout-header">
+                      <div className="icon-label">
+                        <i className="icon fa fa-pencil" aria-hidden="true" />
+                        <span className="label">Notes</span>
+                      </div>
+                    </div>
+                    PLACE NOTES HERE
+                  </div>
                 </SplitPane>
               </div>
             </SplitPane>

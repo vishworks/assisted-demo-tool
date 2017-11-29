@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import { cloneDeep, map } from 'lodash';
+import { cloneDeep, map, findIndex, find, get } from 'lodash';
+import { arrayMove } from 'react-sortable-hoc';
 
 import { LOAD_CONFIG } from '../config/types.js';
 
@@ -11,7 +12,9 @@ import {
   DEMOS_SETTINGS_MOVE_DEMO,
   DEMOS_SETTINGS_START,
   DEMOS_SETTINGS_SELECT_DEMO,
-  GOTO_STEP
+  GOTO_STEP,
+  SWAP_HIGHLIGHTS,
+  TOGGLE_HIGHLIGHT_STAR
 } from './types.js';
 
 const demos = (state = [], action = {}) => {
@@ -29,6 +32,26 @@ const demos = (state = [], action = {}) => {
 
     case DEMOS_SETTINGS_APPLY:
       return cloneDeep(action.payload.tempDemos);
+
+    case SWAP_HIGHLIGHTS:
+      let dms = cloneDeep(state),
+        dmIndex = findIndex(dms, { id: action.payload.demoId }),
+        dm = dms[dmIndex];
+      dm.highlights = arrayMove(
+        dm.highlights,
+        action.payload.oldIndex,
+        action.payload.newIndex
+      ).slice();
+      return Object.assign([], state, dms);
+
+    case TOGGLE_HIGHLIGHT_STAR: {
+      let newState = cloneDeep(state),
+        targetDemo = find(newState, { id: action.payload.demoId }),
+        targetHighlight = get(targetDemo.highlights, action.payload.index);
+
+      targetHighlight.starred = !targetHighlight.starred;
+      return Object.assign([], state, newState);
+    }
 
     default:
       return state;

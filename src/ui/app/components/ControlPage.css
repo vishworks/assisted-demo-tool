@@ -4,6 +4,37 @@
   width: 100%;
 }
 
+.ControlPage .white-area {
+  background: #ffffff;
+}
+
+.ControlPage .grey-area {
+  background: #F9F9F9;
+}
+
+
+.ControlPage .icon-label {
+  display: flex;
+  align-items: center;
+}
+.ControlPage .icon-label .icon {
+  color: #8B8D8F;
+}
+.ControlPage .label {
+  color: #192941;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.ControlPage .layout-header {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  padding-left: 20px;
+}
+
+
 .ControlPage .header {
   display: flex;
   justify-content: space-between;
@@ -29,10 +60,6 @@
   border-left: 1px solid #5f748f;
 }
 
-.ControlPage .layout-header {
-  border-bottom: 1px solid #d1d1d1;
-  min-height: 80px;
-}
 
 .ControlPage .font-header-title {
   font-size: 18px;

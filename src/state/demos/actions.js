@@ -6,7 +6,9 @@ import {
   DEMOS_SETTINGS_MOVE_DEMO,
   DEMOS_SETTINGS_START,
   DEMOS_SETTINGS_SELECT_DEMO,
-  GOTO_STEP
+  GOTO_STEP,
+  SWAP_HIGHLIGHTS,
+  TOGGLE_HIGHLIGHT_STAR
 } from './types.js';
 
 export {
@@ -15,7 +17,9 @@ export {
   selectDemo,
   gotoStep,
   prevStep,
-  nextStep
+  nextStep,
+  swapHighlights,
+  toggleHighlightStar
 } from './operations.js';
 
 export const _startDemoSettings = demos => ({
@@ -72,5 +76,22 @@ export const moveDemo = (demoId, oldIndex, newIndex) => ({
     demoId,
     oldIndex,
     newIndex
+  }
+});
+
+export const _swapHighlights = (demoId, oldIndex, newIndex) => ({
+  type: SWAP_HIGHLIGHTS,
+  payload: {
+    demoId,
+    oldIndex,
+    newIndex
+  }
+});
+
+export const _toggleHighlightStar = (demoId, index) => ({
+  type: TOGGLE_HIGHLIGHT_STAR,
+  payload: {
+    demoId,
+    index
   }
 });

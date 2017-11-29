@@ -17,6 +17,10 @@ import {
 const demos = (state = [], action = {}) => {
   switch (action.type) {
     case LOAD_CONFIG:
+      // do not overwrite the localStorage demos state
+      if (state.length) {
+        return state;
+      }
       let newDemos = map(action.payload.config.demos, demo => {
         demo.included = true;
         return demo;

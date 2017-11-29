@@ -14,14 +14,22 @@ import registerServiceWorker from './registerServiceWorker';
 import ControlPageMiddleware from './middlewares/ControlPageMiddleware.js';
 import UrlHashMiddleware from './middlewares/UrlHashMiddleware.js';
 
+// persistent state management
+import { getPersistedState } from 'helpers/LocalStorageUtils.js';
+import PersistStateSubscription from 'subscriptions/PersistStateSubscription.js';
+
+let preloadedState = getPersistedState();
+
 let store = createStore(
   rootReducer,
-  // preloadedState,
+  preloadedState,
   compose(
     applyMiddleware(thunk, ControlPageMiddleware, UrlHashMiddleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
+
+store.subscribe(PersistStateSubscription(store));
 
 ReactDOM.render(
   <Provider store={store}>

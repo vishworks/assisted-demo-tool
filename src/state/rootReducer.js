@@ -5,6 +5,7 @@ import config from 'state/config/reducer.js';
 import ui from 'state/ui/reducer.js';
 import demos from 'state/demos/reducer.js';
 import personas from 'state/personas/reducer.js';
+import notes from 'state/notes/reducer.js';
 
 import {
   getCurrentDemoId,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   config,
   ui,
   demos,
-  personas
+  personas,
+  notes
 });
 
 const rootReducerUpdatingHash = (state, action) => {

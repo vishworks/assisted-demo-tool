@@ -10,6 +10,7 @@ import BigStepsListContainer from 'ui/steps/containers/BigStepsListContainer.js'
 import BigActiveStepNumberDisplayContainer from 'ui/steps/containers/BigActiveStepNumberDisplayContainer.js';
 import BigTimerContainer from 'ui/demos/containers/BigTimerContainer.js';
 import CurrentDemoHighlightListContainer from 'ui/demos/containers/CurrentDemoHighlightListContainer.js';
+import CurrentDemoNotesListContainer from 'ui/notes/containers/CurrentDemoNotesListContainer.js';
 
 import BigActiveDemoNameDisplay from 'ui/demos/components/BigActiveDemoNameDisplay.js';
 
@@ -73,7 +74,7 @@ class ControlPage extends Component {
                         <span className="label">Notes</span>
                       </div>
                     </div>
-                    PLACE NOTES HERE
+                    <CurrentDemoNotesListContainer />
                   </div>
                 </SplitPane>
               </div>

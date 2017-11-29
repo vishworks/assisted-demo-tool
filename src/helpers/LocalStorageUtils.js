@@ -5,7 +5,7 @@ export function getPersistedState() {
   if (localStorage) {
     let searchParams = qs.parse(window.location.search),
       configUrl = searchParams.configUrl;
-    return JSON.parse(localStorage[configUrl]);
+    return localStorage[configUrl] && JSON.parse(localStorage[configUrl]);
   }
 }
 

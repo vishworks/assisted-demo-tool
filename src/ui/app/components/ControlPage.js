@@ -8,12 +8,12 @@ import CloseButton from 'ui/shared/components/CloseButton.js';
 import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
 import PersonaDropdownLargeContainer from 'ui/personas/containers/PersonaDropdownLargeContainer.js';
 import BigStepsListContainer from 'ui/steps/containers/BigStepsListContainer.js';
-import BigActiveStepNumberDisplayContainer from 'ui/steps/containers/BigActiveStepNumberDisplayContainer.js';
 import BigTimerContainer from 'ui/demos/containers/BigTimerContainer.js';
 import CurrentDemoHighlightListContainer from 'ui/demos/containers/CurrentDemoHighlightListContainer.js';
 import CurrentDemoNotesListContainer from 'ui/notes/containers/CurrentDemoNotesListContainer.js';
 import OpenNewNotePopupButtonContainer from 'ui/notes/containers/OpenNewNotePopupButtonContainer.js';
 import NewNoteFormContainer from 'ui/notes/containers/NewNoteFormContainer.js';
+import StepsCountContainer from 'ui/steps/containers/StepsCountContainer.js';
 
 import 'ui/shared/components/SplitPaneResizer.css';
 import './ControlPage.css';
@@ -31,14 +31,23 @@ class ControlPage extends Component {
           <div className="header-right">
             <PersonaDropdownLargeContainer />
             <SetupDemoButton />
+            <BigTimerContainer />
             <CloseButton />
           </div>
         </div>
         <div className="layout-row main-content">
-          <SplitPane split="vertical" minSize={300} defaultSize={400}>
+          <SplitPane
+            split="vertical"
+            minSize={300}
+            defaultSize={320}
+            pane1Style={{ overflow: 'scroll' }}
+          >
             <div className="layout-col-1">
-              <div className="layout-header">
+              <div className="steps-header">
                 <div className="font-header-title">Steps index</div>
+                <div className="font-header-subtitle">
+                  Total <StepsCountContainer /> Steps
+                </div>
               </div>
               <BigStepsListContainer />
             </div>
@@ -49,10 +58,7 @@ class ControlPage extends Component {
               primary="second"
             >
               <div className="layout-col-2">
-                <div className="layout-header">
-                  <BigActiveStepNumberDisplayContainer />
-                  <BigTimerContainer />
-                </div>
+                <div className="layout-header" />
               </div>
               <div className="layout-col-3">
                 <SplitPane

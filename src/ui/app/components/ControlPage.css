@@ -60,12 +60,23 @@
   border-left: 1px solid #5f748f;
 }
 
+.ControlPage .steps-header {
+  border-bottom: 1px solid #d1d1d1;
+  height: 80px;
+}
 
 .ControlPage .font-header-title {
   font-size: 18px;
   font-weight: bold;
-  text-transform: uppercase;
-  padding: 15px 0 0 35px;
+  padding: 15px 0 0 20px;
+  color: #5F6368;
+}
+
+.ControlPage .font-header-subtitle {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 5px 0 0 20px;
+  color: #787A7C;
 }
 
 .ControlPage .layout-row {
@@ -81,10 +92,6 @@
 .ControlPage .layout-col-2 .layout-header {
   display: flex;
   align-items: stretch;
-}
-
-.ControlPage .layout-col-2 .layout-header .BigActiveStepNumberDisplay {
-  border-right: 1px solid #d1d1d1;
 }
 
 .ControlPage .notes-section {
@@ -135,4 +142,5 @@
   margin-left: 1px;
   border-radius: 6px;
   background-color: #444444;
+  box-shadow: none;
 }

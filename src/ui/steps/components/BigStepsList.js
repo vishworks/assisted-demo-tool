@@ -17,7 +17,6 @@ class BigStepsList extends Component {
             active={currentStepIndex === step.index}
             stepNumber={step.index + 1}
             stepName={step.name}
-            stepsCount={steps.length}
             onClick={ev => gotoStep(step.index)}
           />
         ))}

@@ -2,7 +2,6 @@ html, body, #root, .App {
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
 .App {
@@ -10,6 +9,9 @@ html, body, #root, .App {
   font-family: 'Lato', sans-serif;
 }
 
+.App[data-display-mode="CONTROL_WIDGET_MINI"] {
+  overflow: hidden;
+}
 .App[data-display-mode="CONTROL_WIDGET_MINI"] .ControlWidgetMini {
   right: 5px;
   transition: right 1s;

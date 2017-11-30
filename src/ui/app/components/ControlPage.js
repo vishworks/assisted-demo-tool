@@ -11,8 +11,7 @@ import BigActiveStepNumberDisplayContainer from 'ui/steps/containers/BigActiveSt
 import BigTimerContainer from 'ui/demos/containers/BigTimerContainer.js';
 import CurrentDemoHighlightListContainer from 'ui/demos/containers/CurrentDemoHighlightListContainer.js';
 import CurrentDemoNotesListContainer from 'ui/notes/containers/CurrentDemoNotesListContainer.js';
-
-import BigActiveDemoNameDisplay from 'ui/demos/components/BigActiveDemoNameDisplay.js';
+import AddNoteButtonContainer from 'ui/notes/containers/AddNoteButtonContainer.js';
 
 import 'ui/shared/components/SplitPaneResizer.css';
 import './ControlPage.css';
@@ -54,7 +53,12 @@ class ControlPage extends Component {
                 </div>
               </div>
               <div className="layout-col-3">
-                <SplitPane split="horizontal" minSize={400} defaultSize={500}>
+                <SplitPane
+                  split="horizontal"
+                  minSize={400}
+                  defaultSize={500}
+                  primary="second"
+                >
                   <div className="white-area">
                     <div className="grey-area layout-header">
                       <div className="icon-label">
@@ -67,7 +71,7 @@ class ControlPage extends Component {
                     </div>
                     <CurrentDemoHighlightListContainer />
                   </div>
-                  <div className="white-area">
+                  <div className="white-area notes-section">
                     <div className="grey-area layout-header">
                       <div className="icon-label">
                         <i className="icon fa fa-pencil" aria-hidden="true" />
@@ -75,6 +79,9 @@ class ControlPage extends Component {
                       </div>
                     </div>
                     <CurrentDemoNotesListContainer />
+                    <div className="footer-controls-section">
+                      <AddNoteButtonContainer />
+                    </div>
                   </div>
                 </SplitPane>
               </div>

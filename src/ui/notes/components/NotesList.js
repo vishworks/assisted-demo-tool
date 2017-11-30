@@ -6,23 +6,26 @@ import {
   SortableHandle
 } from 'react-sortable-hoc';
 
+import { isoToLongDate } from 'helpers/DateUtils.js';
+
 import './NotesList.css';
 
 const SortHandle = SortableHandle(() => (
   <i className="sort-handle fa fa-ellipsis-v" />
 ));
 
-const SortableItem = SortableElement(
-  ({ title, text, starred, onClickStar }) => {
-    return (
-      <div className="NotesListItem">
-        <div className="title-label">{title}</div>
-        <div className="text-label">{text}</div>
-        <SortHandle />
+const SortableItem = SortableElement(({ title, text, date, onClickStar }) => {
+  return (
+    <div className="NotesListItem">
+      <div className="title-label">
+        {title}
+        <span className="date-label">{isoToLongDate(date)}</span>
       </div>
-    );
-  }
-);
+      <div className="text-label">{text}</div>
+      <SortHandle />
+    </div>
+  );
+});
 
 const SortableList = SortableContainer(({ items }) => {
   return (

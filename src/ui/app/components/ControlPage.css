@@ -12,7 +12,6 @@
   background: #F9F9F9;
 }
 
-
 .ControlPage .icon-label {
   display: flex;
   align-items: center;
@@ -41,7 +40,7 @@
   background: #203753;
   color: #ffffff;
 
-  min-height: 80px;
+  height: 80px;
 }
 
 .ControlPage .header-left,
@@ -54,6 +53,7 @@
   color: #8b8d8f;
 
   flex-grow: 1;
+  position: relative;
 }
 
 .ControlPage .header .PersonaDropdownLarge {
@@ -85,4 +85,23 @@
 
 .ControlPage .layout-col-2 .layout-header .BigActiveStepNumberDisplay {
   border-right: 1px solid #d1d1d1;
+}
+
+.ControlPage .notes-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.ControlPage .footer-controls-section {
+  min-height: 80px;
+  background: #f9f9f9;
+  color: #8b8d8f;
+  border-top: 1px solid #D1D1D1;
+}
+
+.ControlPage .NotesList {
+  flex-grow: 2;
 }

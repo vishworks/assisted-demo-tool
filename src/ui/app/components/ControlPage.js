@@ -79,7 +79,7 @@ class ControlPage extends Component {
                       </div>
                     </div>
                     <CurrentDemoNotesListContainer />
-                    <div className="footer-controls-section">
+                    <div className="footer-controls-section add-notes-section">
                       <AddNoteButtonContainer />
                     </div>
                   </div>

@@ -105,3 +105,8 @@
 .ControlPage .NotesList {
   flex-grow: 2;
 }
+.ControlPage .add-notes-section {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}

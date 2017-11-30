@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 
+import './AddNoteButton.css';
+
 class AddNoteButton extends Component {
   render() {
     return (
-      <div
-        className="AddNoteButton"
-        onClick={ev =>
-          this.props.addNote('Note title 1', 'Bla bla bla bla bla bla')
-        }
-      >
+      <div className="AddNoteButton">
         <i className="fa fa-pencil" aria-hidden="true" />
-        Add Note
+        <span className="btn-label">Add Note</span>
       </div>
     );
   }

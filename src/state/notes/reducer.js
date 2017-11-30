@@ -10,7 +10,7 @@ const reducer = (state = {}, action = {}) => {
       if (!newState[action.payload.demoId]) {
         newState[action.payload.demoId] = [];
       }
-      newState[action.payload.demoId].push({
+      newState[action.payload.demoId].unshift({
         title: action.payload.title,
         text: action.payload.text,
         date: new Date().toISOString()

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import SplitPane from 'react-split-pane';
 
+import PopupContainer from 'ui/shared/containers/PopupContainer.js';
 import HorizontalDemoListContainer from 'ui/demos/containers/HorizontalDemoListContainer.js';
 import CloseButton from 'ui/shared/components/CloseButton.js';
 import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
@@ -11,7 +12,8 @@ import BigActiveStepNumberDisplayContainer from 'ui/steps/containers/BigActiveSt
 import BigTimerContainer from 'ui/demos/containers/BigTimerContainer.js';
 import CurrentDemoHighlightListContainer from 'ui/demos/containers/CurrentDemoHighlightListContainer.js';
 import CurrentDemoNotesListContainer from 'ui/notes/containers/CurrentDemoNotesListContainer.js';
-import AddNoteButtonContainer from 'ui/notes/containers/AddNoteButtonContainer.js';
+import OpenNewNotePopupButtonContainer from 'ui/notes/containers/OpenNewNotePopupButtonContainer.js';
+import NewNoteFormContainer from 'ui/notes/containers/NewNoteFormContainer.js';
 
 import 'ui/shared/components/SplitPaneResizer.css';
 import './ControlPage.css';
@@ -80,7 +82,14 @@ class ControlPage extends Component {
                     </div>
                     <CurrentDemoNotesListContainer />
                     <div className="footer-controls-section add-notes-section">
-                      <AddNoteButtonContainer />
+                      <PopupContainer
+                        className="popup-cover grey-area new-note-popup"
+                        popupId="newNoteForm"
+                        closeOnClick={false}
+                      >
+                        <NewNoteFormContainer />
+                      </PopupContainer>
+                      <OpenNewNotePopupButtonContainer />
                     </div>
                   </div>
                 </SplitPane>

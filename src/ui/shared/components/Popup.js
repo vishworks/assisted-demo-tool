@@ -26,15 +26,12 @@ class Popup extends Component {
     if (this.props.className) {
       className.push(this.props.className);
     }
+    let style =
+      this.props.activePopup !== this.props.popupId
+        ? { display: 'none' }
+        : undefined;
     return (
-      <div
-        className={className.join(' ')}
-        style={{
-          display:
-            this.props.activePopup === this.props.popupId ? 'block' : 'none'
-        }}
-        onClick={this.onClick}
-      >
+      <div className={className.join(' ')} style={style} onClick={this.onClick}>
         {this.props.children}
       </div>
     );

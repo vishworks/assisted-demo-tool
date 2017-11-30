@@ -110,3 +110,29 @@
   align-items: center;
   padding-left: 30px;
 }
+
+.ControlPage .new-note-popup  {
+  display: flex;
+  flex-direction: column;
+}
+
+.ControlPage .new-note-popup .NewNoteForm  {
+  flex-grow: 1;
+}
+
+
+.ControlPage ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ControlPage ::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #EDEDED;
+}
+
+.ControlPage ::-webkit-scrollbar-thumb {
+  width: 6px;
+  margin-left: 1px;
+  border-radius: 6px;
+  background-color: #444444;
+}

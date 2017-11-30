@@ -1,5 +1,6 @@
 .AddNoteButton {
   cursor: pointer;
+  color: #8b8d8f;
 }
 
 .AddNoteButton .btn-label {

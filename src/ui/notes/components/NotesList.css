@@ -1,5 +1,6 @@
 .NotesList {
   background: #ffffff;
+  overflow: auto;
 }
 
 .NotesListItem {

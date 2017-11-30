@@ -1,67 +1,37 @@
 .BigTimer {
-  background: #DEF3FF;
-  color: #8B8D8F;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-  min-width: 300px;
+  background: #203753;
+  color: #ffffff;
+  border-left: 1px solid #5f748f;
+  min-width: 200px;
   position: relative;
 }
 
-.BigTimer .timer-content {
-  position: relative;
-  left: 45px;
-  top: 15px;
-}
-
-.BigTimer .timer-header {
-  color: #72767B;
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
 .BigTimer .timer-time {
   color: #00B9F7;
-  font-size: 18px;
+  font-size: 30px;
+  font-weight: 300;
 }
 
-.BigTimer.warning {
-  background: #ffffe0;
-}
 .BigTimer.warning .timer-time {
   color: orange;
 }
 
-.BigTimer.danger {
-  background: #ffe0e0;
-}
 .BigTimer.danger .timer-time {
   color: red;
 }
 
-
-.BigTimer .timer-subtext {
-  font-size: 13px;
-}
-
 .BigTimer .timer-icon {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-
   font-size: 19px;
 }
 
-.BigTimer .timer-controls {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-
-  font-size: 16px;
-}
-
-.BigTimer .timer-controls .timer-btn {
+.BigTimer .timer-btn {
   margin-left: 5px;
   cursor: pointer;
 }
-.BigTimer .timer-controls .timer-btn:hover {
+.BigTimer .timer-btn:hover {
   color: #00B9F7;
 }

@@ -29,29 +29,21 @@ class BigTimer extends Component {
       <div className={'BigTimer ' + this.getTimeStatusClass()}>
         <i className="fa fa-clock-o timer-icon" />
 
-        <div className="timer-content">
-          <div className="timer-header">Timer</div>
-          <div className="timer-time">
-            <TimeDisplay currentTime={this.state.time} />
-          </div>
-          <div className="timer-subtext">
-            Estimate time {this.props.estimatedTime} minutes
-          </div>
+        <div className="timer-time">
+          <TimeDisplay currentTime={this.state.time} />
         </div>
 
-        <div className="timer-controls">
-          <i
-            className={
-              'timer-btn timer-pause-btn fa ' +
-              (this.state.running ? 'fa-pause' : 'fa-play')
-            }
-            onClick={this.onClickTogglePlay}
-          />
-          <i
-            className="fa fa-repeat timer-btn timer-reset-btn"
-            onClick={this.onClickReset}
-          />
-        </div>
+        <i
+          className={
+            'timer-btn timer-pause-btn fa ' +
+            (this.state.running ? 'fa-pause' : 'fa-play')
+          }
+          onClick={this.onClickTogglePlay}
+        />
+        <i
+          className="fa fa-repeat timer-btn timer-reset-btn"
+          onClick={this.onClickReset}
+        />
       </div>
     );
   }

@@ -38,16 +38,17 @@ const SortableItem = SortableElement(
 const SortableList = SortableContainer(({ items, toggleHighlightStar }) => {
   return (
     <div className="HighlightList">
-      {items.map((hl, index) => (
-        <SortableItem
-          key={`item-${index}`}
-          index={index}
-          title={hl.title}
-          text={hl.text}
-          starred={hl.starred}
-          onClickStar={ev => toggleHighlightStar(index)}
-        />
-      ))}
+      {items &&
+        items.map((hl, index) => (
+          <SortableItem
+            key={`item-${index}`}
+            index={index}
+            title={hl.title}
+            text={hl.text}
+            starred={hl.starred}
+            onClickStar={ev => toggleHighlightStar(index)}
+          />
+        ))}
     </div>
   );
 });

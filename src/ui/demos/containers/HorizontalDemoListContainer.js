@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 
-import { getIncludedDemos, getCurrentDemoId } from 'state/demos/selectors.js';
+import { getIncludedDemosTitleStepsCountMinutes } from 'state/demos/selectors.js';
 import { selectDemo } from 'state/demos/actions.js';
 
 import HorizontalDemoList from '../components/HorizontalDemoList.js';
 
 const mapStateToProps = state => {
   return {
-    demos: getIncludedDemos(state),
-    currentDemoId: getCurrentDemoId(state)
+    demos: getIncludedDemosTitleStepsCountMinutes(state)
   };
 };
 

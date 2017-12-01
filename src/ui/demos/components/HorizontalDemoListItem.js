@@ -8,7 +8,10 @@ class HorizontalDemoListItem extends Component {
     }
     return (
       <div className={itemClass} onClick={this.props.onClick}>
-        <div className="demo-name">{this.props.name}</div>
+        <div className="demo-title">{this.props.title}</div>
+        <div className="demo-subtitle">
+          {this.props.stepsCount} Steps | {this.props.estimatedTime}:00min
+        </div>
       </div>
     );
   }

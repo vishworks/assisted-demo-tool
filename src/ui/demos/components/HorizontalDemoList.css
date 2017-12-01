@@ -8,10 +8,11 @@
 .HorizontalDemoList .HorizontalDemoListItem {
   border-right: 1px solid #5f748f;
   height: 80px;
-  min-width: 160px;
-  max-width: 160px;
+  min-width: 120px;
+  padding: 0 20px;
   flex-grow: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -33,7 +34,24 @@
   background: #00b9f7;
 }
 
-.HorizontalDemoList .HorizontalDemoListItem .demo-name {
-  font-size: 18px;
+.HorizontalDemoList .HorizontalDemoListItem .demo-title {
+  font-size: 16px;
   font-weight: bold;
+  text-transform: uppercase;
+}
+
+.HorizontalDemoList .HorizontalDemoListItem .demo-subtitle {
+  font-size: 14px;
+}
+
+.HorizontalDemoList .control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 60px;
+  border-right: 1px solid #5f748f;
+  border-left: 1px solid #5f748f;
+  font-size: 20px;
+  color: #546986;
 }

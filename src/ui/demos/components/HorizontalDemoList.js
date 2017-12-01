@@ -12,13 +12,25 @@ class HorizontalDemoList extends Component {
     let demosRenderer = map(this.props.demos, demo => (
       <HorizontalDemoListItem
         key={demo.id}
-        name={demo.name}
-        active={this.props.currentDemoId === demo.id}
+        title={demo.title}
+        active={demo.isCurrentDemo}
+        stepsCount={demo.stepsCount}
+        estimatedTime={demo.estimatedTime}
         onClick={ev => this.props.selectDemo(demo.id)}
       />
     ));
 
-    return <div className={className.join(' ')}>{demosRenderer}</div>;
+    return (
+      <div className={className.join(' ')}>
+        <div className="control-btn">
+          <i className="fa fa-angle-double-left" />
+        </div>
+        {demosRenderer}
+        <div className="control-btn">
+          <i className="fa fa-angle-double-right" />
+        </div>
+      </div>
+    );
   }
 }
 

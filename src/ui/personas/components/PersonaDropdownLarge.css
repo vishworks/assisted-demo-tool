@@ -6,8 +6,8 @@
   min-width: 300px;
   position: relative;
 
-  background: #1F3652;
-  color: #ffffff;
+  background: #f9f9f9;
+  color: #5F6368;
 
   cursor: pointer;
 }
@@ -25,7 +25,7 @@
 .PersonaDropdownLarge .chevron-wrapper {
   min-width: 40px;
 }
-    
+
 .PersonaDropdownLarge .label-wrapper {
   text-align: right;
   flex-grow: 4;
@@ -39,4 +39,14 @@
 
 .PersonaDropdownLarge .image-wrapper {
   flex-grow: 1;
+}
+
+.PersonaDropdownLarge .personas-popup {
+  display: block;
+  right: 0;
+  bottom: 0px;
+  top: initial;
+  width: 100%;
+  padding-top: 20px;
+
 }

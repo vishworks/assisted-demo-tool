@@ -20,16 +20,17 @@ class PersonaDropdownLarge extends Component {
         className={className.join(' ')}
         onClick={ev => this.props.openPopup(POPUP_ID)}
       >
-        <div className="chevron-wrapper centered">
-          <i className="fa fa-chevron-down" />
+        <div className="image-wrapper centered">
+          <CurrentPersonaAvatarContainer />
         </div>
         <div className="label-wrapper centered">
           <CurrentPersonaDoubleLabelContainer />
         </div>
-        <div className="image-wrapper centered">
-          <CurrentPersonaAvatarContainer />
+        <div className="chevron-wrapper centered">
+          <i className="fa fa-chevron-up" />
         </div>
-        <PopupContainer className="popup-cover" popupId="personas">
+
+        <PopupContainer className="personas-popup" popupId="personas">
           <PersonaListContainer />
         </PopupContainer>
       </div>

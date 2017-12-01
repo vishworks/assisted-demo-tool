@@ -107,11 +107,24 @@
 }
 
 .ControlPage .footer-controls-section {
-  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  padding: 10px 20px;
   background: #f9f9f9;
   color: #8b8d8f;
   border-top: 1px solid #D1D1D1;
 }
+
+.ControlPage .footer-controls-section .step-control-buttons {
+  display: flex;
+}
+
+.ControlPage .footer-controls-section .step-control-buttons .NextStepButton {
+  margin-left: 5px;
+}
+
+
 
 .ControlPage .NotesList {
   flex-grow: 2;
@@ -131,16 +144,7 @@
   flex-grow: 1;
 }
 
-.ControlPage .step-control-buttons {
-  display: flex;
-  margin-top: 10px;
-  margin-right: 20px;
-  float: right;
-}
 
-.ControlPage .step-control-buttons .NextStepButton {
-  margin-left: 5px;
-}
 
 
 .ControlPage ::-webkit-scrollbar {
@@ -156,6 +160,6 @@
   width: 6px;
   margin-left: 1px;
   border-radius: 6px;
-  background-color: #444444;
+  background-color: #bbbbbb;
   box-shadow: none;
 }

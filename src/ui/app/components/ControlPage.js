@@ -33,7 +33,6 @@ class ControlPage extends Component {
             <HorizontalDemoListContainer />
           </div>
           <div className="header-right">
-            <PersonaDropdownLargeContainer />
             <SetupDemoButton />
             <BigTimerContainer />
             <CloseButton />
@@ -64,6 +63,9 @@ class ControlPage extends Component {
               <div className="layout-col-2">
                 <TabbedStepContentContainer />
                 <div className="footer-controls-section">
+                  <div className="personas-selector">
+                    <PersonaDropdownLargeContainer />
+                  </div>
                   <div className="step-control-buttons">
                     <PrevStepButtonContainer />
                     <NextStepButtonContainer />

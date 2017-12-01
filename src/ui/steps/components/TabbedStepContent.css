@@ -19,6 +19,7 @@
   border-bottom: 1px solid #D1D1D1;
   border-right: 1px solid #D1D1D1;
   cursor: pointer;
+  flex-grow: 1;
 }
 .TabbedStepContent .tab-buttons-row .tab-button .tab-button-icon {
   color: #8B8D8F;

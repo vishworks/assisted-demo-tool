@@ -26,10 +26,10 @@
   cursor: not-allowed;
 }
 
-.NextStepButton .arrow {
+.NextStepButton .button-arrow {
   font-size: 20px;
 }
-.NextStepButton .label {
+.NextStepButton .button-label {
   font-size: 16px;
   line-height: 17px;
 }

@@ -131,6 +131,17 @@
   flex-grow: 1;
 }
 
+.ControlPage .step-control-buttons {
+  display: flex;
+  margin-top: 10px;
+  margin-right: 20px;
+  float: right;
+}
+
+.ControlPage .step-control-buttons .NextStepButton {
+  margin-left: 5px;
+}
+
 
 .ControlPage ::-webkit-scrollbar {
   width: 8px;

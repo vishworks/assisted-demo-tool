@@ -26,10 +26,10 @@
   cursor: not-allowed;
 }
 
-.PrevStepButton .arrow {
+.PrevStepButton .button-arrow {
   font-size: 20px;
 }
-.PrevStepButton .label {
+.PrevStepButton .button-label {
   font-size: 16px;
   line-height: 17px;
 }

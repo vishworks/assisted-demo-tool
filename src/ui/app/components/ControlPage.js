@@ -15,9 +15,12 @@ import OpenNewNotePopupButtonContainer from 'ui/notes/containers/OpenNewNotePopu
 import NewNoteFormContainer from 'ui/notes/containers/NewNoteFormContainer.js';
 import StepsCountContainer from 'ui/steps/containers/StepsCountContainer.js';
 import TabbedStepContentContainer from 'ui/steps/containers/TabbedStepContentContainer.js';
+import NextStepButtonContainer from 'ui/steps/containers/NextStepButtonContainer.js';
+import PrevStepButtonContainer from 'ui/steps/containers/PrevStepButtonContainer.js';
 
 import 'ui/shared/components/SplitPaneResizer.css';
 import './ControlPage.css';
+import './ControlPageStepButtonsOverride.css';
 
 class ControlPage extends Component {
   render() {
@@ -60,7 +63,12 @@ class ControlPage extends Component {
             >
               <div className="layout-col-2">
                 <TabbedStepContentContainer />
-                <div className="footer-controls-section" />
+                <div className="footer-controls-section">
+                  <div className="step-control-buttons">
+                    <PrevStepButtonContainer />
+                    <NextStepButtonContainer />
+                  </div>
+                </div>
               </div>
               <div className="layout-col-3">
                 <SplitPane

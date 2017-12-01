@@ -15,8 +15,8 @@ class PrevStepButton extends Component {
         onClick={this.prevStep}
         disabled={this.props.isFirstStep}
       >
-        <i className="fa fa-arrow-left arrow" />
-        <span className="label">BACK</span>
+        <i className="fa fa-arrow-left button-arrow" />
+        <span className="button-label">BACK</span>
       </button>
     );
   }

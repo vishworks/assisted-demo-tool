@@ -15,8 +15,8 @@ class NextStepButton extends Component {
         onClick={this.nextStep}
         disabled={this.props.isLastStep}
       >
-        <span className="label">NEXT</span>
-        <i className="fa fa-arrow-right arrow" />
+        <span className="button-label">NEXT</span>
+        <i className="fa fa-arrow-right button-arrow" />
       </button>
     );
   }

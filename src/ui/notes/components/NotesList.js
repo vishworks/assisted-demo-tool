@@ -21,7 +21,7 @@ const SortableItem = SortableElement(({ title, text, date, onClickStar }) => {
         {title}
         <span className="date-label">{isoToLongDate(date)}</span>
       </div>
-      <div className="text-label">{text}</div>
+      <pre className="text-label">{text}</pre>
       <SortHandle />
     </div>
   );

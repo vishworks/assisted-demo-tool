@@ -36,6 +36,7 @@ const rootReducerUpdatingHash = (state, action) => {
     personaId = getCurrentPersonaId(newState);
 
   if (some([demoId, personaId], isEmpty) === false) {
+    // FIXME move into a subscription (reducer shouldn't handle side effects)
     updateHashFromObject({
       demoId,
       stepNumber,

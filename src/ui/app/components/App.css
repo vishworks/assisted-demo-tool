@@ -9,7 +9,8 @@ html, body, #root, .App {
   font-family: 'Lato', sans-serif;
 }
 
-.App[data-display-mode="CONTROL_WIDGET_MINI"] {
+.App[data-display-mode="CONTROL_WIDGET_MINI"],
+.App[data-display-mode="DETACHED_PAGE"] {
   overflow: hidden;
 }
 .App[data-display-mode="CONTROL_WIDGET_MINI"] .ControlWidgetMini {
@@ -25,4 +26,10 @@ html, body, #root, .App {
 .App[data-display-mode="CONTROL_WIDGET"] .ViewPort {
   transition: min-width 500ms;
   min-width: calc(100% - 300px);
+}
+
+.App[data-display-mode="DETACHED_PAGE"] .ControlWidgetMini,
+.App[data-display-mode="DETACHED_PAGE"] .ControlWidget,
+.App[data-display-mode="DETACHED_PAGE"] .Popup {
+  display: none;
 }

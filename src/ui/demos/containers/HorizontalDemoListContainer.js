@@ -1,13 +1,24 @@
 import { connect } from 'react-redux';
+import { map } from 'lodash';
 
-import { getIncludedDemosTitleStepsCountMinutes } from 'state/demos/selectors.js';
+import { getIncludedDemos, getCurrentDemoId } from 'state/demos/selectors.js';
 import { selectDemo } from 'state/demos/actions.js';
 
 import HorizontalDemoList from '../components/HorizontalDemoList.js';
 
 const mapStateToProps = state => {
+  let includedDemos = getIncludedDemos(state),
+    currentDemoId = getCurrentDemoId(state),
+    demoListModel = map(includedDemos, demo => ({
+      id: demo.id,
+      title: demo.name,
+      stepsCount: demo.steps.length,
+      estimatedTime: demo.estimatedTime,
+      isCurrentDemo: demo.id === currentDemoId
+    }));
+
   return {
-    demos: getIncludedDemosTitleStepsCountMinutes(state)
+    demos: demoListModel
   };
 };
 

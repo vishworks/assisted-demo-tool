@@ -150,18 +150,3 @@ export const getCurrentPersonaSteps = createSelector(
     return filter(allSteps, { personaId: currentPersonaId });
   }
 );
-
-export const getIncludedDemosTitleStepsCountMinutes = createSelector(
-  [getIncludedDemos, getCurrentDemoId],
-  (includedDemos, currentDemoId) => {
-    return map(includedDemos, demo => {
-      return {
-        id: demo.id,
-        title: demo.name,
-        stepsCount: demo.steps.length,
-        estimatedTime: demo.estimatedTime,
-        isCurrentDemo: demo.id === currentDemoId
-      };
-    });
-  }
-);

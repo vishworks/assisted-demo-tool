@@ -1,13 +1,19 @@
 
 
+.ControlPage .PrevStepButton,
+.ControlPage .NextStepButton {
+  height: 60px;
+  background-color: #203753;
+}
+.ControlPage .PrevStepButton:hover,
+.ControlPage .NextStepButton:hover {
+  background-color: #00B9F7;
+}
 .ControlPage .NextStepButton {
   width: 180px;
-  height: 60px;
 }
-
 .ControlPage .PrevStepButton {
   width: 80px;
-  height: 60px;
 }
 
 .ControlPage .PrevStepButton .button-label{

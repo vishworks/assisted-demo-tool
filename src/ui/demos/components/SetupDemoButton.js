@@ -18,13 +18,11 @@ class SetupDemoButton extends Component {
       <div className="SetupDemoButton" onClick={this.togglePanel}>
         <i className="fa fa-gear" />
         <PopupContainer
+          className="demos-popup"
           popupId={POPUP_ID}
           closeOnClick={false}
-          onOpen={() => {
-            this.props.startDemoSettings(this.props.demos);
-          }}
+          onOpen={() => this.props.startDemoSettings(this.props.demos)}
         >
-          <div className="side-popup-title">Settings</div>
           <DemoOrdinatorContainer />
         </PopupContainer>
       </div>

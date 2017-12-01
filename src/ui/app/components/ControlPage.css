@@ -97,6 +97,10 @@
   flex-grow: 2;
 }
 
+.ControlPage .layout-col-3 {
+  background: #ffffff;
+}
+
 
 .ControlPage .notes-section {
   display: flex;
@@ -109,8 +113,8 @@
 .ControlPage .footer-controls-section {
   display: flex;
   justify-content: space-between;
-  height: 80px;
-  padding: 10px 20px;
+  min-height: 80px;
+  max-height: 80px;
   background: #f9f9f9;
   color: #8b8d8f;
   border-top: 1px solid #D1D1D1;
@@ -118,6 +122,8 @@
 
 .ControlPage .footer-controls-section .step-control-buttons {
   display: flex;
+  margin-top: 10px;
+  margin-right: 20px;
 }
 
 .ControlPage .footer-controls-section .step-control-buttons .NextStepButton {
@@ -143,8 +149,6 @@
 .ControlPage .new-note-popup .NewNoteForm  {
   flex-grow: 1;
 }
-
-
 
 
 .ControlPage ::-webkit-scrollbar {

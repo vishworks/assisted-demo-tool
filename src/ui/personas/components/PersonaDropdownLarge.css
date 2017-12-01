@@ -1,14 +1,11 @@
 .PersonaDropdownLarge {
   display: flex;
-  align-items: stretch;
-  justify-content: space-around;
-  flex-basis: 100;
+  align-items: center;
   min-width: 300px;
+  height: 80px;
   position: relative;
-
   background: #f9f9f9;
   color: #5F6368;
-
   cursor: pointer;
 }
 
@@ -22,14 +19,18 @@
   justify-content: center;
 }
 
+.PersonaDropdownLarge .image-wrapper {
+  margin-left: 20px;
+}
+.PersonaDropdownLarge .label-wrapper {
+  margin-left: 20px;
+}
 .PersonaDropdownLarge .chevron-wrapper {
+  margin-left: 20px;
   min-width: 40px;
 }
 
-.PersonaDropdownLarge .label-wrapper {
-  text-align: right;
-  flex-grow: 4;
-}
+
 .PersonaDropdownLarge .label-wrapper .DoubleLabel-label {
   font-size: 20px;
 }
@@ -37,16 +38,34 @@
   font-size: 13px;
 }
 
-.PersonaDropdownLarge .image-wrapper {
-  flex-grow: 1;
-}
 
 .PersonaDropdownLarge .personas-popup {
   display: block;
   right: 0;
-  bottom: 0px;
+  bottom: 100%;
   top: initial;
   width: 100%;
-  padding-top: 20px;
+  background: #f9f9f9;
+  color: #8b8d8f;
+  border: 1px solid #D1D1D1;
+}
 
+.PersonaDropdownLarge .list-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.PersonaDropdownLarge .list-item .persona-avatar,
+.PersonaDropdownLarge .list-item .persona-label {
+  margin-left: 20px;
+}
+.PersonaDropdownLarge .list-item .persona-label .DoubleLabel-label {
+  font-size: 20px;
+}
+.PersonaDropdownLarge .list-item .persona-label .DoubleLabel-description {
+  font-size: 13px;
+}
+
+.PersonaDropdownLarge .list-item:hover {
+  color: #15AAF5;
 }

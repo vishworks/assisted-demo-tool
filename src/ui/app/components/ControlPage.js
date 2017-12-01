@@ -79,7 +79,7 @@ class ControlPage extends Component {
                   defaultSize={500}
                   primary="second"
                 >
-                  <div className="white-area">
+                  <div className="white-area highlights-list-area">
                     <div className="grey-area layout-header">
                       <div className="icon-label">
                         <i

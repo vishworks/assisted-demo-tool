@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import CurrentPersonaDoubleLabelContainer from 'ui/personas/containers/CurrentPersonaDoubleLabelContainer.js';
 import CurrentPersonaAvatarContainer from 'ui/personas/containers/CurrentPersonaAvatarContainer.js';
-import PersonaListContainer from 'ui/personas/containers/PersonaListContainer.js';
+import PersonaDropdownLargePopupListContainer from 'ui/personas/containers/PersonaDropdownLargePopupListContainer.js';
 import PopupContainer from 'ui/shared/containers/PopupContainer.js';
 
 import './PersonaDropdownLarge.css';
@@ -31,7 +31,7 @@ class PersonaDropdownLarge extends Component {
         </div>
 
         <PopupContainer className="personas-popup" popupId="personas">
-          <PersonaListContainer />
+          <PersonaDropdownLargePopupListContainer />
         </PopupContainer>
       </div>
     );

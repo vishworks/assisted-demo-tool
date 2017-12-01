@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import { omit } from 'lodash';
 
 class DoubleLabel extends Component {
   render() {
-    let { label, description } = this.props;
-    let className = ['DoubleLabel'];
-    if (this.props.className) {
-      className.push(this.props.className);
+    let { label, description, className } = this.props;
+    let newClassName = 'DoubleLabel';
+    if (className) {
+      newClassName += ' ' + className;
     }
     return (
-      <div className={className.join(' ')}>
+      <div
+        {...omit(this.props, ['label', 'description', 'className'])}
+        className={className}
+      >
         <div className="DoubleLabel-label">{label}</div>
         <div className="DoubleLabel-description">{description}</div>
       </div>

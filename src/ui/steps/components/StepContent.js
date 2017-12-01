@@ -5,6 +5,8 @@ import PseudoCheckbox from 'ui/shared/components/PseudoCheckbox.js';
 
 import './StepContent.css';
 
+// FIXME refactor using HtmlContent and CurrentStepBulletsContainer
+
 class StepContent extends Component {
   constructor(props) {
     super(props);

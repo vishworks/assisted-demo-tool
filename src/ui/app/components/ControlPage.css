@@ -86,13 +86,17 @@
 
 .ControlPage .layout-col-2 {
   flex-grow: 2;
-}
-
-
-.ControlPage .layout-col-2 .layout-header {
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: stretch;
+  justify-content: space-between;
 }
+
+.ControlPage .layout-col-2 .TabbedStepContent{
+  flex-grow: 2;
+}
+
 
 .ControlPage .notes-section {
   display: flex;

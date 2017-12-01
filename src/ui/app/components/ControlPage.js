@@ -14,6 +14,7 @@ import CurrentDemoNotesListContainer from 'ui/notes/containers/CurrentDemoNotesL
 import OpenNewNotePopupButtonContainer from 'ui/notes/containers/OpenNewNotePopupButtonContainer.js';
 import NewNoteFormContainer from 'ui/notes/containers/NewNoteFormContainer.js';
 import StepsCountContainer from 'ui/steps/containers/StepsCountContainer.js';
+import TabbedStepContentContainer from 'ui/steps/containers/TabbedStepContentContainer.js';
 
 import 'ui/shared/components/SplitPaneResizer.css';
 import './ControlPage.css';
@@ -58,7 +59,8 @@ class ControlPage extends Component {
               primary="second"
             >
               <div className="layout-col-2">
-                <div className="layout-header" />
+                <TabbedStepContentContainer />
+                <div className="footer-controls-section" />
               </div>
               <div className="layout-col-3">
                 <SplitPane

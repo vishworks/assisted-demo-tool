@@ -18,14 +18,21 @@ html, body, #root, .App {
   transition: right 1s;
 }
 
-.App .ViewPort {
+.App .tabbed-viewport {
   transition: min-width 500ms;
   min-width: 100%;
-
+  display: flex;
+  flex-direction: column;
 }
-.App[data-display-mode="CONTROL_WIDGET"] .ViewPort {
+.App[data-display-mode="CONTROL_WIDGET"] .tabbed-viewport {
   transition: min-width 500ms;
   min-width: calc(100% - 300px);
+}
+.App .PersonaTabs {
+  display: none;
+}
+.App[data-display-mode="CONTROL_WIDGET_MINI"] .PersonaTabs {
+  display: block;
 }
 
 .App[data-display-mode="DETACHED_PAGE"] .ControlWidgetMini,

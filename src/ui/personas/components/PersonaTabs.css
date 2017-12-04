@@ -1,0 +1,73 @@
+.PersonaTabs {
+  background: #203753;
+  border-bottom: 2px solid #00659C;
+}
+
+.PersonaTabs .tab-button {
+  position: relative;
+  border: none;
+  margin: 5px 5px 0 5px;
+  height: 30px;
+  min-width: 150px;
+  border-top: 1px solid #5F748F;
+  border-radius: 3px 3px 0 0;
+  background: #152437;
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.PersonaTabs .tab-button:first-child {
+  margin-left: 20px;
+}
+
+
+.PersonaTabs .tab-button .left-triangle-area,
+.PersonaTabs .tab-button .right-triangle-area {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  overflow: hidden;
+}
+.PersonaTabs .tab-button .left-triangle-area::after,
+.PersonaTabs .tab-button .right-triangle-area::after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background: #152437;
+  border: 1px solid #5F748F;
+}
+
+.PersonaTabs .tab-button .left-triangle-area {
+  right: 100%;
+}
+.PersonaTabs .tab-button .right-triangle-area {
+  left: 100%;
+}
+.PersonaTabs .tab-button .left-triangle-area::after {
+  right: 0;
+  transform-origin: 100% 0;
+  transform: rotate(-70deg);
+}
+.PersonaTabs .tab-button .right-triangle-area::after {
+  left: 0;
+  transform-origin: 0 0;
+  transform: rotate(70deg);
+}
+
+
+.PersonaTabs .tab-button.active,
+.PersonaTabs .tab-button.active .left-triangle-area::after,
+.PersonaTabs .tab-button.active .right-triangle-area::after {
+  z-index: 10;
+  background: #00659C;
+}
+
+.PersonaTabs .tab-button:hover {
+  color: #00B9F7;
+}

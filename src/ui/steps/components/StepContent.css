@@ -11,3 +11,7 @@
 .StepContent .PseudoCheckbox {
   float: right;
 }
+
+.StepContent .bullets .step-bullet {
+  margin-bottom: 20px;
+}

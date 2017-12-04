@@ -40,7 +40,7 @@ class StepContent extends Component {
       <div className="StepContent">
         <h3 className="step-title">{this.props.stepTitle}</h3>
         <PseudoCheckbox
-          text="Show Bullets"
+          text="Presenter View"
           checked={displayBullets}
           onClick={this.onClickShowBullets}
           disabled={cannotChoose}
@@ -61,7 +61,7 @@ class StepContent extends Component {
 
   renderBullets() {
     let bulletList = this.props.bullets.map(bullet => {
-      return <li>{bullet}</li>;
+      return <li class="step-bullet">{bullet}</li>;
     });
 
     return (

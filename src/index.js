@@ -18,6 +18,15 @@ import UrlHashMiddleware from './middlewares/UrlHashMiddleware.js';
 import { getPersistedState } from 'helpers/LocalStorageUtils.js';
 import PersistStateSubscription from 'subscriptions/PersistStateSubscription.js';
 
+// FIXME remove this when test-config is not needed
+import { parse } from 'qs';
+let obj = parse(
+  window.location.search && window.location.search.replace('?', '')
+);
+if (!obj.configUrl) {
+  window.location.search = 'configUrl=test-config/config_1.json';
+}
+
 let preloadedState = getPersistedState();
 
 let store = createStore(

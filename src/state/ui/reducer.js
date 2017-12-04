@@ -43,7 +43,7 @@ const globalErrorMessage = (state = '', action = {}) => {
   }
 };
 
-const displayBullets = (state = false, action = {}) => {
+const displayBullets = (state = true, action = {}) => {
   switch (action.type) {
     case STEP_CONTENT_SHOW_BULLETS:
       return action.payload.show;

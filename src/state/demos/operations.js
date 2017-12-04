@@ -81,8 +81,12 @@ export const prevStep = () => (dispatch, getState) => {
 };
 
 export const swapHighlights = (oldIndex, newIndex) => (dispatch, getState) => {
-  let currentDemoId = getCurrentDemoId(getState());
-  dispatch(_swapHighlights(currentDemoId, oldIndex, newIndex));
+  let state = getState(),
+    currentDemoId = getCurrentDemoId(state),
+    currentStepIndex = getCurrentStepIndex(state);
+  dispatch(
+    _swapHighlights(currentDemoId, currentStepIndex, oldIndex, newIndex)
+  );
 };
 
 export const toggleHighlightStar = index => (dispatch, getState) => {

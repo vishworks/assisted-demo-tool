@@ -7,7 +7,7 @@ class TextUl extends Component {
     return (
       <ul {...omit(this.props, ['stringArray'])}>
         {this.props.stringArray
-          ? this.props.stringArray.map(str => <li>{str}</li>)
+          ? this.props.stringArray.map(str => <li key={str}>{str}</li>)
           : ''}
       </ul>
     );

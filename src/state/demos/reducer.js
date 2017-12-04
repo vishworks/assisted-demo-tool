@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { cloneDeep, map, findIndex, find, get } from 'lodash';
+import { cloneDeep, map, find, get, set } from 'lodash';
 import { arrayMove } from 'react-sortable-hoc';
 
 import { LOAD_CONFIG } from '../config/types.js';
@@ -35,15 +35,24 @@ const demos = (state = [], action = {}) => {
 
     // FIXME SET HIGHLIGHTS DOMAIN (NORMALIZE DEMOS)
     case SWAP_HIGHLIGHTS: {
-      let dms = cloneDeep(state),
-        dmIndex = findIndex(dms, { id: action.payload.demoId }),
-        dm = dms[dmIndex];
-      dm.highlights = arrayMove(
-        dm.highlights,
-        action.payload.oldIndex,
-        action.payload.newIndex
-      ).slice();
-      return Object.assign([], state, dms);
+      const demo = find(state, { id: action.payload.demoId }),
+        path = 'steps.' + action.payload.stepIndex + '.highlights';
+      let highlights = get(demo, path);
+
+      if (highlights) {
+        highlights = cloneDeep(highlights);
+        highlights = arrayMove(
+          highlights,
+          action.payload.oldIndex,
+          action.payload.newIndex
+        );
+        let dms = cloneDeep(state),
+          dm = find(dms, { id: action.payload.demoId });
+        set(dm, path, highlights);
+
+        return dms;
+      }
+      return state;
     }
 
     case TOGGLE_HIGHLIGHT_STAR: {

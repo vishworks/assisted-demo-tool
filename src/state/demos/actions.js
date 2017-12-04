@@ -79,10 +79,11 @@ export const moveDemo = (demoId, oldIndex, newIndex) => ({
   }
 });
 
-export const _swapHighlights = (demoId, oldIndex, newIndex) => ({
+export const _swapHighlights = (demoId, stepIndex, oldIndex, newIndex) => ({
   type: SWAP_HIGHLIGHTS,
   payload: {
     demoId,
+    stepIndex,
     oldIndex,
     newIndex
   }

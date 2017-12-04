@@ -19,7 +19,7 @@ class NewNoteForm extends Component {
     return (
       <div className="NewNoteForm">
         <div className="input-group title-input-group">
-          <label className="form-label" for="NewNoteForm_note-title">
+          <label className="form-label" htmlFor="NewNoteForm_note-title">
             Title
           </label>
           <input
@@ -32,7 +32,7 @@ class NewNoteForm extends Component {
           />
         </div>
         <div className="input-group text-input-group">
-          <label className="form-label" for="NewNoteForm_note-title">
+          <label className="form-label" htmlFor="NewNoteForm_note-title">
             Text
           </label>
           <textarea

@@ -68,6 +68,21 @@ let schema = {
                     type: 'string'
                   }
                 },
+                highlights: {
+                  type: 'array',
+                  items: {
+                    type: 'object',
+                    properties: {
+                      title: {
+                        type: 'string'
+                      },
+                      text: {
+                        type: 'string'
+                      }
+                    },
+                    required: ['title', 'text']
+                  }
+                },
                 content: {
                   type: 'string'
                 },
@@ -89,21 +104,6 @@ let schema = {
               },
               required: ['personaId', 'title'],
               anyOf: [{ required: ['content'] }, { required: ['bullets'] }]
-            }
-          },
-          highlights: {
-            type: 'array',
-            items: {
-              type: 'object',
-              properties: {
-                title: {
-                  type: 'string'
-                },
-                text: {
-                  type: 'string'
-                }
-              },
-              required: ['title', 'text']
             }
           }
         },

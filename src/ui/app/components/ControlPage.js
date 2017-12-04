@@ -9,7 +9,7 @@ import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
 import PersonaDropdownLargeContainer from 'ui/personas/containers/PersonaDropdownLargeContainer.js';
 import BigStepsListContainer from 'ui/steps/containers/BigStepsListContainer.js';
 import BigTimerContainer from 'ui/demos/containers/BigTimerContainer.js';
-import CurrentDemoHighlightListContainer from 'ui/demos/containers/CurrentDemoHighlightListContainer.js';
+import CurrentStepHighlightListContainer from 'ui/steps/containers/CurrentStepHighlightListContainer.js';
 import CurrentDemoNotesListContainer from 'ui/notes/containers/CurrentDemoNotesListContainer.js';
 import OpenNewNotePopupButtonContainer from 'ui/notes/containers/OpenNewNotePopupButtonContainer.js';
 import NewNoteFormContainer from 'ui/notes/containers/NewNoteFormContainer.js';
@@ -89,7 +89,7 @@ class ControlPage extends Component {
                         <span className="label">Highlights</span>
                       </div>
                     </div>
-                    <CurrentDemoHighlightListContainer />
+                    <CurrentStepHighlightListContainer />
                   </div>
                   <div className="white-area notes-section">
                     <div className="grey-area layout-header">

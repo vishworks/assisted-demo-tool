@@ -50,6 +50,16 @@
             "When you go to a new step, you'll see the webpage related to the step's persona",
             "Click on the 'NEXT' button to go to the next step"
           ],
+          "highlights": [
+            {
+              "title": "Highlight title 1",
+              "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
+            },
+            {
+              "title": "Highlight title 2",
+              "text": "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
+            }
+          ],
           "content": "<article>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
         },
         {
@@ -137,16 +147,6 @@
           "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
         }
 
-      ],
-      "highlights": [
-        {
-          "title": "Highlight title 1",
-          "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
-        },
-        {
-          "title": "Highlight title 2",
-          "text": "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
-        }
       ]
     },
 

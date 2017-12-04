@@ -66,13 +66,6 @@ export const getCurrentDemoTitle = createSelector(
   }
 );
 
-export const getCurrentDemoHighlights = createSelector(
-  [getCurrentDemo],
-  currentDemo => {
-    return currentDemo && currentDemo.highlights;
-  }
-);
-
 export const getSteps = createSelector([getCurrentDemo], currentDemo => {
   return currentDemo && currentDemo.steps;
 });
@@ -117,6 +110,13 @@ export const getCurrentStepBullets = createSelector(
   [getCurrentStep],
   currentStep => {
     return currentStep.bullets;
+  }
+);
+
+export const getCurrentStepHighlights = createSelector(
+  [getCurrentStep],
+  currentStep => {
+    return currentStep && currentStep.highlights;
   }
 );
 

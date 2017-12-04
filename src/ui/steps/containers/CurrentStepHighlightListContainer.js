@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 
-import { getCurrentDemoHighlights } from 'state/demos/selectors.js';
+import { getCurrentStepHighlights } from 'state/demos/selectors.js';
 import { swapHighlights, toggleHighlightStar } from 'state/demos/actions.js';
 
-import HighlightList from 'ui/demos/components/HighlightList.js';
+import HighlightList from '../components/HighlightList.js';
 
 const mapStateToProps = state => {
   return {
-    highlights: getCurrentDemoHighlights(state)
+    highlights: getCurrentStepHighlights(state)
   };
 };
 
@@ -19,9 +19,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const CurrentDemoHighlightListContainer = connect(
+const CurrentStepHighlightListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(HighlightList);
 
-export default CurrentDemoHighlightListContainer;
+export default CurrentStepHighlightListContainer;

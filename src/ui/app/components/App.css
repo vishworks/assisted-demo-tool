@@ -9,34 +9,24 @@ html, body, #root, .App {
   font-family: 'Lato', sans-serif;
 }
 
-.App[data-display-mode="CONTROL_WIDGET_MINI"],
-.App[data-display-mode="DETACHED_PAGE"] {
-  overflow: hidden;
-}
-.App[data-display-mode="CONTROL_WIDGET_MINI"] .ControlWidgetMini {
-  right: 5px;
-  transition: right 1s;
-}
 
 .App .tabbed-viewport {
-  transition: min-width 500ms;
-  min-width: 100%;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
-.App[data-display-mode="CONTROL_WIDGET"] .tabbed-viewport {
-  transition: min-width 500ms;
-  min-width: calc(100% - 300px);
-}
+
+.App .ControlWidget,
+.App .ControlWidgetMini,
 .App .PersonaTabs {
   display: none;
 }
-.App[data-display-mode="CONTROL_WIDGET_MINI"] .PersonaTabs {
-  display: block;
+
+.App[data-display-mode="CONTROL_WIDGET"] .ControlWidget {
+  display: flex;
 }
 
-.App[data-display-mode="DETACHED_PAGE"] .ControlWidgetMini,
-.App[data-display-mode="DETACHED_PAGE"] .ControlWidget,
-.App[data-display-mode="DETACHED_PAGE"] .Popup {
-  display: none;
+.App[data-display-mode="CONTROL_WIDGET_MINI"] .PersonaTabs,
+.App[data-display-mode="CONTROL_WIDGET_MINI"] .ControlWidgetMini {
+  display: block;
 }

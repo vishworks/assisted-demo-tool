@@ -18,7 +18,11 @@ class PersonaTabs extends Component {
         className += ' active';
       }
       return (
-        <button className={className} onClick={this.onClickPersona(persona)}>
+        <button
+          key={persona.id}
+          className={className}
+          onClick={this.onClickPersona(persona)}
+        >
           {persona.description}
           <div className="left-triangle-area" />
           <div className="right-triangle-area" />

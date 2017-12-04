@@ -60,8 +60,12 @@ class StepContent extends Component {
   }
 
   renderBullets() {
-    let bulletList = this.props.bullets.map(bullet => {
-      return <li class="step-bullet">{bullet}</li>;
+    let bulletList = this.props.bullets.map((bullet, i) => {
+      return (
+        <li key={'step-bullet-' + i} className="step-bullet">
+          {bullet}
+        </li>
+      );
     });
 
     return (

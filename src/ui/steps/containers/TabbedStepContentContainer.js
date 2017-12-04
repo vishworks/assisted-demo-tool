@@ -1,9 +1,7 @@
 import { connect } from 'react-redux';
 import { getDisplayBullets } from 'state/ui/selectors.js';
 import {
-  getCurrentStepContent,
   getCurrentStepHasContent,
-  getCurrentStepBullets,
   getCurrentStepHasBullets
 } from 'state/demos/selectors.js';
 import { showBullets } from 'state/ui/actions.js';

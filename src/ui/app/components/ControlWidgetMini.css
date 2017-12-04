@@ -3,8 +3,7 @@
     position: fixed;
     bottom: 20px;
     z-index: 4000;
-    right: -200px;
-    transition: right 1s;
+    right: 30px;
 }
 
 .ControlWidgetMini .personas-list {

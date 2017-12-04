@@ -12,6 +12,10 @@
   float: right;
 }
 
+.StepContent .bullets {
+  padding-left: 15px;
+}
+
 .StepContent .bullets .step-bullet {
   margin-bottom: 20px;
 }

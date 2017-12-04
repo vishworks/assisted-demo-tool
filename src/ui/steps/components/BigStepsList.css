@@ -25,14 +25,11 @@
   font-weight: bold;
 }
 
+.BigStepsListItem:hover,
 .BigStepsListItem.active {
   background: #EDEDED;
 }
+.BigStepsListItem:hover .step-title,
 .BigStepsListItem.active .step-title {
   color: #192941;
-}
-
-.BigStepsListItem:hover {
-  color: #66696b;
-  background: #f5f5f5;
 }

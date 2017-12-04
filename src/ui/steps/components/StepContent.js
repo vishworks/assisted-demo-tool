@@ -68,11 +68,7 @@ class StepContent extends Component {
       );
     });
 
-    return (
-      <div className="bullets">
-        <ul>{bulletList}</ul>
-      </div>
-    );
+    return <ul className="bullets">{bulletList}</ul>;
   }
 
   onClickShowBullets() {

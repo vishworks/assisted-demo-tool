@@ -71,4 +71,13 @@
 
 .TabbedStepContent .tab-content .tab-body {
   margin-top: 30px;
+  font-size: 18px;
+}
+
+.TabbedStepContent .tab-content .tab-body .bullet-list {
+  padding-left: 20px;
+}
+
+.TabbedStepContent .tab-content .tab-body .bullet-list li {
+  margin-bottom: 20px;
 }

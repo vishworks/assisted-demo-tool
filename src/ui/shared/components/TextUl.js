@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { omit } from 'lodash';
 import PropTypes from 'prop-types';
 
 class TextUl extends Component {
   render() {
     return (
-      <ul {...this.props}>
+      <ul {...omit(this.props, ['stringArray'])}>
         {this.props.stringArray
           ? this.props.stringArray.map(str => <li>{str}</li>)
           : ''}

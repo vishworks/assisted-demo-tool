@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { forEach } from 'lodash';
+import { map } from 'lodash';
 
 import LabelledAvatar from './LabelledAvatar.js';
 
@@ -13,25 +13,21 @@ class PersonaList extends Component {
   }
 
   render() {
-    let className = ['PersonaList'];
-
     // render personas
-    let personaRenderers = [];
-    forEach(this.props.personas, persona => {
-      let renderer = (
+    let personaRenderers = map(this.props.personas, persona => {
+      return (
         <LabelledAvatar
           key={persona.id}
           imageUrl={persona.avatar}
           label={persona.label}
           description={persona.description}
           onClick={this.onClickPersona(persona)}
+          active={persona.id === this.props.currentPersonaId}
         />
       );
-
-      personaRenderers.push(renderer);
     });
 
-    return <div className={className.join(' ')}>{personaRenderers}</div>;
+    return <div className="PersonaList">{personaRenderers}</div>;
   }
 
   onClickPersona(persona) {

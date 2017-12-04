@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { isFunction } from 'lodash';
 
 import {
-  getCurrentPersona,
+  getCurrentPersonaId,
   getVisiblePersonas
 } from 'state/personas/selectors.js';
 
@@ -13,7 +13,7 @@ import PersonaList from '../components/PersonaList.js';
 const mapStateToProps = state => {
   return {
     personas: getVisiblePersonas(state),
-    currentPersona: getCurrentPersona(state)
+    currentPersonaId: getCurrentPersonaId(state)
   };
 };
 

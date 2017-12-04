@@ -6,9 +6,12 @@ import './LabelledAvatar.css';
 
 class LabelledAvatar extends Component {
   render() {
-    let className = ['LabelledAvatar'];
+    let { imageUrl, label, description, active } = this.props;
 
-    let { imageUrl, label, description } = this.props;
+    let className = ['LabelledAvatar'];
+    if (active) {
+      className.push('active');
+    }
 
     return (
       <div className={className.join(' ')} onClick={this.props.onClick}>

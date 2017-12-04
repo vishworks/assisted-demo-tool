@@ -18,10 +18,9 @@
   padding-bottom: 20px;
 }
 
-.LabelledAvatar:hover .persona-label {
-  color: #00B9F7;
-}
-
-.LabelledAvatar:hover .persona-description {
+.LabelledAvatar:hover .persona-label,
+.LabelledAvatar:hover .persona-description,
+.LabelledAvatar.active .persona-label,
+.LabelledAvatar.active .persona-description {
   color: #00B9F7;
 }

@@ -71,6 +71,21 @@ let schema = {
                 },
                 content: {
                   type: 'string'
+                },
+                urlOverrides: {
+                  type: 'array',
+                  items: {
+                    type: 'object',
+                    properties: {
+                      personaId: {
+                        type: 'string'
+                      },
+                      url: {
+                        type: 'string'
+                      }
+                    },
+                    required: ['personaId', 'url']
+                  }
                 }
               },
               required: ['personaId', 'name'],

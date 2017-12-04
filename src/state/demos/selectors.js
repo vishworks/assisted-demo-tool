@@ -1,7 +1,11 @@
 import { createSelector } from 'reselect';
-import { find, filter, map } from 'lodash';
+import { find, filter, map, uniq, flatten, compact } from 'lodash';
 
-import { getCurrentPersonaId } from 'state/personas/selectors.js';
+import {
+  getCurrentPersonaId,
+  getDefaultUrls,
+  getCurrentPersonaUrl
+} from 'state/personas/selectors.js';
 
 function addIndexToArray(array) {
   return map(array, (el, index) => {
@@ -137,6 +141,13 @@ export const getCurrentStepName = createSelector(
   }
 );
 
+export const getCurrentStepUrlOverrides = createSelector(
+  [getCurrentStep],
+  currentStep => {
+    return currentStep && currentStep.urlOverrides;
+  }
+);
+
 export const getCurrentStepPersonaId = createSelector(
   [getCurrentStep],
   currentStep => {
@@ -148,5 +159,34 @@ export const getCurrentPersonaSteps = createSelector(
   [getAllSteps, getCurrentPersonaId],
   (allSteps, currentPersonaId) => {
     return filter(allSteps, { personaId: currentPersonaId });
+  }
+);
+
+export const getAllStepUrls = createSelector([getSteps], steps => {
+  return uniq(
+    flatten(
+      compact(
+        map(steps, step => {
+          return step.urlOverrides && map(step.urlOverrides, 'url');
+        })
+      )
+    )
+  );
+});
+
+export const getAllUrls = createSelector(
+  [getDefaultUrls, getAllStepUrls],
+  (defaultPersonaUrls, stepUrls) => {
+    return defaultPersonaUrls.concat(stepUrls);
+  }
+);
+
+export const getCurrentUrl = createSelector(
+  [getCurrentPersonaId, getCurrentPersonaUrl, getCurrentStepUrlOverrides],
+  (currentPersonaId, currentPersonaUrl, stepUrlOverrides) => {
+    const personaOverride =
+      stepUrlOverrides &&
+      find(stepUrlOverrides, { personaId: currentPersonaId });
+    return (personaOverride && personaOverride.url) || currentPersonaUrl;
   }
 );

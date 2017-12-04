@@ -5,7 +5,7 @@
       "label": "Carol Smith",
       "description": "IT Administrator",
       "avatar": "img/user-1.jpg",
-      "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin"
+      "url": "https://www.entando.com/"
     },
     {
       "id": "marketing",
@@ -55,6 +55,16 @@
         {
           "personaId": "itAdmin",
           "name": "The demo steps list",
+          "urlOverrides": [
+              {
+                "personaId": "itAdmin",
+                "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin"
+              },
+              {
+                "personaId": "marketing",
+                "url": "https://www.entando.com/page/en/contribute"
+              }
+          ],
           "bullets": [
             "Click on the 'list' button to see the list of this demo steps",
             "In the steps list popup, click on the 'Filter by persona' checkbox to see only the current persona's steps",

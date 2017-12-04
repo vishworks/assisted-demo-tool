@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 
-import { getUrls, getCurrentUrl } from 'state/personas/selectors.js';
+import { getAllUrls, getCurrentUrl } from 'state/demos/selectors.js';
 
 import ViewPort from '../components/ViewPort.js';
 
 const mapStateToProps = state => {
   return {
-    urls: getUrls(state),
+    urls: getAllUrls(state),
     currentUrl: getCurrentUrl(state)
   };
 };

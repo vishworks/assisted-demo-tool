@@ -72,13 +72,13 @@ export const getCurrentPersonaDescription = createSelector(
   }
 );
 
-export const getCurrentUrl = createSelector(
+export const getCurrentPersonaUrl = createSelector(
   [getCurrentPersona],
   currentPersona => {
     return currentPersona.url;
   }
 );
 
-export const getUrls = createSelector([getPersonas], personas => {
+export const getDefaultUrls = createSelector([getPersonas], personas => {
   return uniq(map(personas, 'url'));
 });

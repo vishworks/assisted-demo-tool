@@ -6,8 +6,6 @@ import './ViewPort.css';
 
 class ViewPort extends Component {
   render() {
-    let className = ['ViewPort'];
-
     let renderers = [];
     forEach(this.props.urls, url => {
       let className = 'view-frame';
@@ -20,7 +18,7 @@ class ViewPort extends Component {
       renderers.push(iframe);
     });
 
-    return <div className={className.join(' ')}>{renderers}</div>;
+    return <div className="ViewPort">{renderers}</div>;
   }
 }
 

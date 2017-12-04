@@ -12,6 +12,8 @@
 
 .LoadingPage .error-container {
   color: darkred;
+  max-width: 90%;
+  overflow: auto;
 }
 
 .LoadingPage .error-container h1 {

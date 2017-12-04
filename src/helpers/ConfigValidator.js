@@ -45,7 +45,7 @@ let schema = {
           id: {
             type: 'string'
           },
-          name: {
+          title: {
             type: 'string'
           },
           estimatedTime: {
@@ -59,8 +59,7 @@ let schema = {
                 personaId: {
                   type: 'string'
                 },
-                name: {
-                  // FIXME refactor name -> title
+                title: {
                   type: 'string'
                 },
                 bullets: {
@@ -88,7 +87,7 @@ let schema = {
                   }
                 }
               },
-              required: ['personaId', 'name'],
+              required: ['personaId', 'title'],
               anyOf: [{ required: ['content'] }, { required: ['bullets'] }]
             }
           },
@@ -108,7 +107,7 @@ let schema = {
             }
           }
         },
-        required: ['id', 'name', 'steps']
+        required: ['id', 'title', 'steps']
       }
     }
   },

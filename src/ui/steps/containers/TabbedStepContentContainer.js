@@ -4,8 +4,7 @@ import {
   getCurrentStepContent,
   getCurrentStepHasContent,
   getCurrentStepBullets,
-  getCurrentStepHasBullets,
-  getCurrentStepName
+  getCurrentStepHasBullets
 } from 'state/demos/selectors.js';
 import { showBullets } from 'state/ui/actions.js';
 import TabbedStepContent from '../components/TabbedStepContent.js';

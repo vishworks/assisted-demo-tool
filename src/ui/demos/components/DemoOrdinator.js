@@ -18,7 +18,7 @@ class DemoOrdinator extends Component {
       return (
         <DemoOrdinatorListItem
           key={demo.id}
-          demoName={demo.name}
+          demoTitle={demo.title}
           demoIncluded={demo.included}
           onClickCheckbox={this.onClickCheckbox(demo.id, i)}
           onClickMoveUp={this.moveDemo(demo.id, i, i - 1)}

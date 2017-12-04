@@ -20,7 +20,7 @@
   font-size: 16px;
 
 }
-.BigStepsListItem .step-name {
+.BigStepsListItem .step-title {
   font-size: 18px;
   font-weight: bold;
 }
@@ -28,7 +28,7 @@
 .BigStepsListItem.active {
   background: #EDEDED;
 }
-.BigStepsListItem.active .step-name {
+.BigStepsListItem.active .step-title {
   color: #192941;
 }
 

@@ -10,7 +10,7 @@ class PersonaStepsListItem extends Component {
     return (
       <div className={className.join(' ')} onClick={this.props.onClick}>
         <div>Step {step.index + 1}</div>
-        <div>{step.name}</div>
+        <div>{step.title}</div>
       </div>
     );
   }

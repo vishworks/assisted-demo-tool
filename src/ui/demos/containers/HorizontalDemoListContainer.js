@@ -11,7 +11,7 @@ const mapStateToProps = state => {
     currentDemoId = getCurrentDemoId(state),
     demoListModel = map(includedDemos, demo => ({
       id: demo.id,
-      title: demo.name,
+      title: demo.title,
       stepsCount: demo.steps.length,
       estimatedTime: demo.estimatedTime,
       isCurrentDemo: demo.id === currentDemoId

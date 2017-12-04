@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 
-import { getCurrentStepName } from 'state/demos/selectors.js';
+import { getCurrentStepTitle } from 'state/demos/selectors.js';
 import ControlPage from '../components/ControlPage.js';
 
 const mapStateToProps = state => {
   return {
-    currentStepName: getCurrentStepName(state)
+    currentStepTitle: getCurrentStepTitle(state)
   };
 };
 

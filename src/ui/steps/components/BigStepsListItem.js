@@ -9,11 +9,11 @@ class BigStepsListItem extends Component {
     if (this.props.active) {
       className.push('active');
     }
-    let { stepNumber, stepName } = this.props;
+    let { stepNumber, stepTitle } = this.props;
     return (
       <div className={className.join(' ')} onClick={this.props.onClick}>
         <div className="step-number">Step {stepNumber}</div>
-        <div className="step-name">{stepName}</div>
+        <div className="step-title">{stepTitle}</div>
       </div>
     );
   }
@@ -22,7 +22,7 @@ class BigStepsListItem extends Component {
 BigStepsListItem.propTypes = {
   active: PropTypes.bool.isRequired,
   stepNumber: PropTypes.number.isRequired,
-  stepName: PropTypes.string.isRequired
+  stepTitle: PropTypes.string.isRequired
 };
 
 export default BigStepsListItem;

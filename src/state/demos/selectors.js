@@ -59,10 +59,10 @@ export const getCurrentDemoEstimatedTime = createSelector(
   }
 );
 
-export const getCurrentDemoName = createSelector(
+export const getCurrentDemoTitle = createSelector(
   [getCurrentDemo],
   currentDemo => {
-    return currentDemo && currentDemo.name;
+    return currentDemo && currentDemo.title;
   }
 );
 
@@ -134,10 +134,10 @@ export const getCurrentStepHasContent = createSelector(
   }
 );
 
-export const getCurrentStepName = createSelector(
+export const getCurrentStepTitle = createSelector(
   [getCurrentStep],
   currentStep => {
-    return currentStep.name;
+    return currentStep.title;
   }
 );
 

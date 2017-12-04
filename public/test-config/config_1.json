@@ -39,12 +39,12 @@
   "demos": [
     {
       "id": "assistedDemoTool",
-      "name": "Assisted Demo Tool",
+      "title": "Assisted Demo Tool",
       "estimatedTime": 5,
       "steps": [
         {
           "personaId": "itAdmin",
-          "name": "Navigating through the demo steps",
+          "title": "Navigating through the demo steps",
           "bullets": [
             "To navigate through this demo steps, click the BACK and NEXT buttons below",
             "When you go to a new step, you'll see the webpage related to the step's persona",
@@ -54,7 +54,7 @@
         },
         {
           "personaId": "itAdmin",
-          "name": "The demo steps list",
+          "title": "The demo steps list",
           "urlOverrides": [
               {
                 "personaId": "itAdmin",
@@ -75,7 +75,7 @@
         },
         {
           "personaId": "itAdmin",
-          "name": "Changing personas",
+          "title": "Changing personas",
           "bullets": [
             "Click on the current persona's picture on the top",
             "Select a new persona from the list",
@@ -86,7 +86,7 @@
         },
         {
           "personaId": "itAdmin",
-          "name": "Set up demos order",
+          "title": "Set up demos order",
           "bullets": [
             "Click the 'gear' button to see the Demos settings popup",
             "Click on the checkboxes to exclude/include demos to be presented",
@@ -96,7 +96,7 @@
         },
         {
           "personaId": "itAdmin",
-          "name": "Minified View",
+          "title": "Minified View",
           "bullets": [
             "Click the 'arrow' button to enter the minified view",
             "Click on the persona picture on the bottom right to open the personas selector",
@@ -108,32 +108,32 @@
         },
         {
           "personaId": "marketing",
-          "name": "Marketing first step",
+          "title": "Marketing first step",
           "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
         },
         {
           "personaId": "marketing",
-          "name": "Marketing second step",
+          "title": "Marketing second step",
           "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
         },
         {
           "personaId": "hiddenGuest",
-          "name": "A random step for a hidden persona",
+          "title": "A random step for a hidden persona",
           "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
         },
         {
           "personaId": "editor",
-          "name": "Editor first steps",
+          "title": "Editor first steps",
           "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
         },
         {
           "personaId": "editor",
-          "name": "Editor second step",
+          "title": "Editor second step",
           "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
         },
         {
           "personaId": "editor",
-          "name": "Editor third step",
+          "title": "Editor third step",
           "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
         }
 
@@ -152,18 +152,18 @@
 
     {
       "id": "testDemo2",
-      "name": "Demo 2",
+      "title": "Demo 2",
       "estimatedTime": 2,
       "steps": [
         {
           "personaId": "itAdmin",
-          "name": "It Admin step",
+          "title": "It Admin step",
           "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
           "content": "some content itAdmin"
         },
         {
           "personaId": "marketing",
-          "name": "Marketing step",
+          "title": "Marketing step",
           "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
           "content": "some content marketing"
         }
@@ -182,18 +182,18 @@
 
     {
       "id": "testDemo3",
-      "name": "Demo 3",
+      "title": "Demo 3",
       "estimatedTime": 3,
       "steps": [
         {
           "personaId": "itAdmin",
-          "name": "It Admin step",
+          "title": "It Admin step",
           "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
           "content": "some content itAdmin"
         },
         {
           "personaId": "marketing",
-          "name": "Marketing step",
+          "title": "Marketing step",
           "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
           "content": "some content marketing"
         }

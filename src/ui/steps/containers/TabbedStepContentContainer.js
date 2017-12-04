@@ -12,9 +12,7 @@ import TabbedStepContent from '../components/TabbedStepContent.js';
 const mapStateToProps = state => {
   return {
     hasContent: getCurrentStepHasContent(state),
-    content: getCurrentStepContent(state),
     hasBullets: getCurrentStepHasBullets(state),
-    bullets: getCurrentStepBullets(state),
     displayBullets: getDisplayBullets(state)
   };
 };

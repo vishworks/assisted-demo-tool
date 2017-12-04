@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-import { find, filter, map, uniq, intersection } from 'lodash';
 
 import { getCurrentDemoId } from 'state/demos/selectors.js';
 

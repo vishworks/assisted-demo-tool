@@ -8,20 +8,8 @@ import CurrentStepTitleContainer from 'ui/steps/containers/CurrentStepTitleConta
 import './TabbedStepContent.css';
 
 class TabbedStepContent extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    const {
-      hasContent,
-      content,
-      hasBullets,
-      bullets,
-      displayBullets,
-
-      showBullets
-    } = this.props;
+    const { hasContent, hasBullets, displayBullets, showBullets } = this.props;
 
     let actualDisplayBullets = displayBullets;
 
@@ -30,16 +18,6 @@ class TabbedStepContent extends Component {
     } else if (hasBullets === false) {
       actualDisplayBullets = false;
     }
-
-    const renderTabButton = (icon, label, active) => (
-      <div
-        className={'tab-button' + (active ? ' active' : '')}
-        onClick={ev => showBullets(!actualDisplayBullets)}
-      >
-        <i className={'tab-button-icon fa ' + icon} />
-        <span className="tab-button-label">{label}</span>
-      </div>
-    );
 
     const tabContent = actualDisplayBullets ? (
       <CurrentStepBulletsContainer />

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { cloneDeep, map, findIndex, find, get, merge } from 'lodash';
+import { cloneDeep, map, findIndex, find, get } from 'lodash';
 import { arrayMove } from 'react-sortable-hoc';
 
 import { LOAD_CONFIG } from '../config/types.js';

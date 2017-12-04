@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { map } from 'lodash';
 import {
   SortableContainer,
   SortableElement,

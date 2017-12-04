@@ -11,7 +11,7 @@ class DoubleLabel extends Component {
     return (
       <div
         {...omit(this.props, ['label', 'description', 'className'])}
-        className={className}
+        className={newClassName}
       >
         <div className="DoubleLabel-label">{label}</div>
         <div className="DoubleLabel-description">{description}</div>

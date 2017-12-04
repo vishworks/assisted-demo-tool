@@ -1,4 +1,4 @@
-import { debounce, pick, set, get } from 'lodash';
+import { set, get } from 'lodash';
 import qs from 'query-string';
 
 export function getPersistedState() {

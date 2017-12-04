@@ -10,6 +10,10 @@ const mapStateToProps = state => {
   };
 };
 
-const CurrentDemoNameContainer = connect(mapStateToProps, null)(Span);
+const mapDispatchToProps = () => ({});
+
+const CurrentDemoNameContainer = connect(mapStateToProps, mapDispatchToProps)(
+  Span
+);
 
 export default CurrentDemoNameContainer;

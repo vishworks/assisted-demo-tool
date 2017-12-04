@@ -59,7 +59,7 @@ class HighlightList extends Component {
         items={this.props.highlights}
         toggleHighlightStar={this.props.toggleHighlightStar}
         onSortEnd={this.onSortEnd}
-        lockAxis
+        lockAxis="y"
         useDragHandle={true}
       />
     );

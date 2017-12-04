@@ -10,6 +10,10 @@ const mapStateToProps = state => {
   };
 };
 
-const CurrentStepTitleContainer = connect(mapStateToProps, null)(Span);
+const mapDispatchToProps = () => ({});
+
+const CurrentStepTitleContainer = connect(mapStateToProps, mapDispatchToProps)(
+  Span
+);
 
 export default CurrentStepTitleContainer;

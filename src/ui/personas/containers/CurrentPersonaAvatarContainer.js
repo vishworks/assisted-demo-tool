@@ -10,8 +10,11 @@ const mapStateToProps = state => {
   };
 };
 
-const CurrentPersonaAvatarContainer = connect(mapStateToProps, null)(
-  RoundImage
-);
+const mapDispatchToProps = () => ({});
+
+const CurrentPersonaAvatarContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RoundImage);
 
 export default CurrentPersonaAvatarContainer;

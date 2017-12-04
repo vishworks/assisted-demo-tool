@@ -11,6 +11,11 @@ const mapStateToProps = state => {
   };
 };
 
-const CurrentStepBulletsContainer = connect(mapStateToProps, null)(TextUl);
+const mapDispatchToProps = () => ({});
+
+const CurrentStepBulletsContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TextUl);
 
 export default CurrentStepBulletsContainer;

@@ -10,6 +10,8 @@ const mapStateToProps = state => {
   };
 };
 
-const StepsCountContainer = connect(mapStateToProps, null)(Span);
+const mapDispatchToProps = () => ({});
+
+const StepsCountContainer = connect(mapStateToProps, mapDispatchToProps)(Span);
 
 export default StepsCountContainer;

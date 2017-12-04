@@ -49,7 +49,7 @@ class NotesList extends Component {
       <SortableList
         items={this.props.notes}
         onSortEnd={this.onSortEnd}
-        lockAxis
+        lockAxis="y"
         useDragHandle={true}
       />
     );

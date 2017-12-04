@@ -16,8 +16,11 @@ const mapStateToProps = state => {
   };
 };
 
-const CurrentPersonaLabelledAvatarContainer = connect(mapStateToProps, null)(
-  LabelledAvatar
-);
+const mapDispatchToProps = () => ({});
+
+const CurrentPersonaLabelledAvatarContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LabelledAvatar);
 
 export default CurrentPersonaLabelledAvatarContainer;

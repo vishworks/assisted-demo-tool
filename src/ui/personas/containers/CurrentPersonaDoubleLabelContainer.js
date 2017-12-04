@@ -14,8 +14,11 @@ const mapStateToProps = state => {
   };
 };
 
-const CurrentPersonaDoubleLabelContainer = connect(mapStateToProps, null)(
-  DoubleLabel
-);
+const mapDispatchToProps = () => ({});
+
+const CurrentPersonaDoubleLabelContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DoubleLabel);
 
 export default CurrentPersonaDoubleLabelContainer;

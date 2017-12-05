@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './PrevStepButton.css';
 
@@ -27,5 +28,10 @@ class PrevStepButton extends Component {
     }
   }
 }
+
+PrevStepButton.propTypes = {
+  prevStep: PropTypes.func.isRequired,
+  isFirstStep: PropTypes.bool.isRequired
+};
 
 export default PrevStepButton;

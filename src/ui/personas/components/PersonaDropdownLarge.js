@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import CurrentPersonaDoubleLabelContainer from 'ui/personas/containers/CurrentPersonaDoubleLabelContainer.js';
 import CurrentPersonaAvatarContainer from 'ui/personas/containers/CurrentPersonaAvatarContainer.js';
@@ -37,5 +38,10 @@ class PersonaDropdownLarge extends Component {
     );
   }
 }
+
+PersonaDropdownLarge.propTypes = {
+  openPopup: PropTypes.func.isRequired,
+  className: PropTypes.string
+};
 
 export default PersonaDropdownLarge;

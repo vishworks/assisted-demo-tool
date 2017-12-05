@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class PersonaStepsListItem extends Component {
   render() {
@@ -6,14 +7,25 @@ class PersonaStepsListItem extends Component {
     if (this.props.active) {
       className.push('active');
     }
-    let step = this.props.step;
+    const { stepNumber, stepTitle, onClick } = this.props;
     return (
-      <div className={className.join(' ')} onClick={this.props.onClick}>
-        <div>Step {step.index + 1}</div>
-        <div>{step.title}</div>
+      <div className={className.join(' ')} onClick={onClick}>
+        <div>Step {stepNumber}</div>
+        <div>{stepTitle}</div>
       </div>
     );
   }
 }
+
+PersonaStepsListItem.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  active: PropTypes.bool,
+  stepNumber: PropTypes.number.isRequired,
+  stepTitle: PropTypes.string.isRequired
+};
+
+PersonaStepsListItem.defaultProps = {
+  active: false
+};
 
 export default PersonaStepsListItem;

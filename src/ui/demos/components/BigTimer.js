@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import TimeDisplay from 'ui/shared/components/TimeDisplay.js';
 
@@ -76,5 +77,10 @@ class BigTimer extends Component {
     }
   }
 }
+
+BigTimer.propTypes = {
+  estimatedTime: PropTypes.number.isRequired,
+  warningTime: PropTypes.number.isRequired
+};
 
 export default BigTimer;

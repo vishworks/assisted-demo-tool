@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { isEmpty } from 'lodash';
 
 import PseudoCheckbox from 'ui/shared/components/PseudoCheckbox.js';
@@ -75,5 +77,13 @@ class StepContent extends Component {
     this.props.showBullets(!this.props.displayBullets);
   }
 }
+
+StepContent.propTypes = {
+  showBullets: PropTypes.func.isRequired,
+  displayBullets: PropTypes.bool.isRequired,
+  stepTitle: PropTypes.string.isRequired,
+  content: PropTypes.string,
+  bullets: PropTypes.arrayOf(PropTypes.string)
+};
 
 export default StepContent;

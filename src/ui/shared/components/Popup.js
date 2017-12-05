@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { isFunction } from 'lodash';
 
 import './Popup.css';
@@ -49,6 +50,15 @@ class Popup extends Component {
     }
   }
 }
+
+Popup.propTypes = {
+  activePopup: PropTypes.string.isRequired,
+  popupId: PropTypes.string.isRequired,
+  closeOnClick: PropTypes.bool,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
+  className: PropTypes.string
+};
 
 Popup.defaultProps = {
   closeOnClick: true

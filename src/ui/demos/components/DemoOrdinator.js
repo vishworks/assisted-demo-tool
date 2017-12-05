@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { map } from 'lodash';
 
 import DemoOrdinatorListItem from './DemoOrdinatorListItem.js';
@@ -62,5 +64,20 @@ class DemoOrdinator extends Component {
     this.props.closeAllPopups();
   }
 }
+
+const DemoPropType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  included: PropTypes.bool.isRequired
+});
+
+DemoOrdinator.propTypes = {
+  includeDemo: PropTypes.func.isRequired,
+  excludeDemo: PropTypes.func.isRequired,
+  moveDemo: PropTypes.func.isRequired,
+  applyDemoSettings: PropTypes.func.isRequired,
+  closeAllPopups: PropTypes.func.isRequired,
+  demos: PropTypes.arrayOf(DemoPropType).isRequired
+};
 
 export default DemoOrdinator;

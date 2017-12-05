@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { forEach } from 'lodash';
 
@@ -14,8 +15,9 @@ class PersonaStepsList extends Component {
     forEach(this.props.steps, (step, i) => {
       renderers.push(
         <PersonaStepsListItem
-          key={step.index}
-          step={step}
+          key={step.index + ''}
+          stepNumber={step.number}
+          stepTitle={step.title}
           active={this.props.currentStepIndex === step.index}
           onClick={ev => {
             this.props.gotoStep(step.index);
@@ -31,5 +33,15 @@ class PersonaStepsList extends Component {
     return <div className={className.join(' ')}>{renderers}</div>;
   }
 }
+
+const StepPropTypes = PropTypes.shape({
+  index: PropTypes.number.isRequired,
+  number: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired
+});
+PersonaStepsList.propTypes = {
+  currentStepIndex: PropTypes.number.isRequired,
+  steps: PropTypes.arrayOf(StepPropTypes).isRequired
+};
 
 export default PersonaStepsList;

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { forEach } from 'lodash';
+import PropTypes from 'prop-types';
+
+import { map } from 'lodash';
 
 import RoundImage from 'ui/shared/components/RoundImage.js';
 import DoubleLabel from 'ui/shared/components/DoubleLabel.js';
@@ -16,9 +18,8 @@ class PersonaDropdownLargePopupList extends Component {
     let className = ['PersonaList'];
 
     // render personas
-    let personaRenderers = [];
-    forEach(this.props.personas, persona => {
-      let renderer = (
+    const personaRenderers = map(this.props.personas, persona => {
+      return (
         <div
           key={persona.id}
           className="list-item"
@@ -32,8 +33,6 @@ class PersonaDropdownLargePopupList extends Component {
           />
         </div>
       );
-
-      personaRenderers.push(renderer);
     });
 
     return <div className={className.join(' ')}>{personaRenderers}</div>;
@@ -43,5 +42,17 @@ class PersonaDropdownLargePopupList extends Component {
     return ev => this.props.selectPersona(persona.id);
   }
 }
+
+const PersonaPropTypes = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired
+});
+
+PersonaDropdownLargePopupList.propTypes = {
+  selectPersona: PropTypes.func.isRequired,
+  personas: PropTypes.arrayOf(PersonaPropTypes)
+};
 
 export default PersonaDropdownLargePopupList;

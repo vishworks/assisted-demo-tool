@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { omit } from 'lodash';
 
 class DoubleLabel extends Component {
@@ -19,5 +20,11 @@ class DoubleLabel extends Component {
     );
   }
 }
+
+DoubleLabel.propTypes = {
+  label: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  className: PropTypes.string
+};
 
 export default DoubleLabel;

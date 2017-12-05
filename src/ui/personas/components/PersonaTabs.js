@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { map } from 'lodash';
 
@@ -37,5 +38,16 @@ class PersonaTabs extends Component {
     return ev => this.props.selectPersona(persona.id);
   }
 }
+
+const PersonaPropTypes = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+});
+
+PersonaTabs.propTypes = {
+  selectPersona: PropTypes.func.isRequired,
+  personas: PropTypes.arrayOf(PersonaPropTypes),
+  currentPersonaId: PropTypes.string.isRequired
+};
 
 export default PersonaTabs;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { map } from 'lodash';
 
@@ -113,5 +114,20 @@ class ControlWidgetMini extends Component {
     this.collapse();
   }
 }
+
+const PersonaPropTypes = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+});
+
+ControlWidgetMini.propTypes = {
+  currentPersonaImageUrl: PropTypes.string.isRequired, // FIXME use container
+  onClickMaximize: PropTypes.func.isRequired,
+  selectPersona: PropTypes.func.isRequired,
+  currentPersonaId: PropTypes.string.isRequired,
+  personas: PropTypes.arrayOf(PersonaPropTypes).isRequired
+};
 
 export default ControlWidgetMini;

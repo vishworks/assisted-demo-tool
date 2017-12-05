@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { map } from 'lodash';
 
 import HorizontalDemoListItem from './HorizontalDemoListItem.js';
@@ -33,5 +35,18 @@ class HorizontalDemoList extends Component {
     );
   }
 }
+
+const DemoPropType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  isCurrentDemo: PropTypes.bool.isRequired,
+  stepsCount: PropTypes.number.isRequired,
+  estimatedTime: PropTypes.number.isRequired
+});
+
+HorizontalDemoList.propTypes = {
+  selectDemo: PropTypes.func.isRequired,
+  demos: PropTypes.arrayOf(DemoPropType).isRequired
+};
 
 export default HorizontalDemoList;

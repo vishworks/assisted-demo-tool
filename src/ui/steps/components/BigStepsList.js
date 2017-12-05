@@ -25,8 +25,15 @@ class BigStepsList extends Component {
   }
 }
 
+const StepPropType = PropTypes.shape({
+  index: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired
+});
+
 BigStepsList.propTypes = {
-  steps: PropTypes.array.isRequired
+  steps: PropTypes.arrayOf(StepPropType).isRequired,
+  currentStepIndex: PropTypes.number.isRequired,
+  gotoStep: PropTypes.func.isRequired
 };
 
 export default BigStepsList;

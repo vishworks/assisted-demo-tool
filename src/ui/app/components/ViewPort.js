@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { forEach } from 'lodash';
 
@@ -21,5 +22,10 @@ class ViewPort extends Component {
     return <div className="ViewPort">{renderers}</div>;
   }
 }
+
+ViewPort.propTypes = {
+  currentUrl: PropTypes.string.isRequired,
+  urls: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+};
 
 export default ViewPort;

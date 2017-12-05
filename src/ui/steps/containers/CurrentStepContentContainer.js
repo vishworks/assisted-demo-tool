@@ -10,6 +10,11 @@ const mapStateToProps = state => {
   };
 };
 
-const CurrentStepContentContainer = connect(mapStateToProps, null)(HtmlContent);
+const mapDispatchToProps = () => ({});
+
+const CurrentStepContentContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HtmlContent);
 
 export default CurrentStepContentContainer;

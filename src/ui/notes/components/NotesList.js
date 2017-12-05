@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import {
   SortableContainer,
   SortableElement,
@@ -58,4 +60,16 @@ class NotesList extends Component {
     this.props.swapNotes(oldIndex, newIndex);
   };
 }
+
+const NotePropTypes = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+});
+
+NotesList.propTypes = {
+  swapNotes: PropTypes.func.isRequired,
+  notes: PropTypes.arrayOf(NotePropTypes)
+};
+
 export default NotesList;

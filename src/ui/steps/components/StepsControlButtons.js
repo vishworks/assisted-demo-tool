@@ -6,12 +6,6 @@ import NextStepButtonContainer from 'ui/steps/containers/NextStepButtonContainer
 import './StepsControlButtons.css';
 
 class StepsControlButtons extends Component {
-  constructor(props) {
-    super(props);
-    this.prevStep = this.prevStep.bind(this);
-    this.nextStep = this.nextStep.bind(this);
-  }
-
   render() {
     return (
       <div className="StepsControlButtons">
@@ -19,18 +13,6 @@ class StepsControlButtons extends Component {
         <NextStepButtonContainer />
       </div>
     );
-  }
-
-  prevStep() {
-    if (this.props.isFirstStep === false) {
-      this.props.prevStep();
-    }
-  }
-
-  nextStep() {
-    if (this.props.isLastStep === false) {
-      this.props.nextStep();
-    }
   }
 }
 

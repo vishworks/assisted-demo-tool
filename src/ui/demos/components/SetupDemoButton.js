@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import PopupContainer from 'ui/shared/containers/PopupContainer.js';
 import DemoOrdinatorContainer from 'ui/demos/containers/DemoOrdinatorContainer.js';
@@ -13,6 +14,7 @@ class SetupDemoButton extends Component {
     this.togglePanel = this.togglePanel.bind(this);
   }
 
+  // FIXME refactor this.props.demos into operations
   render() {
     return (
       <div className="SetupDemoButton" onClick={this.togglePanel}>
@@ -21,7 +23,7 @@ class SetupDemoButton extends Component {
           className="demos-popup"
           popupId={POPUP_ID}
           closeOnClick={false}
-          onOpen={() => this.props.startDemoSettings(this.props.demos)}
+          onOpen={() => this.props.startDemoSettings()}
         >
           <DemoOrdinatorContainer />
         </PopupContainer>
@@ -37,5 +39,12 @@ class SetupDemoButton extends Component {
     }
   }
 }
+
+SetupDemoButton.propTypes = {
+  startDemoSettings: PropTypes.func.isRequired,
+  closeAllPopups: PropTypes.func.isRequired,
+  openPopup: PropTypes.func.isRequired,
+  activePopup: PropTypes.string.isRequired
+};
 
 export default SetupDemoButton;

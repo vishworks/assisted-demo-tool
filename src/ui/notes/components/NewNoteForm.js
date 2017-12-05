@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import AddNoteButton from '../components/AddNoteButton.js';
 
@@ -51,5 +52,9 @@ class NewNoteForm extends Component {
     );
   }
 }
+
+NewNoteForm.propTypes = {
+  addNote: PropTypes.func.isRequired
+};
 
 export default NewNoteForm;

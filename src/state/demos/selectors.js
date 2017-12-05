@@ -10,6 +10,7 @@ import {
 function addIndexToArray(array) {
   return map(array, (el, index) => {
     el.index = index;
+    el.number = index + 1;
     return el;
   });
 }

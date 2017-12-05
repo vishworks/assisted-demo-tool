@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './AddNoteButton.css';
 
@@ -12,5 +13,9 @@ class AddNoteButton extends Component {
     );
   }
 }
+
+AddNoteButton.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
 
 export default AddNoteButton;

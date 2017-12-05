@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class HorizontalDemoListItem extends Component {
   render() {
@@ -16,5 +17,13 @@ class HorizontalDemoListItem extends Component {
     );
   }
 }
+
+HorizontalDemoListItem.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
+  stepsCount: PropTypes.number.isRequired,
+  estimatedTime: PropTypes.number.isRequired
+};
 
 export default HorizontalDemoListItem;

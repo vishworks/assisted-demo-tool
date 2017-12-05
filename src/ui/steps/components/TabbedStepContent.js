@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import CurrentStepContentContainer from 'ui/steps/containers/CurrentStepContentContainer.js';
 import CurrentStepBulletsContainer from 'ui/steps/containers/CurrentStepBulletsContainer.js';
@@ -68,5 +69,12 @@ class TabbedStepContent extends Component {
     );
   }
 }
+
+TabbedStepContent.propTypes = {
+  hasContent: PropTypes.bool.isRequired,
+  hasBullets: PropTypes.bool.isRequired,
+  displayBullets: PropTypes.bool.isRequired,
+  showBullets: PropTypes.func.isRequired
+};
 
 export default TabbedStepContent;

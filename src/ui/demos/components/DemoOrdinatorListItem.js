@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import CustomCheckBox from 'ui/shared/components/CustomCheckBox.js';
 import SortButton from 'ui/shared/components/SortButton.js';
@@ -24,5 +25,15 @@ class DemoOrdinatorListItem extends Component {
     );
   }
 }
+
+DemoOrdinatorListItem.propTypes = {
+  demoIncluded: PropTypes.bool.isRequired,
+  onClickCheckbox: PropTypes.func.isRequired,
+  demoTitle: PropTypes.string.isRequired,
+  onClickMoveUp: PropTypes.func.isRequired,
+  onClickMoveDown: PropTypes.func.isRequired,
+  isFirstItem: PropTypes.bool.isRequired,
+  isLastItem: PropTypes.bool.isRequired
+};
 
 export default DemoOrdinatorListItem;

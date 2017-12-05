@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import RoundImage from 'ui/shared/components/RoundImage.js';
 
@@ -24,5 +25,13 @@ class LabelledAvatar extends Component {
     );
   }
 }
+
+LabelledAvatar.propTypes = {
+  onClick: PropTypes.func,
+  imageUrl: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  active: PropTypes.bool
+};
 
 export default LabelledAvatar;

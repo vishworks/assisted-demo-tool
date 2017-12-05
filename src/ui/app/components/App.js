@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import qs from 'query-string';
 
@@ -53,5 +54,11 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  loadConfig: PropTypes.func.isRequired,
+  setConfigError: PropTypes.func.isRequired,
+  displayMode: PropTypes.string.isRequired
+};
 
 export default App;

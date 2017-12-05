@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import CurrentPersonaLabelledAvatarContainer from 'ui/personas/containers/CurrentPersonaLabelledAvatarContainer.js';
 import PersonaStepsListContainer from 'ui/steps/containers/PersonaStepsListContainer.js';
@@ -73,7 +74,7 @@ class ControlWidget extends Component {
             popupId="settings"
             closeOnClick={false}
             onOpen={() => {
-              this.props.startDemoSettings(this.props.demos);
+              this.props.startDemoSettings();
             }}
           >
             <div className="side-popup-title">Settings</div>
@@ -141,5 +142,14 @@ class ControlWidget extends Component {
     this.props.closeAllPopups();
   }
 }
+
+ControlWidget.propTypes = {
+  setDisplayMode: PropTypes.func.isRequired,
+  startDemoSettings: PropTypes.func.isRequired,
+  closeAllPopups: PropTypes.func.isRequired,
+  openPopup: PropTypes.func.isRequired,
+  onClickMinimize: PropTypes.func.isRequired,
+  activePopup: PropTypes.string.isRequired
+};
 
 export default ControlWidget;

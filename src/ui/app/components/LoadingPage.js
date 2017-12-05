@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './LoadingPage.css';
 
@@ -18,5 +19,9 @@ class LoadingPage extends Component {
     return <div className={className.join(' ')}>{child}</div>;
   }
 }
+
+LoadingPage.propTypes = {
+  errorMessage: PropTypes.string
+};
 
 export default LoadingPage;

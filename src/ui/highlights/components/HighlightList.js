@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import {
   SortableContainer,
   SortableElement,
@@ -68,4 +70,17 @@ class HighlightList extends Component {
     this.props.swapHighlights(oldIndex, newIndex);
   };
 }
+
+const HighlightPropTypes = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  starred: PropTypes.bool.isRequired
+});
+
+HighlightList.propTypes = {
+  swapHighlights: PropTypes.func.isRequired,
+  toggleHighlightStar: PropTypes.func.isRequired,
+  highlights: PropTypes.arrayOf(HighlightPropTypes)
+};
+
 export default HighlightList;

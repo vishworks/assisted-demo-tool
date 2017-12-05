@@ -4,8 +4,24 @@
 
 A tool designed for web applications demos.
 
+## How to install
 
-## Configuration
+Using npm:
+
+```
+git clone https://github.com/entando/assisted-demo-tool.git
+cd assisted-demo-tool
+
+# then, if you have yarn installed (recommended)
+yarn start
+
+# or, using npm
+npm install
+npm start
+```
+
+
+## Configuration file
 
 In order to make it work, the tool needs a valid configuration JSON.
 The URL to get the configuration should be passed in the ```configUrl``` query parameter, e.g.

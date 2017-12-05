@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
 
-import { getCurrentStepHighlights } from 'state/demos/selectors.js';
-import { swapHighlights, toggleHighlightStar } from 'state/demos/actions.js';
+import { getCurrentStepHighlights } from 'state/highlights/selectors.js';
+import {
+  swapHighlights,
+  toggleHighlightStar
+} from 'state/highlights/actions.js';
 
 import HighlightList from '../components/HighlightList.js';
 

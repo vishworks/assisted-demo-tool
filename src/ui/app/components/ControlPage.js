@@ -9,7 +9,7 @@ import SetupDemoButton from 'ui/demos/containers/SetupDemoButtonContainer.js';
 import PersonaDropdownLargeContainer from 'ui/personas/containers/PersonaDropdownLargeContainer.js';
 import BigStepsListContainer from 'ui/steps/containers/BigStepsListContainer.js';
 import BigTimerContainer from 'ui/demos/containers/BigTimerContainer.js';
-import CurrentStepHighlightListContainer from 'ui/steps/containers/CurrentStepHighlightListContainer.js';
+import CurrentStepHighlightListContainer from 'ui/highlights/containers/CurrentStepHighlightListContainer.js';
 import CurrentDemoNotesListContainer from 'ui/notes/containers/CurrentDemoNotesListContainer.js';
 import OpenNewNotePopupButtonContainer from 'ui/notes/containers/OpenNewNotePopupButtonContainer.js';
 import NewNoteFormContainer from 'ui/notes/containers/NewNoteFormContainer.js';

@@ -3,15 +3,12 @@ import {
   _selectDemo,
   _applyDemoSettings,
   _startDemoSettings,
-  _gotoStep,
-  _swapHighlights,
-  _toggleHighlightStar
+  _gotoStep
 } from './actions.js';
 import { selectPersona } from '../personas/actions.js';
 
 import {
   getCurrentDemo,
-  getCurrentDemoId,
   getDemos,
   getIncludedDemos,
   getTempDemos,
@@ -78,18 +75,4 @@ export const nextStep = () => (dispatch, getState) => {
 export const prevStep = () => (dispatch, getState) => {
   let currentStepIndex = getCurrentStepIndex(getState());
   gotoStep(currentStepIndex - 1)(dispatch, getState);
-};
-
-export const swapHighlights = (oldIndex, newIndex) => (dispatch, getState) => {
-  let state = getState(),
-    currentDemoId = getCurrentDemoId(state),
-    currentStepIndex = getCurrentStepIndex(state);
-  dispatch(
-    _swapHighlights(currentDemoId, currentStepIndex, oldIndex, newIndex)
-  );
-};
-
-export const toggleHighlightStar = index => (dispatch, getState) => {
-  let currentDemoId = getCurrentDemoId(getState());
-  dispatch(_toggleHighlightStar(currentDemoId, index));
 };

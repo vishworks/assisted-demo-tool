@@ -113,13 +113,6 @@ export const getCurrentStepBullets = createSelector(
   }
 );
 
-export const getCurrentStepHighlights = createSelector(
-  [getCurrentStep],
-  currentStep => {
-    return currentStep && currentStep.highlights;
-  }
-);
-
 export const getCurrentStepHasBullets = createSelector(
   [getCurrentStepBullets],
   bullets => {

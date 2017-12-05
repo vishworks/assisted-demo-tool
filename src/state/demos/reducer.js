@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
-import { cloneDeep, map, find, get, set } from 'lodash';
-import { arrayMove } from 'react-sortable-hoc';
+import { cloneDeep, map } from 'lodash';
 
 import { LOAD_CONFIG } from '../config/types.js';
 
@@ -12,9 +11,7 @@ import {
   DEMOS_SETTINGS_MOVE_DEMO,
   DEMOS_SETTINGS_START,
   DEMOS_SETTINGS_SELECT_DEMO,
-  GOTO_STEP,
-  SWAP_HIGHLIGHTS,
-  TOGGLE_HIGHLIGHT_STAR
+  GOTO_STEP
 } from './types.js';
 
 const demos = (state = [], action = {}) => {
@@ -24,6 +21,8 @@ const demos = (state = [], action = {}) => {
       if (state.length) {
         return state;
       }
+      // FIXME remove step highlights
+      // FIXME refactor steps as their own state and remove
       let newDemos = map(action.payload.config.demos, demo => {
         demo.included = true;
         return demo;
@@ -32,37 +31,6 @@ const demos = (state = [], action = {}) => {
 
     case DEMOS_SETTINGS_APPLY:
       return cloneDeep(action.payload.tempDemos);
-
-    // FIXME SET HIGHLIGHTS DOMAIN (NORMALIZE DEMOS)
-    case SWAP_HIGHLIGHTS: {
-      const demo = find(state, { id: action.payload.demoId }),
-        path = 'steps.' + action.payload.stepIndex + '.highlights';
-      let highlights = get(demo, path);
-
-      if (highlights) {
-        highlights = cloneDeep(highlights);
-        highlights = arrayMove(
-          highlights,
-          action.payload.oldIndex,
-          action.payload.newIndex
-        );
-        let dms = cloneDeep(state),
-          dm = find(dms, { id: action.payload.demoId });
-        set(dm, path, highlights);
-
-        return dms;
-      }
-      return state;
-    }
-
-    case TOGGLE_HIGHLIGHT_STAR: {
-      let newState = cloneDeep(state),
-        targetDemo = find(newState, { id: action.payload.demoId }),
-        targetHighlight = get(targetDemo.highlights, action.payload.index);
-
-      targetHighlight.starred = !targetHighlight.starred;
-      return Object.assign([], state, newState);
-    }
 
     default:
       return state;

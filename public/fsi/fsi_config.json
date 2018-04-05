@@ -1,0 +1,203 @@
+{
+  "personas": [
+    {
+      "id": "itAdmin",
+      "label": "Carol Smith",
+      "description": "IT Administrator",
+      "avatar": "img/user-1.jpg",
+      "url": "https://www.entando.com/"
+    },
+    {
+      "id": "marketing",
+      "label": "Jessica Bahia",
+      "description": "Marketing",
+      "avatar": "img/user-2.jpg",
+      "url": "http://uxp.entando.com/uxp/en/homepage.page?username=marketing&password=marketing"
+    },
+    {
+      "id": "editor",
+      "label": "Pablo Benitez",
+      "description": "Editor",
+      "avatar": "img/user-3.jpg",
+      "url": "http://uxp.entando.com/uxp/en/homepage.page?username=editor&password=adminadmin"
+    },
+    {
+      "id": "partner",
+      "label": "Nina Bodiul",
+      "description": "Partner",
+      "avatar": "img/user-4.jpg",
+      "url": "http://uxp.entando.com/uxp/en/homepage.page?username=partner&password=adminadmin"
+    },
+    {
+      "id": "hiddenGuest",
+      "label": "Hidden Guest",
+      "description": "Random User",
+      "url": "http://example.com",
+      "hidden": true
+    }
+  ],
+  "demos": [
+    {
+      "id": "assistedDemoTool",
+      "title": "Assisted Demo Tool",
+      "estimatedTime": 5,
+      "steps": [
+        {
+          "personaId": "itAdmin",
+          "title": "Navigating through the demo steps",
+          "bullets": [
+            "To navigate through this demo steps, click the BACK and NEXT buttons below",
+            "When you go to a new step, you'll see the webpage related to the step's persona",
+            "Click on the 'NEXT' button to go to the next step"
+          ],
+          "highlights": [
+            {
+              "title": "Highlight title 1",
+              "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
+            },
+            {
+              "title": "Highlight title 2",
+              "text": "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
+            }
+          ],
+          "content": "<article>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
+        },
+        {
+          "personaId": "itAdmin",
+          "title": "The demo steps list",
+          "urlOverrides": [
+              {
+                "personaId": "itAdmin",
+                "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin"
+              },
+              {
+                "personaId": "marketing",
+                "url": "https://www.entando.com/page/en/contribute"
+              }
+          ],
+          "bullets": [
+            "Click on the 'list' button to see the list of this demo steps",
+            "In the steps list popup, click on the 'Filter by persona' checkbox to see only the current persona's steps",
+            "Click again to see all steps",
+            "Click on the 'NEXT' button to go to the next step"
+          ],
+          "content": "<article><p><b>Lorem ipsum</b> dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "itAdmin",
+          "title": "Changing personas",
+          "bullets": [
+            "Click on the current persona's picture on the top",
+            "Select a new persona from the list",
+            "You will see the webpage related to the selected persona",
+            "Click on the 'NEXT' button to go to the next step"
+          ],
+          "content": "<article><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "itAdmin",
+          "title": "Set up demos order",
+          "bullets": [
+            "Click the 'gear' button to see the Demos settings popup",
+            "Click on the checkboxes to exclude/include demos to be presented",
+            "Hover the items and click on the arrows on the right to change the demos order",
+            "Click on the 'NEXT' button to go to the next step"
+          ]
+        },
+        {
+          "personaId": "itAdmin",
+          "title": "Minified View",
+          "bullets": [
+            "Click the 'arrow' button to enter the minified view",
+            "Click on the persona picture on the bottom right to open the personas selector",
+            "When the persona selector is open, click on a persona to select it",
+            "Click on the 'hamburger' button to go back to the Side View",
+            "Click on the 'NEXT' button to go to the next step"
+          ],
+          "content": "<article><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "marketing",
+          "title": "Marketing first step",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "marketing",
+          "title": "Marketing second step",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "hiddenGuest",
+          "title": "A random step for a hidden persona",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "editor",
+          "title": "Editor first steps",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "editor",
+          "title": "Editor second step",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "editor",
+          "title": "Editor third step",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        }
+
+      ]
+    },
+
+    {
+      "id": "testDemo2",
+      "title": "Demo 2",
+      "estimatedTime": 2,
+      "steps": [
+        {
+          "personaId": "itAdmin",
+          "title": "It Admin step",
+          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
+          "content": "some content itAdmin"
+        },
+        {
+          "personaId": "marketing",
+          "title": "Marketing step",
+          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
+          "content": "some content marketing"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Highlight title 1",
+          "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
+        },
+        {
+          "title": "Highlight title 2",
+          "text": "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
+        }
+      ]
+    },
+
+    {
+      "id": "testDemo3",
+      "title": "Demo 3",
+      "estimatedTime": 3,
+      "steps": [
+        {
+          "personaId": "itAdmin",
+          "title": "It Admin step",
+          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
+          "content": "some content itAdmin"
+        },
+        {
+          "personaId": "marketing",
+          "title": "Marketing step",
+          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
+          "content": "some content marketing"
+        }
+      ]
+    }
+  ]
+}

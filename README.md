@@ -13,7 +13,7 @@ git clone https://github.com/entando/assisted-demo-tool.git
 cd assisted-demo-tool
 
 #Pre-requisites
-Install the redux chrome extension (https://chrome.google.com/webstore/category/extensions)
+Install the redux chrome extension (https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 Install npm
 Install react-scripts on npm (npm install react-scripts)
 

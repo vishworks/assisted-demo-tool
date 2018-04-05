@@ -1,202 +1,385 @@
 {
   "personas": [
     {
-      "id": "itAdmin",
+      "id": "accountManager",
       "label": "Carol Smith",
-      "description": "IT Administrator",
+      "description": "Account Manager",
       "avatar": "img/user-1.jpg",
-      "url": "https://www.entando.com/"
+      "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
     },
     {
-      "id": "marketing",
+      "id": "customer",
       "label": "Jessica Bahia",
-      "description": "Marketing",
+      "description": "Customer",
       "avatar": "img/user-2.jpg",
-      "url": "http://uxp.entando.com/uxp/en/homepage.page?username=marketing&password=marketing"
+      "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
     },
     {
-      "id": "editor",
+      "id": "complianceManager",
       "label": "Pablo Benitez",
-      "description": "Editor",
+      "description": "Compliance Manager",
       "avatar": "img/user-3.jpg",
-      "url": "http://uxp.entando.com/uxp/en/homepage.page?username=editor&password=adminadmin"
+      "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
     },
     {
-      "id": "partner",
+      "id": "businessManager",
       "label": "Nina Bodiul",
-      "description": "Partner",
+      "description": "Business Manager",
       "avatar": "img/user-4.jpg",
-      "url": "http://uxp.entando.com/uxp/en/homepage.page?username=partner&password=adminadmin"
-    },
-    {
-      "id": "hiddenGuest",
-      "label": "Hidden Guest",
-      "description": "Random User",
-      "url": "http://example.com",
-      "hidden": true
+      "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
     }
+
   ],
   "demos": [
     {
-      "id": "assistedDemoTool",
-      "title": "Assisted Demo Tool",
-      "estimatedTime": 5,
+      "id": "fsiDemo",
+      "title": "FSI Demo",
+      "estimatedTime": 1,
       "steps": [
         {
-          "personaId": "itAdmin",
-          "title": "Navigating through the demo steps",
+          "personaId": "accountManager",
+          "title": "Introduction",
+          "urlOverrides": [
+            {
+              "personaId": "accountManager",
+              "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
+            }
+          ],
           "bullets": [
-            "To navigate through this demo steps, click the BACK and NEXT buttons below",
-            "When you go to a new step, you'll see the webpage related to the step's persona",
-            "Click on the 'NEXT' button to go to the next step"
           ],
           "highlights": [
             {
-              "title": "Highlight title 1",
-              "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
-            },
-            {
-              "title": "Highlight title 2",
-              "text": "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
+              "title": "WHAT TO KNOW:",
+              "text": "This client onboarding demo utilizes multiple application instances that incorporates a variety of use cases and user personas. It is recommended to open “private” or “incognito” windows to avoid session conflicts whilst logging in as different users."
             }
           ],
-          "content": "<article>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
+          "content": "<article>Welcome to the The Business Process Automation - Client Onboarding Demo developed in conjunction with Red Hat JBoss BPM Suite and Entando, running on OpenShift. <br><br>This downloadable demo can be used to illustrate a large number of process-driven use cases or to highlight the customer-centric use experience of Red Hat’s JBoss BPM Suite. <br><br>Some features of this demo include: Case management, drag-n-drop application building, smart inbox, document approvals/attachments, custom task screens, PDF viewers, decision management, analytics, forms, digitized processes and more.</article>"
         },
         {
-          "personaId": "itAdmin",
-          "title": "The demo steps list",
+          "personaId": "accountManager",
+          "title": "Login as Account Manager",
           "urlOverrides": [
-              {
-                "personaId": "itAdmin",
-                "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin"
-              },
-              {
-                "personaId": "marketing",
-                "url": "https://www.entando.com/page/en/contribute"
-              }
+            {
+              "personaId": "accountManager",
+              "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
+            }
           ],
           "bullets": [
-            "Click on the 'list' button to see the list of this demo steps",
-            "In the steps list popup, click on the 'Filter by persona' checkbox to see only the current persona's steps",
-            "Click again to see all steps",
-            "Click on the 'NEXT' button to go to the next step"
+            "Login as:",
+            "User: account",
+            "Password: adminadmin"
           ],
-          "content": "<article><p><b>Lorem ipsum</b> dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
-        },
-        {
-          "personaId": "itAdmin",
-          "title": "Changing personas",
-          "bullets": [
-            "Click on the current persona's picture on the top",
-            "Select a new persona from the list",
-            "You will see the webpage related to the selected persona",
-            "Click on the 'NEXT' button to go to the next step"
+          "highlights": [
+            {
+              "title": "AUTHENTICATION & AUTHORIZATION:",
+              "text": "the platform allows you to set various levels of permission, according to any organizational structure."
+            }
           ],
-          "content": "<article><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+          "content": "<article><br><br>An Account Manager at Fortress Bank convinces the CFO at a medium-scale business, Interstellar to sign up as a customer of the bank. Once the customer rep agrees to open a business banking account with the bank, the Account Manager starts the onboarding process by going to his home page with his credentials through the login form accessible through the bank portal.</article>"
         },
         {
-          "personaId": "itAdmin",
-          "title": "Set up demos order",
+          "personaId": "accountManager",
+          "title": "Account Manager Dashboard",
+
           "bullets": [
-            "Click the 'gear' button to see the Demos settings popup",
-            "Click on the checkboxes to exclude/include demos to be presented",
-            "Hover the items and click on the arrows on the right to change the demos order",
-            "Click on the 'NEXT' button to go to the next step"
-          ]
-        },
-        {
-          "personaId": "itAdmin",
-          "title": "Minified View",
-          "bullets": [
-            "Click the 'arrow' button to enter the minified view",
-            "Click on the persona picture on the bottom right to open the personas selector",
-            "When the persona selector is open, click on a persona to select it",
-            "Click on the 'hamburger' button to go back to the Side View",
-            "Click on the 'NEXT' button to go to the next step"
+            "1. Click on the ADD CUSTOMER button"
           ],
-          "content": "<article><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+          "highlights": [
+            {
+              "title": "Drag and Drop",
+              "text": "The page can be designed by dragging and dropping widgets, which are integrated with BPM Suite to get the information from forms"
+            }
+          ],
+          "content": "<article><br>Once on his home page, the Account Manager can sign up a new Customer by clicking on the ADD CUSTOMER button in the upper part of the page. He can also monitor all the KPIs related to his portfolio, for example the Customer Overview and the Customers’ data.</article>"
+        },
+
+        {
+          "personaId": "accountManager",
+          "title": "Signup New Customer",
+
+          "bullets": [
+            "Complete New Client Form",
+            "Feel free to use your own email",
+            "Click on the SUBMIT button"
+          ],
+          "highlights": [
+            {
+              "title": "OMNICHANNEL",
+              "text": "Modern applications have to perform well on every screen/device: this is what responsive design enables"
+            }
+          ],
+          "content": "<article><br>The Account manager starts the commercial client onboarding process by filling this form from any mobile device. He enters the email of customer rep i.e. CFO of Interstellar and submits the form. Other fields such as client type, account name are pre­filled to make it easy for the demo</article>"
+        },
+
+        {
+          "personaId": "customer",
+          "title": "Open Email and Sign In",
+          "bullets": [
+            "Open email client and click on SIGN IN link"
+          ],
+          "highlights": [
+            {
+              "title": "BPM Interaction",
+              "text": "This is an automated step where the process in BPM suite can be configured to send an email once the account manager signs up the prospect"
+            }
+          ],
+          "content": "<article><br>The Customer receives a Welcome email from the System and he clicks on the SIGN IN link available in the email to complete the account registration.</article>"
         },
         {
-          "personaId": "marketing",
-          "title": "Marketing first step",
-          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+          "personaId": "customer",
+          "title": "Open Email and Sign In",
+          "bullets": [
+            "Complete the signup form by creating a password for the account",
+            "Click on SUBMIT button",
+            "A success message should confirm that the account has been created successfully"
+          ],
+          "highlights": [
+            {
+              "title": "USE CONTENT TO IMPROVE CONTEXT: ",
+              "text": "Pure BPM elements such as forms can be enriched by content (texts, images, videos) that help set up the application context and can be easily managed through a CMS"
+            }
+          ],
+          "content": "<article><br>After sign in, the Customer can now register for an account at Fortress Bank by inserting his First Name, Last Name, Company Name and creating a password for the account. To complete the registration, he clicks on the SUBMIT button; a success message appears to confirm that the account has been created successfully.</article>"
         },
         {
-          "personaId": "marketing",
-          "title": "Marketing second step",
-          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+          "personaId": "customer",
+          "title": "Login to Fill Application",
+          "bullets": [
+            "Login by selecting the LOGIN link in the upper right side of the page.",
+            "Use your configured username and password to sign in."
+          ],
+          "highlights": [
+            {
+              "title": "Sign Up: ",
+              "text": "Initial Sign up enables the customer (prospect) to save and finish the application as per his convenience."
+            }
+          ],
+          "content": "<article><br>After completing the registration, the Customer can login to the System from the link on the upper right side of the page, using the account credentials just created.</article>"
         },
+
         {
-          "personaId": "hiddenGuest",
-          "title": "A random step for a hidden persona",
-          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+          "personaId": "customer",
+          "title": "Fill Application Business Details",
+          "bullets": [
+            "Fill in the form",
+            "Click on the SUBMIT button"
+          ],
+          "highlights": [
+            {
+              "title": "Visual Cues: ",
+              "text": "Pictorial representation shows number of steps to finish the application. This helps in enhancing customer experience."
+            }
+          ],
+          "content": "<article><br>Once logged in, the Customer can sign up for a commercial account. The first step is to complete the Business Details form to tell the Bank more about his Business and then click on the SUBMIT button to move to the next step of the Application.</article>"
         },
+
         {
-          "personaId": "editor",
-          "title": "Editor first steps",
-          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+          "personaId": "customer",
+          "title": "Fill Application Banking Services",
+          "bullets": [
+            "Flag the services the customer is interested in",
+            "Click on the SUBMIT button to move to the next step"
+          ],
+          "highlights": [
+            {
+              "title": "Frictionless Information Flow:",
+              "text": "This page reflects the services entered by the Account manager. The customer can confirm the same or add or delete the services he wants to sign up for."
+            }
+          ],
+          "content": "<article><br>In the second step of the application for a commercial account, the Customer is asked to select all the banking services he is interested in. Then clicking on the SUBMIT button, he can move to the last step of the Application.</article>"
         },
+
         {
-          "personaId": "editor",
-          "title": "Editor second step",
-          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+          "personaId": "customer",
+          "title": "Complete Application: Upload Documents",
+          "bullets": [
+            "Upload documents by clicking on select file. You can locate the sample documents in the “Supported Files” folder. NOTE: The current doc viewer in this demo only works with the prescribed documents. Please select and upload the documents provided.",
+            "Click on the SUBMIT button to move to the next step",
+            "A confirmation page will appear"
+          ],
+          "highlights": [
+            {
+              "title": "Automation: ",
+              "text": "processes are easily-customizable to enable service automation in a way that is consistent with any type of business flow"
+            }
+          ],
+          "content": "<article><br>In the last step of the application for a commercial account, the Customer is prompted to upload business and tax documentation. They can be uploaded by clicking on SELECT FILE. Clicking on the SUBMIT button completes the application. If all the required fields are filled and documents uploaded, a confirmation page appears and the customer has to now sit back and relax until it is approved by the back-office.</article>"
         },
+
         {
-          "personaId": "editor",
-          "title": "Editor third step",
-          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+          "personaId": "accountManager",
+          "title": "Check Customer Status",
+          "bullets": [
+            "Move to the Account page",
+            "Refresh page",
+            "Visualize and point Customers’ data in the Inbox",
+            "Click on the VIEW button to see the Customer’s full details"
+          ],
+          "highlights": [
+            {
+              "title": "Customizable UI: ",
+              "text": "thanks to decoupling (app front end detached from app back end), the branding elements (es. colours/visuals) and the overall the layout of any page can be easily designed and changed anytime, without affecting the underlying application logic and functioning. For example you could place the pie chart in a different position, without re-deploying the application"
+            }
+          ],
+          "content": "<article><br>Now that the Customer has completed the application, let’s move again to the Account Manager’s home page, refresh the page. The Account Manager can now visualize and point Customers’ data in the Inbox. Click on the VIEW button to see the Customer’s full details.</article>"
+        },
+
+        {
+          "personaId": "accountManager",
+          "title": "Visualize Customer Details",
+          "bullets": [
+            "Highlight the customer full details in the upper part of the page",
+            "Highlight the stage in the onboarding process in the lower part of the page",
+            "Logout"
+          ],
+          "highlights": [
+            {
+              "title": "Customization: ",
+              "text": "low code tools can be used to customize not only customer­facing pages but also the employee­facing pages"
+            }
+          ],
+          "content": "<article><br>From this page, the Account Manager can visualize the data submitted by the Customer,In the upper page the customer full details, while in the lower part of the page the stage in the onboarding process. It’s available also information about the stage of the customer application and the Transaction history</article>"
+        },
+
+        {
+          "personaId": "complianceManager",
+          "title": "Login as Compliance Manager",
+          "urlOverrides": [
+            {
+              "personaId": "complianceManager",
+              "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
+            }
+          ],
+          "bullets": [
+            "Insert credentials to login user: legal psw: adminadmin",
+            "Click on the Login button"
+          ],
+          "highlights": [
+            {
+              "title": "Personas: ",
+              "text": "As for other personas, the platform allows you to set various levels of permission, according to any organizational structure."
+            }
+          ],
+          "content": "<article><br>Now that all the KYC requirements have been ensured and reviewed by the KYC analyst, let’s move to the Compliance Manager experience. She reviews the legal documents such as tax forms. Let’s login in with the appropriate credentials.</article>"
+        },
+
+
+        {
+          "personaId": "complianceManager",
+          "title": "Compliance Manager: Review Tasks",
+
+          "bullets": [
+            "Visualize customer list",
+            "Click on review"
+          ],
+          "highlights": [
+            {
+              "title": "Reuse: ",
+              "text": "Same task inbox widget is used for all the knowledge workers but the data is different based on the process defined in BPM suite. This enables quicker development of apps be it customer­facing or employee­facing"
+            }
+          ],
+          "content": "<article><br>Compliance manager can see a series of indicators that summarize the state of his activities, for example the remaining tasks to be completed. <br>The most important item, here, is her task list. This is where she can efficiently manage the pending requests. For each record, she can see the relevant information that she needs to effectively perform her tasks: the customer name, the type of task and the due date.<br>          Once she clicks the REVIEW button, she can start the review process.</article>"
+        },
+
+        {
+          "personaId": "complianceManager",
+          "title": "Compliance Manager: View Documentation Tasks",
+
+          "bullets": [
+            "Visualize the document",
+            "Scroll down to see all the contents in the document"
+          ],
+          "highlights": [
+            {
+              "title": "Design Decisions: ",
+              "text": "Document viewer is used to make the job easy for compliance manager. It is at the discretion of organization to decide to use a document viewer or make this task an automated one."
+            }
+          ],
+          "content": "<article><br>Clicking on the REVIEW button, a document opens inside the page. The Compliance Manager first can scroll the document to read it all, check if it’s readable and acceptable from a compliance point of view.</article>"
+        },
+
+        {
+          "personaId": "complianceManager",
+          "title": "Compliance Manager: Validate Documentation",
+
+          "bullets": [
+            "In the right hand of the page see the preselected USER INFO tab, that shows a set of fields",
+            "Next to each field name you can see a small ARROW pointing down, pre-filled by the user",
+            "Click on it to display the field value",
+            "The field value appears along with a green/red button",
+            "Click on the green button to validate",
+            "Repeat this task for each field",
+            "When the last field has been marked, an APPROVE button appears",
+            "Click on the APPROVE button to conclude the validation process",
+            "Logout"
+          ],
+          "highlights": [
+            {
+              "title": "View the Status: ",
+              "text": "If the document is approved, the status of the application is reflected on customer’s home page. If the document is rejected or marked for more information, the customer is notified of it and the status is reflected on his home page."
+            }
+          ],
+          "content": "<article><br>Having read the entire document, the Compliance Manager is now asked to validate it. An easy tool on the right of the page allows her to visualize a set of precompiled fields that describe the document items and value. Each field’s content can be approved or rejected. After browsing and managing all the fields, assuming that all the contents in the document are legally compliant, she can then approve it and move that Customer to the next step of the process.</article>"
+        },
+
+        {
+          "personaId": "businessManager",
+          "title": "Business Manager: Login",
+
+          "bullets": [
+            "Insert credentials to login user: Manager psw: adminadmin",
+            "Click on the Login"
+          ],
+          "highlights": [
+            {
+              "title": "Security: ",
+              "text": "Only this persona is authorized to access information of the entire business unit unlike the other personas involved."
+            }
+          ],
+          "content": "<article><br>Let’s finally move to the last persona, the Client Onboarding Manager. He’s supposed to monitor his team’s activities and business unit’s performance. Let’s login with his credentials and take a look at his dashboard.</article>"
+        },
+
+        {
+          "personaId": "businessManager",
+          "title": "Business Manager: Check Business Performanceß",
+
+          "bullets": [
+            "Point the mouse to the upper part of the page, Team Performances",
+            "Scroll below the Team Performances and highlight the overall business KPIs",
+
+            "Go below the pie charts and highlight the chart",
+            "Click on the PROSPECT tab to measure the overall performance of a worker against the average",
+            "Click on the ONBOARDING TAB to see the comparison between onboarded/lost customers"
+          ],
+          "highlights": [
+            {
+              "title": "Dashboards: ",
+              "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
+            }
+          ],
+          "content": "<article><br>After logging in, the BUSINESS MANAGER has access to his control panel. From here, he can monitor all the KPIs related to his business, for example:<br><br> 1. The overall team performance <br> 2. A snapshot of the main business KPIs, such as the pie chart on the right hand indicating<br> the number of applications completed/suspended/pending<br> 3. Some trends illustrated in the line charts:<br> a. Clicking on the PROSPECT he can check the overall performance of a worker against the average<br> b. Click on the ONBOARDING TAB he can control see the average time conversion and the trend of onboarded versus lost customers</article>"
+        },
+
+        {
+          "personaId": "businessManager",
+          "title": "Conclusion",
+
+          "bullets": [
+            "rapid, low code tools that enable lightning fast application development",
+            "flexible, easily-customizable processes and service automation",
+
+            "A ux-rich, interactive, customer experience",
+            "a versatile API integration layer"
+          ],
+          "highlights": [
+            {
+              "title": "Dashboards: ",
+              "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
+            }
+          ],
+          "content": "<article><br>This is the end of this Client onboarding demo, that gives you an example of a process driven application.</article>"
         }
 
-      ]
-    },
-
-    {
-      "id": "testDemo2",
-      "title": "Demo 2",
-      "estimatedTime": 2,
-      "steps": [
-        {
-          "personaId": "itAdmin",
-          "title": "It Admin step",
-          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
-          "content": "some content itAdmin"
-        },
-        {
-          "personaId": "marketing",
-          "title": "Marketing step",
-          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
-          "content": "some content marketing"
-        }
-      ],
-      "highlights": [
-        {
-          "title": "Highlight title 1",
-          "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
-        },
-        {
-          "title": "Highlight title 2",
-          "text": "This is the second Highlight. This is the second highlight in this application, and I think it will be very useful, but less than the first one"
-        }
-      ]
-    },
-
-    {
-      "id": "testDemo3",
-      "title": "Demo 3",
-      "estimatedTime": 3,
-      "steps": [
-        {
-          "personaId": "itAdmin",
-          "title": "It Admin step",
-          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
-          "content": "some content itAdmin"
-        },
-        {
-          "personaId": "marketing",
-          "title": "Marketing step",
-          "bullets": [ "Bullet 1", "Bullet 2", "Bullet 3" ],
-          "content": "some content marketing"
-        }
       ]
     }
   ]

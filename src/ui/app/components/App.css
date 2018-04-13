@@ -17,8 +17,7 @@ html, body, #root, .App {
 }
 
 .App .ControlWidget,
-.App .ControlWidgetMini,
-.App .PersonaTabs {
+.App .ControlWidgetMini {
   display: none;
 }
 
@@ -26,7 +25,6 @@ html, body, #root, .App {
   display: flex;
 }
 
-.App[data-display-mode="CONTROL_WIDGET_MINI"] .PersonaTabs,
 .App[data-display-mode="CONTROL_WIDGET_MINI"] .ControlWidgetMini {
   display: block;
 }

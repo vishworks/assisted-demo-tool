@@ -1,4 +1,4 @@
-import { includes } from 'lodash';
+import { includes, set, get } from 'lodash';
 
 import { resetState } from '../state/config/actions.js';
 import { LOAD_CONFIG } from '../state/config/types.js';
@@ -30,6 +30,8 @@ const ControlCenterMiddleware = store => {
         store.dispatch(setDisplayMode(DisplayModeEnum.CONTROL_PAGE));
         break;
       case MessageType.ACTION:
+        // tells the action was propagated from another source (do not forward again)
+        set(ev.data.payload.action, 'meta.propagated', true);
         store.dispatch(ev.data.payload.action);
         break;
       case MessageType.WINDOW_CLOSED:
@@ -39,6 +41,7 @@ const ControlCenterMiddleware = store => {
           window.close();
         } else {
           store.dispatch(setDisplayMode(DisplayModeEnum.CONTROL_WIDGET));
+          controlPageWindow = null;
         }
         break;
       default:
@@ -86,21 +89,27 @@ const ControlCenterMiddleware = store => {
       }
     }
 
-    // if it's the control page, forward actions to the display page
-    if (isControlPage && !includes(NOT_FORWARDABLE_ACTIONS, action.type)) {
-      try {
-        window.opener.postMessage(
-          {
-            type: MessageType.ACTION,
-            payload: {
-              action: action
-            }
-          },
-          '*'
-        );
-      } catch (e) {
-        // probably thunk, do nothing
-      }
+    // if the action should not be propagated, return
+    if (
+      get(action, 'meta.propagated') ||
+      includes(NOT_FORWARDABLE_ACTIONS, action.type)
+    ) {
+      return next(action);
+    }
+
+    const receiverWindow = isControlPage ? window.opener : controlPageWindow;
+    try {
+      receiverWindow.postMessage(
+        {
+          type: MessageType.ACTION,
+          payload: {
+            action: action
+          }
+        },
+        '*'
+      );
+    } catch (e) {
+      // probably thunk, do nothing
     }
 
     return next(action);

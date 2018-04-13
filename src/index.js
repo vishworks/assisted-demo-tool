@@ -29,14 +29,14 @@ if (!obj.configUrl) {
 
 let preloadedState = getPersistedState();
 
-let store = createStore(
-  rootReducer,
-  preloadedState,
-  compose(
-    applyMiddleware(thunk, ControlPageMiddleware, UrlHashMiddleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+const enhancers = [
+  applyMiddleware(thunk, ControlPageMiddleware, UrlHashMiddleware)
+];
+if (window.__REDUX_DEVTOOLS_EXTENSION__) {
+  enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__());
+}
+
+let store = createStore(rootReducer, preloadedState, compose(...enhancers));
 
 store.subscribe(PersistStateSubscription(store));
 

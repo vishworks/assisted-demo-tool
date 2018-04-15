@@ -1,9 +1,11 @@
 .PseudoCheckbox {
   font-size: 12px;
   text-align: right;
-  padding: 0 10px;
+  padding: 0 0 10px 0;
   cursor: pointer;
   user-select: none;
+  display: inline-block;
+  color: #BCBCBC;
 }
 
 .PseudoCheckbox.disabled {

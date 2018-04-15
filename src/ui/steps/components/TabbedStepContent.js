@@ -40,7 +40,7 @@ class TabbedStepContent extends Component {
             }}
           >
             <i className="tab-button-icon fa fa-list" />
-            <span className="tab-button-label">Presenter View</span>
+            <span className="tab-button-label">Presenter Mode</span>
           </div>
           <div
             className={
@@ -53,7 +53,7 @@ class TabbedStepContent extends Component {
             }}
           >
             <i className="tab-button-icon fa fa-bullseye" />
-            <span className="tab-button-label">Details View</span>
+            <span className="tab-button-label">Training Mode</span>
           </div>
         </div>
         <div className="tab-content">

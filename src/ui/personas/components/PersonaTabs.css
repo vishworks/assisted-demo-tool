@@ -1,5 +1,5 @@
 .PersonaTabs {
-  background: #203753;
+  background: #CB9666;
   border-bottom: 2px solid #00659C;
 }
 
@@ -17,6 +17,8 @@
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .PersonaTabs .tab-button:first-child {

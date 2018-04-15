@@ -40,13 +40,13 @@ class StepContent extends Component {
 
     return (
       <div className="StepContent">
-        <h3 className="step-title">{this.props.stepTitle}</h3>
         <PseudoCheckbox
           text="Presenter View"
           checked={displayBullets}
           onClick={this.onClickShowBullets}
           disabled={cannotChoose}
         />
+        <h3 className="step-title">{this.props.stepTitle}</h3>
         {contentRenderer}
       </div>
     );

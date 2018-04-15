@@ -89,7 +89,7 @@ class ControlWidget extends Component {
             <div className="side-popup-title">Steps</div>
 
             <PseudoCheckbox
-              text="Filter by persona"
+              text="&nbsp; &nbsp; Filter by Persona"
               checked={this.state.filterStepsByPersona}
               onClick={() => {
                 this.setState({

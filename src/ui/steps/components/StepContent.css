@@ -1,16 +1,17 @@
 .StepContent {
   color: #FFFFFF;
-  padding: 10px;
+  padding: 20px;
 }
 
 
 .StepContent .step-title  {
-  text-align: center;
+  text-align: left;
 }
-
+/*
 .StepContent .PseudoCheckbox {
   float: right;
 }
+*/
 
 .StepContent .bullets {
   padding-left: 15px;

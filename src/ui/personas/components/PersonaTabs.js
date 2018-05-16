@@ -18,13 +18,18 @@ class PersonaTabs extends Component {
       if (persona.id === this.props.currentPersonaId) {
         className += ' active';
       }
+
       return (
         <button
           key={persona.id}
           className={className}
           onClick={this.onClickPersona(persona)}
         >
-          <div className="tab-text">{persona.description}</div>
+          <div className="tab-button-content">
+            <img className="tab-icon-image" alt="" src={persona.tabImg} />
+            <div className="tab-text">{persona.description}</div>
+          </div>
+
           <div className="left-triangle-area" />
           <div className="right-triangle-area" />
           <div className="right-fade-out-area" />

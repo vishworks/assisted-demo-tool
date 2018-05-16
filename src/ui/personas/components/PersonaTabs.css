@@ -16,15 +16,21 @@
   font-size: 13px;
   font-weight: 400;
   cursor: pointer;
-  padding-left: 10px;
   padding-right: 10px;
   text-align: left;
   white-space: nowrap;
 }
 
+.PersonaTabs .tab-button .tab-icon-image {
+  max-width: 16px;
+  max-height: 16px;
+}
+
 .PersonaTabs .tab-button .tab-text {
+  display: inline-block;
   overflow: hidden;
-  width: 100%;
+  width: 150px;
+  margin-left: 5px;
 }
 
 .PersonaTabs .tab-button:first-child {

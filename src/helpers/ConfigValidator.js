@@ -30,6 +30,9 @@ let schema = {
           },
           hidden: {
             type: 'boolean'
+          },
+          tabImg: {
+            type: 'string'
           }
         },
         required: ['id', 'url', 'label']

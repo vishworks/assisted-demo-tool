@@ -18,6 +18,16 @@ const MessageType = Object.freeze({
 
 const NOT_FORWARDABLE_ACTIONS = [SET_DISPLAY_MODE, LOAD_CONFIG];
 
+const getControlWindowWidth = () =>
+  window.screen.availWidth
+    ? Math.floor(window.screen.availWidth * 75 / 100)
+    : 1100;
+
+const getControlWindowHeight = () =>
+  window.screen.availHeight
+    ? Math.floor(window.screen.availHeight * 75 / 100)
+    : 800;
+
 var controlPageWindow;
 
 const ControlCenterMiddleware = store => {
@@ -69,10 +79,7 @@ const ControlCenterMiddleware = store => {
         controlPageWindow = window.open(
           window.location.href,
           CONTROL_PAGE_NAME,
-          'width=' +
-            (window.screen.availWidth || 1100) +
-            ',height=' +
-            (window.screen.availHeight || 800)
+          `width=${getControlWindowWidth()},height=${getControlWindowHeight()}`
         );
         controlPageWindow.addEventListener('load', () => {
           let state = store.getState();

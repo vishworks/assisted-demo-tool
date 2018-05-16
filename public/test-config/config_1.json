@@ -3,10 +3,10 @@
     {
       "id": "itAdmin",
       "label": "Carol Smith",
-      "description": "IT Administrator bla bla Administrator bla bla Administrator bla bla",
+      "description": "IT Administrator",
       "avatar": "img/user-1.jpg",
       "url": "https://www.entando.com/",
-      "tabImg": "http://www.duckhousecorbridge.co.uk/wp-content/uploads/2016/02/Duck-Favicon.png" 
+      "tabImg": "img/icons/test-icon-a.jpeg" 
     },
     {
       "id": "marketing",
@@ -14,7 +14,7 @@
       "description": "Marketing",
       "avatar": "img/user-2.jpg",
       "url": "http://uxp.entando.com/uxp/en/homepage.page?username=marketing&password=marketing",
-      "tabImg": "http://direct.smilebasicsource.com/main/favicon.ico"
+      "tabImg": "img/icons/test-icon-m.png"
     },
     {
       "id": "editor",
@@ -22,14 +22,16 @@
       "description": "Editor",
       "avatar": "img/user-3.jpg",
       "url": "http://uxp.entando.com/uxp/en/homepage.page?username=editor&password=adminadmin",
-      "tabImg": "pippo"
+      "tabImg": "img/icons/test-icon-e.png"
     },
     {
       "id": "partner",
       "label": "Nina Bodiul",
       "description": "Partner",
       "avatar": "img/user-4.jpg",
-      "url": "http://uxp.entando.com/uxp/en/homepage.page?username=partner&password=adminadmin"
+      "url": "http://uxp.entando.com/uxp/en/homepage.page?username=partner&password=adminadmin",
+      "tabImg": "img/icons/test-icon-p.png",
+      "tabName": "Partner user"
     },
     {
       "id": "hiddenGuest",

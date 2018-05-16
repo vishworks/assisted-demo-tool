@@ -27,7 +27,9 @@ class PersonaTabs extends Component {
         >
           <div className="tab-button-content">
             <img className="tab-icon-image" alt="" src={persona.tabImg} />
-            <div className="tab-text">{persona.description}</div>
+            <div className="tab-text">
+              {persona.tabName || persona.description}
+            </div>
           </div>
 
           <div className="left-triangle-area" />

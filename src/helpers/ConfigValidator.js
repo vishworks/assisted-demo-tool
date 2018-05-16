@@ -33,6 +33,9 @@ let schema = {
           },
           tabImg: {
             type: 'string'
+          },
+          tabName: {
+            type: 'string'
           }
         },
         required: ['id', 'url', 'label']

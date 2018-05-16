@@ -24,9 +24,10 @@ class PersonaTabs extends Component {
           className={className}
           onClick={this.onClickPersona(persona)}
         >
-          {persona.description}
+          <div className="tab-text">{persona.description}</div>
           <div className="left-triangle-area" />
           <div className="right-triangle-area" />
+          <div className="right-fade-out-area" />
         </button>
       );
     });

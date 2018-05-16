@@ -1,6 +1,5 @@
 .PersonaTabs {
-  background: #CB9666;
-  border-bottom: 2px solid #00659C;
+  background: #cb9666;
 }
 
 .PersonaTabs .tab-button {
@@ -8,17 +7,24 @@
   border: none;
   margin: 5px 5px 0 5px;
   height: 30px;
-  min-width: 150px;
-  border-top: 1px solid #5F748F;
+  width: 185px;
+  border-top: 1px solid #8c8c8c;
   border-radius: 3px 3px 0 0;
-  background: #152437;
-  color: #ffffff;
+  background: #b1b1b1;
+  color: #626262;
   font-family: 'Lato', sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
   cursor: pointer;
   padding-left: 10px;
   padding-right: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.PersonaTabs .tab-button .tab-text {
+  overflow: hidden;
+  width: 100%;
 }
 
 .PersonaTabs .tab-button:first-child {
@@ -41,9 +47,19 @@
   top: 0;
   width: 40px;
   height: 100%;
-  background: #152437;
-  border: 1px solid #5F748F;
+  background: #b1b1b1;
+  border: 1px solid #8c8c8c;
 }
+
+.PersonaTabs .tab-button .right-fade-out-area {
+  position: absolute;
+  bottom: 0;
+  width: 35px;
+  height: 90%;
+  right: 3px;
+  background-image: linear-gradient(to right, transparent, #b1b1b1);
+}
+
 
 .PersonaTabs .tab-button .left-triangle-area {
   right: 100%;
@@ -63,13 +79,25 @@
 }
 
 
+.PersonaTabs .tab-button:hover {
+  background: #c2c2c2;
+}
+.PersonaTabs .tab-button:hover .left-triangle-area::after,
+.PersonaTabs .tab-button:hover .right-triangle-area::after {
+  background: #c2c2c2;
+}
+.PersonaTabs .tab-button:hover .right-fade-out-area {
+  background-image: linear-gradient(to right, transparent, #c2c2c2);
+}
+
+
 .PersonaTabs .tab-button.active,
 .PersonaTabs .tab-button.active .left-triangle-area::after,
 .PersonaTabs .tab-button.active .right-triangle-area::after {
   z-index: 10;
-  background: #00659C;
+  background: #cecece;
+  color: #3c3c3c;
 }
-
-.PersonaTabs .tab-button:hover {
-  color: #00B9F7;
+.PersonaTabs .tab-button.active .right-fade-out-area {
+  background-image: linear-gradient(to right, transparent, #cecece);
 }

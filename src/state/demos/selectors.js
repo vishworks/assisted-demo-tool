@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { find, filter, map, uniq, flatten, compact } from 'lodash';
+import { find, findIndex, filter, map, uniq, flatten, compact } from 'lodash';
 
 import {
   getCurrentPersonaId,
@@ -53,6 +53,24 @@ export const getCurrentDemo = createSelector(
     return find(demos, { id: currentDemoId });
   }
 );
+
+export const getNextDemo = createSelector(
+  [getCurrentDemoId, getIncludedDemos],
+  (currentDemoId, demos) => {
+    if (!demos || !currentDemoId) {
+      return null;
+    }
+    const curDemoIndex = findIndex(demos, { id: currentDemoId });
+    if (curDemoIndex < 0 || curDemoIndex >= demos.length - 1) {
+      return null;
+    }
+    return demos[curDemoIndex + 1];
+  }
+);
+
+export const getNextDemoId = createSelector([getNextDemo], demo => {
+  return demo ? demo.id : '';
+});
 
 export const getCurrentDemoEstimatedTime = createSelector(
   [getCurrentDemo],

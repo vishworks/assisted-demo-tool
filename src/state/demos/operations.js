@@ -14,7 +14,8 @@ import {
   getTempDemos,
   getStepsCount,
   getCurrentStepIndex,
-  getCurrentStepPersonaId
+  getCurrentStepPersonaId,
+  getNextDemoId
 } from './selectors.js';
 
 import { getCurrentPersonaId } from '../personas/selectors.js';
@@ -75,4 +76,9 @@ export const nextStep = () => (dispatch, getState) => {
 export const prevStep = () => (dispatch, getState) => {
   let currentStepIndex = getCurrentStepIndex(getState());
   gotoStep(currentStepIndex - 1)(dispatch, getState);
+};
+
+export const nextDemo = () => (dispatch, getState) => {
+  const nextDemoId = getNextDemoId(getState());
+  selectDemo(nextDemoId)(dispatch, getState);
 };

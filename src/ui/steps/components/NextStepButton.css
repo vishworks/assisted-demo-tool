@@ -20,7 +20,17 @@
   outline: 0;
 }
 
-.NextStepButton:disabled {
+.NextStepButton.last-step {
+  background-color: #6ec664;
+  width: 130px;
+}
+
+.NextStepButton.last-step:hover {
+  background-color: #7ecc75;
+}
+
+.NextStepButton:disabled,
+.NextStepButton:disabled:hover {
   background: #375667;
   color: #999999;
   cursor: not-allowed;

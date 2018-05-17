@@ -20,8 +20,18 @@
   display: none;
 }
 
+.ControlPage .NextStepButton.last-step {
+  background-color: #6ec664;
+}
+
+.ControlPage .NextStepButton.last-step:hover {
+  background-color: #7ecc75;
+}
+
 .ControlPage .PrevStepButton:disabled,
-.ControlPage .NextStepButton:disabled {
+.ControlPage .NextStepButton:disabled,
+.ControlPage .PrevStepButton:disabled:hover,
+.ControlPage .NextStepButton:disabled:hover {
   background: transparent;
   color: #5F6368;
   border: 1px solid #8B8D8F;

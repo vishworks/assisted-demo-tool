@@ -10,13 +10,21 @@ class NextStepButton extends Component {
   }
 
   render() {
+    const { isLastStep, nextDemoId } = this.props;
+    const isLastDemo = !this.props.nextDemoId;
+    const classNameAr = ['NextStepButton'];
+    if (isLastStep) {
+      classNameAr.push('last-step');
+    }
     return (
       <button
-        className="NextStepButton"
+        className={classNameAr.join(' ')}
         onClick={this.nextStep}
-        disabled={this.props.isLastStep}
+        disabled={isLastStep && isLastDemo}
       >
-        <span className="button-label">NEXT</span>
+        <span className="button-label">
+          NEXT {isLastStep && nextDemoId && 'DEMO'}
+        </span>
         <i className="fa fa-arrow-right button-arrow" />
       </button>
     );
@@ -25,6 +33,8 @@ class NextStepButton extends Component {
   nextStep() {
     if (this.props.isLastStep === false) {
       this.props.nextStep();
+    } else if (this.props.nextDemoId) {
+      this.props.nextDemo();
     }
   }
 }

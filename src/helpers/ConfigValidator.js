@@ -57,6 +57,12 @@ let schema = {
           estimatedTime: {
             type: 'integer'
           },
+          personas: {
+            type: 'array',
+            items: {
+              type: 'string'
+            }
+          },
           steps: {
             type: 'array',
             items: {

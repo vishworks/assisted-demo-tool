@@ -54,7 +54,7 @@ class ControlWidget extends Component {
               data-id="settings"
               onClick={this.togglePanel}
             >
-              <i className="fa fa-gear" />
+              <i className="fa fa-list-ol" />
             </button>
             <button
               className="tool-btn"
@@ -62,7 +62,7 @@ class ControlWidget extends Component {
                 this.props.setDisplayMode('DETACHED_PAGE');
               }}
             >
-              <i className="fa fa-object-ungroup" />
+              <i className="fa fa-window-restore" />
             </button>
           </div>
 
@@ -77,7 +77,7 @@ class ControlWidget extends Component {
               this.props.startDemoSettings();
             }}
           >
-            <div className="side-popup-title">Settings</div>
+            <div className="side-popup-title">Demo Organizer</div>
             <DemoOrdinatorContainer />
           </PopupContainer>
 

@@ -38,7 +38,8 @@
       "label": "Hidden Guest",
       "description": "Random User",
       "url": "http://example.com",
-      "hidden": true
+      "hidden": true,
+      "tabImg": "img/icons/test-icon-unknown.png"
     }
   ],
   "demos": [
@@ -157,8 +158,9 @@
 
     {
       "id": "testDemo2",
-      "title": "Demo 2",
+      "title": "Demo with personas subset",
       "estimatedTime": 2,
+      "personas": ["partner", "marketing"],
       "steps": [
         {
           "personaId": "itAdmin",

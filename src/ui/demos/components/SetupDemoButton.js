@@ -18,7 +18,7 @@ class SetupDemoButton extends Component {
   render() {
     return (
       <div className="SetupDemoButton" onClick={this.togglePanel}>
-        <i className="fa fa-gear" />
+        <i className="fa fa-list-ol" />
         <PopupContainer
           className="demos-popup"
           popupId={POPUP_ID}

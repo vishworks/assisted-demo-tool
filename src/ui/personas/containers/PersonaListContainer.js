@@ -1,18 +1,14 @@
 import { connect } from 'react-redux';
 import { isFunction } from 'lodash';
 
-import {
-  getCurrentPersonaId,
-  getVisiblePersonas
-} from 'state/personas/selectors.js';
-
+import { getCurrentPersonaId } from 'state/personas/selectors.js';
+import { getCurrentStepVisiblePersonas } from 'state/demos/selectors.js';
 import { selectPersona } from 'state/personas/actions.js';
-
 import PersonaList from '../components/PersonaList.js';
 
 const mapStateToProps = state => {
   return {
-    personas: getVisiblePersonas(state),
+    personas: getCurrentStepVisiblePersonas(state),
     currentPersonaId: getCurrentPersonaId(state)
   };
 };

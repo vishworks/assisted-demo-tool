@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { isFunction } from 'lodash';
 
-import { getVisibleNotSelectedPersonas } from 'state/personas/selectors.js';
+import { getCurrentStepNotSelectedVisiblePersonas } from 'state/demos/selectors.js';
 
 import { selectPersona } from 'state/personas/actions.js';
 
@@ -9,7 +9,7 @@ import PersonaDropdownLargePopupList from '../components/PersonaDropdownLargePop
 
 const mapStateToProps = state => {
   return {
-    personas: getVisibleNotSelectedPersonas(state)
+    personas: getCurrentStepNotSelectedVisiblePersonas(state)
   };
 };
 

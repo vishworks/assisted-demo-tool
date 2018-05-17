@@ -12,6 +12,9 @@ class DemoOrdinatorListItem extends Component {
     if (this.props.className) {
       classNameAr.push(this.props.className);
     }
+    if (!this.props.demoIncluded) {
+      classNameAr.push('excluded');
+    }
     return (
       <div className={classNameAr.join(' ')}>
         <CustomCheckBox

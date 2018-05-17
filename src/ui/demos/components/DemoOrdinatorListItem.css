@@ -19,6 +19,10 @@
   color: #00B9F7;
 }
 
+.DemoOrdinatorListItem.excluded .demo-title {
+  color: #BCBCBC;
+}
+
 .DemoOrdinatorListItem .SortButton {
   opacity: 0;
   transition: opacity 300ms;

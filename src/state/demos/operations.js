@@ -20,35 +20,6 @@ import {
 
 import { getCurrentPersonaId } from '../personas/selectors.js';
 
-export const selectDemo = demoId => (dispatch, getState) => {
-  var demos = getIncludedDemos(getState());
-  if (includes(map(demos, 'id'), demoId)) {
-    dispatch(_selectDemo(demoId));
-  } else {
-    console.error(
-      '[selectDemo] : demo with id ' + demoId + ' not found, or not included'
-    );
-    dispatch(_selectDemo(get(demos, '0.id')));
-  }
-};
-
-export const applyDemoSettings = () => (dispatch, getState) => {
-  var tempDemos = getTempDemos(getState());
-  if (!find(tempDemos, 'included')) {
-    console.error('[applyDemoSettings] : trying to exclude all demos');
-    return;
-  }
-  dispatch(_applyDemoSettings(tempDemos));
-  if (!getCurrentDemo(getState()).included) {
-    dispatch(_selectDemo(get(find(tempDemos, 'included'), 'id')));
-  }
-};
-
-export const startDemoSettings = () => (dispatch, getState) => {
-  var demos = getDemos(getState());
-  dispatch(_startDemoSettings(demos));
-};
-
 export const gotoStep = stepIndex => (dispatch, getState) => {
   let state = getState(),
     stepsCount = getStepsCount(state),
@@ -76,6 +47,37 @@ export const nextStep = () => (dispatch, getState) => {
 export const prevStep = () => (dispatch, getState) => {
   let currentStepIndex = getCurrentStepIndex(getState());
   gotoStep(currentStepIndex - 1)(dispatch, getState);
+};
+
+export const selectDemo = demoId => (dispatch, getState) => {
+  var demos = getIncludedDemos(getState());
+  if (includes(map(demos, 'id'), demoId)) {
+    dispatch(_selectDemo(demoId));
+    gotoStep(0)(dispatch, getState);
+  } else {
+    console.error(
+      '[selectDemo] : demo with id ' + demoId + ' not found, or not included'
+    );
+    dispatch(_selectDemo(get(demos, '0.id')));
+    gotoStep(0)(dispatch, getState);
+  }
+};
+
+export const applyDemoSettings = () => (dispatch, getState) => {
+  var tempDemos = getTempDemos(getState());
+  if (!find(tempDemos, 'included')) {
+    console.error('[applyDemoSettings] : trying to exclude all demos');
+    return;
+  }
+  dispatch(_applyDemoSettings(tempDemos));
+  if (!getCurrentDemo(getState()).included) {
+    dispatch(_selectDemo(get(find(tempDemos, 'included'), 'id')));
+  }
+};
+
+export const startDemoSettings = () => (dispatch, getState) => {
+  var demos = getDemos(getState());
+  dispatch(_startDemoSettings(demos));
 };
 
 export const nextDemo = () => (dispatch, getState) => {

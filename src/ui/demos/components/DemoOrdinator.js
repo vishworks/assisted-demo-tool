@@ -20,11 +20,13 @@ class DemoOrdinator extends Component {
       return (
         <DemoOrdinatorListItem
           key={demo.id}
+          className={this.props.currentDemoId === demo.id ? 'active' : ''}
           demoTitle={demo.title}
           demoIncluded={demo.included}
           onClickCheckbox={this.onClickCheckbox(demo.id, i)}
           onClickMoveUp={this.moveDemo(demo.id, i, i - 1)}
           onClickMoveDown={this.moveDemo(demo.id, i, i + 1)}
+          onClickDemoName={() => this.props.selectDemo(demo.id)}
           isFirstItem={i === 0}
           isLastItem={i + 1 === this.props.demos.length}
         />
@@ -75,9 +77,11 @@ DemoOrdinator.propTypes = {
   includeDemo: PropTypes.func.isRequired,
   excludeDemo: PropTypes.func.isRequired,
   moveDemo: PropTypes.func.isRequired,
+  selectDemo: PropTypes.func.isRequired,
   applyDemoSettings: PropTypes.func.isRequired,
   closeAllPopups: PropTypes.func.isRequired,
-  demos: PropTypes.arrayOf(DemoPropType).isRequired
+  demos: PropTypes.arrayOf(DemoPropType).isRequired,
+  currentDemoId: PropTypes.string.isRequired
 };
 
 export default DemoOrdinator;

@@ -4,14 +4,20 @@ import { mapValues } from 'lodash';
 
 import DemoOrdinator from '../components/DemoOrdinator.js';
 
-import { getTempDemos } from 'state/demos/selectors.js';
+import { getTempDemos, getCurrentDemoId } from 'state/demos/selectors.js';
 
 import { closeAllPopups } from 'state/ui/actions.js';
-import { excludeDemo, includeDemo, moveDemo } from 'state/demos/actions.js';
+import {
+  excludeDemo,
+  includeDemo,
+  moveDemo,
+  selectDemo
+} from 'state/demos/actions.js';
 import { applyDemoSettings } from 'state/demos/actions.js';
 
 const selectorMap = {
-  demos: getTempDemos
+  demos: getTempDemos,
+  currentDemoId: getCurrentDemoId
 };
 
 const actionsMap = {
@@ -19,7 +25,8 @@ const actionsMap = {
   excludeDemo,
   includeDemo,
   moveDemo,
-  applyDemoSettings
+  applyDemoSettings,
+  selectDemo
 };
 
 const mapStateToProps = state => mapValues(selectorMap, func => func(state));

@@ -15,6 +15,10 @@
   flex-grow: 2;
 }
 
+.DemoOrdinatorListItem.active .demo-title {
+  color: #00B9F7;
+}
+
 .DemoOrdinatorListItem .SortButton {
   opacity: 0;
   transition: opacity 300ms;

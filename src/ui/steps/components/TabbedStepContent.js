@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import CurrentStepContentContainer from 'ui/steps/containers/CurrentStepContentContainer.js';
+import CurrentStepTrainingContentContainer from 'ui/steps/containers/CurrentStepTrainingContentContainer.js';
 import CurrentStepPresenterContentContainer from 'ui/steps/containers/CurrentStepPresenterContentContainer.js';
 import CurrentStepNumberContainer from 'ui/steps/containers/CurrentStepNumberContainer.js';
 import CurrentStepTitleContainer from 'ui/steps/containers/CurrentStepTitleContainer.js';
@@ -11,7 +11,7 @@ import './TabbedStepContent.css';
 class TabbedStepContent extends Component {
   render() {
     const {
-      hasContent,
+      hasTrainingContent,
       hasPresenterContent,
       displayPresenterContent,
       showPresenterContent
@@ -19,7 +19,7 @@ class TabbedStepContent extends Component {
 
     let actualDisplayPresenterContent = displayPresenterContent;
 
-    if (hasContent === false) {
+    if (hasTrainingContent === false) {
       actualDisplayPresenterContent = true;
     } else if (hasPresenterContent === false) {
       actualDisplayPresenterContent = false;
@@ -28,7 +28,7 @@ class TabbedStepContent extends Component {
     const tabContent = actualDisplayPresenterContent ? (
       <CurrentStepPresenterContentContainer />
     ) : (
-      <CurrentStepContentContainer />
+      <CurrentStepTrainingContentContainer />
     );
 
     return (
@@ -51,7 +51,7 @@ class TabbedStepContent extends Component {
             className={
               'tab-button' +
               (!actualDisplayPresenterContent ? ' active' : '') +
-              (!hasContent ? ' disabled' : '')
+              (!hasTrainingContent ? ' disabled' : '')
             }
             onClick={ev => {
               actualDisplayPresenterContent && showPresenterContent(false);
@@ -76,7 +76,7 @@ class TabbedStepContent extends Component {
 }
 
 TabbedStepContent.propTypes = {
-  hasContent: PropTypes.bool.isRequired,
+  hasTrainingContent: PropTypes.bool.isRequired,
   hasPresenterContent: PropTypes.bool.isRequired,
   displayPresenterContent: PropTypes.bool.isRequired,
   showPresenterContent: PropTypes.func.isRequired

@@ -135,10 +135,10 @@ export const getCurrentStep = createSelector(
   }
 );
 
-export const getCurrentStepContent = createSelector(
+export const getCurrentStepTrainingContent = createSelector(
   [getCurrentStep],
   currentStep => {
-    return currentStep.content;
+    return currentStep.trainingContent;
   }
 );
 
@@ -156,10 +156,10 @@ export const getCurrentStepHasPresenterContent = createSelector(
   }
 );
 
-export const getCurrentStepHasContent = createSelector(
-  [getCurrentStepContent],
-  content => {
-    return !!content;
+export const getCurrentStepHasTrainingContent = createSelector(
+  [getCurrentStepTrainingContent],
+  trainingContent => {
+    return !!trainingContent;
   }
 );
 

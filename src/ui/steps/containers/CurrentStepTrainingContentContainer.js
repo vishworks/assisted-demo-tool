@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
 
-import { getCurrentStepContent } from 'state/demos/selectors.js';
+import { getCurrentStepTrainingContent } from 'state/demos/selectors.js';
 
 import HtmlContent from 'ui/shared/components/HtmlContent.js';
 
 const mapStateToProps = state => {
   return {
-    html: getCurrentStepContent(state) + ''
+    html: getCurrentStepTrainingContent(state) + ''
   };
 };
 
 const mapDispatchToProps = () => ({});
 
-const CurrentStepContentContainer = connect(
+const CurrentStepTrainingContentContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(HtmlContent);
 
-export default CurrentStepContentContainer;
+export default CurrentStepTrainingContentContainer;

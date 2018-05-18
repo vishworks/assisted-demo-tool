@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { getDisplayPresenterContent } from 'state/ui/selectors.js';
 import {
-  getCurrentStepHasContent,
+  getCurrentStepHasTrainingContent,
   getCurrentStepHasPresenterContent
 } from 'state/demos/selectors.js';
 import { showPresenterContent } from 'state/ui/actions.js';
@@ -9,7 +9,7 @@ import TabbedStepContent from '../components/TabbedStepContent.js';
 
 const mapStateToProps = state => {
   return {
-    hasContent: getCurrentStepHasContent(state),
+    hasTrainingContent: getCurrentStepHasTrainingContent(state),
     hasPresenterContent: getCurrentStepHasPresenterContent(state),
     displayPresenterContent: getDisplayPresenterContent(state)
   };

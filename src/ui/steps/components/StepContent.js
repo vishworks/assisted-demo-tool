@@ -12,8 +12,6 @@ import './StepContent.css';
 class StepContent extends Component {
   constructor(props) {
     super(props);
-    this.renderPresenterContent = this.renderPresenterContent.bind(this);
-    this.renderContent = this.renderContent.bind(this);
     this.onClickShowPresenterContent = this.onClickShowPresenterContent.bind(
       this
     );
@@ -21,10 +19,10 @@ class StepContent extends Component {
 
   render() {
     let displayPresenterContent,
-      contentRenderer,
+      htmlContent,
       cannotChoose = false;
 
-    if (isEmpty(this.props.content)) {
+    if (isEmpty(this.props.trainingContent)) {
       displayPresenterContent = true;
       cannotChoose = true;
     } else if (isEmpty(this.props.presenterContent)) {
@@ -35,9 +33,9 @@ class StepContent extends Component {
     }
 
     if (displayPresenterContent) {
-      contentRenderer = this.renderPresenterContent();
+      htmlContent = this.props.presenterContent;
     } else {
-      contentRenderer = this.renderContent();
+      htmlContent = this.props.trainingContent;
     }
 
     return (
@@ -49,26 +47,11 @@ class StepContent extends Component {
           disabled={cannotChoose}
         />
         <h3 className="step-title">{this.props.stepTitle}</h3>
-        {contentRenderer}
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
       </div>
-    );
-  }
-
-  renderContent() {
-    return (
-      <div
-        className="content"
-        dangerouslySetInnerHTML={{ __html: this.props.content }}
-      />
-    );
-  }
-
-  renderPresenterContent() {
-    return (
-      <div
-        className="content"
-        dangerouslySetInnerHTML={{ __html: this.props.presenterContent }}
-      />
     );
   }
 
@@ -81,8 +64,8 @@ StepContent.propTypes = {
   showPresenterContent: PropTypes.func.isRequired,
   displayPresenterContent: PropTypes.bool.isRequired,
   stepTitle: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  presenterContent: PropTypes.arrayOf(PropTypes.string)
+  trainingContent: PropTypes.string,
+  presenterContent: PropTypes.string
 };
 
 export default StepContent;

@@ -77,7 +77,7 @@ let schema = {
                 presenterContent: {
                   type: 'string'
                 },
-                content: {
+                trainingContent: {
                   type: 'string'
                 },
                 highlights: {
@@ -113,7 +113,7 @@ let schema = {
               },
               required: ['personaId', 'title'],
               anyOf: [
-                { required: ['content'] },
+                { required: ['trainingContent'] },
                 { required: ['presenterContent'] }
               ]
             }

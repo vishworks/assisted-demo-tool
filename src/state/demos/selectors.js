@@ -142,17 +142,17 @@ export const getCurrentStepContent = createSelector(
   }
 );
 
-export const getCurrentStepBullets = createSelector(
+export const getCurrentStepPresenterContent = createSelector(
   [getCurrentStep],
   currentStep => {
-    return currentStep.bullets;
+    return currentStep.presenterContent;
   }
 );
 
-export const getCurrentStepHasBullets = createSelector(
-  [getCurrentStepBullets],
-  bullets => {
-    return !!(bullets && bullets.length);
+export const getCurrentStepHasPresenterContent = createSelector(
+  [getCurrentStepPresenterContent],
+  presenterContent => {
+    return !!presenterContent;
   }
 );
 

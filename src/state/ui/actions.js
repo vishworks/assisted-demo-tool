@@ -3,7 +3,7 @@ import {
   POPUP_CLOSE_ALL,
   SET_DISPLAY_MODE,
   SET_GLOBAL_ERROR,
-  STEP_CONTENT_SHOW_BULLETS
+  STEP_CONTENT_SHOW_PRESENTER_CONTENT
 } from './types.js';
 
 export const openPopup = popupId => ({
@@ -31,8 +31,8 @@ export const setGlobalError = errorMessage => ({
   }
 });
 
-export const showBullets = show => ({
-  type: STEP_CONTENT_SHOW_BULLETS,
+export const showPresenterContent = show => ({
+  type: STEP_CONTENT_SHOW_PRESENTER_CONTENT,
   payload: {
     show
   }

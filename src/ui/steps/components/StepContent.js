@@ -7,33 +7,35 @@ import PseudoCheckbox from 'ui/shared/components/PseudoCheckbox.js';
 
 import './StepContent.css';
 
-// FIXME refactor using HtmlContent and CurrentStepBulletsContainer
+// FIXME refactor using HtmlContent and CurrentStepPresenterContentContainer
 
 class StepContent extends Component {
   constructor(props) {
     super(props);
-    this.renderBullets = this.renderBullets.bind(this);
+    this.renderPresenterContent = this.renderPresenterContent.bind(this);
     this.renderContent = this.renderContent.bind(this);
-    this.onClickShowBullets = this.onClickShowBullets.bind(this);
+    this.onClickShowPresenterContent = this.onClickShowPresenterContent.bind(
+      this
+    );
   }
 
   render() {
-    let displayBullets,
+    let displayPresenterContent,
       contentRenderer,
       cannotChoose = false;
 
     if (isEmpty(this.props.content)) {
-      displayBullets = true;
+      displayPresenterContent = true;
       cannotChoose = true;
-    } else if (isEmpty(this.props.bullets)) {
-      displayBullets = false;
+    } else if (isEmpty(this.props.presenterContent)) {
+      displayPresenterContent = false;
       cannotChoose = true;
     } else {
-      displayBullets = this.props.displayBullets;
+      displayPresenterContent = this.props.displayPresenterContent;
     }
 
-    if (displayBullets) {
-      contentRenderer = this.renderBullets();
+    if (displayPresenterContent) {
+      contentRenderer = this.renderPresenterContent();
     } else {
       contentRenderer = this.renderContent();
     }
@@ -42,8 +44,8 @@ class StepContent extends Component {
       <div className="StepContent">
         <PseudoCheckbox
           text="Presenter View"
-          checked={displayBullets}
-          onClick={this.onClickShowBullets}
+          checked={displayPresenterContent}
+          onClick={this.onClickShowPresenterContent}
           disabled={cannotChoose}
         />
         <h3 className="step-title">{this.props.stepTitle}</h3>
@@ -61,29 +63,26 @@ class StepContent extends Component {
     );
   }
 
-  renderBullets() {
-    let bulletList = this.props.bullets.map((bullet, i) => {
-      return (
-        <li key={'step-bullet-' + i} className="step-bullet">
-          {bullet}
-        </li>
-      );
-    });
-
-    return <ul className="bullets">{bulletList}</ul>;
+  renderPresenterContent() {
+    return (
+      <div
+        className="content"
+        dangerouslySetInnerHTML={{ __html: this.props.presenterContent }}
+      />
+    );
   }
 
-  onClickShowBullets() {
-    this.props.showBullets(!this.props.displayBullets);
+  onClickShowPresenterContent() {
+    this.props.showPresenterContent(!this.props.displayPresenterContent);
   }
 }
 
 StepContent.propTypes = {
-  showBullets: PropTypes.func.isRequired,
-  displayBullets: PropTypes.bool.isRequired,
+  showPresenterContent: PropTypes.func.isRequired,
+  displayPresenterContent: PropTypes.bool.isRequired,
   stepTitle: PropTypes.string.isRequired,
   content: PropTypes.string,
-  bullets: PropTypes.arrayOf(PropTypes.string)
+  presenterContent: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default StepContent;

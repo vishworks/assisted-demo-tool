@@ -7,7 +7,7 @@ import {
   POPUP_CLOSE_ALL,
   SET_DISPLAY_MODE,
   SET_GLOBAL_ERROR,
-  STEP_CONTENT_SHOW_BULLETS
+  STEP_CONTENT_SHOW_PRESENTER_CONTENT
 } from './types.js';
 
 const activePopup = (state = '', action = {}) => {
@@ -43,9 +43,9 @@ const globalErrorMessage = (state = '', action = {}) => {
   }
 };
 
-const displayBullets = (state = true, action = {}) => {
+const displayPresenterContent = (state = true, action = {}) => {
   switch (action.type) {
-    case STEP_CONTENT_SHOW_BULLETS:
+    case STEP_CONTENT_SHOW_PRESENTER_CONTENT:
       return action.payload.show;
 
     default:
@@ -57,7 +57,7 @@ const reducer = combineReducers({
   displayMode,
   activePopup,
   globalErrorMessage,
-  displayBullets
+  displayPresenterContent
 });
 
 export default reducer;

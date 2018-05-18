@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import CurrentStepContentContainer from 'ui/steps/containers/CurrentStepContentContainer.js';
-import CurrentStepBulletsContainer from 'ui/steps/containers/CurrentStepBulletsContainer.js';
+import CurrentStepPresenterContentContainer from 'ui/steps/containers/CurrentStepPresenterContentContainer.js';
 import CurrentStepNumberContainer from 'ui/steps/containers/CurrentStepNumberContainer.js';
 import CurrentStepTitleContainer from 'ui/steps/containers/CurrentStepTitleContainer.js';
 
@@ -10,18 +10,23 @@ import './TabbedStepContent.css';
 
 class TabbedStepContent extends Component {
   render() {
-    const { hasContent, hasBullets, displayBullets, showBullets } = this.props;
+    const {
+      hasContent,
+      hasPresenterContent,
+      displayPresenterContent,
+      showPresenterContent
+    } = this.props;
 
-    let actualDisplayBullets = displayBullets;
+    let actualDisplayPresenterContent = displayPresenterContent;
 
     if (hasContent === false) {
-      actualDisplayBullets = true;
-    } else if (hasBullets === false) {
-      actualDisplayBullets = false;
+      actualDisplayPresenterContent = true;
+    } else if (hasPresenterContent === false) {
+      actualDisplayPresenterContent = false;
     }
 
-    const tabContent = actualDisplayBullets ? (
-      <CurrentStepBulletsContainer />
+    const tabContent = actualDisplayPresenterContent ? (
+      <CurrentStepPresenterContentContainer />
     ) : (
       <CurrentStepContentContainer />
     );
@@ -32,11 +37,11 @@ class TabbedStepContent extends Component {
           <div
             className={
               'tab-button' +
-              (actualDisplayBullets ? ' active' : '') +
-              (!hasBullets ? ' disabled' : '')
+              (actualDisplayPresenterContent ? ' active' : '') +
+              (!hasPresenterContent ? ' disabled' : '')
             }
             onClick={ev => {
-              !actualDisplayBullets && showBullets(true);
+              !actualDisplayPresenterContent && showPresenterContent(true);
             }}
           >
             <i className="tab-button-icon fa fa-list" />
@@ -45,11 +50,11 @@ class TabbedStepContent extends Component {
           <div
             className={
               'tab-button' +
-              (!actualDisplayBullets ? ' active' : '') +
+              (!actualDisplayPresenterContent ? ' active' : '') +
               (!hasContent ? ' disabled' : '')
             }
             onClick={ev => {
-              actualDisplayBullets && showBullets(false);
+              actualDisplayPresenterContent && showPresenterContent(false);
             }}
           >
             <i className="tab-button-icon fa fa-bullseye" />
@@ -72,9 +77,9 @@ class TabbedStepContent extends Component {
 
 TabbedStepContent.propTypes = {
   hasContent: PropTypes.bool.isRequired,
-  hasBullets: PropTypes.bool.isRequired,
-  displayBullets: PropTypes.bool.isRequired,
-  showBullets: PropTypes.func.isRequired
+  hasPresenterContent: PropTypes.bool.isRequired,
+  displayPresenterContent: PropTypes.bool.isRequired,
+  showPresenterContent: PropTypes.func.isRequired
 };
 
 export default TabbedStepContent;

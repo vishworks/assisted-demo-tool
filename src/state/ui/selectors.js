@@ -12,9 +12,9 @@ export const getDisplayMode = createSelector(
   uiState => uiState.displayMode
 );
 
-export const getDisplayBullets = createSelector(
+export const getDisplayPresenterContent = createSelector(
   [getUiState],
-  uiState => uiState.displayBullets
+  uiState => uiState.displayPresenterContent
 );
 
 export const getGlobalErrorMessage = createSelector(

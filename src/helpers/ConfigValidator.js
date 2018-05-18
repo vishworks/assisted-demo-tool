@@ -74,11 +74,11 @@ let schema = {
                 title: {
                   type: 'string'
                 },
-                bullets: {
-                  type: 'array',
-                  items: {
-                    type: 'string'
-                  }
+                presenterContent: {
+                  type: 'string'
+                },
+                content: {
+                  type: 'string'
                 },
                 highlights: {
                   type: 'array',
@@ -94,9 +94,6 @@ let schema = {
                     },
                     required: ['title', 'text']
                   }
-                },
-                content: {
-                  type: 'string'
                 },
                 urlOverrides: {
                   type: 'array',
@@ -115,7 +112,10 @@ let schema = {
                 }
               },
               required: ['personaId', 'title'],
-              anyOf: [{ required: ['content'] }, { required: ['bullets'] }]
+              anyOf: [
+                { required: ['content'] },
+                { required: ['presenterContent'] }
+              ]
             }
           }
         },

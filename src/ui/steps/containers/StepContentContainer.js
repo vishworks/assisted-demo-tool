@@ -1,26 +1,26 @@
 import { connect } from 'react-redux';
-import { getDisplayBullets } from 'state/ui/selectors.js';
+import { getDisplayPresenterContent } from 'state/ui/selectors.js';
 import {
   getCurrentStepContent,
-  getCurrentStepBullets,
+  getCurrentStepPresenterContent,
   getCurrentStepTitle
 } from 'state/demos/selectors.js';
-import { showBullets } from 'state/ui/actions.js';
+import { showPresenterContent } from 'state/ui/actions.js';
 import StepContent from '../components/StepContent.js';
 
 const mapStateToProps = state => {
   return {
     content: getCurrentStepContent(state),
-    bullets: getCurrentStepBullets(state),
-    displayBullets: getDisplayBullets(state),
+    presenterContent: getCurrentStepPresenterContent(state),
+    displayPresenterContent: getDisplayPresenterContent(state),
     stepTitle: getCurrentStepTitle(state)
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    showBullets: show => {
-      dispatch(showBullets(show));
+    showPresenterContent: show => {
+      dispatch(showPresenterContent(show));
     }
   };
 };

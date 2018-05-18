@@ -1,24 +1,24 @@
 import { connect } from 'react-redux';
-import { getDisplayBullets } from 'state/ui/selectors.js';
+import { getDisplayPresenterContent } from 'state/ui/selectors.js';
 import {
   getCurrentStepHasContent,
-  getCurrentStepHasBullets
+  getCurrentStepHasPresenterContent
 } from 'state/demos/selectors.js';
-import { showBullets } from 'state/ui/actions.js';
+import { showPresenterContent } from 'state/ui/actions.js';
 import TabbedStepContent from '../components/TabbedStepContent.js';
 
 const mapStateToProps = state => {
   return {
     hasContent: getCurrentStepHasContent(state),
-    hasBullets: getCurrentStepHasBullets(state),
-    displayBullets: getDisplayBullets(state)
+    hasPresenterContent: getCurrentStepHasPresenterContent(state),
+    displayPresenterContent: getDisplayPresenterContent(state)
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    showBullets: show => {
-      dispatch(showBullets(show));
+    showPresenterContent: show => {
+      dispatch(showPresenterContent(show));
     }
   };
 };

@@ -46,7 +46,7 @@
     {
       "id": "assistedDemoTool",
       "title": "Assisted Demo Tool",
-      "estimatedTime": 5,
+      "estimatedTime": 1,
       "steps": [
         {
           "personaId": "itAdmin",
@@ -134,7 +134,7 @@
     {
       "id": "testDemo2",
       "title": "Demo with personas subset",
-      "estimatedTime": 2,
+      "estimatedTime": 1,
       "personas": ["partner", "marketing"],
       "steps": [
         {
@@ -165,7 +165,7 @@
     {
       "id": "testDemo3",
       "title": "Demo 3",
-      "estimatedTime": 3,
+      "estimatedTime": 1,
       "steps": [
         {
           "personaId": "itAdmin",

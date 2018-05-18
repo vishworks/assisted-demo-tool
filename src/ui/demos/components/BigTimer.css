@@ -35,3 +35,19 @@
 .BigTimer .timer-btn:hover {
   color: #00B9F7;
 }
+
+.BigTimer .timer-icon-group {
+  position: relative;
+  cursor: pointer;
+}
+
+.BigTimer .timer-icon-group:hover {
+  color: #00B9F7;
+}
+
+.BigTimer .timer-icon-group .time-type-icon {
+  position: absolute;
+  display: block;
+  bottom: -10px;
+  right: -10px;
+}

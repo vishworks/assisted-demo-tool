@@ -39,7 +39,12 @@ class PersonaTabs extends Component {
       );
     });
 
-    return <div className="PersonaTabs">{personaRenderers}</div>;
+    return (
+      <div className="PersonaTabs">
+        {personaRenderers}
+        <div className="bottom-fake-border" />
+      </div>
+    );
   }
 
   onClickPersona(persona) {

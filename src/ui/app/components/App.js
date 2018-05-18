@@ -11,6 +11,7 @@ import ControlPageContainer from 'ui/app/containers/ControlPageContainer.js';
 import ViewPortContainer from 'ui/app/containers/ViewPortContainer.js';
 import LoadingPageContainer from 'ui/app/containers/LoadingPageContainer.js';
 import PersonaTabsContainer from 'ui/personas/containers/PersonaTabsContainer.js';
+import PersonaUrlControlsContainer from 'ui/personas/containers/PersonaUrlControlsContainer.js';
 
 import DisplayModeEnum from 'enums/DisplayMode.js';
 
@@ -46,6 +47,7 @@ class App extends Component {
       <div className="App" data-display-mode={this.props.displayMode}>
         <div className="tabbed-viewport">
           <PersonaTabsContainer />
+          <PersonaUrlControlsContainer />
           <ViewPortContainer />
         </div>
         <ControlWidgetContainer />

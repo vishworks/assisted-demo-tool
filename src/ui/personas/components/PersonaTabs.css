@@ -1,5 +1,15 @@
 .PersonaTabs {
+  position: relative;
   background: #cb9666;
+}
+
+.PersonaTabs .bottom-fake-border {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #8c8c8c;
+  height: 1px;
+  z-index: 9;
 }
 
 .PersonaTabs .tab-button {
@@ -72,6 +82,7 @@
 }
 .PersonaTabs .tab-button .right-triangle-area {
   left: 100%;
+  z-index: 5;
 }
 .PersonaTabs .tab-button .left-triangle-area::after {
   right: 0;

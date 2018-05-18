@@ -6,7 +6,7 @@ import HtmlContent from 'ui/shared/components/HtmlContent.js';
 
 const mapStateToProps = state => {
   return {
-    html: getCurrentStepTrainingContent(state) + ''
+    html: getCurrentStepTrainingContent(state)
   };
 };
 

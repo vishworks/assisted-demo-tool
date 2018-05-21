@@ -1,4 +1,4 @@
-import { includes, map, get, find } from 'lodash';
+import { includes, map, get, find, first, filter } from 'lodash';
 import {
   _selectDemo,
   _applyDemoSettings,
@@ -9,13 +9,13 @@ import { selectPersona } from '../personas/actions.js';
 
 import {
   getCurrentDemo,
-  getDemos,
-  getIncludedDemos,
-  getTempDemos,
+  getSortedIncludedDemos,
   getStepsCount,
   getCurrentStepIndex,
   getCurrentStepPersonaId,
-  getNextDemoId
+  getNextDemoId,
+  getDemosConfig,
+  getDemosTempConfig
 } from './selectors.js';
 
 import { getCurrentPersonaId } from '../personas/selectors.js';
@@ -50,7 +50,7 @@ export const prevStep = () => (dispatch, getState) => {
 };
 
 export const selectDemo = demoId => (dispatch, getState) => {
-  var demos = getIncludedDemos(getState());
+  var demos = getSortedIncludedDemos(getState());
   if (includes(map(demos, 'id'), demoId)) {
     dispatch(_selectDemo(demoId));
     gotoStep(0)(dispatch, getState);
@@ -64,20 +64,23 @@ export const selectDemo = demoId => (dispatch, getState) => {
 };
 
 export const applyDemoSettings = () => (dispatch, getState) => {
-  var tempDemos = getTempDemos(getState());
-  if (!find(tempDemos, 'included')) {
+  var tempDemoConfig = getDemosTempConfig(getState());
+  if (!find(tempDemoConfig.data, 'included')) {
     console.error('[applyDemoSettings] : trying to exclude all demos');
     return;
   }
-  dispatch(_applyDemoSettings(tempDemos));
+  dispatch(_applyDemoSettings(tempDemoConfig));
   if (!getCurrentDemo(getState()).included) {
-    dispatch(_selectDemo(get(find(tempDemos, 'included'), 'id')));
+    const includedDemoId = first(
+      filter(tempDemoConfig.order, id => tempDemoConfig.data[id].included)
+    );
+    dispatch(_selectDemo(includedDemoId));
   }
 };
 
 export const startDemoSettings = () => (dispatch, getState) => {
-  var demos = getDemos(getState());
-  dispatch(_startDemoSettings(demos));
+  const demosConfig = getDemosConfig(getState());
+  dispatch(_startDemoSettings(demosConfig));
 };
 
 export const nextDemo = () => (dispatch, getState) => {

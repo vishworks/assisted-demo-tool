@@ -1,12 +1,15 @@
 import { connect } from 'react-redux';
 
-import { getIncludedDemos, getCurrentDemoId } from 'state/demos/selectors.js';
+import {
+  getSortedIncludedDemos,
+  getCurrentDemoId
+} from 'state/demos/selectors.js';
 
 import BigTimer from '../components/BigTimer.js';
 
 const mapStateToProps = state => {
   return {
-    includedDemos: getIncludedDemos(state),
+    includedDemos: getSortedIncludedDemos(state),
     currentDemoId: getCurrentDemoId(state)
   };
 };

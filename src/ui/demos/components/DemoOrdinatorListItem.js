@@ -12,7 +12,7 @@ class DemoOrdinatorListItem extends Component {
     if (this.props.className) {
       classNameAr.push(this.props.className);
     }
-    if (!this.props.demoIncluded) {
+    if (!this.props.demoCurrentlyIncluded) {
       classNameAr.push('excluded');
     }
     return (
@@ -38,6 +38,7 @@ class DemoOrdinatorListItem extends Component {
 DemoOrdinatorListItem.propTypes = {
   className: PropTypes.string,
   demoIncluded: PropTypes.bool.isRequired,
+  demoCurrentlyIncluded: PropTypes.bool.isRequired,
   onClickCheckbox: PropTypes.func.isRequired,
   demoTitle: PropTypes.string.isRequired,
   onClickMoveUp: PropTypes.func.isRequired,

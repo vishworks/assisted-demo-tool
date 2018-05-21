@@ -23,6 +23,7 @@ class DemoOrdinator extends Component {
           className={this.props.currentDemoId === demo.id ? 'active' : ''}
           demoTitle={demo.title}
           demoIncluded={demo.included}
+          demoCurrentlyIncluded={demo.currentConfig.included}
           onClickCheckbox={this.onClickCheckbox(demo.id, i)}
           onClickMoveUp={this.moveDemo(demo.id, i, i - 1)}
           onClickMoveDown={this.moveDemo(demo.id, i, i + 1)}
@@ -70,7 +71,10 @@ class DemoOrdinator extends Component {
 const DemoPropType = PropTypes.shape({
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  included: PropTypes.bool.isRequired
+  included: PropTypes.bool.isRequired,
+  currentConfig: PropTypes.shape({
+    included: PropTypes.bool.isRequired
+  }).isRequired
 });
 
 DemoOrdinator.propTypes = {

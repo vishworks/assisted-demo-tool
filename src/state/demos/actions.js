@@ -18,17 +18,17 @@ export {
   nextStep
 } from './operations.js';
 
-export const _startDemoSettings = demos => ({
+export const _startDemoSettings = config => ({
   type: DEMOS_SETTINGS_START,
   payload: {
-    demos
+    config
   }
 });
 
-export const _applyDemoSettings = tempDemos => ({
+export const _applyDemoSettings = config => ({
   type: DEMOS_SETTINGS_APPLY,
   payload: {
-    tempDemos
+    config
   }
 });
 

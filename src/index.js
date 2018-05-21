@@ -27,7 +27,7 @@ if (!obj.configUrl) {
   window.location.search = 'configUrl=test-config/config_1.json';
 }
 
-let preloadedState = getPersistedState();
+const preloadedState = getPersistedState();
 
 const enhancers = [
   applyMiddleware(thunk, ControlPageMiddleware, UrlHashMiddleware)
@@ -36,7 +36,7 @@ if (window.__REDUX_DEVTOOLS_EXTENSION__) {
   enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__());
 }
 
-let store = createStore(rootReducer, preloadedState, compose(...enhancers));
+const store = createStore(rootReducer, preloadedState, compose(...enhancers));
 
 store.subscribe(PersistStateSubscription(store));
 

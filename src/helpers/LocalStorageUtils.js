@@ -15,7 +15,7 @@ export function persistState(state) {
       configUrl = searchParams.configUrl;
     if (configUrl) {
       let savedState = {};
-      set(savedState, 'demos.demos', get(state, 'demos.demos'));
+      set(savedState, 'demos.config', get(state, 'demos.config'));
       set(savedState, 'notes', get(state, 'notes'));
       set(savedState, 'highlights', get(state, 'highlights'));
       localStorage[configUrl] = JSON.stringify(savedState);

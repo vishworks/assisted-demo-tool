@@ -1,13 +1,16 @@
 import { connect } from 'react-redux';
 import { map } from 'lodash';
 
-import { getIncludedDemos, getCurrentDemoId } from 'state/demos/selectors.js';
+import {
+  getSortedIncludedDemos,
+  getCurrentDemoId
+} from 'state/demos/selectors.js';
 import { selectDemo } from 'state/demos/actions.js';
 
 import HorizontalDemoList from '../components/HorizontalDemoList.js';
 
 const mapStateToProps = state => {
-  let includedDemos = getIncludedDemos(state),
+  let includedDemos = getSortedIncludedDemos(state),
     currentDemoId = getCurrentDemoId(state),
     demoListModel = map(includedDemos, demo => ({
       id: demo.id,

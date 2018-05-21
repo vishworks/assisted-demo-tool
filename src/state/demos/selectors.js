@@ -18,13 +18,61 @@ function addIndexToArray(array) {
 
 export const getDemosState = state => state.demos;
 
-export const getDemos = createSelector(
+export const getDemosConfig = createSelector(
   [getDemosState],
-  demosState => demosState.demos
+  demosState => demosState.config
 );
 
-export const getIncludedDemos = createSelector([getDemos], demos =>
-  filter(demos, demo => demo.included)
+export const getDemosConfigData = createSelector(
+  [getDemosConfig],
+  config => config.data
+);
+
+export const getDemosConfigOrder = createSelector(
+  [getDemosConfig],
+  config => config.order
+);
+
+export const getDemosTempConfig = createSelector(
+  [getDemosState],
+  demosState => demosState.tempConfig
+);
+
+export const getDemosTempConfigData = createSelector(
+  [getDemosTempConfig],
+  config => config.data
+);
+
+export const getDemosTempConfigOrder = createSelector(
+  [getDemosTempConfig],
+  config => config.order
+);
+
+export const getDemosMap = createSelector(
+  [getDemosState],
+  demosState => demosState.demosMap
+);
+
+export const getDemosIdList = createSelector(
+  [getDemosState],
+  demosState => demosState.demosIdList
+);
+
+export const getDemos = createSelector(
+  [getDemosMap, getDemosIdList, getDemosConfigData],
+  (demosMap, demosIdList, demosData) =>
+    map(demosIdList, id => ({ ...demosMap[id], ...demosData[id] }))
+);
+
+export const getSortedDemos = createSelector(
+  [getDemosMap, getDemosConfigOrder],
+  (demosMap, demosIdList) => map(demosIdList, id => demosMap[id])
+);
+
+export const getSortedIncludedDemos = createSelector(
+  [getSortedDemos, getDemosConfigData],
+  (sortedDemos, demoData) =>
+    filter(sortedDemos, demo => demoData[demo.id].included)
 );
 
 export const getCurrentDemoId = createSelector(
@@ -33,8 +81,18 @@ export const getCurrentDemoId = createSelector(
 );
 
 export const getTempDemos = createSelector(
-  [getDemosState],
-  demosState => demosState.tempDemos
+  [
+    getDemosMap,
+    getDemosTempConfigOrder,
+    getDemosTempConfigData,
+    getDemosConfigData
+  ],
+  (demosMap, idList, demosData, currentDemosData) =>
+    map(idList, id => ({
+      ...demosMap[id],
+      ...demosData[id],
+      currentConfig: currentDemosData[id]
+    }))
 );
 
 export const getCurrentStepIndex = createSelector(
@@ -55,7 +113,7 @@ export const getCurrentDemo = createSelector(
 );
 
 export const getNextDemo = createSelector(
-  [getCurrentDemoId, getIncludedDemos],
+  [getCurrentDemoId, getSortedIncludedDemos],
   (currentDemoId, demos) => {
     if (!demos || !currentDemoId) {
       return null;

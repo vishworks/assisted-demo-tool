@@ -1,0 +1,73 @@
+.StepContentModeTabs {
+  display: flex;
+  align-items: stretch;
+  min-height: 80px;
+}
+.StepContentModeTabs .tab-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 270px;
+  border-bottom: 1px solid #D1D1D1;
+  border-right: 1px solid #D1D1D1;
+  cursor: pointer;
+  flex-grow: 1;
+}
+.StepContentModeTabs .tab-button .tab-button-icon {
+  color: #8B8D8F;
+  font-size: 18px;
+}
+.StepContentModeTabs .tab-button .tab-button-label {
+  color: #192941;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.StepContentModeTabs .tab-button.active {
+  border-bottom: none;
+  background: #ffffff;
+}
+
+.StepContentModeTabs .tab-button.active .tab-button-label,
+.StepContentModeTabs .tab-button:hover .tab-button-label {
+  color: #15AAF5;
+}
+
+.StepContentModeTabs .tab-button.disabled {
+  cursor: not-allowed;
+}
+.StepContentModeTabs .tab-button.disabled .tab-button-icon,
+.StepContentModeTabs .tab-button.disabled .tab-button-label,
+.StepContentModeTabs .tab-button.disabled:hover .tab-button-label {
+  color: #bfbfbf;
+}
+
+
+.StepContentModeTabs.dark-theme {
+  min-height: initial;
+}
+
+.StepContentModeTabs.dark-theme .tab-button {
+  min-width: initial;
+  height: 30px;
+  border: 1px solid #5F748F;
+}
+
+.StepContentModeTabs.dark-theme .tab-button.active {
+  border-bottom: 1px solid #5F748F;;
+  background: #192941;
+}
+
+.StepContentModeTabs.dark-theme .tab-button.active .tab-button-icon,
+.StepContentModeTabs.dark-theme .tab-button.active .tab-button-label,
+.StepContentModeTabs.dark-theme .tab-button:hover .tab-button-icon,
+.StepContentModeTabs.dark-theme .tab-button:hover .tab-button-label {
+  color: #15AAF5;
+}
+
+.StepContentModeTabs.dark-theme .tab-button .tab-button-icon,
+.StepContentModeTabs.dark-theme .tab-button .tab-button-label {
+  color: #ffffff;
+  font-size: 13px;
+}

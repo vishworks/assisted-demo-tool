@@ -14,7 +14,7 @@ import CurrentDemoNotesListContainer from 'ui/notes/containers/CurrentDemoNotesL
 import OpenNewNotePopupButtonContainer from 'ui/notes/containers/OpenNewNotePopupButtonContainer.js';
 import NewNoteFormContainer from 'ui/notes/containers/NewNoteFormContainer.js';
 import StepsCountContainer from 'ui/steps/containers/StepsCountContainer.js';
-import TabbedStepContentContainer from 'ui/steps/containers/TabbedStepContentContainer.js';
+import TabbedStepContent from 'ui/steps/components/TabbedStepContent.js';
 import NextStepButtonContainer from 'ui/steps/containers/NextStepButtonContainer.js';
 import PrevStepButtonContainer from 'ui/steps/containers/PrevStepButtonContainer.js';
 
@@ -61,7 +61,7 @@ class ControlPage extends Component {
               primary="second"
             >
               <div className="layout-col-2">
-                <TabbedStepContentContainer />
+                <TabbedStepContent />
                 <div className="footer-controls-section">
                   <div className="personas-selector">
                     <PersonaDropdownLargeContainer />

@@ -8,6 +8,8 @@ import {
   getPersonas
 } from 'state/personas/selectors.js';
 
+import { getDisplayPresenterContent } from 'state/ui/selectors.js';
+
 function addIndexToArray(array) {
   return map(array, (el, index) => {
     el.index = index;
@@ -204,6 +206,23 @@ export const getCurrentStepPresenterContent = createSelector(
   [getCurrentStep],
   currentStep => {
     return currentStep.presenterContent;
+  }
+);
+
+export const getCurrentStepContent = createSelector(
+  [
+    getDisplayPresenterContent,
+    getCurrentStepTrainingContent,
+    getCurrentStepPresenterContent
+  ],
+  (isPresenterMode, trainingContent, presenterContent) => {
+    if (isPresenterMode && presenterContent) {
+      return presenterContent;
+    }
+    if (!isPresenterMode && trainingContent) {
+      return trainingContent;
+    }
+    return 'No data available';
   }
 );
 

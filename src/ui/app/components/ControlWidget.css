@@ -15,7 +15,6 @@
 .ControlWidget header {
     height: 180px;
     min-height: 180px;
-    border-bottom: 1px solid #5F748F;
     position: relative;
 
     display: flex;
@@ -68,14 +67,15 @@
 .ControlWidget .step-content  {
     overflow: auto;
     flex-grow: 2;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+.ControlWidget .step-content .step-title {
+  text-align: left;
 }
 
 .ControlWidget .persona-dropdown-trigger:hover {
     color: #00B9F7;
     cursor: pointer;
 }
-/*
-.ControlWidget .PseudoCheckbox  {
-    float: right;
-}
-*/

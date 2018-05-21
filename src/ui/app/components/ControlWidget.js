@@ -6,11 +6,13 @@ import PersonaStepsListContainer from 'ui/steps/containers/PersonaStepsListConta
 import AllStepsListContainer from 'ui/steps/containers/AllStepsListContainer.js';
 
 import StepsControlButtonsContainer from 'ui/steps/containers/StepsControlButtonsContainer.js';
-import StepContentContainer from 'ui/steps/containers/StepContentContainer.js';
+import StepContentModeTabsContainer from 'ui/steps/containers/StepContentModeTabsContainer.js';
 import StepLabelContainer from 'ui/steps/containers/StepLabelContainer.js';
 import NotSelectedPersonaListContainer from 'ui/personas/containers/PersonaListContainer.js';
 import PopupContainer from 'ui/shared/containers/PopupContainer.js';
 import DemoOrdinatorContainer from 'ui/demos/containers/DemoOrdinatorContainer.js';
+import CurrentStepContentContainer from 'ui/steps/containers/CurrentStepContentContainer.js';
+import CurrentStepTitleContainer from 'ui/steps/containers/CurrentStepTitleContainer.js';
 
 import PseudoCheckbox from 'ui/shared/components/PseudoCheckbox.js';
 
@@ -105,8 +107,12 @@ class ControlWidget extends Component {
           </PopupContainer>
         </header>
 
+        <StepContentModeTabsContainer className="dark-theme" />
         <div className="step-content">
-          <StepContentContainer />
+          <h3 className="step-title">
+            <CurrentStepTitleContainer />
+          </h3>
+          <CurrentStepContentContainer />
         </div>
 
         <StepLabelContainer />

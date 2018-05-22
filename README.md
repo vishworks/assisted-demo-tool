@@ -47,10 +47,6 @@ demos: Array<Object> - one or more demos to be shown
     name: string - the demo name
     estimatedTime: number - the demo estimated duration in minutes
     personas: Array<String> - a list of the demo personas ids
-    highlights: Array<Object> - a list of the demo most important informations
-      (highlights items)
-        title: string - the highlight title
-        text: string - the highlight text
     steps: Array<Object> - the demo steps list
       (steps items)
         personaId: string - the id of the persona associated to this step
@@ -62,5 +58,9 @@ demos: Array<Object> - one or more demos to be shown
             personaId: string - the id of the target persona
             url: string - the URL to push in the target persona iframe
             newTab: boolean - (default false) if true, opens a new window when applying an override on the current visible persona
+        highlights: Array<Object> - a list of the demo most important informations
+          (highlights items)
+            title: string - the highlight title
+            text: string - the highlight text
 
 ```

@@ -7,7 +7,7 @@ import { SELECT_PERSONA } from './types.js';
 const personas = (state = [], action = {}) => {
   switch (action.type) {
     case LOAD_CONFIG:
-      let newPersonas = action.payload.config.personas.slice();
+      const newPersonas = action.payload.config.personas.slice();
       return Object.assign([], state, newPersonas);
 
     default:

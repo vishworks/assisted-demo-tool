@@ -7,6 +7,7 @@ import demos from 'state/demos/reducer.js';
 import personas from 'state/personas/reducer.js';
 import notes from 'state/notes/reducer.js';
 import highlights from 'state/highlights/reducer.js';
+import urlHistory from 'state/urlHistory/reducer.js';
 
 import {
   getCurrentDemoId,
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   demos,
   personas,
   notes,
-  highlights
+  highlights,
+  urlHistory
 });
 
 const rootReducerUpdatingHash = (state, action) => {

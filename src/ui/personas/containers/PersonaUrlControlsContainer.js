@@ -1,16 +1,32 @@
 import { connect } from 'react-redux';
 
-import { getCurrentPersonaUrl } from 'state/personas/selectors.js';
+import {
+  getCurrentUrl,
+  getCurrentUrlIsFirst,
+  getCurrentUrlIsLast
+} from 'state/urlHistory/selectors.js';
+import { gotoNextUrl, gotoPrevUrl } from 'state/urlHistory/actions.js';
+
 import PersonaUrlControls from '../components/PersonaUrlControls.js';
 
 const mapStateToProps = state => {
   return {
-    url: getCurrentPersonaUrl(state)
+    url: getCurrentUrl(state),
+    prevButtonDisabled: getCurrentUrlIsFirst(state),
+    nextButtonDisabled: getCurrentUrlIsLast(state)
   };
 };
 
-const PersonaUrlControlsContainer = connect(mapStateToProps, null)(
-  PersonaUrlControls
-);
+const mapDispatchToProps = dispatch => {
+  return {
+    gotoPrevUrl: () => dispatch(gotoPrevUrl()),
+    gotoNextUrl: () => dispatch(gotoNextUrl())
+  };
+};
+
+const PersonaUrlControlsContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PersonaUrlControls);
 
 export default PersonaUrlControlsContainer;

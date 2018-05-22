@@ -254,6 +254,15 @@ export const getCurrentStepUrlOverrides = createSelector(
   }
 );
 
+export const getCurrentPersonaUrlOverride = createSelector(
+  [getCurrentStepUrlOverrides, getCurrentPersonaId],
+  (urlOverrides, currentPersonaId) => {
+    return urlOverrides && currentPersonaId
+      ? find(urlOverrides, { personaId: currentPersonaId })
+      : null;
+  }
+);
+
 export const getCurrentStepPersonaId = createSelector(
   [getCurrentStep],
   currentStep => {
@@ -301,15 +310,5 @@ export const getAllUrls = createSelector(
   [getDefaultUrls, getAllStepUrls],
   (defaultPersonaUrls, stepUrls) => {
     return defaultPersonaUrls.concat(stepUrls);
-  }
-);
-
-export const getCurrentUrl = createSelector(
-  [getCurrentPersonaId, getCurrentPersonaUrl, getCurrentStepUrlOverrides],
-  (currentPersonaId, currentPersonaUrl, stepUrlOverrides) => {
-    const personaOverride =
-      stepUrlOverrides &&
-      find(stepUrlOverrides, { personaId: currentPersonaId });
-    return (personaOverride && personaOverride.url) || currentPersonaUrl;
   }
 );

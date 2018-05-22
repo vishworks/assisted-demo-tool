@@ -17,7 +17,7 @@
   font-size: 14px;
 }
 
-.PersonaUrlControls .url-refresh-button {
+.PersonaUrlControls .url-tools-button {
   width: 26px;
   height: 26px;
   color: #3c3c3c;
@@ -28,7 +28,12 @@
   transition: background-color 500ms;
 }
 
-.PersonaUrlControls .url-refresh-button:hover {
+.PersonaUrlControls .url-tools-button:hover {
   background-color: #bbbbbb;
   transition: background-color 500ms;
+}
+
+.PersonaUrlControls .url-tools-button:disabled {
+  background-color: #cecece;
+  color: #b0b0b0;
 }

@@ -6,6 +6,7 @@ import {
   _gotoStep
 } from './actions.js';
 import { selectPersona } from '../personas/actions.js';
+import { pushPersonaUrl } from '../urlHistory/actions.js';
 
 import {
   getCurrentDemo,
@@ -13,12 +14,14 @@ import {
   getStepsCount,
   getCurrentStepIndex,
   getCurrentStepPersonaId,
+  getCurrentPersonaUrlOverride,
   getNextDemoId,
   getDemosConfig,
   getDemosTempConfig
 } from './selectors.js';
 
 import { getCurrentPersonaId } from '../personas/selectors.js';
+import { getCurrentUrl } from '../urlHistory/selectors.js';
 
 export const gotoStep = stepIndex => (dispatch, getState) => {
   let state = getState(),
@@ -29,9 +32,16 @@ export const gotoStep = stepIndex => (dispatch, getState) => {
     dispatch(_gotoStep(stepIndex));
 
     // update persona if necessary
-    let nextPersonaId = getCurrentStepPersonaId(getState());
+    const nextPersonaId = getCurrentStepPersonaId(getState());
     if (nextPersonaId !== currentPersonaId) {
       dispatch(selectPersona(nextPersonaId));
+    }
+
+    // push a new URL if necessary
+    const urlOverrides = getCurrentPersonaUrlOverride(getState());
+    const currentUrl = getCurrentUrl(getState());
+    if (urlOverrides && urlOverrides.url !== currentUrl) {
+      dispatch(pushPersonaUrl(nextPersonaId, urlOverrides.url));
     }
   } else {
     console.warn('[gotoStep] attempting to go to step with index ' + stepIndex);

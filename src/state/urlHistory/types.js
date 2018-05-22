@@ -1,0 +1,2 @@
+export const PUSH_PERSONA_URL = 'PUSH_PERSONA_URL';
+export const SET_CURRENT_URL = 'SET_CURRENT_URL';

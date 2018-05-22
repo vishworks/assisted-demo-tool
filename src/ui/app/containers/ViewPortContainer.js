@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 
-import { getAllUrls, getCurrentUrl } from 'state/demos/selectors.js';
+import { getCurrentPersonaId } from 'state/personas/selectors.js';
+import { getCurrentDemoPersonasUrls } from 'state/urlHistory/selectors.js';
 
 import ViewPort from '../components/ViewPort.js';
 
 const mapStateToProps = state => {
   return {
-    urls: getAllUrls(state),
-    currentUrl: getCurrentUrl(state)
+    currentPersonaId: getCurrentPersonaId(state),
+    currentPersonasUrls: getCurrentDemoPersonasUrls(state)
   };
 };
 

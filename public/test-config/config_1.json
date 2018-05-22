@@ -70,11 +70,11 @@
           "urlOverrides": [
               {
                 "personaId": "itAdmin",
-                "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin"
-              },
+                "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin"              },
               {
                 "personaId": "marketing",
-                "url": "https://www.entando.com/page/en/contribute"
+                "url": "https://www.entando.com/page/en/contribute",
+                "newTab": true
               }
           ],
           "presenterContent": "<ul><li>Click on the 'list' button to see the list of this demo steps</li><li>In the steps list popup, click on the 'Filter by persona' checkbox to see only the current persona's steps</li><li>Click again to see all steps</li><li>Click on the 'NEXT' button to go to the next step</li></ul>",

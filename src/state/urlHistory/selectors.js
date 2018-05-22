@@ -1,21 +1,31 @@
 import { createSelector } from 'reselect';
-import { first, last } from 'lodash';
 
-import {
-  getCurrentDemoPersonas,
-  getCurrentStepUrlOverrides
-} from 'state/demos/selectors';
+import { getCurrentDemoPersonas } from 'state/demos/selectors';
 import { getCurrentPersonaId } from 'state/personas/selectors';
 
 export const getUrlHistory = state => state.urlHistory;
 
+export const getUrlHistoryPersonaUrlMap = createSelector(
+  [getUrlHistory],
+  urlHistoryMap => {
+    return Object.keys(urlHistoryMap).reduce((acc, personaId) => {
+      const item = urlHistoryMap[personaId];
+      acc[personaId] = item.history[item.currentUrlIndex];
+      return acc;
+    }, {});
+  }
+);
+
 export const getCurrentDemoPersonasUrls = createSelector(
   [getCurrentDemoPersonas, getUrlHistory],
   (demoPersonas, urlHistoryMap) => {
-    return demoPersonas.map(persona => ({
-      personaId: persona.id,
-      currentUrl: urlHistoryMap[persona.id].currentUrl
-    }));
+    return demoPersonas.map(persona => {
+      const historyItem = urlHistoryMap[persona.id];
+      return {
+        personaId: persona.id,
+        currentUrl: historyItem.history[historyItem.currentUrlIndex]
+      };
+    });
   }
 );
 
@@ -26,45 +36,30 @@ export const getCurrentPersonaUrlHistory = createSelector(
   }
 );
 
-export const getCurrentUrl = createSelector(
+export const getCurrentUrlIndex = createSelector(
   [getCurrentPersonaUrlHistory],
   currentPersonaUrlHistory => {
-    return currentPersonaUrlHistory.currentUrl;
+    return currentPersonaUrlHistory.currentUrlIndex;
+  }
+);
+
+export const getCurrentUrl = createSelector(
+  [getCurrentPersonaUrlHistory],
+  historyItem => {
+    return historyItem.history[historyItem.currentUrlIndex];
   }
 );
 
 export const getCurrentUrlIsFirst = createSelector(
   [getCurrentPersonaUrlHistory],
   curHistory => {
-    return curHistory.currentUrl === first(curHistory.history);
+    return curHistory.currentUrlIndex === 0;
   }
 );
 
 export const getCurrentUrlIsLast = createSelector(
   [getCurrentPersonaUrlHistory],
   curHistory => {
-    return curHistory.currentUrl === last(curHistory.history);
-  }
-);
-
-export const getPrevUrl = createSelector(
-  [getCurrentPersonaUrlHistory, getCurrentUrlIsFirst],
-  (historyEntry, isFirst) => {
-    if (isFirst) {
-      return null;
-    }
-    const curIndex = historyEntry.history.indexOf(historyEntry.currentUrl);
-    return historyEntry.history[curIndex - 1];
-  }
-);
-
-export const getNextUrl = createSelector(
-  [getCurrentPersonaUrlHistory, getCurrentUrlIsLast],
-  (historyEntry, isLast) => {
-    if (isLast) {
-      return null;
-    }
-    const curIndex = historyEntry.history.indexOf(historyEntry.currentUrl);
-    return historyEntry.history[curIndex + 1];
+    return curHistory.currentUrlIndex === curHistory.history.length - 1;
   }
 );

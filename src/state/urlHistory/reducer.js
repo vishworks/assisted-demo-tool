@@ -1,7 +1,7 @@
 import { reduce } from 'lodash';
 
 import { LOAD_CONFIG } from '../config/types.js';
-import { PUSH_PERSONA_URL, SET_CURRENT_URL } from './types.js';
+import { PUSH_PERSONA_URL, SET_CURRENT_URL_INDEX } from './types.js';
 
 const historyMap = (state = {}, action = {}) => {
   switch (action.type) {
@@ -11,7 +11,7 @@ const historyMap = (state = {}, action = {}) => {
         (acc, persona) => {
           acc[persona.id] = {
             history: [persona.url],
-            currentUrl: persona.url
+            currentUrlIndex: 0
           };
           return acc;
         },
@@ -20,19 +20,19 @@ const historyMap = (state = {}, action = {}) => {
 
     case PUSH_PERSONA_URL: {
       const { personaId, url } = action.payload;
+      const newItem = { ...state[personaId] };
+      newItem.history = [...newItem.history, url];
+      newItem.currentUrlIndex = newItem.history.length - 1;
       return {
         ...state,
-        [personaId]: {
-          history: [...state[personaId].history, url],
-          currentUrl: url
-        }
+        [personaId]: newItem
       };
     }
-    case SET_CURRENT_URL: {
-      const { personaId, url } = action.payload;
+    case SET_CURRENT_URL_INDEX: {
+      const { personaId, urlIndex } = action.payload;
       return {
         ...state,
-        [personaId]: { ...state[personaId], currentUrl: url }
+        [personaId]: { ...state[personaId], currentUrlIndex: urlIndex }
       };
     }
     default:

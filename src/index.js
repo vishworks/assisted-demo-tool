@@ -17,6 +17,7 @@ import UrlHashMiddleware from './middlewares/UrlHashMiddleware.js';
 // persistent state management
 import { getPersistedState } from 'helpers/LocalStorageUtils.js';
 import PersistStateSubscription from 'subscriptions/PersistStateSubscription.js';
+import OpenNewWindowSubscription from 'subscriptions/OpenNewWindowSubscription.js';
 
 // FIXME remove this when test-config is not needed
 import { parse } from 'qs';
@@ -39,6 +40,7 @@ if (window.__REDUX_DEVTOOLS_EXTENSION__) {
 const store = createStore(rootReducer, preloadedState, compose(...enhancers));
 
 store.subscribe(PersistStateSubscription(store));
+store.subscribe(OpenNewWindowSubscription(store));
 
 ReactDOM.render(
   <Provider store={store}>

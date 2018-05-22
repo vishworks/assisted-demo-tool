@@ -4,7 +4,6 @@ import { find, findIndex, filter, map, uniq, flatten, compact } from 'lodash';
 import {
   getCurrentPersonaId,
   getDefaultUrls,
-  getCurrentPersonaUrl,
   getPersonas
 } from 'state/personas/selectors.js';
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import CurrentStepContentContainer from 'ui/steps/containers/CurrentStepContentContainer.js';
 import CurrentStepNumberContainer from 'ui/steps/containers/CurrentStepNumberContainer.js';

@@ -1,4 +1,4 @@
-import { PUSH_PERSONA_URL, SET_CURRENT_URL } from './types.js';
+import { PUSH_PERSONA_URL, SET_CURRENT_URL_INDEX } from './types.js';
 
 export { gotoNextUrl, gotoPrevUrl } from './operations.js';
 
@@ -10,10 +10,10 @@ export const pushPersonaUrl = (personaId, url) => ({
   }
 });
 
-export const setCurrentUrl = (personaId, url) => ({
-  type: SET_CURRENT_URL,
+export const setCurrentUrlIndex = (personaId, urlIndex) => ({
+  type: SET_CURRENT_URL_INDEX,
   payload: {
     personaId,
-    url
+    urlIndex
   }
 });

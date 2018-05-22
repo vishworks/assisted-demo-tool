@@ -46,6 +46,7 @@ demos: Array<Object> - one or more demos to be shown
     id: string - an unique id for the demo
     name: string - the demo name
     estimatedTime: number - the demo estimated duration in minutes
+    personas: Array<String> - a list of the demo personas ids
     highlights: Array<Object> - a list of the demo most important informations
       (highlights items)
         title: string - the highlight title

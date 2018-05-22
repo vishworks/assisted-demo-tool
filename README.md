@@ -1,26 +1,21 @@
 
-# Assisted Demo tool
+# Virgil
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 A tool designed for web applications demos.
 
+## Pre-requisites
+Make sure to have the following software installed:
+
+- git (2.7.4 +)
+- node (9.4.0 +)
+- npm (5.7.1 +)
+
 ## How to install
-
-Using npm:
-
 ```
 git clone https://github.com/entando/assisted-demo-tool.git
 cd assisted-demo-tool
 
-#Pre-requisites
-Install the redux chrome extension (https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
-Install npm
-Install react-scripts on npm (npm install react-scripts)
-
-# then, if you have yarn installed (recommended)
-yarn start
-
-# or, using npm
 npm install
 npm start
 ```
@@ -41,7 +36,10 @@ personas: Array<Object> - a list of personas
     label: string - the persona name
     description: string - the persona description (e.g. role)
     avatar: string - the persona avatar image URL
+    hidden: boolean - if true, the persona will be hidden (will appear only in its steps)
     url: string - the web page associated to the persona
+    tabImg: string - the tab image URL
+    tabName: string - the tab text (if not provided, the tab text will be the persona label)
   ...
 demos: Array<Object> - one or more demos to be shown
   (demos items)
@@ -56,7 +54,12 @@ demos: Array<Object> - one or more demos to be shown
       (steps items)
         personaId: string - the id of the persona associated to this step
         name: string - the step title
-        content: string - the HTML textual content for the step (Details View)
-        bullets: Array<String> - a list of action descriptions for the step (Presenter View)
+        trainingContent: string - the HTML content for the step in Training Mode View
+        presenterContent: string - the HTML content for the step in Presenter Mode View
+        urlOverrides: Array<Object> - an array defining the URL overrides for this step
+          (urlOverrides items)
+            personaId: string - the id of the target persona
+            url: string - the URL to push in the target persona iframe
+            newTab: boolean - (default false) if true, opens a new window when applying an override on the current visible persona
 
 ```

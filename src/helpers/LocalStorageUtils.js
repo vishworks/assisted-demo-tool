@@ -17,7 +17,6 @@ export function persistState(state) {
       let savedState = {};
       set(savedState, 'demos.config', get(state, 'demos.config'));
       set(savedState, 'notes', get(state, 'notes'));
-      set(savedState, 'highlights', get(state, 'highlights'));
       localStorage[configUrl] = JSON.stringify(savedState);
     }
   }

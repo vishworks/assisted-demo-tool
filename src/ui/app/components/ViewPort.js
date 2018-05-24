@@ -29,7 +29,6 @@ class ViewPort extends Component {
 }
 
 ViewPort.propTypes = {
-  currentUrl: PropTypes.string.isRequired,
   currentPersonaId: PropTypes.string.isRequired,
   currentPersonasUrls: PropTypes.arrayOf(
     PropTypes.shape({

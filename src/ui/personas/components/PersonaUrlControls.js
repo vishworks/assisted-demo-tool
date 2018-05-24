@@ -33,7 +33,7 @@ class PersonaUrlControls extends Component {
         >
           <i className="fa fa-refresh" />
         </button>
-        <input className="url-input" readonly disabled value={this.props.url} />
+        <input className="url-input" readOnly disabled value={this.props.url} />
       </div>
     );
   }

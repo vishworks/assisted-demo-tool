@@ -1,5 +1,15 @@
 {
   "personas": [
+	{
+      "id": "newid",
+      "label": "Duncan Doyle",
+      "description": "Miles Davis - RHT Demos",
+      "avatar": "img/duncan.png",
+      "url": "https://servicesblog.redhat.com/contributors/duncan-doyle/",
+      "tabImg": "img/icons/git-icon.png",
+	  "tabName": "Red Hat Blogs"
+},
+
     {
       "id": "customer",
       "label": "Jessica Bahia",

@@ -1,4 +1,4 @@
-import { reduce } from 'lodash';
+import { reduce, find, get } from 'lodash';
 
 import { LOAD_CONFIG } from '../config/types.js';
 import { PUSH_PERSONA_URL, SET_CURRENT_URL_INDEX } from './types.js';
@@ -6,13 +6,26 @@ import { PUSH_PERSONA_URL, SET_CURRENT_URL_INDEX } from './types.js';
 const historyMap = (state = {}, action = {}) => {
   switch (action.type) {
     case LOAD_CONFIG:
+      const { config, initialDemoId, initialStepIndex } = action.payload;
       return reduce(
-        action.payload.config.personas,
+        config.personas,
         (acc, persona) => {
-          acc[persona.id] = {
-            history: [persona.url],
-            currentUrlIndex: 0
-          };
+          const demo = find(config.demos, { id: initialDemoId });
+          const step = get(demo, `steps.${initialStepIndex}`, {});
+          const urlOverride = find(step.urlOverrides, {
+            personaId: persona.id
+          });
+          if (urlOverride) {
+            acc[persona.id] = {
+              history: [persona.url, urlOverride.url],
+              currentUrlIndex: 1
+            };
+          } else {
+            acc[persona.id] = {
+              history: [persona.url],
+              currentUrlIndex: 0
+            };
+          }
           return acc;
         },
         {}

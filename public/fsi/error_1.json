@@ -1,0 +1,116 @@
+{
+  "personas": [
+    {
+      "label": "Carol Smith",
+      "description": "IT Administrator",
+      "avatar": "img/user-1.jpg"
+    },
+    {
+      "name": "marketing",
+      "label": "Jessica Bahia",
+      "description": "Marketing",
+      "avatar": "img/user-2.jpg"
+    },
+    {
+      "id": "editor",
+      "labelll": "Pablo Benitez",
+      "description": "Editor",
+      "avatar": "img/user-3.jpg"
+    },
+    {
+      "id": "partner",
+      "label": "Nina Bodiul",
+      "description": "Partner",
+      "avatar": "img/user-4.jpg",
+      "visible": true
+    },
+    {
+      "id": "hiddenGuest",
+      "label": "Hidden Guest",
+      "description": "Random User",
+      "hidden": true
+    },
+    {
+      "id": "hiddenGuest2",
+      "label": "Hidden Guest",
+      "description": "Random User",
+      "hidden": "yes"
+    }
+  ],
+  "demos": [
+    {
+      "id": "entandoUXP",
+      "name": "Entando UXP Demo",
+      "steps": [
+        {
+          "personaId": "itAdmin",
+          "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin",
+          "name": "It Admin first steps",
+          "content": "<article>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</article>"
+        },
+        {
+          "personaId": "itAdmin",
+          "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin",
+          "name": "IT Admin best pratice",
+          "content": "<article><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "itAdmin",
+          "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin",
+          "name": "Configure stuff",
+          "content": "<article><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "itAdmin",
+          "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin",
+          "name": "Some more configuration",
+          "content": "<article><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "itAdmin",
+          "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin",
+          "name": "Some more configuration",
+          "content": "<article><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "marketing",
+          "url": "http://uxp.entando.com/uxp/en/homepage.page?username=marketing&password=marketing",
+          "name": "Marketing first step",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "marketing",
+          "url": "http://uxp.entando.com/uxp/en/homepage.page?username=marketing&password=marketing",
+          "name": "Marketing second step",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "hiddenGuest",
+          "url": "http://example.com",
+          "name": "A random step for a hidden persona",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "editor",
+          "url": "http://uxp.entando.com/uxp/en/homepage.page?username=editor&password=adminadmin",
+          "name": "Editor first steps",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "editor",
+          "url": "http://uxp.entando.com/uxp/en/homepage.page?username=editor&password=adminadmin",
+          "name": "Editor second step",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        },
+        {
+          "personaId": "editor",
+          "url": "http://uxp.entando.com/uxp/en/homepage.page?username=editor&password=adminadmin",
+          "name": "Editor third step",
+          "content": "<article><p>Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
+        }
+
+
+      ]
+    }
+  ]
+}

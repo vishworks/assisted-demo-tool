@@ -25,7 +25,7 @@ let obj = parse(
   window.location.search && window.location.search.replace('?', '')
 );
 if (!obj.configUrl) {
-  window.location.search = 'configUrl=test-config/config_1.json';
+  window.location.search = 'configUrl=demo-1/config.json';
 }
 
 const preloadedState = getPersistedState();

@@ -37,15 +37,6 @@
 	  "tabImg": "img/icons/user4-icon.png"
     },
 	{
-      "id": "processAdmin",
-      "label": "Duncan Doyle",
-      "description": "Process Administrator",
-      "avatar": "demo-1/img/personas/duncan.png",
-      "url": "http://ansible.serv.run:8080/business-central/kie-wb.jsp",
-	  "tabName": "Kie Workbench",
-	  "tabImg": "demo-1/img/icons/shadowman.png"
-    },
-	{
       "id": "demoNarrator",
       "label": "Demo Narrator",
       "description": "Your Guide",

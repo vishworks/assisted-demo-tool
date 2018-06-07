@@ -18,6 +18,7 @@ import UrlHashMiddleware from './middlewares/UrlHashMiddleware.js';
 import { getPersistedState } from 'helpers/LocalStorageUtils.js';
 import PersistStateSubscription from 'subscriptions/PersistStateSubscription.js';
 import OpenNewWindowSubscription from 'subscriptions/OpenNewWindowSubscription.js';
+import HashUpdateSubscription from 'subscriptions/HashUpdateSubscription.js';
 
 // FIXME remove this when test-config is not needed
 import { parse } from 'qs';
@@ -41,6 +42,7 @@ const store = createStore(rootReducer, preloadedState, compose(...enhancers));
 
 store.subscribe(PersistStateSubscription(store));
 store.subscribe(OpenNewWindowSubscription(store));
+store.subscribe(HashUpdateSubscription(store));
 
 ReactDOM.render(
   <Provider store={store}>

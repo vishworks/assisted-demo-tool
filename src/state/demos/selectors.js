@@ -190,7 +190,7 @@ export const getIsFirstStep = createSelector(
 export const getCurrentStep = createSelector(
   [getAllSteps, getCurrentStepIndex],
   (allSteps, currentStepIndex) => {
-    return allSteps[currentStepIndex];
+    return (allSteps && allSteps[currentStepIndex]) || 0;
   }
 );
 

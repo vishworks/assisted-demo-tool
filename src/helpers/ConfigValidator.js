@@ -63,6 +63,33 @@ let schema = {
           estimatedTime: {
             type: 'integer'
           },
+          description: {
+            type: 'string'
+          },
+          useCase: {
+            type: 'array',
+            items: {
+              type: 'string'
+            }
+          },
+          products: {
+            type: 'array',
+            items: {
+              type: 'string'
+            }
+          },
+          features: {
+            type: 'array',
+            items: {
+              type: 'string'
+            }
+          },
+          prerequisites: {
+            type: 'array',
+            items: {
+              type: 'string'
+            }
+          },
           personas: {
             type: 'array',
             items: {

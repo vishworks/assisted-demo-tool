@@ -49,6 +49,11 @@ The main data entities in the project are:
   - *id*: the demo unique id
   - *title*: the demo title
   - *estimatedTime*: the time estimated for this demo, expressed in minutes
+  - *description*: a description of the demo
+  - *useCases*: a list of use cases included in the demo
+  - *products*: a list of products included in the demo
+  - *features*: list of features included in the demo
+  - *prerequisites*: a list of demos that should be run before this demo
   - *personas*: a list of (existent) persona ids, to be used for this demo
   - **steps**: a list of demo steps
     - *personaId*: the id of the default persona for this step

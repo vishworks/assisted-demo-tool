@@ -6,7 +6,12 @@
       "longDesc": "IT Administrator Long",
       "avatar": "img/user-1.jpg",
       "url": "https://www.entando.com/",
+<<<<<<< HEAD
+      "tabImg": "img/icons/test-icon-a.jpeg",
+      "organization": "1"
+=======
       "tabImg": "img/icons/test-icon-a.jpeg"
+>>>>>>> master
     },
     {
       "id": "marketing",

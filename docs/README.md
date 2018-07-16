@@ -44,16 +44,11 @@ The main data entities in the project are:
   - *url*: the default webapp URL to be shown in the iframe when this persona is selected
   - *tabImg*: the URL of an image to be displayed
   - *hidden*: a boolean. If true, the persona will pop up only when it's the default persona for the current step
-  - *organization*: a string. The name of a users company (not required),
+  - *organization*: a string. The name of a users company (not required)
 - **demo**: represents a demo, a set of sequential steps with an estimated time to be presented. It has an id, a title, estimated time and a list of steps.
   - *id*: the demo unique id
   - *title*: the demo title
   - *estimatedTime*: the time estimated for this demo, expressed in minutes
-  - *description*: a description of the demo
-  - *useCases*: a list of use cases included in the demo
-  - *products*: a list of products included in the demo
-  - *features*: list of features included in the demo
-  - *prerequisites*: a list of demos that should be run before this demo
   - *personas*: a list of (existent) persona ids, to be used for this demo
   - **steps**: a list of demo steps
     - *personaId*: the id of the default persona for this step

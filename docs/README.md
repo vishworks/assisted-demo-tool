@@ -43,7 +43,7 @@ The main data entities in the project are:
   - *avatar*: the URL of the persona avatar image
   - *url*: the default webapp URL to be shown in the iframe when this persona is selected
   - *tabImg*: the URL of an image to be displayed
-  - *hidden*: a boolean. If true, the persona will pop up only when it's the default persona for the current step,
+  - *hidden*: a boolean. If true, the persona will pop up only when it's the default persona for the current step
   - *organization*: a string. The name of a users company (not required),
 - **demo**: represents a demo, a set of sequential steps with an estimated time to be presented. It has an id, a title, estimated time and a list of steps.
   - *id*: the demo unique id

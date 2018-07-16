@@ -47,6 +47,11 @@ The main data entities in the project are:
   - *id*: the demo unique id
   - *title*: the demo title
   - *estimatedTime*: the time estimated for this demo, expressed in minutes
+  - *description*: a description of the demo
+  - *useCases*: a list of use cases included in the demo
+  - *products*: a list of products included in the demo
+  - *features*: list of features included in the demo
+  - *prerequisites*: a list of demos that should be run before this demo
   - *personas*: a list of (existent) persona ids, to be used for this demo
   - **steps**: a list of demo steps
     - *personaId*: the id of the default persona for this step
@@ -86,7 +91,7 @@ The source structure is the following:
     │       │   └── [... domain related components ...]
     │       └── containers
     │           └── [... domain related containers ...]
-    
+
 ```
 
 - **docs**: the project documentation
@@ -172,7 +177,7 @@ When the DETACH button is clicked, the following happens:
 
 1. The current tab display mode is set to `DETACHED_PAGE` via the `SET_DISPLAY_MODE` action.
 2. The `SET_DISPLAY_MODE` action is intercepted by the `ControlPageMiddleware`, and here:
-    1. a new tab with the current URL is opened using `window.open`, and a reference to the new `Window` object is stored. This is the **control page** window object. Now, the two tabs share the same URL, 
+    1. a new tab with the current URL is opened using `window.open`, and a reference to the new `Window` object is stored. This is the **control page** window object. Now, the two tabs share the same URL,
     2. a `load` event listener is set on the newly opened window: when the new tab loading is complete, `message` with type `INIT_CONTROL_PAGE` will be sent (via `postMessage`) to the new window, sending the current state to initialize the control page.
 3. In the `CONTROL_PAGE` tab, the `ControlPageMiddleware` has a `message` event listener. It receives the `message` with type `INIT_CONTROL_PAGE` sent by the `DETACHED_PAGE`, and:
     1. It dispatches `RESET_STATE`, setting its state = the state from the `DETACHED_PAGE`

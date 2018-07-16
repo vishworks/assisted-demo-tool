@@ -71,7 +71,7 @@ class ControlWidgetMini extends Component {
               id={persona.id}
               imageUrl={persona.avatar}
               label={persona.label}
-              description={persona.description}
+              description={persona.shortDesc}
             />
           ))}
         </div>
@@ -119,7 +119,7 @@ const PersonaPropTypes = PropTypes.shape({
   id: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  shortDesc: PropTypes.string.isRequired
 });
 
 ControlWidgetMini.propTypes = {

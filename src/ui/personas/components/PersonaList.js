@@ -21,7 +21,7 @@ class PersonaList extends Component {
           key={persona.id}
           imageUrl={persona.avatar}
           label={persona.label}
-          description={persona.description}
+          shortDesc={persona.shortDesc}
           onClick={this.onClickPersona(persona)}
           active={persona.id === this.props.currentPersonaId}
         />
@@ -39,7 +39,7 @@ class PersonaList extends Component {
 const PersonaPropTypes = PropTypes.shape({
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  shortDesc: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired
 });
 

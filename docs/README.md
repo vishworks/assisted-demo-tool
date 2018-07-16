@@ -37,12 +37,14 @@ The main data entities in the project are:
   - *demos*: a list of demos
 - **persona**: represents a generic user.
   - *id*: the unique persona id
-  - *label*: a short persona description (might be its name or role)
-  - *description*: a long persona description
+  - *label*: persona's name or role
+  - *shortDesc*: a short persona description
+  - *longDesc*: a long persona description
   - *avatar*: the URL of the persona avatar image
   - *url*: the default webapp URL to be shown in the iframe when this persona is selected
   - *tabImg*: the URL of an image to be displayed
-  - *hidden*: a boolean. If true, the persona will pop up only when it's the default persona for the current step
+  - *hidden*: a boolean. If true, the persona will pop up only when it's the default persona for the current step,
+  - *organization*: a string. The name of a users company (not required),
 - **demo**: represents a demo, a set of sequential steps with an estimated time to be presented. It has an id, a title, estimated time and a list of steps.
   - *id*: the demo unique id
   - *title*: the demo title
@@ -86,7 +88,7 @@ The source structure is the following:
     │       │   └── [... domain related components ...]
     │       └── containers
     │           └── [... domain related containers ...]
-    
+
 ```
 
 - **docs**: the project documentation
@@ -172,7 +174,7 @@ When the DETACH button is clicked, the following happens:
 
 1. The current tab display mode is set to `DETACHED_PAGE` via the `SET_DISPLAY_MODE` action.
 2. The `SET_DISPLAY_MODE` action is intercepted by the `ControlPageMiddleware`, and here:
-    1. a new tab with the current URL is opened using `window.open`, and a reference to the new `Window` object is stored. This is the **control page** window object. Now, the two tabs share the same URL, 
+    1. a new tab with the current URL is opened using `window.open`, and a reference to the new `Window` object is stored. This is the **control page** window object. Now, the two tabs share the same URL,
     2. a `load` event listener is set on the newly opened window: when the new tab loading is complete, `message` with type `INIT_CONTROL_PAGE` will be sent (via `postMessage`) to the new window, sending the current state to initialize the control page.
 3. In the `CONTROL_PAGE` tab, the `ControlPageMiddleware` has a `message` event listener. It receives the `message` with type `INIT_CONTROL_PAGE` sent by the `DETACHED_PAGE`, and:
     1. It dispatches `RESET_STATE`, setting its state = the state from the `DETACHED_PAGE`

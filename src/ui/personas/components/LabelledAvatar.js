@@ -7,7 +7,7 @@ import './LabelledAvatar.css';
 
 class LabelledAvatar extends Component {
   render() {
-    let { imageUrl, label, description, active } = this.props;
+    let { imageUrl, label, shortDesc, active } = this.props;
 
     let className = ['LabelledAvatar'];
     if (active) {
@@ -20,7 +20,7 @@ class LabelledAvatar extends Component {
           <RoundImage imageUrl={imageUrl} />
         </div>
         <div className="persona-label">{label}</div>
-        <div className="persona-description">{description}</div>
+        <div className="persona-description">{shortDesc}</div>
       </div>
     );
   }
@@ -30,7 +30,7 @@ LabelledAvatar.propTypes = {
   onClick: PropTypes.func,
   imageUrl: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  shortDesc: PropTypes.string.isRequired,
   active: PropTypes.bool
 };
 

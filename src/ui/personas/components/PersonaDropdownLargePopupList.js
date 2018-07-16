@@ -29,7 +29,7 @@ class PersonaDropdownLargePopupList extends Component {
           <DoubleLabel
             className="persona-label"
             label={persona.label}
-            description={persona.description}
+            description={persona.shortDesc}
           />
         </div>
       );
@@ -46,7 +46,7 @@ class PersonaDropdownLargePopupList extends Component {
 const PersonaPropTypes = PropTypes.shape({
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  shortDesc: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired
 });
 

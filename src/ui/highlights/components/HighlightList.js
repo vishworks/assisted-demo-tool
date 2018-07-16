@@ -74,7 +74,7 @@ class HighlightList extends Component {
 const HighlightPropTypes = PropTypes.shape({
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  starred: PropTypes.bool.isRequired
+  starred: PropTypes.bool
 });
 
 HighlightList.propTypes = {

@@ -1,17 +1,18 @@
 {
-  "personas": [
-    {
+  "personas": [{
       "id": "itAdmin",
       "label": "Carol Smith",
-      "description": "IT Administrator",
+      "shortDesc": "IT Administrator",
+      "longDesc": "IT Administrator Long",
       "avatar": "img/user-1.jpg",
       "url": "https://www.entando.com/",
-      "tabImg": "img/icons/test-icon-a.jpeg" 
+      "tabImg": "img/icons/test-icon-a.jpeg",
+      "organization": "1"
     },
     {
       "id": "marketing",
       "label": "Jessica Bahia",
-      "description": "Marketing",
+      "shortDesc": "Marketing",
       "avatar": "img/user-2.jpg",
       "url": "http://uxp.entando.com/uxp/en/homepage.page?username=marketing&password=marketing",
       "tabImg": "img/icons/test-icon-m.png"
@@ -19,7 +20,7 @@
     {
       "id": "editor",
       "label": "Pablo Benitez",
-      "description": "Editor",
+      "shortDesc": "Editor",
       "avatar": "img/user-3.jpg",
       "url": "http://uxp.entando.com/uxp/en/homepage.page?username=editor&password=adminadmin",
       "tabImg": "img/icons/test-icon-e.png"
@@ -27,7 +28,7 @@
     {
       "id": "partner",
       "label": "Nina Bodiul",
-      "description": "Partner",
+      "shortDesc": "Partner",
       "avatar": "img/user-4.jpg",
       "url": "http://uxp.entando.com/uxp/en/homepage.page?username=partner&password=adminadmin",
       "tabImg": "img/icons/test-icon-p.png",
@@ -36,23 +37,20 @@
     {
       "id": "hiddenGuest",
       "label": "Hidden Guest",
-      "description": "Random User",
+      "shortDesc": "Random User",
       "url": "http://example.com",
       "hidden": true,
       "tabImg": "img/icons/test-icon-unknown.png"
     }
   ],
-  "demos": [
-    {
+  "demos": [{
       "id": "assistedDemoTool",
       "title": "Assisted Demo Tool",
       "estimatedTime": 1,
-      "steps": [
-        {
+      "steps": [{
           "personaId": "itAdmin",
           "title": "Navigating through the demo steps",
-          "highlights": [
-            {
+          "highlights": [{
               "title": "Highlight title 1",
               "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
             },
@@ -67,15 +65,15 @@
         {
           "personaId": "itAdmin",
           "title": "The demo steps list",
-          "urlOverrides": [
-              {
-                "personaId": "itAdmin",
-                "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin"              },
-              {
-                "personaId": "marketing",
-                "url": "https://www.entando.com/page/en/contribute",
-                "newTab": true
-              }
+          "urlOverrides": [{
+              "personaId": "itAdmin",
+              "url": "http://uxp.entando.com/uxp/do/doLogin.action?username=admin&password=adminadmin"
+            },
+            {
+              "personaId": "marketing",
+              "url": "https://www.entando.com/page/en/contribute",
+              "newTab": true
+            }
           ],
           "presenterContent": "<ul><li>Click on the 'list' button to see the list of this demo steps</li><li>In the steps list popup, click on the 'Filter by persona' checkbox to see only the current persona's steps</li><li>Click again to see all steps</li><li>Click on the 'NEXT' button to go to the next step</li></ul>",
           "trainingContent": "<article><p><b>Lorem ipsum</b> dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p><p>Lorem ipsum dolor sit amet, saepe euripidis persequeris ea usu, dicat dignissim eum ne, qui nihil utroque in. Persius qualisque omittantur ei mel, nec dolor maluisset ad, in unum soleat ancillae sed. Pri at odio atomorum appellantur, ne usu accusamus inciderint contentiones. Pri at dolore officiis dissentiet, summo accumsan perpetua ei vix. Vim ut oportere abhorreant.</p></article>"
@@ -136,8 +134,7 @@
       "title": "Demo with personas subset",
       "estimatedTime": 1,
       "personas": ["partner", "marketing"],
-      "steps": [
-        {
+      "steps": [{
           "personaId": "itAdmin",
           "title": "It Admin step",
           "presenterContent": "Some presenter content",
@@ -150,8 +147,7 @@
           "trainingContent": "some content marketing"
         }
       ],
-      "highlights": [
-        {
+      "highlights": [{
           "title": "Highlight title 1",
           "text": "This is the first Highlight. This is the very first highlight in this application, and I think it will be very useful"
         },
@@ -166,8 +162,7 @@
       "id": "testDemo3",
       "title": "Demo 3",
       "estimatedTime": 1,
-      "steps": [
-        {
+      "steps": [{
           "personaId": "itAdmin",
           "title": "It Admin step",
           "presenterContent": "Some presenter content",

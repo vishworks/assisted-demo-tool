@@ -19,7 +19,10 @@ let schema = {
           label: {
             type: 'string'
           },
-          description: {
+          shortDesc: {
+            type: 'string'
+          },
+          longDesc: {
             type: 'string'
           },
           avatar: {
@@ -35,6 +38,9 @@ let schema = {
             type: 'string'
           },
           tabName: {
+            type: 'string'
+          },
+          organization: {
             type: 'string'
           }
         },

@@ -12,7 +12,7 @@ const mapStateToProps = state => {
   return {
     imageUrl: getCurrentPersonaImageUrl(state),
     label: getCurrentPersonaLabel(state),
-    description: getCurrentPersonaDescription(state)
+    shortDesc: getCurrentPersonaDescription(state)
   };
 };
 

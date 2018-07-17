@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  background: #ededed;
 }
 
 .NewNoteForm .input-group {
@@ -32,7 +33,6 @@
 
 .NewNoteForm .bottom-row {
   min-height: 80px;
-  padding-left: 30px;
   display: flex;
   align-items: center;
 }

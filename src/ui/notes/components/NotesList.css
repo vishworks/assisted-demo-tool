@@ -1,6 +1,7 @@
 .NotesList {
   background: #ffffff;
-  overflow: auto;
+  overflow-y: scroll;
+  padding-bottom: 80px;
 }
 
 .NotesListItem {

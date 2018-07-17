@@ -43,7 +43,7 @@ class ControlPage extends Component {
             split="vertical"
             minSize={300}
             defaultSize={320}
-            pane1Style={{ overflow: 'scroll' }}
+            // pane1Style={{ overflow: 'scroll' }}
           >
             <div className="layout-col-1">
               <div className="steps-header">
@@ -75,10 +75,9 @@ class ControlPage extends Component {
               <div className="layout-col-3">
                 <SplitPane
                   split="horizontal"
-                  minSize={400}
-                  defaultSize={500}
+                  maxSize={500}
+                  defaultSize={600}
                   primary="second"
-                  pane1Style={{ 'max-height': '279px' }}
                 >
                   <div className="white-area highlights-list-area">
                     <div className="grey-area layout-header">
@@ -100,18 +99,18 @@ class ControlPage extends Component {
                       </div>
                     </div>
                     <CurrentDemoNotesListContainer />
-                    <div className="footer-controls-section add-notes-section">
-                      <PopupContainer
-                        className="popup-cover grey-area new-note-popup"
-                        popupId="newNoteForm"
-                        closeOnClick={false}
-                      >
-                        <NewNoteFormContainer />
-                      </PopupContainer>
-                      <OpenNewNotePopupButtonContainer />
-                    </div>
                   </div>
                 </SplitPane>
+                <div className="footer-controls-section add-notes-section">
+                  <PopupContainer
+                    className="popup-cover grey-area new-note-popup"
+                    popupId="newNoteForm"
+                    closeOnClick={false}
+                  >
+                    <NewNoteFormContainer />
+                  </PopupContainer>
+                  <OpenNewNotePopupButtonContainer />
+                </div>
               </div>
             </SplitPane>
           </SplitPane>

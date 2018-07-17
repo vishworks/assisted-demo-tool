@@ -2,7 +2,8 @@
   "personas": [{
       "id": "itAdmin",
       "label": "Carol Smith",
-      "description": "IT Administrator",
+      "shortDesc": "IT Administrator",
+      "longDesc": "IT Administrator Long",
       "avatar": "img/user-1.jpg",
       "url": "https://www.entando.com/",
       "tabImg": "img/icons/test-icon-a.jpeg"
@@ -10,7 +11,7 @@
     {
       "id": "marketing",
       "label": "Jessica Bahia",
-      "description": "Marketing",
+      "shortDesc": "Marketing",
       "avatar": "img/user-2.jpg",
       "url": "http://uxp.entando.com/uxp/en/homepage.page?username=marketing&password=marketing",
       "tabImg": "img/icons/test-icon-m.png"
@@ -18,7 +19,7 @@
     {
       "id": "editor",
       "label": "Pablo Benitez",
-      "description": "Editor",
+      "shortDesc": "Editor",
       "avatar": "img/user-3.jpg",
       "url": "http://uxp.entando.com/uxp/en/homepage.page?username=editor&password=adminadmin",
       "tabImg": "img/icons/test-icon-e.png"
@@ -26,7 +27,7 @@
     {
       "id": "partner",
       "label": "Nina Bodiul",
-      "description": "Partner",
+      "shortDesc": "Partner",
       "avatar": "img/user-4.jpg",
       "url": "http://uxp.entando.com/uxp/en/homepage.page?username=partner&password=adminadmin",
       "tabImg": "img/icons/test-icon-p.png",
@@ -35,7 +36,7 @@
     {
       "id": "hiddenGuest",
       "label": "Hidden Guest",
-      "description": "Random User",
+      "shortDesc": "Random User",
       "url": "http://example.com",
       "hidden": true,
       "tabImg": "img/icons/test-icon-unknown.png"

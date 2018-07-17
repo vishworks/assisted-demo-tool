@@ -68,7 +68,7 @@ export const getCurrentPersonaLabel = createSelector(
 export const getCurrentPersonaDescription = createSelector(
   [getCurrentPersona],
   currentPersona => {
-    return currentPersona && currentPersona.description;
+    return currentPersona && currentPersona.shortDesc;
   }
 );
 

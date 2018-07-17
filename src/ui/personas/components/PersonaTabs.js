@@ -28,7 +28,7 @@ class PersonaTabs extends Component {
           <div className="tab-button-content">
             <img className="tab-icon-image" alt="" src={persona.tabImg} />
             <div className="tab-text">
-              {persona.tabName || persona.description}
+              {persona.tabName || persona.shortDesc}
             </div>
           </div>
 
@@ -54,7 +54,7 @@ class PersonaTabs extends Component {
 
 const PersonaPropTypes = PropTypes.shape({
   id: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  shortDesc: PropTypes.string.isRequired
 });
 
 PersonaTabs.propTypes = {

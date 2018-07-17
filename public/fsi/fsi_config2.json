@@ -1,178 +1,154 @@
 {
-  "personas": [
-	{
+  "personas": [{
       "id": "newid",
       "label": "Duncan Doyle",
-      "description": "Miles Davis - RHT Demos",
+      "shortDesc": "Miles Davis - RHT Demos",
       "avatar": "img/duncan.png",
       "url": "https://servicesblog.redhat.com/contributors/duncan-doyle/",
       "tabImg": "img/icons/git-icon.png",
-	  "tabName": "Red Hat Blogs"
-},
+      "tabName": "Red Hat Blogs"
+    },
 
     {
       "id": "customer",
       "label": "Jessica Bahia",
-      "description": "Interstellar: Customer",
+      "shortDesc": "Interstellar: Customer",
       "avatar": "img/user-2.jpg",
       "url": "http://fsi-customer.serv.run/fsi-customer/",
-	  "tabImg": "img/icons/test-icon-a.jpeg" 
+      "tabImg": "img/icons/test-icon-a.jpeg"
     },
-	{
+    {
       "id": "accountManager",
       "label": "Rich Naszcyniec",
-      "description": "FB&L: Account Manager",
+      "shortDesc": "FB&L: Account Manager",
       "avatar": "img/rich.jpg",
       "url": "http://fsi-backoffice.serv.run/fsi-backoffice/",
-	  "tabImg": "img/icons/test-icon-m.png"
+      "tabImg": "img/icons/test-icon-m.png"
     },
     {
       "id": "complianceManager",
       "label": "Pablo Benitez",
-      "description": "FB&L: Compliance Manager",
+      "shortDesc": "FB&L: Compliance Manager",
       "avatar": "img/user-3.jpg",
       "url": "http://fsi-backoffice.serv.run/fsi-backoffice/",
-	  "tabImg": "img/icons/test-icon-e.png"
+      "tabImg": "img/icons/test-icon-e.png"
     },
     {
       "id": "businessManager",
       "label": "Nina Bodiul",
-      "description": "FB&L: Business Manager",
+      "shortDesc": "FB&L: Business Manager",
       "avatar": "img/user-4.jpg",
       "url": "/img/slides/cod-1.svg",
-	  "tabImg": "img/icons/test-icon-p.png"
+      "tabImg": "img/icons/test-icon-p.png"
     },
-	{
+    {
       "id": "processAdmin",
       "label": "Mark Proctor",
-      "description": "Process Administrator",
+      "shortDesc": "Process Administrator",
       "avatar": "img/user-1.jpg",
       "url": "http://entando-jbpms.sorint.it/business-central/kie-wb.jsp",
-	  "tabName": "Kie Workbench"
+      "tabName": "Kie Workbench"
     },
-	{
+    {
       "id": "hiddenGuest",
       "label": "Hidden Guest",
-      "description": "Random User",
+      "shortDesc": "Random User",
       "url": "http://example.com",
       "hidden": true,
       "tabImg": "img/icons/test-icon-unknown.png"
     }
 
   ],
-  "demos": [
-    {
+  "demos": [{
       "id": "COoverview10",
       "title": "Client Onboarding Overview",
       "estimatedTime": 10,
-      "steps": [
+      "steps": [{
+          "personaId": "businessManager",
+          "title": "Welcome: Client Onboarding",
+          "presenterContent": "",
+          "urlOverrides": [{
+            "personaId": "businessManager",
+            "url": "/img/slides/cod-1.svg"
+          }],
+          "highlights": [{
+            "title": "highlight title",
+            "text": "highlight detail"
+          }],
+          "trainingContent": "<article>instruction detail</article>"
+        },
         {
           "personaId": "businessManager",
           "title": "Welcome: Client Onboarding",
           "presenterContent": "",
-		  "urlOverrides": [
-            {
-              "personaId": "businessManager",
-              "url": "/img/slides/cod-1.svg"
-            }
-          ],
-          "highlights": [
-            {
-              "title": "highlight title",
-              "text": "highlight detail"
-            }
-          ],
+          "urlOverrides": [{
+            "personaId": "businessManager",
+            "url": "/img/slides/cod-2.svg"
+          }],
+          "highlights": [{
+            "title": "highlight title",
+            "text": "highlight detail"
+          }],
           "trainingContent": "<article>instruction detail</article>"
         },
-		{
+        {
           "personaId": "businessManager",
           "title": "Welcome: Client Onboarding",
           "presenterContent": "",
-		  "urlOverrides": [
-            {
-              "personaId": "businessManager",
-              "url": "/img/slides/cod-2.svg"
-            }
-          ],
-          "highlights": [
-            {
-              "title": "highlight title",
-              "text": "highlight detail"
-            }
-          ],
+          "urlOverrides": [{
+            "personaId": "businessManager",
+            "url": "/img/slides/cod-3.svg"
+          }],
+          "highlights": [{
+            "title": "highlight title",
+            "text": "highlight detail"
+          }],
           "trainingContent": "<article>instruction detail</article>"
         },
-		{
+        {
           "personaId": "businessManager",
           "title": "Welcome: Client Onboarding",
           "presenterContent": "",
-		  "urlOverrides": [
-            {
-              "personaId": "businessManager",
-              "url": "/img/slides/cod-3.svg"
-            }
-          ],
-          "highlights": [
-            {
-              "title": "highlight title",
-              "text": "highlight detail"
-            }
-          ],
+          "urlOverrides": [{
+            "personaId": "businessManager",
+            "url": "/img/slides/cod-4.svg"
+          }],
+          "highlights": [{
+            "title": "highlight title",
+            "text": "highlight detail"
+          }],
           "trainingContent": "<article>instruction detail</article>"
         },
-		{
-          "personaId": "businessManager",
-          "title": "Welcome: Client Onboarding",
-          "presenterContent": "",
-		  "urlOverrides": [
-            {
-              "personaId": "businessManager",
-              "url": "/img/slides/cod-4.svg"
-            }
-          ],
-          "highlights": [
-            {
-              "title": "highlight title",
-              "text": "highlight detail"
-            }
-          ],
-          "trainingContent": "<article>instruction detail</article>"
-        },
-		{
+        {
           "personaId": "accountManager",
           "title": "Introduction",
           "presenterContent": "",
-          "highlights": [
-            {
-              "title": "WHAT TO KNOW:",
-              "text": "This client onboarding demo utilizes multiple application instances that incorporates a variety of use cases and user personas. It is recommended to open “private” or “incognito” windows to avoid session conflicts whilst logging in as different users."
-            }
-          ],
+          "highlights": [{
+            "title": "WHAT TO KNOW:",
+            "text": "This client onboarding demo utilizes multiple application instances that incorporates a variety of use cases and user personas. It is recommended to open “private” or “incognito” windows to avoid session conflicts whilst logging in as different users."
+          }],
           "trainingContent": "<article>Welcome to the The Business Process Automation - Client Onboarding Demo developed in conjunction with Red Hat JBoss BPM Suite and Entando, running on OpenShift. <br><br>This downloadable demo can be used to illustrate a large number of process-driven use cases or to highlight the customer-centric use experience of Red Hat’s JBoss BPM Suite. <br><br>Some features of this demo include: Case management, drag-n-drop application building, smart inbox, document approvals/attachments, custom task screens, PDF viewers, decision management, analytics, forms, digitized processes and more.</article>"
         },
         {
           "personaId": "accountManager",
           "title": "Login as Account Manager",
-          "urlOverrides": [
-            {
-              "personaId": "accountManager",
-              "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
-            }
-          ],
+          "urlOverrides": [{
+            "personaId": "accountManager",
+            "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
+          }],
           "presenterContent": "<ul><li>Login as:</li><li>User: account</li><li>Password: adminadmin</li></ul>",
-          "highlights": [
-            {
+          "highlights": [{
               "title": "Modular Auth and Authz:",
               "text": "the platform allows you to set various levels of permission, according to any organizational structure."
             },
-			{
+            {
               "title": "Red Hat Key Cloak Integration:",
               "text": "the platform allows you to set various levels of permission, according to any organizational structure."
             },
-			{
+            {
               "title": "Social or OAuth Authentication:",
               "text": "the platform allows you to set various levels of permission, according to any organizational structure."
-            }  
+            }
           ],
           "trainingContent": "<article>An Account Manager at Fortress Bank convinces the CFO at a medium-scale business, Interstellar to sign up as a customer of the bank. Once the customer rep agrees to open a business banking account with the bank, the Account Manager starts the onboarding process by going to his home page with his credentials through the login form accessible through the bank portal.</article>"
         },
@@ -181,12 +157,10 @@
           "title": "Account Manager Dashboard",
 
           "presenterContent": "<ol><li>Click on the ADD CUSTOMER button</li></ol>",
-          "highlights": [
-            {
-              "title": "Drag and Drop",
-              "text": "The page can be designed by dragging and dropping widgets, which are integrated with BPM Suite to get the information from forms"
-            }
-          ],
+          "highlights": [{
+            "title": "Drag and Drop",
+            "text": "The page can be designed by dragging and dropping widgets, which are integrated with BPM Suite to get the information from forms"
+          }],
           "trainingContent": "<article>Once on his home page, the Account Manager can sign up a new Customer by clicking on the ADD CUSTOMER button in the upper part of the page. He can also monitor all the KPIs related to his portfolio, for example the Customer Overview and the Customers’ data.</article>"
         },
 
@@ -195,12 +169,10 @@
           "title": "Signup New Customer",
 
           "presenterContent": "<ul><li>Complete New Client Form</li><li>Feel free to use your own email</li><li>Click on the SUBMIT button</li></ul>",
-          "highlights": [
-            {
-              "title": "OMNICHANNEL",
-              "text": "Modern applications have to perform well on every screen/device: this is what responsive design enables"
-            }
-          ],
+          "highlights": [{
+            "title": "OMNICHANNEL",
+            "text": "Modern applications have to perform well on every screen/device: this is what responsive design enables"
+          }],
           "trainingContent": "<article>The Account manager starts the commercial client onboarding process by filling this form from any mobile device. He enters the email of customer rep i.e. CFO of Interstellar and submits the form. Other fields such as client type, account name are pre­filled to make it easy for the demo</article>"
         },
 
@@ -208,36 +180,30 @@
           "personaId": "customer",
           "title": "Open Email and Sign In",
           "presenterContent": "<ul><li>Open email client and click on SIGN IN link</li></ul>",
-          "highlights": [
-            {
-              "title": "BPM Interaction",
-              "text": "This is an automated step where the process in BPM suite can be configured to send an email once the account manager signs up the prospect"
-            }
-          ],
+          "highlights": [{
+            "title": "BPM Interaction",
+            "text": "This is an automated step where the process in BPM suite can be configured to send an email once the account manager signs up the prospect"
+          }],
           "trainingContent": "<article>The Customer receives a Welcome email from the System and he clicks on the SIGN IN link available in the email to complete the account registration.</article>"
         },
         {
           "personaId": "customer",
           "title": "Open Email and Sign In",
           "presenterContent": "<ul><li>Complete the signup form by creating a password for the account</li><li>Click on SUBMIT button</li><li>A success message should confirm that the account has been created successfully</li></ul>",
-          "highlights": [
-            {
-              "title": "USE CONTENT TO IMPROVE CONTEXT: ",
-              "text": "Pure BPM elements such as forms can be enriched by content (texts, images, videos) that help set up the application context and can be easily managed through a CMS"
-            }
-          ],
+          "highlights": [{
+            "title": "USE CONTENT TO IMPROVE CONTEXT: ",
+            "text": "Pure BPM elements such as forms can be enriched by content (texts, images, videos) that help set up the application context and can be easily managed through a CMS"
+          }],
           "trainingContent": "<article>After sign in, the Customer can now register for an account at Fortress Bank by inserting his First Name, Last Name, Company Name and creating a password for the account. To complete the registration, he clicks on the SUBMIT button; a success message appears to confirm that the account has been created successfully.</article>"
         },
         {
           "personaId": "customer",
           "title": "Login to Fill Application",
           "presenterContent": "<ul><li>Login by selecting the LOGIN link in the upper right side of the page.</li><li>Use your configured username and password to sign in.</li></ul>",
-          "highlights": [
-            {
-              "title": "Sign Up: ",
-              "text": "Initial Sign up enables the customer (prospect) to save and finish the application as per his convenience."
-            }
-          ],
+          "highlights": [{
+            "title": "Sign Up: ",
+            "text": "Initial Sign up enables the customer (prospect) to save and finish the application as per his convenience."
+          }],
           "trainingContent": "<article>After completing the registration, the Customer can login to the System from the link on the upper right side of the page, using the account credentials just created.</article>"
         },
 
@@ -245,12 +211,10 @@
           "personaId": "customer",
           "title": "Fill Application Business Details",
           "presenterContent": "<ul><li>Fill in the form</li><li>Click on the SUBMIT button</li></ul>",
-          "highlights": [
-            {
-              "title": "Visual Cues: ",
-              "text": "Pictorial representation shows number of steps to finish the application. This helps in enhancing customer experience."
-            }
-          ],
+          "highlights": [{
+            "title": "Visual Cues: ",
+            "text": "Pictorial representation shows number of steps to finish the application. This helps in enhancing customer experience."
+          }],
           "trainingContent": "<article>Once logged in, the Customer can sign up for a commercial account. The first step is to complete the Business Details form to tell the Bank more about his Business and then click on the SUBMIT button to move to the next step of the Application.</article>"
         },
 
@@ -258,12 +222,10 @@
           "personaId": "customer",
           "title": "Fill Application Banking Services",
           "presenterContent": "<ul><li>Flag the services the customer is interested in</li><li>Click on the SUBMIT button to move to the next step</li></ul>",
-          "highlights": [
-            {
-              "title": "Frictionless Information Flow:",
-              "text": "This page reflects the services entered by the Account manager. The customer can confirm the same or add or delete the services he wants to sign up for."
-            }
-          ],
+          "highlights": [{
+            "title": "Frictionless Information Flow:",
+            "text": "This page reflects the services entered by the Account manager. The customer can confirm the same or add or delete the services he wants to sign up for."
+          }],
           "trainingContent": "<article>In the second step of the application for a commercial account, the Customer is asked to select all the banking services he is interested in. Then clicking on the SUBMIT button, he can move to the last step of the Application.</article>"
         },
 
@@ -271,12 +233,10 @@
           "personaId": "customer",
           "title": "Complete Application: Upload Documents",
           "presenterContent": "<ul><li>Upload documents by clicking on select file. You can locate the sample documents in the “Supported Files” folder. NOTE: The current doc viewer in this demo only works with the prescribed documents. Please select and upload the documents provided.</li><li>Click on the SUBMIT button to move to the next step</li><li>A confirmation page will appear</li></ul>",
-          "highlights": [
-            {
-              "title": "Automation: ",
-              "text": "processes are easily-customizable to enable service automation in a way that is consistent with any type of business flow"
-            }
-          ],
+          "highlights": [{
+            "title": "Automation: ",
+            "text": "processes are easily-customizable to enable service automation in a way that is consistent with any type of business flow"
+          }],
           "trainingContent": "<article>In the last step of the application for a commercial account, the Customer is prompted to upload business and tax documentation. They can be uploaded by clicking on SELECT FILE. Clicking on the SUBMIT button completes the application. If all the required fields are filled and documents uploaded, a confirmation page appears and the customer has to now sit back and relax until it is approved by the back-office.</article>"
         },
 
@@ -284,12 +244,10 @@
           "personaId": "accountManager",
           "title": "Check Customer Status",
           "presenterContent": "<ul><li>Move to the Account page</li><li>Refresh page</li><li>Visualize and point Customers’ data in the Inbox</li><li>Click on the VIEW button to see the Customer’s full details</li></ul>",
-          "highlights": [
-            {
-              "title": "Customizable UI: ",
-              "text": "thanks to decoupling (app front end detached from app back end), the branding elements (es. colours/visuals) and the overall the layout of any page can be easily designed and changed anytime, without affecting the underlying application logic and functioning. For example you could place the pie chart in a different position, without re-deploying the application"
-            }
-          ],
+          "highlights": [{
+            "title": "Customizable UI: ",
+            "text": "thanks to decoupling (app front end detached from app back end), the branding elements (es. colours/visuals) and the overall the layout of any page can be easily designed and changed anytime, without affecting the underlying application logic and functioning. For example you could place the pie chart in a different position, without re-deploying the application"
+          }],
           "trainingContent": "<article>Now that the Customer has completed the application, let’s move again to the Account Manager’s home page, refresh the page. The Account Manager can now visualize and point Customers’ data in the Inbox. Click on the VIEW button to see the Customer’s full details.</article>"
         },
 
@@ -297,31 +255,25 @@
           "personaId": "accountManager",
           "title": "Visualize Customer Details",
           "presenterContent": "<ul><li>Highlight the customer full details in the upper part of the page</li><li>Highlight the stage in the onboarding process in the lower part of the page</li><li>Logout</li></ul>",
-          "highlights": [
-            {
-              "title": "Customization: ",
-              "text": "low code tools can be used to customize not only customer­facing pages but also the employee­facing pages"
-            }
-          ],
+          "highlights": [{
+            "title": "Customization: ",
+            "text": "low code tools can be used to customize not only customer­facing pages but also the employee­facing pages"
+          }],
           "trainingContent": "<article>From this page, the Account Manager can visualize the data submitted by the Customer,In the upper page the customer full details, while in the lower part of the page the stage in the onboarding process. It’s available also information about the stage of the customer application and the Transaction history</article>"
         },
 
         {
           "personaId": "complianceManager",
           "title": "Login as Compliance Manager",
-          "urlOverrides": [
-            {
-              "personaId": "complianceManager",
-              "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
-            }
-          ],
+          "urlOverrides": [{
+            "personaId": "complianceManager",
+            "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
+          }],
           "presenterContent": "<ul><li>Insert credentials to login user: legal psw: adminadmin</li><li>Click on the Login button</li></ul>",
-          "highlights": [
-            {
-              "title": "Personas: ",
-              "text": "As for other personas, the platform allows you to set various levels of permission, according to any organizational structure."
-            }
-          ],
+          "highlights": [{
+            "title": "Personas: ",
+            "text": "As for other personas, the platform allows you to set various levels of permission, according to any organizational structure."
+          }],
           "trainingContent": "<article>Now that all the KYC requirements have been ensured and reviewed by the KYC analyst, let’s move to the Compliance Manager experience. She reviews the legal documents such as tax forms. Let’s login in with the appropriate credentials.</article>"
         },
 
@@ -331,12 +283,10 @@
           "title": "Compliance Manager: Review Tasks",
 
           "presenterContent": "<ul><li>Visualize customer list</li><li>Click on review</li></ul>",
-          "highlights": [
-            {
-              "title": "Reuse: ",
-              "text": "Same task inbox widget is used for all the knowledge workers but the data is different based on the process defined in BPM suite. This enables quicker development of apps be it customer­facing or employee­facing"
-            }
-          ],
+          "highlights": [{
+            "title": "Reuse: ",
+            "text": "Same task inbox widget is used for all the knowledge workers but the data is different based on the process defined in BPM suite. This enables quicker development of apps be it customer­facing or employee­facing"
+          }],
           "trainingContent": "<article>Compliance manager can see a series of indicators that summarize the state of his activities, for example the remaining tasks to be completed. <br>The most important item, here, is her task list. This is where she can efficiently manage the pending requests. For each record, she can see the relevant information that she needs to effectively perform her tasks: the customer name, the type of task and the due date.<br>          Once she clicks the REVIEW button, she can start the review process.</article>"
         },
 
@@ -345,12 +295,10 @@
           "title": "Compliance Manager: View Documentation Tasks",
 
           "presenterContent": "<ul><li>Visualize the document</li><li>Scroll down to see all the contents in the document</li></ul>",
-          "highlights": [
-            {
-              "title": "Design Decisions: ",
-              "text": "Document viewer is used to make the job easy for compliance manager. It is at the discretion of organization to decide to use a document viewer or make this task an automated one."
-            }
-          ],
+          "highlights": [{
+            "title": "Design Decisions: ",
+            "text": "Document viewer is used to make the job easy for compliance manager. It is at the discretion of organization to decide to use a document viewer or make this task an automated one."
+          }],
           "trainingContent": "<article>Clicking on the REVIEW button, a document opens inside the page. The Compliance Manager first can scroll the document to read it all, check if it’s readable and acceptable from a compliance point of view.</article>"
         },
 
@@ -359,12 +307,10 @@
           "title": "Compliance Manager: Validate Documentation",
 
           "presenterContent": "<ul><li>In the right hand of the page see the preselected USER INFO tab, that shows a set of fields</li><li>Next to each field name you can see a small ARROW pointing down, pre-filled by the user</li><li>Click on it to display the field value</li><li>The field value appears along with a green/red button</li><li>Click on the green button to validate</li><li>Repeat this task for each field</li><li>When the last field has been marked, an APPROVE button appears</li><li>Click on the APPROVE button to conclude the validation process</li><li>Logout</li></ul>",
-          "highlights": [
-            {
-              "title": "View the Status: ",
-              "text": "If the document is approved, the status of the application is reflected on customer’s home page. If the document is rejected or marked for more information, the customer is notified of it and the status is reflected on his home page."
-            }
-          ],
+          "highlights": [{
+            "title": "View the Status: ",
+            "text": "If the document is approved, the status of the application is reflected on customer’s home page. If the document is rejected or marked for more information, the customer is notified of it and the status is reflected on his home page."
+          }],
           "trainingContent": "<article>Having read the entire document, the Compliance Manager is now asked to validate it. An easy tool on the right of the page allows her to visualize a set of precompiled fields that describe the document items and value. Each field’s content can be approved or rejected. After browsing and managing all the fields, assuming that all the contents in the document are legally compliant, she can then approve it and move that Customer to the next step of the process.</article>"
         },
 
@@ -373,12 +319,10 @@
           "title": "Business Manager: Login",
 
           "presenterContent": "<ul><li>Insert credentials to login user: Manager psw: adminadmin</li><li>Click on the Login</li></ul>",
-          "highlights": [
-            {
-              "title": "Security: ",
-              "text": "Only this persona is authorized to access information of the entire business unit unlike the other personas involved."
-            }
-          ],
+          "highlights": [{
+            "title": "Security: ",
+            "text": "Only this persona is authorized to access information of the entire business unit unlike the other personas involved."
+          }],
           "trainingContent": "<article>Let’s finally move to the last persona, the Client Onboarding Manager. He’s supposed to monitor his team’s activities and business unit’s performance. Let’s login with his credentials and take a look at his dashboard.</article>"
         },
 
@@ -387,12 +331,10 @@
           "title": "Business Manager: Check Business Performanceß",
 
           "presenterContent": "<ul><li>Point the mouse to the upper part of the page, Team Performances</li><li>Scroll below the Team Performances and highlight the overall business KPIs</li><li>Go below the pie charts and highlight the chart</li><li>Click on the PROSPECT tab to measure the overall performance of a worker against the average</li><li>Click on the ONBOARDING TAB to see the comparison between onboarded/lost customers</li></ul>",
-          "highlights": [
-            {
-              "title": "Dashboards: ",
-              "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
-            }
-          ],
+          "highlights": [{
+            "title": "Dashboards: ",
+            "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
+          }],
           "trainingContent": "<article>After logging in, the BUSINESS MANAGER has access to his control panel. From here, he can monitor all the KPIs related to his business, for example:<br><br> 1. The overall team performance <br> 2. A snapshot of the main business KPIs, such as the pie chart on the right hand indicating<br> the number of applications completed/suspended/pending<br> 3. Some trends illustrated in the line charts:<br> a. Clicking on the PROSPECT he can check the overall performance of a worker against the average<br> b. Click on the ONBOARDING TAB he can control see the average time conversion and the trend of onboarded versus lost customers</article>"
         },
 
@@ -401,50 +343,41 @@
           "title": "Conclusion",
 
           "presenterContent": "<ul><li>rapid, low code tools that enable lightning fast application development</li><li>flexible, easily-customizable processes and service automation</li><li>A ux-rich, interactive, customer experience</li><li>a versatile API integration layer</li></ul>",
-          "highlights": [
-            {
-              "title": "Dashboards: ",
-              "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
-            }
-          ],
+          "highlights": [{
+            "title": "Dashboards: ",
+            "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
+          }],
           "trainingContent": "<article>This is the end of this Client onboarding demo, that gives you an example of a process driven application.</article>"
         }
 
       ]
     },
-	  {
+    {
       "id": "dm5",
       "title": "DM - Decision Tables",
       "estimatedTime": 5,
-      "steps": [
-        {
+      "steps": [{
           "personaId": "accountManager",
           "title": "Introduction",
           "presenterContent": "",
-          "highlights": [
-            {
-              "title": "WHAT TO KNOW:",
-              "text": "This client onboarding demo utilizes multiple application instances that incorporates a variety of use cases and user personas. It is recommended to open “private” or “incognito” windows to avoid session conflicts whilst logging in as different users."
-            }
-          ],
+          "highlights": [{
+            "title": "WHAT TO KNOW:",
+            "text": "This client onboarding demo utilizes multiple application instances that incorporates a variety of use cases and user personas. It is recommended to open “private” or “incognito” windows to avoid session conflicts whilst logging in as different users."
+          }],
           "trainingContent": "<article>Welcome to the The Business Process Automation - Client Onboarding Demo developed in conjunction with Red Hat JBoss BPM Suite and Entando, running on OpenShift. <br><br>This downloadable demo can be used to illustrate a large number of process-driven use cases or to highlight the customer-centric use experience of Red Hat’s JBoss BPM Suite. <br><br>Some features of this demo include: Case management, drag-n-drop application building, smart inbox, document approvals/attachments, custom task screens, PDF viewers, decision management, analytics, forms, digitized processes and more.</article>"
         },
         {
           "personaId": "accountManager",
           "title": "Logging into Decision Manager",
-          "urlOverrides": [
-            {
-              "personaId": "accountManager",
-              "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
-            }
-          ],
+          "urlOverrides": [{
+            "personaId": "accountManager",
+            "url": "http://fsi-backoffice.serv.run/fsi-backoffice/"
+          }],
           "presenterContent": "<ul><li><br>Login as:</li><li>User: account</li><li>Password: adminadmin</li></ul>",
-          "highlights": [
-            {
-              "title": "AUTHENTICATION & AUTHORIZATION:",
-              "text": "the platform allows you to set various levels of permission, according to any organizational structure."
-            }
-          ],
+          "highlights": [{
+            "title": "AUTHENTICATION & AUTHORIZATION:",
+            "text": "the platform allows you to set various levels of permission, according to any organizational structure."
+          }],
           "trainingContent": "<article>An Account Manager at Fortress Bank convinces the CFO at a medium-scale business, Interstellar to sign up as a customer of the bank. Once the customer rep agrees to open a business banking account with the bank, the Account Manager starts the onboarding process by going to his home page with his credentials through the login form accessible through the bank portal.</article>"
         },
         {
@@ -452,12 +385,10 @@
           "title": "Updating the Decision Table",
 
           "presenterContent": "<ol><li>Click on the ADD CUSTOMER button</li></ol>",
-          "highlights": [
-            {
-              "title": "Drag and Drop",
-              "text": "The page can be designed by dragging and dropping widgets, which are integrated with BPM Suite to get the information from forms"
-            }
-          ],
+          "highlights": [{
+            "title": "Drag and Drop",
+            "text": "The page can be designed by dragging and dropping widgets, which are integrated with BPM Suite to get the information from forms"
+          }],
           "trainingContent": "<article>Once on his home page, the Account Manager can sign up a new Customer by clicking on the ADD CUSTOMER button in the upper part of the page. He can also monitor all the KPIs related to his portfolio, for example the Customer Overview and the Customers’ data.</article>"
         },
         {
@@ -465,44 +396,37 @@
           "title": "Conclusion",
 
           "presenterContent": "<ul><li>rapid, low code tools that enable lightning fast application development</li><li>flexible, easily-customizable processes and service automation</li><li>A ux-rich, interactive, customer experience</li><li>a versatile API integration layer</li></ul>",
-          "highlights": [
-            {
-              "title": "Dashboards: ",
-              "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
-            }
-          ],
+          "highlights": [{
+            "title": "Dashboards: ",
+            "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
+          }],
           "trainingContent": "<article>This is the end of this Client onboarding demo, that gives you an example of a process driven application.</article>"
         }
 
       ]
     },
-	{
+    {
       "id": "pam5",
       "title": "PAM - Process Improvement",
       "estimatedTime": 8,
-      "steps": [
-        {
+      "steps": [{
           "personaId": "processAdmin",
           "title": "Login to KIE Server",
           "presenterContent": "",
-          "highlights": [
-            {
-              "title": "WHAT TO KNOW:",
-              "text": "This client onboarding demo utilizes multiple application instances that incorporates a variety of use cases and user personas. It is recommended to open “private” or “incognito” windows to avoid session conflicts whilst logging in as different users."
-            }
-          ],
+          "highlights": [{
+            "title": "WHAT TO KNOW:",
+            "text": "This client onboarding demo utilizes multiple application instances that incorporates a variety of use cases and user personas. It is recommended to open “private” or “incognito” windows to avoid session conflicts whilst logging in as different users."
+          }],
           "trainingContent": "<article>Welcome to the The Business Process Automation - Client Onboarding Demo developed in conjunction with Red Hat JBoss BPM Suite and Entando, running on OpenShift. <br><br>This downloadable demo can be used to illustrate a large number of process-driven use cases or to highlight the customer-centric use experience of Red Hat’s JBoss BPM Suite. <br><br>Some features of this demo include: Case management, drag-n-drop application building, smart inbox, document approvals/attachments, custom task screens, PDF viewers, decision management, analytics, forms, digitized processes and more.</article>"
         },
         {
           "personaId": "processAdmin",
           "title": "Update the Process",
           "presenterContent": "<ul><li>Login as:</li><li>User: account</li><li>Password: adminadmin</li></ul>",
-          "highlights": [
-            {
-              "title": "AUTHENTICATION & AUTHORIZATION:",
-              "text": "the platform allows you to set various levels of permission, according to any organizational structure."
-            }
-          ],
+          "highlights": [{
+            "title": "AUTHENTICATION & AUTHORIZATION:",
+            "text": "the platform allows you to set various levels of permission, according to any organizational structure."
+          }],
           "trainingContent": "<article>An Account Manager at Fortress Bank convinces the CFO at a medium-scale business, Interstellar to sign up as a customer of the bank. Once the customer rep agrees to open a business banking account with the bank, the Account Manager starts the onboarding process by going to his home page with his credentials through the login form accessible through the bank portal.</article>"
         },
         {
@@ -510,30 +434,24 @@
           "title": "Updating the Decision Table",
 
           "presenterContent": "<ol><li>Click on the ADD CUSTOMER button</li></ol>",
-          "highlights": [
-            {
-              "title": "Drag and Drop",
-              "text": "The page can be designed by dragging and dropping widgets, which are integrated with BPM Suite to get the information from forms"
-            }
-          ],
+          "highlights": [{
+            "title": "Drag and Drop",
+            "text": "The page can be designed by dragging and dropping widgets, which are integrated with BPM Suite to get the information from forms"
+          }],
           "trainingContent": "<article>Once on his home page, the Account Manager can sign up a new Customer by clicking on the ADD CUSTOMER button in the upper part of the page. He can also monitor all the KPIs related to his portfolio, for example the Customer Overview and the Customers’ data.</article>"
         },
         {
           "personaId": "processAdmin",
           "title": "Conclusion",
-          "urlOverrides": [
-            {
-              "personaId": "processAdmin",
-              "url": "http://entando-jbpms.sorint.it"
-            }
-          ],
+          "urlOverrides": [{
+            "personaId": "processAdmin",
+            "url": "http://entando-jbpms.sorint.it"
+          }],
           "presenterContent": "<ul><li>rapid, low code tools that enable lightning fast application development</li><li>flexible, easily-customizable processes and service automation</li><li>A ux-rich, interactive, customer experience</li><li>a versatile API integration layer</li></ul>",
-          "highlights": [
-            {
-              "title": "Dashboards: ",
-              "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
-            }
-          ],
+          "highlights": [{
+            "title": "Dashboards: ",
+            "text": "The dashboards can be built based on the manager’s requirements. All the widgets can be configured on Entando platform and data can be fetched from BPM Suite"
+          }],
           "trainingContent": "<article>This is the end of this Client onboarding demo, that gives you an example of a process driven application.</article>"
         }
 

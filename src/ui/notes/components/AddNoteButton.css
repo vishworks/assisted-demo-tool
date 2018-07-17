@@ -1,6 +1,7 @@
 .AddNoteButton {
   cursor: pointer;
   color: #8b8d8f;
+  margin-left: 20px;
 }
 
 .AddNoteButton .btn-label {
@@ -14,4 +15,10 @@
 
 .AddNoteButton:hover {
   color: #00b9f7;
+}
+
+.add-notes-section {
+ position: absolute;
+ bottom: 0;
+ width: 100%;
 }

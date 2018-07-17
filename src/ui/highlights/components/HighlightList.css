@@ -1,5 +1,7 @@
 .HighlightList {
   background: #ffffff;
+  max-height: calc(50vh - 200px);
+  overflow-y: auto;
 }
 
 .HighlightListItem {

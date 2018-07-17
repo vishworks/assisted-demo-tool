@@ -78,7 +78,6 @@ class ControlPage extends Component {
                   minSize={400}
                   defaultSize={500}
                   primary="second"
-                  pane1Style={{ 'max-height': '279px' }}
                 >
                   <div className="white-area highlights-list-area">
                     <div className="grey-area layout-header">

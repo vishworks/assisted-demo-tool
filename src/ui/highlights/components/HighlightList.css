@@ -1,5 +1,6 @@
 .HighlightList {
   background: #ffffff;
+  overflow-y: auto;
 }
 
 .HighlightListItem {

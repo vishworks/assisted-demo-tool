@@ -39,12 +39,7 @@ class ControlPage extends Component {
           </div>
         </div>
         <div className="layout-row main-content">
-          <SplitPane
-            split="vertical"
-            minSize={300}
-            defaultSize={320}
-            // pane1Style={{ overflow: 'scroll' }}
-          >
+          <SplitPane split="vertical" minSize={300} defaultSize={320}>
             <div className="layout-col-1">
               <div className="steps-header">
                 <div className="font-header-title">Steps index</div>

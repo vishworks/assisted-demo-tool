@@ -51,7 +51,6 @@
 .ControlPage .main-content {
   background: #f9f9f9;
   color: #8b8d8f;
-
   flex-grow: 1;
   position: relative;
 }

@@ -51,7 +51,8 @@ class ControlPage extends Component {
             </div>
             <SplitPane
               split="vertical"
-              maxSize={400}
+              minSize={200}
+              maxSize={450}
               defaultSize={300}
               primary="second"
             >

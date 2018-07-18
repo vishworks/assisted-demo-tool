@@ -36,23 +36,25 @@ const SortableItem = SortableElement(
   }
 );
 
-const SortableList = SortableContainer(({ items, toggleHighlightStar }) => {
-  return (
-    <div className="HighlightList">
-      {items &&
-        items.map((hl, index) => (
-          <SortableItem
-            key={`item-${index}`}
-            index={index}
-            title={hl.title}
-            text={hl.text}
-            starred={hl.starred}
-            onClickStar={ev => toggleHighlightStar(index)}
-          />
-        ))}
-    </div>
-  );
-});
+const SortableList = SortableContainer(
+  ({ items, toggleHighlightStar, height }) => {
+    return (
+      <div className="HighlightList" style={{ height: height }}>
+        {items &&
+          items.map((hl, index) => (
+            <SortableItem
+              key={`item-${index}`}
+              index={index}
+              title={hl.title}
+              text={hl.text}
+              starred={hl.starred}
+              onClickStar={ev => toggleHighlightStar(index)}
+            />
+          ))}
+      </div>
+    );
+  }
+);
 
 class HighlightList extends Component {
   render() {
@@ -63,6 +65,7 @@ class HighlightList extends Component {
         onSortEnd={this.onSortEnd}
         lockAxis="y"
         useDragHandle={true}
+        height={this.props.pane1Height}
       />
     );
   }

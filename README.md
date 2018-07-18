@@ -33,8 +33,9 @@ The schema for the configuration object should be as following:
 personas: Array<Object> - a list of personas
   (personas items)
     id: string - an unique id for the persona
-    label: string - the persona name
-    description: string - the persona description (e.g. role)
+    label: string - persona's name or role
+    shortDesc: string - the short persona description (e.g. role)
+    longDesc: string - the long persona description (e.g. role)
     avatar: string - the persona avatar image URL
     hidden: boolean - if true, the persona will be hidden (will appear only in its steps)
     url: string - the web page associated to the persona
@@ -44,13 +45,18 @@ personas: Array<Object> - a list of personas
 demos: Array<Object> - one or more demos to be shown
   (demos items)
     id: string - an unique id for the demo
-    name: string - the demo name
+    title: string - the demo name
+    description: string - a description of the demo
     estimatedTime: number - the demo estimated duration in minutes
+    useCases: Array<String> - a list of use cases included in the demo
+    products: Array<String> - a list of products included in the demo
+    features: Array<String> - list of features included in the demo
+    prerequisites: Array<String> - a list of demos that should be run before this demo
     personas: Array<String> - a list of the demo personas ids
     steps: Array<Object> - the demo steps list
       (steps items)
         personaId: string - the id of the persona associated to this step
-        name: string - the step title
+        title: string - the step title
         trainingContent: string - the HTML content for the step in Training Mode View
         presenterContent: string - the HTML content for the step in Presenter Mode View
         urlOverrides: Array<Object> - an array defining the URL overrides for this step

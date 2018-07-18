@@ -99,7 +99,7 @@ class ControlPage extends Component {
                   ref={this.splitPane}
                   split="horizontal"
                   maxSize={700}
-                  defaultSize={500}
+                  defaultSize={600}
                   primary="second"
                   onDragFinished={size => {
                     const { current } = this.splitPane;

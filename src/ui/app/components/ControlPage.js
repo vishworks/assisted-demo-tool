@@ -32,8 +32,8 @@ class ControlPage extends Component {
 
     this.updateHeight = throttle(() => {
       const { pane1 } = this.splitPane.current;
-      this.setState({ pane1Height: pane1.clientHeight }), 100;
-    });
+      this.setState({ pane1Height: pane1.clientHeight });
+    }, 100);
   }
 
   componentDidMount() {

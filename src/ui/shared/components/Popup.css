@@ -1,21 +1,15 @@
 .Popup {
   position: absolute;
-  top: 0;
   right: 100%;
-
   background: #152437;
   color: #FFFFFF;
-
-  width: 300px;
-  overflow: auto;
-  max-height: 90vh;
-  min-height: 100%;
   z-index: 500;
 }
 
 .Popup.popup-cover {
   display: block;
-  right: 0;
+  height: 400px;
   width: 100%;
-  top: 0;
+  right: 0;
+  bottom: 0;
 }

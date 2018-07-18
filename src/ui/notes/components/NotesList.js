@@ -22,7 +22,7 @@ const SortableItem = SortableElement(({ title, text, date, onClickStar }) => {
         {title}
         <span className="date-label">{isoToLongDate(date)}</span>
       </div>
-      <pre className="text-label">{text}</pre>
+      <p className="text-label">{text}</p>
       <SortHandle />
     </div>
   );

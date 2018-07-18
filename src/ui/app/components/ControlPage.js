@@ -81,8 +81,9 @@ class ControlPage extends Component {
             </div>
             <SplitPane
               split="vertical"
-              minSize={300}
-              defaultSize={400}
+              minSize={200}
+              maxSize={450}
+              defaultSize={300}
               primary="second"
             >
               <div className="layout-col-2">
@@ -101,8 +102,8 @@ class ControlPage extends Component {
                 <SplitPane
                   ref={this.splitPane}
                   split="horizontal"
-                  minSize={400}
-                  defaultSize={500}
+                  maxSize={700}
+                  defaultSize={600}
                   primary="second"
                   onDragFinished={size => {
                     const { current } = this.splitPane;
@@ -134,18 +135,18 @@ class ControlPage extends Component {
                       </div>
                     </div>
                     <CurrentDemoNotesListContainer />
-                    <div className="footer-controls-section add-notes-section">
-                      <PopupContainer
-                        className="popup-cover grey-area new-note-popup"
-                        popupId="newNoteForm"
-                        closeOnClick={false}
-                      >
-                        <NewNoteFormContainer />
-                      </PopupContainer>
-                      <OpenNewNotePopupButtonContainer />
-                    </div>
                   </div>
                 </SplitPane>
+                <div className="footer-controls-section add-notes-section">
+                  <PopupContainer
+                    className="popup-cover grey-area new-note-popup"
+                    popupId="newNoteForm"
+                    closeOnClick={false}
+                  >
+                    <NewNoteFormContainer />
+                  </PopupContainer>
+                  <OpenNewNotePopupButtonContainer />
+                </div>
               </div>
             </SplitPane>
           </SplitPane>

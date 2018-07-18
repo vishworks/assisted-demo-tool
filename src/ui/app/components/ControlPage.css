@@ -51,7 +51,6 @@
 .ControlPage .main-content {
   background: #f9f9f9;
   color: #8b8d8f;
-
   flex-grow: 1;
   position: relative;
 }
@@ -101,7 +100,6 @@
   background: #ffffff;
 }
 
-
 .ControlPage .notes-section {
   display: flex;
   flex-direction: column;
@@ -130,15 +128,12 @@
   margin-left: 5px;
 }
 
-
-
 .ControlPage .NotesList {
   flex-grow: 2;
 }
 .ControlPage .add-notes-section {
   display: flex;
   align-items: center;
-  padding-left: 30px;
 }
 
 .ControlPage .new-note-popup  {

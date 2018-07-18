@@ -22,6 +22,8 @@ import 'ui/shared/components/SplitPaneResizer.css';
 import './ControlPage.css';
 import './ControlPageStepButtonsOverride.css';
 
+const calc20PercHeight = h => Math.ceil(parseInt(h, 10) * 0.2);
+
 class ControlPage extends Component {
   constructor(props) {
     super(props);
@@ -31,8 +33,10 @@ class ControlPage extends Component {
     };
 
     this.updateHeight = throttle(() => {
-      const { pane1 } = this.splitPane.current;
-      this.setState({ pane1Height: pane1.clientHeight });
+      const { current } = this.splitPane;
+      this.setState({
+        pane1Height: calc20PercHeight(current.splitPane.clientHeight)
+      });
     }, 100);
   }
 
